@@ -115,7 +115,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.8s forwards; }
 .hero-trust { font-size: 12px; color: var(--muted); margin-top: 14px; margin-bottom: 0; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.95s forwards; letter-spacing: 0.02em; }
 .hero-right { position: relative; overflow: hidden; z-index: 1; }
-.hero-photo { position: absolute; inset: 0; background-image: url(https://images.unsplash.com/photo-1543362906-acfc16c67564?w=1200&q=80); background-size: cover; background-position: center right; opacity: 0; animation: fadeIn 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards; will-change: transform; }
+.hero-photo { position: absolute; inset: 0; background-image: url(https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&q=80); background-size: cover; background-position: center; opacity: 0; animation: fadeIn 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards; will-change: transform; }
 .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 28%, rgba(255,255,255,0) 50%); }
 .hero-photo::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, transparent 15%, transparent 85%, rgba(255,255,255,0.6) 100%); }
 .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3; opacity: 0; animation: fadeIn 1s ease 2s forwards; }
@@ -201,6 +201,12 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-pillar-score { font-size: 10px; color: rgba(255,255,255,0.5); width: 22px; text-align: right; flex-shrink: 0; font-weight: 600; }
 .mock-insight-preview { margin: 4px 13px 11px; padding: 8px 11px; background: rgba(46,168,74,0.06); border-left: 2px solid rgba(46,168,74,0.35); border-radius: 0 6px 6px 0; flex-shrink: 0; }
 .mock-insight-preview p { font-size: 9.5px; color: rgba(255,255,255,0.42); line-height: 1.55; font-style: italic; }
+.mock-trend-row { display: flex; align-items: flex-end; gap: 8px; padding: 8px 15px 10px; border-top: 1px solid rgba(255,255,255,0.05); flex-shrink: 0; }
+.mock-trend-label { font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.22); flex-shrink: 0; align-self: center; }
+.mock-trend-bars { display: flex; align-items: flex-end; gap: 3px; flex: 1; height: 28px; }
+.mock-trend-bar { flex: 1; background: rgba(46,168,74,0.2); border-radius: 2px 2px 0 0; min-height: 4px; }
+.mock-trend-bar.active { background: var(--green-accent); }
+.mock-trend-up { font-size: 9px; font-weight: 700; color: var(--green-accent); flex-shrink: 0; align-self: center; }
 
 /* Longevity Coach */
 .mock-coach { background: var(--white); }
@@ -240,6 +246,11 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-mm-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
 .mock-mm-tag.safe { background: var(--green-light); color: var(--green-dark); }
 .mock-mm-tag.goal { background: rgba(57,140,186,0.08); color: var(--body-blue); }
+.mock-mm-why { font-size: 9.5px; color: var(--muted); font-style: italic; padding: 6px 14px 4px; line-height: 1.4; border-top: 1px solid var(--border); }
+.mock-mm-alts { padding: 6px 14px 10px; display: flex; flex-direction: column; gap: 4px; }
+.mock-mm-alt { display: flex; justify-content: space-between; align-items: center; background: var(--surface); border-radius: 5px; padding: 5px 10px; }
+.mock-mm-alt-name { font-size: 9.5px; color: var(--ink-2); font-weight: 500; }
+.mock-mm-alt-pct { font-size: 9px; font-weight: 700; color: var(--muted-2); background: var(--white); border: 1px solid var(--border-mid); border-radius: 50px; padding: 2px 7px; }
 
 /* Pantry Pal */
 .mock-pantry { background: var(--white); }
@@ -261,6 +272,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-match-bar { height: 3px; background: var(--surface-2); border-radius: 2px; margin-bottom: 8px; overflow: hidden; }
 .mock-match-bar-fill { height: 100%; width: 92%; background: var(--green); border-radius: 2px; }
 .mock-match-label { font-size: 9px; font-weight: 700; color: var(--green-dark); background: var(--green-light); padding: 4px 10px; border-radius: 4px; display: inline-block; align-self: flex-start; margin-top: auto; }
+.mock-recipe-meta-row { display: flex; gap: 10px; margin-bottom: 8px; }
+.mock-recipe-meta-item { display: flex; align-items: center; gap: 4px; font-size: 9.5px; color: var(--muted-2); font-weight: 500; }
+.mock-recipe-meta-item svg { stroke: var(--muted); }
 
 /* ── HOW IT WORKS (dark, WHOOP-style) ── */
 .section-loop { padding: var(--section-pad) 0; background: var(--ink); position: relative; z-index: 2; overflow: hidden; }
@@ -323,6 +337,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pricing-check path { stroke: var(--green); }
 .pricing-card.muted { opacity: 0.65; }
 .pricing-card.muted .pricing-price { color: var(--muted-2); }
+.pricing-trial { font-size: 12px; color: var(--muted); margin-top: 12px; margin-bottom: 0; letter-spacing: 0.01em; }
 
 /* ── VIDEO SECTION ── */
 .section-video { padding: var(--section-pad) 0; position: relative; z-index: 2; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -562,6 +577,19 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <div class="mock-pillar-row"><span class="mock-pillar-name">Mind</span><div class="mock-pillar-bar"><div class="mock-pillar-fill m" style="width:91%"></div></div><span class="mock-pillar-score">91</span></div>
         </div>
         <div class="mock-insight-preview"><p>"Sleep quality improved both nights you ate salmon. Pattern confirmed across 4 weeks. Omega-3s are working for your recovery."</p></div>
+        <div class="mock-trend-row">
+          <span class="mock-trend-label">7-day trend</span>
+          <div class="mock-trend-bars">
+            <div class="mock-trend-bar" style="height:40%"></div>
+            <div class="mock-trend-bar" style="height:55%"></div>
+            <div class="mock-trend-bar" style="height:48%"></div>
+            <div class="mock-trend-bar" style="height:62%"></div>
+            <div class="mock-trend-bar" style="height:58%"></div>
+            <div class="mock-trend-bar" style="height:70%"></div>
+            <div class="mock-trend-bar active" style="height:72%"></div>
+          </div>
+          <span class="mock-trend-up">+4 pts</span>
+        </div>
       </div>
     </div>
     <div class="feature-copy reveal d2">
@@ -594,6 +622,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <div class="mock-bubble coach">
             <div class="mock-coach-label">TLC Coach</div>
             With your HRV at 41ms and light sleep, I'd lean anti-inflammatory today: salmon, leafy greens, or walnuts. Avoid caffeine after 1pm. Last Tuesday's salmon dinner correlated with your best recovery day this week.
+          </div>
+          <div class="mock-bubble user">"Any restaurants near me that fit that?"</div>
+          <div class="mock-bubble coach">
+            <div class="mock-coach-label">TLC Coach</div>
+            Opening Meal Matchmaker with anti-inflammatory filter applied for your current location.
           </div>
         </div>
         <div class="mock-input-row">
@@ -641,18 +674,24 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <span class="mock-mm-tag goal">Goal-matched</span>
           <span class="mock-mm-tag goal">Anti-inflammatory</span>
         </div>
+        <div class="mock-mm-why">"Omega-3 profile supports your recovery goal. Calorie distance: 12 kcal."</div>
+        <div class="mock-mm-alts">
+          <div class="mock-mm-alt"><span class="mock-mm-alt-name">Tuna Tataki</span><span class="mock-mm-alt-pct">87%</span></div>
+          <div class="mock-mm-alt"><span class="mock-mm-alt-name">Edamame Ramen (miso broth)</span><span class="mock-mm-alt-pct">79%</span></div>
+        </div>
       </div>
     </div>
     <div class="feature-copy reveal d2">
-      <span class="label">Wherever you eat</span>
+      <span class="label">Always with you. Always up to date.</span>
       <h3>MEAL MATCHMAKER</h3>
-      <p>Eating out doesn't mean going off-plan. TLC scans real restaurant menus and finds the dishes that actually hit your macros, respect your restrictions, and align with your goal, for wherever you are right now.</p>
-      <p>Paper menu? Photograph it. TLC reads it and surfaces the best option in seconds. No guilt, no guesswork. You eat. TLC handles the nutrition intelligence.</p>
+      <p>Work trip to Tokyo. Business lunch in a city you don't know. Dinner at a friend's favourite spot with a laminated menu you've never seen. Meal Matchmaker handles all of it. TLC knows your macros, your restrictions, and your live goals, and finds the single best dish for you, right now, wherever you are.</p>
+      <p>No more guessing. No opening another tab. Just open TLC, see what's nearby, and eat with precision. Your standards travel with you because the tool travels with you.</p>
       <ul class="feature-highlights">
-        <li>Real restaurant discovery, any cuisine, any city</li>
-        <li>Macro-matched and allergy-verified every time</li>
-        <li>Menu Scanner works on any physical menu</li>
-        <li>Adapts to your goal: longevity, fat loss, muscle gain</li>
+        <li>Any city, any country. Your plan never stays home.</li>
+        <li>Macro-matched, allergy-verified, and goal-aligned, every time</li>
+        <li>Menu Scanner reads any paper, digital, or overhead menu instantly</li>
+        <li>Synced live with your current goals and restrictions</li>
+        <li>Always on. Always relevant. Never a generic suggestion.</li>
       </ul>
       <a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="feature-cta">Find your next meal free &rarr;</a>
     </div>
@@ -679,6 +718,21 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <div class="mock-macro-pills">
             <span class="mock-macro-pill cal">520 kcal</span>
             <span class="mock-macro-pill pro">38g protein</span>
+            <span class="mock-macro-pill cal">12g fat</span>
+          </div>
+          <div class="mock-recipe-meta-row">
+            <span class="mock-recipe-meta-item">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              25 min
+            </span>
+            <span class="mock-recipe-meta-item">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+              7 ingredients
+            </span>
+            <span class="mock-recipe-meta-item">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Anti-inflam.
+            </span>
           </div>
           <div class="mock-match-bar"><div class="mock-match-bar-fill"></div></div>
           <span class="mock-match-label">Macro match: Excellent</span>
@@ -704,7 +758,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- THE DIFFERENCE -->
 <section class="section-difference"><div class="container"><div class="difference-inner">
-  <div class="difference-quote reveal"><div class="quote-mark">"</div><div class="quote-pre">You might be asking</div><p class="quote-text">Can't I just ask a search engine<br><em>"What should I eat?"</em></p></div>
+  <div class="difference-quote reveal"><div class="quote-mark">"</div><div class="quote-pre">You might be asking</div><p class="quote-text">Can't I just ask an AI model<br><em>"What should I eat?"</em></p></div>
   <div class="difference-answer reveal d2">
     <span class="label" style="margin-bottom:22px;display:inline-flex;color:var(--green-accent);">The Difference</span>
     <h2>IT ADAPTS TO YOU. NOT THE OTHER WAY ROUND.</h2>
@@ -734,9 +788,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <p>TLC Lite gets you started. TLC unlocks the deep insights that connect all three pillars and drive lasting change.</p>
   </div>
   <div class="pricing-grid">
-    <div class="pricing-card reveal-scale d1"><div class="pricing-tier">TLC Lite</div><div class="pricing-price">Free</div><div class="pricing-period">forever</div><ul class="pricing-features"><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Meal Matchmaker</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Basic meal logging</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Restaurant discovery</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Nutrition blueprint</li></ul><a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a></div>
-    <div class="pricing-card featured reveal-scale d2"><div class="pricing-badge">Most Popular</div><div class="pricing-tier">TLC</div><div class="pricing-price">$9.99</div><div class="pricing-period">per month</div><ul class="pricing-features"><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Lite</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Dynamic Insights (daily + weekly)</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Longevity Coach</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Menu Scanner + Meal Analyser</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal + Recipes on Demand</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Weekly Strategy + Goals</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Wearable integration (25+ devices)</li></ul><a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="width:100%;justify-content:center;">Start Your Journey</a></div>
-    <div class="pricing-card reveal-scale d3"><div class="pricing-tier">TLC Pro</div><div class="pricing-price">$19.99</div><div class="pricing-period">per month</div><ul class="pricing-features"><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in TLC</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personalised meal planning</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Advanced analytics</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li></ul><a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a></div>
+    <div class="pricing-card reveal-scale d1"><div class="pricing-tier">TLC Lite</div><div class="pricing-price">Free</div><div class="pricing-period">forever</div><ul class="pricing-features"><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Meal Matchmaker</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Basic meal logging</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Restaurant discovery</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Nutrition blueprint</li></ul><a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a><p class="pricing-trial">7-day full trial included. No card required.</p></div>
+    <div class="pricing-card featured reveal-scale d2"><div class="pricing-badge">Most Popular</div><div class="pricing-tier">TLC</div><div class="pricing-price">$9.99</div><div class="pricing-period">per month</div><ul class="pricing-features"><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Lite</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Dynamic Insights (daily + weekly)</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Longevity Coach</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Menu Scanner + Meal Analyser</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal + Recipes on Demand</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Weekly Strategy + Goals</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Wearable integration (25+ devices)</li></ul><a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="width:100%;justify-content:center;">Start Your Journey</a><p class="pricing-trial">7-day free trial. No card required.</p></div>
+    <div class="pricing-card reveal-scale d3"><div class="pricing-tier">TLC Pro</div><div class="pricing-price">$19.99</div><div class="pricing-period">per month</div><ul class="pricing-features"><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in TLC</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personalised meal planning</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Advanced analytics</li><li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li></ul><a href="mailto:chris@thelongevitychef.com" class="btn btn-outline" style="width:100%;justify-content:center;">Join Waitlist</a><p class="pricing-trial">7-day free trial on launch. No card required.</p></div>
   </div>
 </div></section>
 
