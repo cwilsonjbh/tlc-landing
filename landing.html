@@ -270,24 +270,48 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-recipe-meta-item svg { stroke: var(--muted); }
 
 /* ── HOW IT WORKS (dark, WHOOP-style) ── */
-.section-loop { padding: var(--section-pad) 0; background: var(--ink); position: relative; z-index: 2; overflow: hidden; }
-.section-loop::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, rgba(46,168,74,0.04) 0%, transparent 60%); pointer-events: none; }
-.section-header-dark { text-align: center; margin-bottom: 72px; }
-.section-header-dark h2 { font-family: var(--font-display); font-size: clamp(48px, 5.5vw, 76px); line-height: 0.95; letter-spacing: 0.02em; color: var(--white); margin-bottom: 20px; }
-.section-header-dark h2 em { font-style: normal; color: var(--green-accent); }
-.section-header-dark > p { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 460px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
-.loop-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
-.loop-steps::before { content: ''; position: absolute; top: 54px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, transparent, rgba(46,168,74,0.15), rgba(46,168,74,0.15), transparent); }
-.loop-step { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 32px 24px; text-align: center; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; z-index: 1; }
-.loop-step:hover { background: rgba(255,255,255,0.06); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(46,168,74,0.06); }
-.loop-step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--white); font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(46,168,74,0.25); }
-.loop-step h4 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-.loop-step p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
-.loop-engine { text-align: center; margin-top: 44px; }
-.loop-engine-pill { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08); border-radius: 50px; padding: 12px 32px; box-shadow: 0 0 0 6px rgba(46,168,74,0.03); }
-.loop-engine-pill svg { width: 18px; height: 18px; stroke: var(--green-accent); fill: none; stroke-width: 2; stroke-linecap: round; }
-.loop-engine-pill strong { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); }
-.loop-engine-pill span { font-size: 11px; color: rgba(255,255,255,0.35); }
+/* ── LONGEVITY LOOP (from original Bubble LP — animated SVG track) ── */
+.s-loop { padding: var(--section-pad) 0; background: var(--white); position: relative; z-index: 2; overflow: hidden; }
+.loop-hdr { text-align: center; margin-bottom: 48px; }
+.loop-hdr h2 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 60px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 14px; }
+.loop-hdr h2 em { font-style: normal; color: var(--green); }
+.loop-hdr > p { font-size: 16px; color: var(--muted-2); max-width: 460px; margin: 0 auto; line-height: 1.7; }
+.loop-track { position: relative; max-width: 1060px; margin: 0 auto; background: var(--ink); border-radius: 20px; padding: 40px 32px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+.loop-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.loop-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; position: relative; z-index: 2; }
+.lc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 22px 20px 18px; transition: box-shadow 0.3s ease, transform 0.3s ease; cursor: default; display: flex; flex-direction: column; }
+.lc:hover { box-shadow: 0 8px 28px rgba(46,168,74,0.06); transform: translateY(-2px); background: rgba(255,255,255,0.06); }
+.lc-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.lc-ico { width: 42px; height: 42px; min-width: 42px; border-radius: 50%; background: rgba(46,168,74,0.08); border: 1.5px solid rgba(46,168,74,0.2); display: flex; align-items: center; justify-content: center; position: relative; }
+.lc-ico svg { width: 18px; height: 18px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.lc-num { position: absolute; top: -4px; right: -4px; width: 18px; height: 18px; border-radius: 50%; background: var(--green); color: var(--white); font-size: 9px; font-weight: 800; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.lc-top h4 { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.25; }
+.lc > p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; flex: 1; }
+.lc-tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-accent, #46c461); background: rgba(46,168,74,0.1); padding: 3px 9px; border-radius: 2px; margin-top: 9px; }
+.loop-hub { text-align: center; padding: 12px 0; position: relative; z-index: 3; }
+.loop-hub-inner { display: inline-flex; align-items: center; gap: 10px; background: var(--white); border: 1.5px solid rgba(0,0,0,0.08); border-radius: 50px; padding: 9px 24px; box-shadow: 0 0 0 6px rgba(46,168,74,0.04), 0 2px 12px rgba(0,0,0,0.02); }
+.loop-hub-inner svg { width: 18px; height: 18px; }
+.loop-hub-inner strong { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+.loop-hub-inner span { font-size: 10.5px; color: rgba(26,26,26,0.4); }
+/* Mobile timeline layout */
+.loop-mobile-wrap { display: none; background: var(--ink); border-radius: 20px; padding: 32px 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+.loop-mobile { position: relative; max-width: 500px; margin: 0 auto; padding-left: 42px; }
+.loop-mobile::before { content: ''; position: absolute; left: 20px; top: 20px; bottom: 80px; width: 2px; border-radius: 2px; background: linear-gradient(180deg, var(--green), rgba(46,168,74,0.12) 10%, rgba(46,168,74,0.12) 90%, var(--green)); }
+.m-dot { position: absolute; left: 16px; top: 20px; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px rgba(46,168,74,0.55); z-index: 2; animation: mTravel 5.5s ease-in-out infinite; }
+@keyframes mTravel { 0% { top: 20px; opacity: 1; } 85% { opacity: 1; } 95% { top: calc(100% - 90px); opacity: 0; } 100% { top: 20px; opacity: 0; } }
+.mi { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; position: relative; }
+.mi-ico { width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: var(--white); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; position: relative; z-index: 3; box-shadow: 0 0 0 4px rgba(46,168,74,0.06), 0 2px 6px rgba(0,0,0,0.04); }
+.mi-ico svg { width: 17px; height: 17px; stroke: var(--green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.mi-ico .mi-n { position: absolute; top: -4px; right: -6px; width: 16px; height: 16px; border-radius: 50%; background: var(--green); color: var(--white); font-size: 9px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.mi-body h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; line-height: 1.3; }
+.mi-body p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+.mi-body .lc-tag { margin-top: 7px; }
+.m-lb { text-align: center; margin-top: 28px; margin-left: -42px; }
+.m-lb-pill { display: inline-flex; align-items: center; gap: 10px; background: rgba(46,168,74,0.08); border: 1px solid rgba(46,168,74,0.15); border-radius: 50px; padding: 10px 24px; }
+.m-lb-pill svg { width: 18px; height: 18px; }
+.m-lb-pill span { font-size: 13px; font-weight: 700; color: var(--green-dark, #1a5c28); letter-spacing: 0.02em; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
 
 /* ── THE DIFFERENCE (dark + food photo) ── */
 .section-difference { padding: var(--section-pad) 0; background: var(--ink); position: relative; z-index: 2; overflow: hidden; }
@@ -384,8 +408,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .hero-left::after { display: none; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .loop-steps { grid-template-columns: repeat(2, 1fr); }
-  .loop-steps::before { display: none; }
+  .loop-track { display: none; }
+  .loop-mobile-wrap { display: block !important; }
+  .loop-hdr { margin-bottom: 36px; }
   .feature-inner { grid-template-columns: 1fr; gap: 40px; }
   .feature-block:nth-child(even) .feature-inner { direction: ltr; }
   .difference-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -401,7 +426,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   :root { --section-pad: clamp(72px, 10vw, 100px); }
   .hero-right { height: 40vh; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .loop-steps { grid-template-columns: 1fr; }
+  .loop-hdr h2 { font-size: clamp(32px, 9vw, 48px); }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .hero-headline { font-size: clamp(64px, 16vw, 100px); }
@@ -526,20 +551,57 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 </div></div></div>
 
 <!-- HOW IT WORKS -->
-<section class="section-loop" id="how-it-works"><div class="container">
-  <div class="section-header-dark reveal">
-    <span class="label" style="margin-bottom:20px;display:inline-flex;justify-content:center;color:var(--green-accent);">Your Journey</span>
-    <h2>THE <em>DAILY LOOP</em></h2>
-    <p>Two minutes a day. TLC does the heavy lifting. It learns, adapts, and gets sharper with every cycle.</p>
+<section class="s-loop" id="how-it-works">
+  <div class="container">
+    <div class="loop-hdr reveal">
+      <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;">Your Journey</span>
+      <h2>YOUR <em>LONGEVITY LOOP</em></h2>
+      <p>A continuous cycle that learns who you are, adapts to how you live, and gets sharper every week.</p>
+    </div>
+    <div class="loop-track">
+      <svg class="loop-svg" viewBox="0 0 1060 490" fill="none" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="ltG" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2ea84a"/><stop offset="50%" stop-color="#46c461"/><stop offset="100%" stop-color="#2ea84a"/></linearGradient>
+          <filter id="dGl"><feGaussianBlur stdDeviation="4"/></filter>
+        </defs>
+        <path id="trackP" d="M160,105 L900,105 C1020,105 1020,385 900,385 L160,385 C40,385 40,105 160,105 Z" stroke="#dde3df" stroke-width="2"/>
+        <path d="M160,105 L900,105 C1020,105 1020,385 900,385 L160,385 C40,385 40,105 160,105 Z" stroke="url(#ltG)" stroke-width="2" stroke-dasharray="10 7" opacity="0.25"/>
+        <circle r="7" fill="#2ea84a" opacity="0.2" filter="url(#dGl)"><animateMotion dur="10s" repeatCount="indefinite"><mpath href="#trackP"/></animateMotion></circle>
+        <circle r="4" fill="#2ea84a" opacity="0.85"><animateMotion dur="10s" repeatCount="indefinite"><mpath href="#trackP"/></animateMotion></circle>
+        <circle r="1.5" fill="#fff"><animateMotion dur="10s" repeatCount="indefinite"><mpath href="#trackP"/></animateMotion></circle>
+        <g transform="translate(350,92) rotate(0)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+        <g transform="translate(710,92) rotate(0)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+        <g transform="translate(1006,245) rotate(90)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+        <g transform="translate(710,398) rotate(180)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+        <g transform="translate(350,398) rotate(180)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+        <g transform="translate(52,245) rotate(270)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+      </svg>
+      <div class="loop-row reveal" style="margin-bottom:20px;">
+        <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span class="lc-num">1</span></div><h4>Build Your Blueprint</h4></div><p>Answer a short assessment about your goals, health history, and how you live. TLC uses this to build a nutrition blueprint unique to your body - not a generic template. Choose Express for the essentials or go Detailed for precision. Either way, your plan starts from you.</p><span class="lc-tag">Your unique starting point</span></div>
+        <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 8v5l3 2"/><line x1="9" y1="1" x2="15" y2="1" stroke-width="1.5"/><line x1="9" y1="23" x2="15" y2="23" stroke-width="1.5"/></svg><span class="lc-num">2</span></div><h4>Connect Your Wearable</h4></div><p>Sync your WHOOP, Oura, Garmin, Fitbit or any of 25+ devices. Sleep, recovery, strain and heart rate data flow in automatically so your nutrition adapts to what your body is actually doing - not what a generic formula guesses. Your plan shifts when your body does.</p><span class="lc-tag">Syncing reveals deeper insights</span></div>
+        <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/><path d="M8 12c0-3 2-5.5 4-5.5s4 2.5 4 5.5"/><path d="M7 14h10"/><path d="M9 17h6"/></svg><span class="lc-num">3</span></div><h4>Eat Your Way</h4></div><p>Eating out? TLC finds restaurants nearby and suggests meals that hit your macros and calorie targets. Perfect for lunch with friends or while travelling. Just snap a photo of your meal and TLC automatically analyses it for calories, macros and nutritional content - matched to your goals as they evolve.</p><span class="lc-tag">Dine out, cook in, or freestyle</span></div>
+      </div>
+      <div class="loop-hub reveal reveal-delay-1"><div class="loop-hub-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="2" stroke-linecap="round"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg><strong>TLC Engine</strong><span>Always adapting</span></div></div>
+      <div class="loop-row reveal reveal-delay-2" style="margin-top:20px;">
+        <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span class="lc-num">6</span></div><h4>Weekly Recalibration</h4></div><p>Every week, TLC reviews what worked and what didn't across your meals, biometrics, and reflections. It recalibrates your blueprint, adjusts your targets, and generates a fresh strategy. The longer you use it, the sharper it gets. Your next week always builds on the last.</p><span class="lc-tag">Then the loop repeats</span></div>
+        <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="0.5" fill="#2ea84a"/><circle cx="12" cy="10" r="0.5" fill="#2ea84a"/><circle cx="15" cy="10" r="0.5" fill="#2ea84a"/></svg><span class="lc-num">5</span></div><h4>Longevity Coach</h4></div><p>Each day, your coach connects nutrition, biometrics and mindset - analysing all three together to uncover insights that stay hidden when tracked in isolation. It cross-references your meals, body data and reflections against your full history. No recycled wellness advice - real guidance that gets sharper the longer you use it.</p><span class="lc-tag">Knows your full history</span></div>
+        <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="lc-num">4</span></div><h4>Menus and Smart Shopping</h4></div><p>When you choose to cook, TLC builds personalised weekly menus matched to your macros, calorie targets, dietary needs, likes and dislikes. Each menu comes with a sustainability-focused, zero-waste shopping list where ingredients overlap intentionally across meals. Less waste, lower bills, better for the planet.</p><span class="lc-tag">Zero Waste Cooking</span></div>
+      </div>
+    </div>
+    <div class="loop-mobile-wrap">
+    <div class="loop-mobile">
+      <div class="m-dot"></div>
+      <div class="mi reveal"><div class="mi-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span class="mi-n">1</span></div><div class="mi-body"><h4>Build Your Blueprint</h4><p>Answer a short assessment about your goals, health history, and how you live. TLC uses this to build a nutrition blueprint unique to your body - not a generic template. Choose Express for the essentials or go Detailed for precision. Either way, your plan starts from you.</p><span class="lc-tag">Your unique starting point</span></div></div>
+      <div class="mi reveal reveal-delay-1"><div class="mi-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 8v5l3 2"/><line x1="9" y1="1" x2="15" y2="1" stroke-width="1.5"/><line x1="9" y1="23" x2="15" y2="23" stroke-width="1.5"/></svg><span class="mi-n">2</span></div><div class="mi-body"><h4>Connect Your Wearable</h4><p>Sync your WHOOP, Oura, Garmin, Fitbit or any of 25+ devices. Sleep, recovery, strain and heart rate data flow in automatically so your nutrition adapts to what your body is actually doing - not what a generic formula guesses. Your plan shifts when your body does.</p><span class="lc-tag">Syncing reveals deeper insights</span></div></div>
+      <div class="mi reveal reveal-delay-2"><div class="mi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/><path d="M8 12c0-3 2-5.5 4-5.5s4 2.5 4 5.5"/><path d="M7 14h10"/><path d="M9 17h6"/></svg><span class="mi-n">3</span></div><div class="mi-body"><h4>Eat Your Way</h4><p>Eating out? TLC finds restaurants nearby and suggests meals that hit your macros and calorie targets. Perfect for lunch with friends or while travelling. Just snap a photo of your meal and TLC automatically analyses it for calories, macros and nutritional content - matched to your goals as they evolve.</p><span class="lc-tag">Dine out, cook in, or freestyle</span></div></div>
+      <div class="mi reveal"><div class="mi-ico"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="mi-n">4</span></div><div class="mi-body"><h4>Menus and Smart Shopping</h4><p>When you choose to cook, TLC builds personalised weekly menus matched to your macros, calorie targets, dietary needs, likes and dislikes. Each menu comes with a sustainability-focused, zero-waste shopping list where ingredients overlap intentionally across meals. Less waste, lower bills, better for the planet.</p><span class="lc-tag">Zero Waste Cooking</span></div></div>
+      <div class="mi reveal reveal-delay-1"><div class="mi-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="0.5" fill="#2ea84a"/><circle cx="12" cy="10" r="0.5" fill="#2ea84a"/><circle cx="15" cy="10" r="0.5" fill="#2ea84a"/></svg><span class="mi-n">5</span></div><div class="mi-body"><h4>Longevity Coach</h4><p>Each day, your coach connects nutrition, biometrics and mindset - analysing all three together to uncover insights that stay hidden when tracked in isolation. It cross-references your meals, body data and reflections against your full history. No recycled wellness advice - real guidance that gets sharper the longer you use it.</p><span class="lc-tag">Knows your full history</span></div></div>
+      <div class="mi reveal reveal-delay-2"><div class="mi-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span class="mi-n">6</span></div><div class="mi-body"><h4>Weekly Recalibration</h4><p>Every week, TLC reviews what worked and what didn't across your meals, biometrics, and reflections. It recalibrates your blueprint, adjusts your targets, and generates a fresh strategy. The longer you use it, the sharper it gets. Your next week always builds on the last.</p><span class="lc-tag">Then the loop repeats</span></div></div>
+      <div class="m-lb"><div class="m-lb-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="2" stroke-linecap="round"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg><span>TLC understands your mind and body better every week.</span></div></div>
+    </div>
+    </div>
   </div>
-  <div class="loop-steps">
-    <div class="loop-step reveal d1"><div class="loop-step-num">1</div><h4>Baseline</h4><p>Before TLC gives you anything, it learns you. Goals, body stats, sleep patterns, diet, health conditions. Five minutes that tell TLC exactly where you are starting from, so every recommendation is built on reality, not guesswork.</p></div>
-    <div class="loop-step reveal d2"><div class="loop-step-num">2</div><h4>Your Plan</h4><p>TLC doesn't wait for you to ask. It tells you what to eat today, how much, and why. Based on your baseline, your goals, and your body, not a generic macro split copied from the internet.</p></div>
-    <div class="loop-step reveal d3"><div class="loop-step-num">3</div><h4>Track and Reflect</h4><p>Log your meals and spend sixty seconds on how you feel. Energy, sleep, mood. That daily input is what separates TLC from every other tool. It is the data that reveals why your body responded the way it did.</p></div>
-    <div class="loop-step reveal d4"><div class="loop-step-num">4</div><h4>Learn and Optimise</h4><p>TLC never stops learning. Every week it reviews what worked, what did not, and recalibrates. Not a one-time plan, a system that compounds. The longer you use it, the sharper it gets, and the closer you move to the version of yourself built to last.</p></div>
-  </div>
-  <div class="loop-engine reveal d5"><div class="loop-engine-pill"><svg viewBox="0 0 24 24"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg><strong>TLC Engine</strong><span>Always adapting</span></div></div>
-</div></section>
+</section>
 
 <!-- FEATURE SHOWCASE (WHOOP-style alternating sections) -->
 <section class="section-features" id="features">
