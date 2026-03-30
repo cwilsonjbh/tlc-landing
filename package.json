@@ -1,0 +1,13 @@
+{
+  "name": "tlc-landing",
+  "version": "1.0.0",
+  "description": "The Longevity Chef - Landing Page",
+  "scripts": {
+    "dev": "wrangler dev",
+    "sync": "node sync-landing.js",
+    "deploy": "node sync-landing.js && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
