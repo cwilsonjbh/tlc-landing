@@ -140,7 +140,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pillar-card.nutrition::before { background: var(--nutrition); }
 .pillar-card.body-pillar::before { background: var(--body-blue); }
 .pillar-card.mind::before { background: var(--mind); }
-.pillar-visual { margin-bottom: 26px; height: 44px; display: flex; align-items: center; }
+.pillar-visual { margin-bottom: 26px; height: 44px; display: flex; align-items: center; justify-content: center; }
 .pillar-visual svg { display: block; overflow: visible; }
 .pillar-card h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
 .pillar-card p { font-size: 15px; color: var(--muted-2); line-height: 1.75; }
