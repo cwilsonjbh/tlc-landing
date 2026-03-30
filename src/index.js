@@ -540,10 +540,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <p>Two minutes a day. TLC does the heavy lifting. It learns, adapts, and gets sharper with every cycle.</p>
   </div>
   <div class="loop-steps">
-    <div class="loop-step reveal d1"><div class="loop-step-num">1</div><h4>Log</h4><p>A photo, a note, a restaurant search. However you eat, TLC builds the data picture that makes every insight possible. It takes seconds and sharpens everything that follows.</p></div>
-    <div class="loop-step reveal d2"><div class="loop-step-num">2</div><h4>Reflect</h4><p>Sixty seconds unlocks what no wearable can deliver. Your energy, sleep, and mood ratings are the missing variable. They tell TLC exactly why your body responded the way it did.</p></div>
-    <div class="loop-step reveal d3"><div class="loop-step-num">3</div><h4>Insight</h4><p>Every morning, a single insight that didn't exist yesterday. The meal behind your recovery spike. The pattern your Tuesday diet creates by Thursday. TLC sees it. You don't have to.</p></div>
-    <div class="loop-step reveal d4"><div class="loop-step-num">4</div><h4>Strategy</h4><p>Each week, TLC takes everything it has learned and writes a personalised plan. Not a template. Your actual patterns, your actual body, your actual week ahead.</p></div>
+    <div class="loop-step reveal d1"><div class="loop-step-num">1</div><h4>Baseline</h4><p>Before TLC gives you anything, it learns you. Goals, body stats, sleep patterns, diet, health conditions. Five minutes that tell TLC exactly where you are starting from, so every recommendation is built on reality, not guesswork.</p></div>
+    <div class="loop-step reveal d2"><div class="loop-step-num">2</div><h4>Your Plan</h4><p>TLC doesn't wait for you to ask. It tells you what to eat today, how much, and why. Based on your baseline, your goals, and your body, not a generic macro split copied from the internet.</p></div>
+    <div class="loop-step reveal d3"><div class="loop-step-num">3</div><h4>Track and Reflect</h4><p>Log your meals and spend sixty seconds on how you feel. Energy, sleep, mood. That daily input is what separates TLC from every other tool. It is the data that reveals why your body responded the way it did.</p></div>
+    <div class="loop-step reveal d4"><div class="loop-step-num">4</div><h4>Learn and Optimise</h4><p>TLC never stops learning. Every week it reviews what worked, what did not, and recalibrates. Not a one-time plan, a system that compounds. The longer you use it, the sharper it gets, and the closer you move to the version of yourself built to last.</p></div>
   </div>
   <div class="loop-engine reveal d5"><div class="loop-engine-pill"><svg viewBox="0 0 24 24"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg><strong>TLC Engine</strong><span>Always adapting</span></div></div>
 </div></section>
