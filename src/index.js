@@ -503,6 +503,58 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
 
+<!-- THREE PILLARS -->
+<section class="section-pillars" id="pillars">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The Three Pillars</span>
+      <h2>EVERYTHING YOUR BODY<br><em>IS TRYING TO TELL YOU</em></h2>
+      <p>Most health tools track one thing at a time. TLC tracks all three simultaneously and finds the connections between them. Those connections are the insight.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card nutrition reveal d1">
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11c0-2 1.5-2 1.5-4"/><path d="M12 11c0-2 1.5-2 1.5-4"/><path d="M15 11c0-2 1.5-2 1.5-4"/><path d="M5 11h14a7 7 0 01-14 0z"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div></div>
+        <h3>Nutrition</h3>
+        <p class="pillar-hook">What you eat shapes everything else.</p>
+        <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">Meal logging</span>
+          <span class="pillar-data-tag">Macro targets</span>
+          <span class="pillar-data-tag">Menu scanning</span>
+          <span class="pillar-data-tag">Restaurant finder</span>
+        </div>
+      </div>
+      <div class="pillar-card body-pillar reveal d2">
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="4"/><path d="M9 4V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5V4"/><path d="M9 20v1.5a.5.5 0 00.5.5h5a.5.5 0 00.5-.5V20"/><polyline points="7.5 13 9.5 13 11 10.5 12.5 15.5 14 12 15.5 13 16.5 13"/><circle cx="12" cy="7.5" r="1" fill="#398CBA" stroke="none"/></svg></div></div>
+        <h3>Body</h3>
+        <p class="pillar-hook">Your wearable has been waiting for context.</p>
+        <p class="pillar-body">HRV, sleep stages, resting heart rate, strain, recovery. Your wearable collects all of it. TLC is the first system that connects these signals to what you ate and how you felt. That's where the patterns are.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">HRV</span>
+          <span class="pillar-data-tag">Sleep quality</span>
+          <span class="pillar-data-tag">Recovery</span>
+          <span class="pillar-data-tag">25+ devices</span>
+        </div>
+      </div>
+      <div class="pillar-card mind reveal d3">
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg></div></div>
+        <h3>Mind</h3>
+        <p class="pillar-hook">The data your wearable can't collect.</p>
+        <p class="pillar-body">Energy, focus, mood, motivation. A 60-second evening reflection tells TLC what no sensor can: how you actually feel. It is the missing variable that makes every other data point interpretable.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">Evening reflection</span>
+          <span class="pillar-data-tag">Mood tracking</span>
+          <span class="pillar-data-tag">Energy levels</span>
+          <span class="pillar-data-tag">Focus</span>
+        </div>
+      </div>
+    </div>
+    <div class="pillars-link reveal">
+      <a href="/why-tlc">See why connecting all three changes everything &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- THREE SIGNALS SECTION -->
 <section style="padding:clamp(72px,9vw,120px) 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:2;">
 <style>
@@ -636,58 +688,6 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
     <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:560px;margin:40px auto 0;line-height:1.85;" class="reveal d3">Because once you break through the clouds, the picture sharpens.<br>Every signal aligns. Every decision becomes clearer.</p>
 
-  </div>
-</section>
-
-<!-- THREE PILLARS -->
-<section class="section-pillars" id="pillars">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The Three Pillars</span>
-      <h2>EVERYTHING YOUR BODY<br><em>IS TRYING TO TELL YOU</em></h2>
-      <p>Most health tools track one thing at a time. TLC tracks all three simultaneously and finds the connections between them. Those connections are the insight.</p>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar-card nutrition reveal d1">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11c0-2 1.5-2 1.5-4"/><path d="M12 11c0-2 1.5-2 1.5-4"/><path d="M15 11c0-2 1.5-2 1.5-4"/><path d="M5 11h14a7 7 0 01-14 0z"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div></div>
-        <h3>Nutrition</h3>
-        <p class="pillar-hook">What you eat shapes everything else.</p>
-        <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
-        <div class="pillar-data-tags">
-          <span class="pillar-data-tag">Meal logging</span>
-          <span class="pillar-data-tag">Macro targets</span>
-          <span class="pillar-data-tag">Menu scanning</span>
-          <span class="pillar-data-tag">Restaurant finder</span>
-        </div>
-      </div>
-      <div class="pillar-card body-pillar reveal d2">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="4"/><path d="M9 4V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5V4"/><path d="M9 20v1.5a.5.5 0 00.5.5h5a.5.5 0 00.5-.5V20"/><polyline points="7.5 13 9.5 13 11 10.5 12.5 15.5 14 12 15.5 13 16.5 13"/><circle cx="12" cy="7.5" r="1" fill="#398CBA" stroke="none"/></svg></div></div>
-        <h3>Body</h3>
-        <p class="pillar-hook">Your wearable has been waiting for context.</p>
-        <p class="pillar-body">HRV, sleep stages, resting heart rate, strain, recovery. Your wearable collects all of it. TLC is the first system that connects these signals to what you ate and how you felt. That's where the patterns are.</p>
-        <div class="pillar-data-tags">
-          <span class="pillar-data-tag">HRV</span>
-          <span class="pillar-data-tag">Sleep quality</span>
-          <span class="pillar-data-tag">Recovery</span>
-          <span class="pillar-data-tag">25+ devices</span>
-        </div>
-      </div>
-      <div class="pillar-card mind reveal d3">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg></div></div>
-        <h3>Mind</h3>
-        <p class="pillar-hook">The data your wearable can't collect.</p>
-        <p class="pillar-body">Energy, focus, mood, motivation. A 60-second evening reflection tells TLC what no sensor can: how you actually feel. It is the missing variable that makes every other data point interpretable.</p>
-        <div class="pillar-data-tags">
-          <span class="pillar-data-tag">Evening reflection</span>
-          <span class="pillar-data-tag">Mood tracking</span>
-          <span class="pillar-data-tag">Energy levels</span>
-          <span class="pillar-data-tag">Focus</span>
-        </div>
-      </div>
-    </div>
-    <div class="pillars-link reveal">
-      <a href="/why-tlc">See why connecting all three changes everything &rarr;</a>
-    </div>
   </div>
 </section>
 
