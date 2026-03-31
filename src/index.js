@@ -4522,14 +4522,14 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td><span class="feat-label">Longevity Score<span class="feat-info">i<span class="feat-tooltip">A weekly composite score (0-100) reflecting your nutrition consistency, sleep quality, activity, and wellbeing data. Tracks your trajectory over time so progress is always visible.</span></span></span></td>
+            <td><span class="feat-label">Longevity Score<span class="feat-info">i<span class="feat-tooltip">A weekly composite score (0-1000) reflecting your nutrition consistency, sleep quality, activity, and wellbeing data. Tracks your trajectory over time so progress is always visible.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
           </tr>
           <tr class="comp-section-header"><td colspan="4">Tools</td></tr>
           <tr>
-            <td><span class="feat-label">Personal nutrition blueprint<span class="feat-info">i<span class="feat-tooltip">Your personalised calorie and macro targets, calculated from your body stats, goals, and activity level. Displayed on your dashboard as your daily blueprint.</span></span></span></td>
+            <td><span class="feat-label">Personal nutrition blueprint<span class="feat-info">i<span class="feat-tooltip">Your personal nutrition targets built from your body stats, health goals, dietary preferences, food tastes, and lifestyle. More than macros — an evolving daily guide that adapts as you progress.</span></span></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
