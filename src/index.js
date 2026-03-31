@@ -508,7 +508,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 /* ── TESTIMONIALS (social proof, green gradient — matches Longevity Score card) ── */
 .section-testimonials { padding: var(--section-pad) 0; background: linear-gradient(135deg, #154D33 0%, #1D6040 50%, #39BA76 100%); position: relative; z-index: 2; overflow: hidden; box-shadow: 0 4px 48px rgba(21,77,51,0.35) inset; }
-#testimonialNebula { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.55; }
+#testimonialNebula { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 1; }
 .section-testimonials .container { position: relative; z-index: 1; }
 .testimonials-header { text-align: center; margin-bottom: 60px; position: relative; }
 .testimonials-header h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 14px; }
@@ -812,7 +812,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <canvas id="testimonialNebula"></canvas>
   <div class="container">
     <div class="testimonials-header reveal">
-      <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:rgba(255,255,255,0.80);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.20);">Real Results</span>
+      <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:rgba(255,255,255,0.70);background:transparent;border:none;letter-spacing:0.18em;">Real Results</span>
       <h2>PEOPLE WHO <em>JOINED THE DOTS</em></h2>
       <p>What happens when food, body, and mind finally talk to each other.</p>
     </div>
@@ -944,7 +944,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <div class="mock-di-narrative">
           <p id="di-narrative-text" style="opacity:0;transition:opacity 0.8s ease;">Day 1 blueprint live. Targets set: <strong>2,340 kcal</strong> and <strong>165g protein</strong> calibrated for your Patagonia trek in 8 weeks. Your longevity blueprint is active.</p>
           <p id="di-narrative-p2" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">Your baseline is clear. RHR <strong>58 bpm</strong>, sleep averaging <strong>6.8h</strong>, energy at <strong>6.2/10</strong>. Mediterranean and seafood preferences locked in. Every number is a reference point from today.</p>
-          <p id="di-narrative-p3" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">Most systems track one pillar. TLC connects three. What you eat, how your body responds, and how you feel reveal patterns none of them show alone. That is what builds from here.</p>
+          <p id="di-narrative-p3" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">Your first full insight lands tonight at <strong>8pm</strong>. Log a meal before then and take 60 seconds for your evening reflection. That is all TLC needs. The patterns start tonight.</p>
         </div>
         <!-- Wellbeing bar charts: Mood / Focus / Energy -->
         <div class="mock-wellbeing-section">
@@ -1895,12 +1895,12 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
   // Single centralized cluster — same node layout as the LS dial card, scaled to section
   var nodes = [
-    {a:0,     rx:0.28, ry:0.32, spd: 0.003,  dot:2.0, bright:0.22},
-    {a:1.05,  rx:0.20, ry:0.26, spd:-0.004,  dot:1.6, bright:0.18},
-    {a:2.09,  rx:0.34, ry:0.28, spd: 0.0025, dot:2.2, bright:0.26},
-    {a:3.14,  rx:0.14, ry:0.30, spd:-0.005,  dot:1.4, bright:0.16},
-    {a:4.19,  rx:0.26, ry:0.20, spd: 0.0035, dot:1.6, bright:0.20},
-    {a:5.24,  rx:0.32, ry:0.18, spd:-0.003,  dot:1.5, bright:0.18},
+    {a:0,     rx:0.28, ry:0.32, spd: 0.003,  dot:2.8, bright:0.55},
+    {a:1.05,  rx:0.20, ry:0.26, spd:-0.004,  dot:2.2, bright:0.45},
+    {a:2.09,  rx:0.34, ry:0.28, spd: 0.0025, dot:3.0, bright:0.60},
+    {a:3.14,  rx:0.14, ry:0.30, spd:-0.005,  dot:2.0, bright:0.40},
+    {a:4.19,  rx:0.26, ry:0.20, spd: 0.0035, dot:2.4, bright:0.50},
+    {a:5.24,  rx:0.32, ry:0.18, spd:-0.003,  dot:2.2, bright:0.45},
   ];
 
   var rings = [];
@@ -1925,22 +1925,22 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
     // Expanding rings from centre
     ringT++;
-    if (ringT > 140) { ringT = 0; rings.push({r: 0, a: 0.18}); }
+    if (ringT > 110) { ringT = 0; rings.push({r: 0, a: 0.35}); }
     for (var j = rings.length - 1; j >= 0; j--) {
       var rn = rings[j];
-      rn.r += 0.5; rn.a *= 0.977;
-      if (rn.a < 0.008) { rings.splice(j, 1); continue; }
+      rn.r += 0.6; rn.a *= 0.974;
+      if (rn.a < 0.01) { rings.splice(j, 1); continue; }
       ctx.beginPath(); ctx.arc(cx, cy, rn.r, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(255,255,255,' + (rn.a * 0.18) + ')';
-      ctx.lineWidth = 0.7; ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,255,255,' + (rn.a * 0.30) + ')';
+      ctx.lineWidth = 0.9; ctx.stroke();
     }
 
     // Lines from centre to each node
     for (var k = 0; k < nodes.length; k++) {
       var nd = nodes[k];
       ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nd.x, nd.y);
-      ctx.strokeStyle = 'rgba(255,255,255,' + (0.05 + 0.025 * Math.sin(t * 0.02 + nd.a)) + ')';
-      ctx.lineWidth = 0.5; ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.14 + 0.06 * Math.sin(t * 0.02 + nd.a)) + ')';
+      ctx.lineWidth = 0.7; ctx.stroke();
     }
 
     // Inter-node connections (proximity-based)
@@ -1948,11 +1948,11 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
       for (var p = m + 1; p < nodes.length; p++) {
         var dx = nodes[m].x - nodes[p].x, dy = nodes[m].y - nodes[p].y;
         var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < W * 0.38) {
-          var alpha = (1 - dist / (W * 0.38)) * 0.09;
+        if (dist < W * 0.45) {
+          var alpha = (1 - dist / (W * 0.45)) * 0.20;
           ctx.beginPath(); ctx.moveTo(nodes[m].x, nodes[m].y); ctx.lineTo(nodes[p].x, nodes[p].y);
           ctx.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
-          ctx.lineWidth = 0.45; ctx.stroke();
+          ctx.lineWidth = 0.6; ctx.stroke();
         }
       }
     }
@@ -1960,15 +1960,22 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
     // Nodes (white dots with glow)
     for (var q = 0; q < nodes.length; q++) {
       var nn = nodes[q];
-      var pulse = nn.bright + 0.06 * Math.sin(t * 0.03 + nn.a);
+      var pulse = nn.bright + 0.10 * Math.sin(t * 0.03 + nn.a);
+      // Glow halo
+      var glow = ctx.createRadialGradient(nn.x, nn.y, 0, nn.x, nn.y, nn.dot * 6);
+      glow.addColorStop(0, 'rgba(255,255,255,' + (pulse * 0.35) + ')');
+      glow.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.beginPath(); ctx.arc(nn.x, nn.y, nn.dot * 6, 0, Math.PI * 2);
+      ctx.fillStyle = glow; ctx.fill();
+      // Core dot
       ctx.beginPath(); ctx.arc(nn.x, nn.y, nn.dot, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(255,255,255,' + pulse + ')';
       ctx.fill();
     }
 
     // Central radial glow
-    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.22);
-    grad.addColorStop(0, 'rgba(255,255,255,0.05)');
+    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.28);
+    grad.addColorStop(0, 'rgba(255,255,255,0.10)');
     grad.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
