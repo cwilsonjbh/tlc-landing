@@ -506,27 +506,28 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .footer-bottom { max-width: var(--content-max); margin: 0 auto; padding: 24px var(--gutter); border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; margin-top: 44px; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
 
-/* ── TESTIMONIALS (social proof, dark section) ── */
-.section-testimonials { padding: var(--section-pad) 0; background: var(--ink); position: relative; z-index: 2; overflow: hidden; }
-#testimonialNebula { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.9; }
+/* ── TESTIMONIALS (social proof, green gradient — matches Longevity Score card) ── */
+.section-testimonials { padding: var(--section-pad) 0; background: linear-gradient(135deg, #154D33 0%, #1D6040 50%, #39BA76 100%); position: relative; z-index: 2; overflow: hidden; box-shadow: 0 4px 48px rgba(21,77,51,0.35) inset; }
+#testimonialNebula { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.55; }
 .section-testimonials .container { position: relative; z-index: 1; }
 .testimonials-header { text-align: center; margin-bottom: 60px; position: relative; }
 .testimonials-header h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 14px; }
-.testimonials-header h2 em { color: var(--green-accent); font-style: normal; }
-.testimonials-header > p { font-size: 17px; color: rgba(255,255,255,0.42); max-width: 480px; margin: 0 auto; line-height: 1.75; }
+.testimonials-header h2 em { color: rgba(255,255,255,0.85); font-style: normal; }
+.testimonials-header > p { font-size: 17px; color: rgba(255,255,255,0.60); max-width: 480px; margin: 0 auto; line-height: 1.75; }
+.testimonials-header .label { background: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.75) !important; border: 1px solid rgba(255,255,255,0.20); }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.testimonial-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 36px 30px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
-.testimonial-card:hover { border-color: rgba(255,255,255,0.13); background: rgba(255,255,255,0.05); transform: translateY(-4px); }
+.testimonial-card { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 36px 30px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+.testimonial-card:hover { border-color: rgba(255,255,255,0.30); background: rgba(255,255,255,0.16); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(21,77,51,0.30); }
 .t-stars { display: flex; gap: 4px; margin-bottom: 22px; }
 .t-star { width: 14px; height: 14px; fill: var(--mind); }
-.t-quote { font-size: 15.5px; color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 28px; font-weight: 300; }
-.t-quote strong { color: var(--green-accent); font-weight: 600; }
+.t-quote { font-size: 15.5px; color: rgba(255,255,255,0.82); line-height: 1.75; margin-bottom: 28px; font-weight: 300; }
+.t-quote strong { color: var(--white); font-weight: 700; }
 .t-author { display: flex; align-items: center; gap: 14px; }
-.t-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
+.t-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.22); }
 .t-avatar-letter { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.5); font-family: var(--font-display); letter-spacing: 0.02em; }
 .t-info { flex: 1; }
 .t-name { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
-.t-device { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 500; letter-spacing: 0.04em; }
+.t-device { font-size: 11px; color: rgba(255,255,255,0.52); font-weight: 500; letter-spacing: 0.04em; }
 @media (max-width: 960px) { .testimonials-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; } }
 
 /* ── RING GAUGES (Dynamic Insights demo — matches real product) ── */
@@ -811,7 +812,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <canvas id="testimonialNebula"></canvas>
   <div class="container">
     <div class="testimonials-header reveal">
-      <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:var(--green-accent);">Real Results</span>
+      <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:rgba(255,255,255,0.80);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.20);">Real Results</span>
       <h2>PEOPLE WHO <em>JOINED THE DOTS</em></h2>
       <p>What happens when food, body, and mind finally talk to each other.</p>
     </div>
