@@ -20,7 +20,7 @@ const LANDING_HTML = `<!DOCTYPE html>
 <title>The Longevity Chef | Food for Life</title>
 <meta name="description" content="TLC connects what you eat, how your body responds, and how you feel into one insight system that gets sharper every day.">
 <meta property="og:title" content="The Longevity Chef | Food for Life">
-<meta property="og:description" content="See the patterns your body is trying to show you. Nutrition, body, and mind - connected.">
+<meta property="og:description" content="See the patterns your body is trying to show you. Nutrition, body, and mind. Connected for the first time.">
 <meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -153,7 +153,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hero-video-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.6) 22%, rgba(255,255,255,0.1) 42%, rgba(0,0,0,0.08) 55%, rgba(0,0,0,0.32) 100%); pointer-events: none; }
 
 /* ── FLOATING INSIGHT CARD ── */
-.hero-insight-card { position: absolute; bottom: 18%; right: 7%; z-index: 3; width: 232px; background: rgba(255,255,255,0.93); backdrop-filter: blur(24px) saturate(1.5); border-radius: 16px; padding: 18px 20px; box-shadow: 0 24px 64px rgba(0,0,0,0.20), 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.55); opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 1.4s forwards; }
+.hero-insight-card { position: absolute; bottom: 18%; right: 7%; z-index: 3; width: 232px; background: rgba(255,255,255,0.93); backdrop-filter: blur(24px) saturate(1.5); border-radius: 16px; padding: 18px 20px; box-shadow: 0 24px 64px rgba(0,0,0,0.20), 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.55); opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s forwards; }
 .hic-label { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
 .hic-live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: livePulse 2s ease-in-out infinite; flex-shrink: 0; }
 .hic-speedo-wrap { text-align: center; margin: 4px -4px 2px; }
@@ -337,6 +337,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .nav-links { display: none; }
   .nav-hamburger { display: block; }
   .sub-nav-links { display: none; }
+  .sub-nav { display: none; }
   .mobile-cta { display: block; }
   body { padding-bottom: 72px; }
 }
@@ -406,7 +407,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <a href="/start" class="btn btn-black">See What You've Been Missing</a>
       <a href="/how-it-works" class="btn btn-outline">How It Works</a>
     </div>
-    <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;&middot;&nbsp; No wearable required.</p>
+    <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;&middot;&nbsp; Encrypted in transit and at rest. &nbsp;&middot;&nbsp; No wearable required.</p>
   </div>
   <div class="hero-right">
     <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80">
@@ -419,7 +420,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <svg class="hic-speedo-svg" viewBox="0 0 200 110">
           <defs><linearGradient id="hicGrad" gradientUnits="userSpaceOnUse" x1="18" y1="100" x2="182" y2="100"><stop offset="0%" stop-color="#E8B84B"/><stop offset="55%" stop-color="#39BA76"/><stop offset="100%" stop-color="#2ea84a"/></linearGradient></defs>
           <path d="M 18,100 A 82,82 0 0,1 182,100" stroke="rgba(26,26,26,0.08)" stroke-width="12" fill="none" stroke-linecap="round"/>
-          <path id="hic-speedo-fill" d="M 18,100 A 82,82 0 0,1 182,100" stroke="url(#hicGrad)" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="257.6" stroke-dashoffset="257.6" style="transition:stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1) 0.3s;"/>
+          <path id="hic-speedo-fill" d="M 18,100 A 82,82 0 0,1 182,100" stroke="url(#hicGrad)" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="257.6" stroke-dashoffset="257.6" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.4,0,0.2,1) 0.1s;"/>
           <text id="hic-speedo-num" x="100" y="86" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="36" fill="#1a1a1a">0</text>
           <text x="100" y="100" text-anchor="middle" font-family="'Figtree',sans-serif" font-size="9" fill="rgba(26,26,26,0.38)" font-weight="600">/ 1000</text>
         </svg>
@@ -504,8 +505,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 </style>
   <div class="container">
     <div style="text-align:center;margin-bottom:52px;" class="reveal">
-      <span class="label" style="justify-content:center;margin-bottom:16px;display:inline-flex;">How TLC is different</span>
-      <h2 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,60px);line-height:0.95;letter-spacing:0.02em;color:var(--ink);">THREE SIGNALS.<br><em style="font-style:normal;color:var(--green);">ONE INSIGHT THAT FINALLY MAKES SENSE.</em></h2>
+      <h2 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,60px);line-height:0.95;letter-spacing:0.02em;color:var(--ink);">THREE SIGNALS.<br><em style="font-style:normal;color:var(--green);">ONE CLEAR VIEW.</em></h2>
     </div>
 
     <!-- Three input cards -->
@@ -522,7 +522,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
         <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE FUEL LOAD</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">What powers every hour of your day. Logged in isolation, food data tells you what went in. It cannot tell you how your body responded.</p>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">What powers every hour of your day. Logged in isolation, food data tells you what went in, but not how the system responded once you were in motion.</p>
       </div>
 
       <!-- BODY: THE INSTRUMENT PANEL -->
@@ -542,28 +542,21 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
         <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE INSTRUMENT PANEL</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable measures sleep depth, HRV, and resting heart rate with precision. But instruments without context produce numbers, not answers.</p>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable tracks sleep depth, HRV, and resting heart rate with precision. But instruments alone don't tell the story. They show readings, not meaning.</p>
       </div>
 
       <!-- MIND: CREW READINESS -->
       <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
         <div style="width:60px;height:60px;border-radius:16px;background:rgba(232,184,75,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="19" stroke="rgba(232,184,75,0.2)" stroke-width="1.5"/>
-            <circle cx="24" cy="24" r="19" stroke="#E8B84B" stroke-width="1.5" style="transform-origin:24px 24px;animation:mindPulse 2.8s ease-in-out infinite;stroke-dasharray:119;stroke-dashoffset:30;"/>
-            <circle cx="24" cy="24" r="7" fill="rgba(232,184,75,0.18)" style="animation:fuelRise 2.8s 0.4s ease-in-out infinite;"/>
-            <circle cx="24" cy="24" r="3.5" fill="#E8B84B"/>
-            <line x1="24" y1="5" x2="24" y2="9" stroke="rgba(232,184,75,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="39.5" y1="13.5" x2="36.2" y2="15.4" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="8.5" y1="13.5" x2="11.8" y2="15.4" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="39.5" y1="34.5" x2="36.2" y2="32.6" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="8.5" y1="34.5" x2="11.8" y2="32.6" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="24" y1="43" x2="24" y2="39" stroke="rgba(232,184,75,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <svg width="52" height="36" viewBox="0 0 52 36" fill="none">
+            <line x1="2" y1="18" x2="50" y2="18" stroke="rgba(232,184,75,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+            <polyline points="2,18 10,18 13,4 16,32 19,10 22,26 26,18 30,18 33,4 36,32 39,10 42,26 50,18" stroke="#E8B84B" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="animation:mindPulse 2.8s ease-in-out infinite;transform-origin:26px 18px;"/>
+            <circle cx="26" cy="18" r="3.5" fill="#E8B84B" style="animation:fuelRise 2.8s 0.4s ease-in-out infinite;"/>
           </svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">CREW READINESS</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Energy, mood, and stress are not soft data. They are the human variable that explains everything the instruments cannot capture on their own.</p>
+        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">PILOT STATE</div>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Energy, mood, and stress aren't soft signals. They're the human variable, the difference between turbulence and control, clarity and noise.</p>
       </div>
 
     </div>
@@ -624,23 +617,14 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
         <div style="font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:14px;">THE FLIGHT MANAGEMENT SYSTEM</div>
-        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one system alone. TLC takes your nutrition, biometrics, and reflections simultaneously, finds the connections between all three, and builds a picture that gets sharper every single day.</p>
+        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one instrument alone. TLC brings your nutrition, biometrics, and reflections together, reading how they interact, not just how they perform in isolation.</p>
       </div>
     </div>
 
-    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:600px;margin:40px auto 0;line-height:1.8;" class="reveal d3">No airline would let a pilot fly on one system alone. Yet every wellness tracker in the world asks you to do exactly that. TLC does not.</p>
+    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:560px;margin:40px auto 0;line-height:1.85;" class="reveal d3">Because once you break through the clouds, the picture sharpens.<br>Every signal aligns. Every decision becomes clearer.</p>
+
   </div>
 </section>
-
-<!-- SIMPLICITY REASSURANCE STRIP -->
-<div style="background:var(--green-light);border-top:1px solid rgba(46,168,74,0.14);border-bottom:1px solid rgba(46,168,74,0.14);padding:28px var(--gutter);">
-  <div style="max-width:var(--content-max);margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;text-align:center;">
-    <div style="width:36px;height:36px;border-radius:10px;background:rgba(46,168,74,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-    </div>
-    <p style="font-size:15px;color:var(--green-dark);font-weight:500;line-height:1.6;margin:0;max-width:640px;">Sounds like a lot? It is not. <strong>Log a meal. Reflect for two minutes. Connect your wearable once.</strong> TLC does everything else: the analysis, the pattern finding, the daily insight. You just live your life.</p>
-  </div>
-</div>
 
 <!-- THREE PILLARS -->
 <section class="section-pillars" id="pillars">
@@ -648,11 +632,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="section-header reveal">
       <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The Three Pillars</span>
       <h2>EVERYTHING YOUR BODY<br><em>IS TRYING TO TELL YOU</em></h2>
-      <p>Most health tools track one thing at a time. TLC tracks all three simultaneously and finds the connections between them. That is where the insight lives.</p>
+      <p>Most health tools track one thing at a time. TLC tracks all three simultaneously and finds the connections between them. Those connections are the insight.</p>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card nutrition reveal d1">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg></div></div>
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11c0-2 1.5-2 1.5-4"/><path d="M12 11c0-2 1.5-2 1.5-4"/><path d="M15 11c0-2 1.5-2 1.5-4"/><path d="M5 11h14a7 7 0 01-14 0z"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div></div>
         <h3>Nutrition</h3>
         <p class="pillar-hook">What you eat shapes everything else.</p>
         <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
@@ -664,7 +648,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
       </div>
       <div class="pillar-card body-pillar reveal d2">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="4"/><path d="M9 4V2h6v2"/><path d="M9 20v2h6v-2"/><polyline points="7.5 12 9.5 12 11 10 13 14 14.5 12 16.5 12"/></svg></div></div>
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="4"/><path d="M9 4V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5V4"/><path d="M9 20v1.5a.5.5 0 00.5.5h5a.5.5 0 00.5-.5V20"/><polyline points="7.5 13 9.5 13 11 10.5 12.5 15.5 14 12 15.5 13 16.5 13"/><circle cx="12" cy="7.5" r="1" fill="#398CBA" stroke="none"/></svg></div></div>
         <h3>Body</h3>
         <p class="pillar-hook">Your wearable has been waiting for context.</p>
         <p class="pillar-body">HRV, sleep stages, resting heart rate, strain, recovery. Your wearable collects all of it. TLC is the first system that connects these signals to what you ate and how you felt. That's where the patterns are.</p>
@@ -676,7 +660,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
       </div>
       <div class="pillar-card mind reveal d3">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div></div>
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="1.5" fill="#E8B84B" stroke="none"/><path d="M8.5 8.5a5 5 0 000 7"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M5.5 5.5a9 9 0 000 13"/><path d="M18.5 5.5a9 9 0 010 13"/></svg></div></div>
         <h3>Mind</h3>
         <p class="pillar-hook">The data your wearable can't collect.</p>
         <p class="pillar-body">Energy, focus, mood, motivation. A 60-second evening reflection tells TLC what no sensor can: how you actually feel. It is the missing variable that makes every other data point interpretable.</p>
@@ -706,7 +690,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
       <a href="/features#dynamic-insights" class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="1" fill="#39BA76"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2" stroke="#39BA76" stroke-width="1.8"/><circle cx="19" cy="5" r="2" stroke="#39BA76" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke="#39BA76" stroke-width="1.8"/><line x1="6.8" y1="6.2" x2="10.5" y2="11" stroke="#39BA76" stroke-width="1.6"/><line x1="17.2" y1="6.2" x2="13.5" y2="11" stroke="#39BA76" stroke-width="1.6"/><line x1="12" y1="18" x2="12" y2="14" stroke="#39BA76" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" stroke="#39BA76" stroke-width="1.8"/><circle cx="12" cy="12" r="1" fill="#39BA76" stroke="none"/></svg>
         </div>
 
         <h3 class="teaser-h">YOUR PATTERNS,<br>DECODED</h3>
@@ -793,7 +777,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 </section>
 
 <!-- COMPETITOR DIFFERENTIATION -->
-<section class="section-diff-table" style="padding:var(--section-pad) 0;background:var(--white);border-top:1px solid var(--border);position:relative;z-index:2;">
+<section class="section-diff-table" id="compare" style="padding:var(--section-pad) 0;background:var(--white);border-top:1px solid var(--border);position:relative;z-index:2;">
   <div class="container">
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">Why TLC</span>
@@ -808,7 +792,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <th style="text-align:center;font-size:12px;font-weight:800;color:var(--green);padding:0 16px 18px;border-bottom:2px solid var(--green);background:rgba(46,168,74,0.04);">TLC</th>
             <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">MyFitnessPal</th>
             <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">WHOOP/Oura</th>
-            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Noom</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">ZOE</th>
           </tr>
         </thead>
         <tbody>
@@ -834,7 +818,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Personalised daily insight (cross-pillar)</td>
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Daily insight connecting food, sleep and mood</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
             <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
             <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
@@ -898,7 +882,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal and photo meal logging</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>25+ wearables connected</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="width:100%;justify-content:center;">Start Your Journey</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
       <div class="pricing-card reveal-scale d3">
@@ -912,7 +896,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Smart zero-waste shopping list</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>10-15% average grocery savings</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Your Journey</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Your First Month Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
     </div>
@@ -938,7 +922,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></div>
-      <p>Connecting the dots between nutrition, body, and mind. Eat smarter, feel better, live longer.</p>
+      <p>Connecting the dots between what you eat, how your body responds, and how you feel.</p>
     </div>
     <div class="footer-col"><ul>
       <li><a href="/features">Features</a></li>
@@ -948,7 +932,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </ul></div>
     <div class="footer-col"><ul>
       <li><a href="https://www.instagram.com/thelongevitychef_">Instagram</a></li>
-      <li><a href="https://docs.google.com/document/d/1ZXE0c5gG4ep34tESNVOQF0SWg7lPpPb4KaQ7fkIcPFg/edit?usp=sharing">FAQs</a></li>
+      <li><a href="/pricing#faq">FAQs</a></li>
       <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
@@ -1088,7 +1072,7 @@ setTimeout(function() {
   if (ringN) ringN.style.strokeDashoffset = (87.96 * (1 - 0.78)).toFixed(2);
   if (ringB) ringB.style.strokeDashoffset = (87.96 * (1 - 0.65)).toFixed(2);
   if (ringM) ringM.style.strokeDashoffset = (87.96 * (1 - 0.84)).toFixed(2);
-}, 2200);
+}, 800);
 
 // ── Testimonial nebula ──
 (function() {
@@ -5327,7 +5311,7 @@ main {
     <!-- FREE TIER -->
     <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
       <div class="goal-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="6.5"/><circle cx="12" cy="14" r="3.5"/><path d="M3 3v4a2.5 2.5 0 005 0V3"/><line x1="5.5" y1="7.5" x2="5.5" y2="21"/></svg>
       </div>
       <div class="goal-tier-pill">TLC Lite &middot; Free</div>
       <h2 class="goal-title">SMARTER EATING<br>WHEN I'M OUT</h2>
@@ -5358,9 +5342,9 @@ main {
     </a>
 
     <!-- TLC PAID TIER -->
-    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="goal-card gc-tlc">
+    <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="goal-card gc-tlc">
       <div class="goal-icon">
-        <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="4" cy="6" r="2" stroke-width="1.8"/><circle cx="20" cy="6" r="2" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke-width="1.8"/><circle cx="12" cy="13" r="2.5" stroke-width="1.8"/><circle cx="12" cy="13" r="0.8" fill="currentColor" stroke="none"/><line x1="5.7" y1="7.2" x2="10.4" y2="11.6" stroke-width="1.6"/><line x1="18.3" y1="7.2" x2="13.6" y2="11.6" stroke-width="1.6"/><line x1="12" y1="15.5" x2="12" y2="18" stroke-width="1.6"/></svg>
       </div>
       <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
       <h2 class="goal-title">DAILY INSIGHT<br>INTO MY HEALTH</h2>
@@ -5391,9 +5375,9 @@ main {
     </a>
 
     <!-- TLC PRO TIER -->
-    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="goal-card gc-pro">
+    <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="goal-card gc-pro">
       <div class="goal-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="3" stroke-width="1.8"/><path d="M16 2v4M8 2v4" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-width="1.8"/><rect x="7" y="12" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/><rect x="14" y="12" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/><rect x="7" y="17" width="3" height="2" rx="0.5" fill="currentColor" stroke="none"/><rect x="14" y="17" width="3" height="2" rx="0.5" fill="currentColor" stroke="none"/></svg>
       </div>
       <div class="goal-tier-pill">TLC Pro &middot; $19.99/mo</div>
       <h2 class="goal-title">COMPLETE MEAL<br>PLANNING SYSTEM</h2>
