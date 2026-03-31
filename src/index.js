@@ -420,6 +420,62 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .footer-bottom { max-width: var(--content-max); margin: 0 auto; padding: 24px var(--gutter); border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; margin-top: 44px; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
 
+/* ── TESTIMONIALS (social proof, dark section) ── */
+.section-testimonials { padding: var(--section-pad) 0; background: var(--ink); position: relative; z-index: 2; overflow: hidden; }
+.section-testimonials::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 60%, rgba(46,168,74,0.05) 0%, transparent 55%), radial-gradient(ellipse at 75% 40%, rgba(57,140,186,0.04) 0%, transparent 55%); pointer-events: none; }
+.testimonials-header { text-align: center; margin-bottom: 60px; position: relative; }
+.testimonials-header h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 14px; }
+.testimonials-header h2 em { color: var(--green-accent); font-style: normal; }
+.testimonials-header > p { font-size: 17px; color: rgba(255,255,255,0.42); max-width: 480px; margin: 0 auto; line-height: 1.75; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.testimonial-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 36px 30px; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+.testimonial-card:hover { border-color: rgba(255,255,255,0.13); background: rgba(255,255,255,0.05); transform: translateY(-4px); }
+.t-stars { display: flex; gap: 4px; margin-bottom: 22px; }
+.t-star { width: 14px; height: 14px; fill: var(--mind); }
+.t-quote { font-size: 15.5px; color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 28px; font-weight: 300; }
+.t-quote strong { color: var(--green-accent); font-weight: 600; }
+.t-author { display: flex; align-items: center; gap: 14px; }
+.t-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
+.t-avatar-letter { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.5); font-family: var(--font-display); letter-spacing: 0.02em; }
+.t-info { flex: 1; }
+.t-name { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.t-device { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 500; letter-spacing: 0.04em; }
+@media (max-width: 960px) { .testimonials-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; } }
+
+/* ── RING GAUGES (Dynamic Insights demo — matches real product) ── */
+.mock-rings { display: flex; gap: 8px; justify-content: center; padding: 8px 15px 4px; flex-shrink: 0; }
+.mock-ring-wrap { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.mock-ring-outer { position: relative; width: 58px; height: 58px; }
+.mock-ring-svg { width: 58px; height: 58px; transform: rotate(-90deg); overflow: visible; }
+.mock-ring-track { fill: none; stroke: rgba(255,255,255,0.07); stroke-width: 4.5; }
+.mock-ring-fill { fill: none; stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 138.2; stroke-dashoffset: 138.2; transition: stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1); }
+.mock-ring-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.mock-ring-val { font-size: 12px; font-weight: 800; color: white; line-height: 1; }
+.mock-ring-name { font-size: 7.5px; color: rgba(255,255,255,0.32); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; text-align: center; }
+
+/* ── COACH TYPING INDICATOR ── */
+@keyframes typingBounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-5px); opacity: 1; } }
+.mock-typing-row { display: flex; align-items: center; gap: 5px; padding: 9px 13px; background: var(--green-light); border: 1px solid rgba(46,168,74,0.14); border-radius: 10px; border-bottom-left-radius: 2px; align-self: flex-start; width: fit-content; }
+.typing-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); display: inline-block; animation: typingBounce 1.2s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0.32s; }
+
+/* ── MM LOADING SKELETON ── */
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.skel { background: linear-gradient(90deg, rgba(26,26,26,0.05) 25%, rgba(26,26,26,0.12) 50%, rgba(26,26,26,0.05) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 4px; height: 10px; }
+.mock-mm-skeleton { padding: 14px; display: flex; flex-direction: column; gap: 9px; position: absolute; inset: 0; background: var(--white); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.mock-mm-skeleton.visible { opacity: 1; pointer-events: auto; }
+.mock-mm-result { opacity: 1; transition: opacity 0.5s; display: flex; flex-direction: column; flex: 1; }
+.mock-mm-result.hidden { opacity: 0; pointer-events: none; }
+.skel-title { height: 16px; width: 55%; }
+.skel-sub { height: 9px; width: 38%; }
+.skel-full { width: 88%; }
+.skel-macro { height: 8px; width: 100%; }
+.skel-gap { height: 6px; }
+
+/* ── PANTRY INGREDIENT POP-IN ── */
+@keyframes ingPop { 0% { transform: scale(0.6); opacity: 0; } 75% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
+
 /* ── MOBILE STICKY CTA ── */
 .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 12px var(--gutter); z-index: 190; text-align: center; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
 .mobile-cta.show { transform: translateY(0); }
@@ -598,6 +654,70 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
 
+<!-- TESTIMONIALS -->
+<section class="section-testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:var(--green-accent);">Real Results</span>
+      <h2>PEOPLE WHO <em>JOINED THE DOTS</em></h2>
+      <p>What happens when food, body, and mind finally talk to each other.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal d1">
+        <div class="t-stars">
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="t-quote">I tried every tracker going. They all showed me numbers but never explained <strong>why</strong> my energy crashed every Thursday. TLC spotted the pattern in week two: low sleep Tuesday + high carbs Wednesday. Fixed it. Never looked back.</p>
+        <div class="t-author">
+          <div class="t-avatar"><span class="t-avatar-letter">S</span></div>
+          <div class="t-info">
+            <div class="t-name">Sarah M.</div>
+            <div class="t-device">Oura Ring &bull; Fat loss goal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal d2">
+        <div class="t-stars">
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition hasn't slipped in six months.</p>
+        <div class="t-author">
+          <div class="t-avatar"><span class="t-avatar-letter">J</span></div>
+          <div class="t-info">
+            <div class="t-name">James K.</div>
+            <div class="t-device">WHOOP 4.0 &bull; Longevity goal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal d3">
+        <div class="t-stars">
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="t-quote">As someone managing gut health issues, the coach is extraordinary. It knows <strong>my exact sensitivities</strong>, cross-references everything I eat with how I felt the next day, and has never once suggested something that would trigger a flare.</p>
+        <div class="t-author">
+          <div class="t-avatar"><span class="t-avatar-letter">P</span></div>
+          <div class="t-info">
+            <div class="t-name">Priya L.</div>
+            <div class="t-device">Garmin &bull; Gut health goal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="s-loop" id="how-it-works">
   <div class="container">
@@ -606,7 +726,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <h2>YOUR <em>LONGEVITY LOOP</em></h2>
       <p>A continuous cycle that learns who you are, adapts to how you live, and gets sharper every week.</p>
     </div>
-    <div class="loop-track">
+    <div class="loop-track reveal">
       <svg class="loop-svg" viewBox="0 0 1060 490" fill="none" preserveAspectRatio="xMidYMid meet">
         <defs>
           <linearGradient id="ltG" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2ea84a"/><stop offset="50%" stop-color="#46c461"/><stop offset="100%" stop-color="#2ea84a"/></linearGradient>
@@ -624,13 +744,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <g transform="translate(350,398) rotate(180)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
         <g transform="translate(52,245) rotate(270)" opacity="0.18"><polyline points="-4,-5 2,0 -4,5" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
       </svg>
-      <div class="loop-row reveal" style="margin-bottom:20px;">
+      <div class="loop-row" style="margin-bottom:20px;">
         <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span class="lc-num">1</span></div><h4>Build Your Blueprint</h4></div><p>Answer a short assessment about your goals, health history, and how you live. TLC uses this to build a nutrition blueprint unique to your body - not a generic template. Choose Express for the essentials or go Detailed for precision. Either way, your plan starts from you.</p><span class="lc-tag">Your unique starting point</span></div>
         <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 8v5l3 2"/><line x1="9" y1="1" x2="15" y2="1" stroke-width="1.5"/><line x1="9" y1="23" x2="15" y2="23" stroke-width="1.5"/></svg><span class="lc-num">2</span></div><h4>Connect Your Wearable</h4></div><p>Sync your WHOOP, Oura, Garmin, Fitbit or any of 25+ devices. Sleep, recovery, strain and heart rate data flow in automatically so your nutrition adapts to what your body is actually doing - not what a generic formula guesses. Your plan shifts when your body does.</p><span class="lc-tag">Syncing reveals deeper insights</span></div>
         <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/><path d="M8 12c0-3 2-5.5 4-5.5s4 2.5 4 5.5"/><path d="M7 14h10"/><path d="M9 17h6"/></svg><span class="lc-num">3</span></div><h4>Eat Your Way</h4></div><p>Eating out? TLC finds restaurants nearby and suggests meals that hit your macros and calorie targets. Perfect for lunch with friends or while travelling. Just snap a photo of your meal and TLC automatically analyses it for calories, macros and nutritional content - matched to your goals as they evolve.</p><span class="lc-tag">Dine out, cook in, or freestyle</span></div>
       </div>
-      <div class="loop-hub reveal reveal-delay-1"><div class="loop-hub-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="2" stroke-linecap="round"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg><strong>TLC Engine</strong><span>Always adapting</span></div></div>
-      <div class="loop-row reveal reveal-delay-2" style="margin-top:20px;">
+      <div class="loop-hub"><div class="loop-hub-inner"><svg viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="2" stroke-linecap="round"><path d="M17 2.1l4 4-4 4"/><path d="M3 12.2v-2a4 4 0 0 1 4-4h12.8"/><path d="M7 21.9l-4-4 4-4"/><path d="M21 11.8v2a4 4 0 0 1-4 4H4.2"/></svg><strong>TLC Engine</strong><span>Always adapting</span></div></div>
+      <div class="loop-row" style="margin-top:20px;">
         <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span class="lc-num">6</span></div><h4>Weekly Recalibration</h4></div><p>Every week, TLC reviews what worked and what didn't across your meals, biometrics, and reflections. It recalibrates your blueprint, adjusts your targets, and generates a fresh strategy. The longer you use it, the sharper it gets. Your next week always builds on the last.</p><span class="lc-tag">Then the loop repeats</span></div>
         <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="0.5" fill="#2ea84a"/><circle cx="12" cy="10" r="0.5" fill="#2ea84a"/><circle cx="15" cy="10" r="0.5" fill="#2ea84a"/></svg><span class="lc-num">5</span></div><h4>Longevity Coach</h4></div><p>Each day, your coach connects nutrition, biometrics and mindset - analysing all three together to uncover insights that stay hidden when tracked in isolation. It cross-references your meals, body data and reflections against your full history. No recycled wellness advice - real guidance that gets sharper the longer you use it.</p><span class="lc-tag">Knows your full history</span></div>
         <div class="lc"><div class="lc-top"><div class="lc-ico"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="lc-num">4</span></div><h4>Menus and Smart Shopping</h4></div><p>When you choose to cook, TLC builds personalised weekly menus matched to your macros, calorie targets, dietary needs, likes and dislikes. Each menu comes with a sustainability-focused, zero-waste shopping list where ingredients overlap intentionally across meals. Less waste, lower bills, better for the planet.</p><span class="lc-tag">Zero Waste Cooking</span></div>
@@ -655,37 +775,65 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <!-- Dynamic Insights -->
   <div class="feature-block"><div class="container"><div class="feature-inner">
     <div class="feature-visual reveal-scale">
-      <div class="mock-card mock-di">
+      <div class="mock-card mock-di" id="demo-di">
         <div class="mock-di-header">
           <span class="mock-di-title">Dynamic Insight</span>
           <div class="mock-di-badge"><span class="mock-di-badge-dot"></span><span class="mock-di-badge-text">Today</span></div>
         </div>
         <div class="mock-score-row">
-          <div class="mock-score-num">72</div>
+          <div class="mock-score-num" id="di-score">0</div>
           <div class="mock-score-info">
             <div class="mock-score-label">Longevity Score</div>
-            <div class="mock-score-bar"><div class="mock-score-bar-fill"></div></div>
+            <div class="mock-score-bar"><div class="mock-score-bar-fill" id="di-score-bar" style="width:0%"></div></div>
             <div class="mock-score-good">Good &uarr; +4 this week</div>
           </div>
         </div>
-        <div class="mock-pillars-section">
-          <div class="mock-pillar-row"><span class="mock-pillar-name">Nutrition</span><div class="mock-pillar-bar"><div class="mock-pillar-fill n" style="width:84%"></div></div><span class="mock-pillar-score">84</span></div>
-          <div class="mock-pillar-row"><span class="mock-pillar-name">Body</span><div class="mock-pillar-bar"><div class="mock-pillar-fill b" style="width:61%"></div></div><span class="mock-pillar-score">61</span></div>
-          <div class="mock-pillar-row"><span class="mock-pillar-name">Mind</span><div class="mock-pillar-bar"><div class="mock-pillar-fill m" style="width:91%"></div></div><span class="mock-pillar-score">91</span></div>
+        <!-- Three pillar rings (matches real DI dashboard) -->
+        <div class="mock-rings">
+          <div class="mock-ring-wrap">
+            <div class="mock-ring-outer">
+              <svg class="mock-ring-svg" viewBox="0 0 54 54">
+                <circle class="mock-ring-track" cx="27" cy="27" r="22"/>
+                <circle class="mock-ring-fill" cx="27" cy="27" r="22" stroke="var(--nutrition)" id="ring-n"/>
+              </svg>
+              <div class="mock-ring-center"><span class="mock-ring-val" id="ring-n-val">84</span></div>
+            </div>
+            <span class="mock-ring-name">Nutrition</span>
+          </div>
+          <div class="mock-ring-wrap">
+            <div class="mock-ring-outer">
+              <svg class="mock-ring-svg" viewBox="0 0 54 54">
+                <circle class="mock-ring-track" cx="27" cy="27" r="22"/>
+                <circle class="mock-ring-fill" cx="27" cy="27" r="22" stroke="var(--body-blue)" id="ring-b"/>
+              </svg>
+              <div class="mock-ring-center"><span class="mock-ring-val" id="ring-b-val">61</span></div>
+            </div>
+            <span class="mock-ring-name">Body</span>
+          </div>
+          <div class="mock-ring-wrap">
+            <div class="mock-ring-outer">
+              <svg class="mock-ring-svg" viewBox="0 0 54 54">
+                <circle class="mock-ring-track" cx="27" cy="27" r="22"/>
+                <circle class="mock-ring-fill" cx="27" cy="27" r="22" stroke="var(--mind)" id="ring-m"/>
+              </svg>
+              <div class="mock-ring-center"><span class="mock-ring-val" id="ring-m-val">91</span></div>
+            </div>
+            <span class="mock-ring-name">Mind</span>
+          </div>
         </div>
-        <div class="mock-insight-preview"><p>"Sleep quality improved both nights you ate salmon. Pattern confirmed across 4 weeks. Omega-3s are working for your recovery."</p></div>
+        <div class="mock-insight-preview"><p id="di-insight-text" style="opacity:0;transition:opacity 0.8s ease;">"Sleep quality improved both nights you ate salmon. Pattern confirmed across 4 weeks. Omega-3s are working for your recovery."</p></div>
         <div class="mock-trend-row">
           <span class="mock-trend-label">7-day trend</span>
-          <div class="mock-trend-bars">
-            <div class="mock-trend-bar" style="height:40%"></div>
-            <div class="mock-trend-bar" style="height:55%"></div>
-            <div class="mock-trend-bar" style="height:48%"></div>
-            <div class="mock-trend-bar" style="height:62%"></div>
-            <div class="mock-trend-bar" style="height:58%"></div>
-            <div class="mock-trend-bar" style="height:70%"></div>
-            <div class="mock-trend-bar active" style="height:72%"></div>
+          <div class="mock-trend-bars" id="di-bars">
+            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
+            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
+            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
+            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
+            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
+            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
+            <div class="mock-trend-bar active" style="height:3px;transition:height 0.5s ease;"></div>
           </div>
-          <span class="mock-trend-up">+4 pts</span>
+          <span class="mock-trend-up" id="di-trend-up" style="opacity:0;transition:opacity 0.5s;">+4 pts</span>
         </div>
       </div>
     </div>
@@ -707,24 +855,15 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <!-- Longevity Coach -->
   <div class="feature-block"><div class="container"><div class="feature-inner">
     <div class="feature-visual reveal-scale">
-      <div class="mock-card mock-coach">
+      <div class="mock-card mock-coach" id="demo-coach">
         <div class="mock-coach-context">
           <span class="mock-chip alert">HRV: 41ms</span>
           <span class="mock-chip alert">Sleep: 6.2h</span>
           <span class="mock-chip low">Recovery: Low</span>
           <span class="mock-chip">Goal: Longevity</span>
         </div>
-        <div class="mock-chat-area">
-          <div class="mock-bubble user">"I didn't sleep well. What should I focus on today?"</div>
-          <div class="mock-bubble coach">
-            <div class="mock-coach-label">TLC Coach</div>
-            With your HRV at 41ms and light sleep, I'd lean anti-inflammatory today: salmon, leafy greens, or walnuts. Avoid caffeine after 1pm. Last Tuesday's salmon dinner correlated with your best recovery day this week.
-          </div>
-          <div class="mock-bubble user">"Any restaurants near me that fit that?"</div>
-          <div class="mock-bubble coach">
-            <div class="mock-coach-label">TLC Coach</div>
-            Opening Meal Matchmaker with anti-inflammatory filter applied for your current location.
-          </div>
+        <div class="mock-chat-area" id="coach-chat">
+          <!-- Populated by animation JS -->
         </div>
         <div class="mock-input-row">
           <div class="mock-input-bar"></div>
@@ -749,11 +888,31 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
   <!-- Meal Matchmaker -->
   <div class="feature-block"><div class="container"><div class="feature-inner">
-    <div class="feature-visual reveal-scale">
-      <div class="mock-card mock-mm">
+    <div class="feature-visual reveal-scale" id="demo-mm" style="position:relative;">
+      <!-- Loading skeleton (shown first) -->
+      <div class="mock-mm-skeleton" id="mm-skeleton">
+        <div class="skel skel-title"></div>
+        <div class="skel skel-sub"></div>
+        <div class="skel skel-gap"></div>
+        <div class="skel skel-full" style="height:14px;"></div>
+        <div class="skel skel-sub"></div>
+        <div class="skel skel-gap"></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div class="skel skel-macro"></div>
+          <div class="skel skel-macro"></div>
+          <div class="skel skel-macro"></div>
+        </div>
+        <div class="skel skel-gap"></div>
+        <div style="display:flex;gap:6px;">
+          <div class="skel" style="width:70px;height:22px;border-radius:50px;"></div>
+          <div class="skel" style="width:80px;height:22px;border-radius:50px;"></div>
+        </div>
+      </div>
+      <!-- Result card (shown after analysis) -->
+      <div class="mock-card mock-mm mock-mm-result" id="mm-result" style="position:absolute;inset:0;opacity:0;transition:opacity 0.5s;">
         <div class="mock-mm-header">
           <span class="mock-mm-restaurant">Sushi Yoshi</span>
-          <span class="mock-mm-score">94% Match</span>
+          <span class="mock-mm-score" id="mm-score-badge">0% Match</span>
         </div>
         <div class="mock-mm-meta">
           <span class="mock-mm-cuisine">Japanese</span>
@@ -762,9 +921,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <div class="mock-mm-dish">
           <div class="mock-mm-dish-name">Salmon Avocado Bowl</div>
           <div class="mock-mm-kcal">680 kcal</div>
-          <div class="mock-macro-row"><span class="mock-macro-label">Protein</span><div class="mock-macro-bar"><div class="mock-macro-fill" style="width:88%"></div></div><span class="mock-macro-val">44g</span></div>
-          <div class="mock-macro-row"><span class="mock-macro-label">Carbs</span><div class="mock-macro-bar"><div class="mock-macro-fill carbs" style="width:56%"></div></div><span class="mock-macro-val">28g</span></div>
-          <div class="mock-macro-row"><span class="mock-macro-label">Fat</span><div class="mock-macro-bar"><div class="mock-macro-fill fat" style="width:36%"></div></div><span class="mock-macro-val">18g</span></div>
+          <div class="mock-macro-row"><span class="mock-macro-label">Protein</span><div class="mock-macro-bar"><div class="mock-macro-fill" id="mm-bar-p" style="width:0%;transition:width 0.9s ease;"></div></div><span class="mock-macro-val">44g</span></div>
+          <div class="mock-macro-row"><span class="mock-macro-label">Carbs</span><div class="mock-macro-bar"><div class="mock-macro-fill carbs" id="mm-bar-c" style="width:0%;transition:width 0.9s ease;"></div></div><span class="mock-macro-val">28g</span></div>
+          <div class="mock-macro-row"><span class="mock-macro-label">Fat</span><div class="mock-macro-bar"><div class="mock-macro-fill fat" id="mm-bar-f" style="width:0%;transition:width 0.9s ease;"></div></div><span class="mock-macro-val">18g</span></div>
         </div>
         <div class="mock-mm-tags">
           <span class="mock-mm-tag safe">Allergy-safe</span>
@@ -797,18 +956,18 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <!-- Pantry Pal + Recipes -->
   <div class="feature-block"><div class="container"><div class="feature-inner">
     <div class="feature-visual reveal-scale">
-      <div class="mock-card mock-pantry">
+      <div class="mock-card mock-pantry" id="demo-pantry">
         <div class="mock-pantry-scan">
           <div class="mock-pantry-title">Detected in your fridge</div>
-          <div class="mock-ingredients-row">
-            <span class="mock-ingredient">Salmon</span>
-            <span class="mock-ingredient">Lemon</span>
-            <span class="mock-ingredient">Dill</span>
-            <span class="mock-ingredient">Capers</span>
-            <span class="mock-ingredient more">+7 more</span>
+          <div class="mock-ingredients-row" id="pantry-ings">
+            <span class="mock-ingredient" style="opacity:0;">Salmon</span>
+            <span class="mock-ingredient" style="opacity:0;">Lemon</span>
+            <span class="mock-ingredient" style="opacity:0;">Dill</span>
+            <span class="mock-ingredient" style="opacity:0;">Capers</span>
+            <span class="mock-ingredient more" style="opacity:0;">+7 more</span>
           </div>
         </div>
-        <div class="mock-recipe-card-inner">
+        <div class="mock-recipe-card-inner" id="pantry-recipe" style="opacity:0;transition:opacity 0.7s ease;">
           <div class="mock-recipe-eyebrow">Generated for you</div>
           <div class="mock-recipe-name">Herb-Crusted Salmon</div>
           <div class="mock-recipe-sub">with Caper Butter &bull; 25 min</div>
@@ -994,6 +1153,219 @@ const counterObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+// ── FEATURE DEMO ANIMATIONS ──
+(function() {
+  'use strict';
+
+  var C = 138.2; // SVG ring circumference (r=22)
+
+  // ── DI DEMO ──
+  function runDI() {
+    var scoreEl = document.getElementById('di-score');
+    var scoreBar = document.getElementById('di-score-bar');
+    var ringN = document.getElementById('ring-n');
+    var ringB = document.getElementById('ring-b');
+    var ringM = document.getElementById('ring-m');
+    var insightEl = document.getElementById('di-insight-text');
+    var barsContainer = document.getElementById('di-bars');
+    var trendUp = document.getElementById('di-trend-up');
+    if (!scoreEl) return;
+
+    // Reset
+    scoreEl.textContent = '0';
+    if (scoreBar) scoreBar.style.width = '0%';
+    if (ringN) ringN.style.strokeDashoffset = C;
+    if (ringB) ringB.style.strokeDashoffset = C;
+    if (ringM) ringM.style.strokeDashoffset = C;
+    if (insightEl) insightEl.style.opacity = '0';
+    if (trendUp) trendUp.style.opacity = '0';
+    var bars = barsContainer ? barsContainer.querySelectorAll('.mock-trend-bar') : [];
+    bars.forEach(function(b) { b.style.height = '3px'; });
+
+    // Phase 1: Count score 0 → 72
+    var score = 0;
+    var scoreTimer = setInterval(function() {
+      score = Math.min(72, score + 3);
+      scoreEl.textContent = score;
+      if (scoreBar) scoreBar.style.width = (score / 100 * 100) + '%';
+      if (score >= 72) clearInterval(scoreTimer);
+    }, 45);
+
+    // Phase 2: Fill rings at 1s
+    setTimeout(function() {
+      if (ringN) ringN.style.strokeDashoffset = C * (1 - 0.84); // Nutrition 84%
+      if (ringB) ringB.style.strokeDashoffset = C * (1 - 0.61); // Body 61%
+      if (ringM) ringM.style.strokeDashoffset = C * (1 - 0.91); // Mind 91%
+    }, 900);
+
+    // Phase 3: Animate trend bars at 2.2s
+    var barHeights = [40, 55, 48, 62, 58, 70, 72];
+    setTimeout(function() {
+      bars.forEach(function(b, i) {
+        setTimeout(function() { b.style.height = barHeights[i] + '%'; }, i * 90);
+      });
+    }, 2100);
+
+    // Phase 4: Show insight at 3.2s
+    setTimeout(function() {
+      if (insightEl) insightEl.style.opacity = '1';
+      if (trendUp) trendUp.style.opacity = '1';
+    }, 3200);
+  }
+
+  // ── COACH DEMO ──
+  function runCoach() {
+    var chatEl = document.getElementById('coach-chat');
+    if (!chatEl) return;
+    chatEl.innerHTML = '';
+
+    function addBubble(type, text, delay) {
+      setTimeout(function() {
+        var div = document.createElement('div');
+        div.className = 'mock-bubble ' + type;
+        if (type === 'coach') {
+          div.innerHTML = '<div class="mock-coach-label">TLC Coach</div>' + text;
+        } else {
+          div.textContent = text;
+        }
+        div.style.opacity = '0';
+        div.style.transform = 'translateY(10px)';
+        div.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+        chatEl.appendChild(div);
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            div.style.opacity = '1';
+            div.style.transform = 'translateY(0)';
+          });
+        });
+      }, delay);
+    }
+
+    function addTyping(delay) {
+      setTimeout(function() {
+        var div = document.createElement('div');
+        div.className = 'mock-typing-row';
+        div.id = 'typing-ind';
+        div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+        div.style.opacity = '0';
+        div.style.transition = 'opacity 0.25s';
+        chatEl.appendChild(div);
+        requestAnimationFrame(function() { div.style.opacity = '1'; });
+      }, delay);
+    }
+
+    function removeTyping(delay) {
+      setTimeout(function() {
+        var t = document.getElementById('typing-ind');
+        if (t) t.remove();
+      }, delay);
+    }
+
+    // Sequence: user → typing → coach → pause → user → typing → coach
+    addBubble('user', '"I didn\\'t sleep well. What should I focus on today?"', 400);
+    addTyping(1400);
+    removeTyping(2900);
+    addBubble('coach', 'With your HRV at 41ms and light sleep, lean anti-inflammatory today: salmon, leafy greens, walnuts. Avoid caffeine after 1pm. Last Tuesday\\'s salmon dinner gave you your best recovery score this week.', 2900);
+    addBubble('user', '"Any restaurants nearby that fit that?"', 5000);
+    addTyping(5900);
+    removeTyping(7200);
+    addBubble('coach', 'Opening Meal Matchmaker with anti-inflammatory filter for your current location.', 7200);
+  }
+
+  // ── MM DEMO ──
+  function runMM() {
+    var skeleton = document.getElementById('mm-skeleton');
+    var result = document.getElementById('mm-result');
+    var badge = document.getElementById('mm-score-badge');
+    var barP = document.getElementById('mm-bar-p');
+    var barC = document.getElementById('mm-bar-c');
+    var barF = document.getElementById('mm-bar-f');
+    if (!skeleton) return;
+
+    // Reset: show skeleton, hide result
+    skeleton.style.opacity = '1';
+    if (result) result.style.opacity = '0';
+    if (badge) badge.textContent = '0% Match';
+    if (barP) barP.style.width = '0%';
+    if (barC) barC.style.width = '0%';
+    if (barF) barF.style.width = '0%';
+
+    // After 2.5s: hide skeleton, show result
+    setTimeout(function() {
+      skeleton.style.transition = 'opacity 0.4s';
+      skeleton.style.opacity = '0';
+      if (result) {
+        result.style.opacity = '1';
+        // Count score badge
+        var s = 0;
+        var t = setInterval(function() {
+          s = Math.min(94, s + 3);
+          if (badge) badge.textContent = s + '% Match';
+          if (s >= 94) clearInterval(t);
+        }, 35);
+        // Animate macro bars
+        setTimeout(function() {
+          if (barP) barP.style.width = '88%';
+          if (barC) barC.style.width = '56%';
+          if (barF) barF.style.width = '36%';
+        }, 300);
+      }
+    }, 2500);
+  }
+
+  // ── PANTRY DEMO ──
+  function runPantry() {
+    var ingsEl = document.getElementById('pantry-ings');
+    var recipeEl = document.getElementById('pantry-recipe');
+    if (!ingsEl) return;
+
+    var ings = ingsEl.querySelectorAll('.mock-ingredient');
+    // Reset
+    ings.forEach(function(i) { i.style.opacity = '0'; i.style.transform = 'scale(0.6)'; });
+    if (recipeEl) recipeEl.style.opacity = '0';
+
+    // Pop ingredients in one by one
+    ings.forEach(function(ing, i) {
+      setTimeout(function() {
+        ing.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1)';
+        ing.style.opacity = '1';
+        ing.style.transform = 'scale(1)';
+      }, 500 + i * 320);
+    });
+
+    // Reveal recipe card
+    var totalIngTime = 500 + ings.length * 320 + 500;
+    setTimeout(function() {
+      if (recipeEl) recipeEl.style.opacity = '1';
+    }, totalIngTime);
+  }
+
+  // ── INIT WITH INTERSECTION OBSERVER ──
+  function startWhenVisible(containerId, runFn, loopMs) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var started = false;
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting && !started) {
+          started = true;
+          runFn();
+          setInterval(runFn, loopMs);
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    obs.observe(el);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    startWhenVisible('demo-di', runDI, 9000);
+    startWhenVisible('demo-coach', runCoach, 10000);
+    startWhenVisible('demo-mm', runMM, 8500);
+    startWhenVisible('demo-pantry', runPantry, 8000);
+  });
+})();
 
 // ── Nebula placeholder (constellation removed — video hero in use) ──
 (function() { return; })();
