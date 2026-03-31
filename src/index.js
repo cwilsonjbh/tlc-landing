@@ -1015,12 +1015,12 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="feature-copy reveal d2">
       <span class="label">With you wherever, whenever</span>
       <h3>LONGEVITY COACH</h3>
-      <p>A dietician, nutritionist, longevity specialist, and life coach combined into one. Not a generic chatbot. A single expert who holds your complete picture — biometrics, meals, goals, restrictions, and the full arc of your health journey — before you ask a single question.</p>
+      <p>A dietician, nutritionist, longevity specialist, and life coach combined into one. Not a generic chatbot. A single expert who holds your complete picture: biometrics, meals, goals, restrictions, and the full arc of your health journey, before you ask a single question.</p>
       <p>As you evolve with TLC, so does the coach. Every conversation builds on the last. Every insight it has read. Every pattern it has spotted. The longer you use it, the more precisely it can guide you. No repeating yourself. No context lost. Always grounded in what your body is actually doing today.</p>
       <ul class="feature-highlights">
         <li>Dietician, nutritionist, longevity specialist and life coach in one</li>
         <li>Full understanding of your needs, goals and journey</li>
-        <li>References your actual data in every response — never generic</li>
+        <li>References your actual data in every response. Never generic.</li>
         <li>Gets smarter with every session as you evolve</li>
       </ul>
       <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="feature-cta">Talk to your coach free &rarr;</a>
@@ -1156,12 +1156,12 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <span class="label">At home, in your kitchen</span>
       <h3>PANTRY PAL + RECIPES</h3>
       <p>Point your camera at your fridge. TLC identifies what you have and builds a recipe that hits your macros, suits your goal, and uses what's already there. Or planning a shop with an empty fridge? TLC builds the recipe from scratch and hands you a ready-to-go shopping list. Either way, nutrition lands exactly where it needs to.</p>
-      <p>Whatever your day looks like, TLC meets you there. Cooking at home, eating out, grabbing something on the go, or somewhere in between — there is a TLC tool built for that moment. Every meal gets logged. Every macro tracked. All the heavy lifting done for you.</p>
+      <p>Whatever your day looks like, TLC meets you there. Cooking at home, eating out, grabbing something on the go, or somewhere in between. There is a TLC tool built for that moment. Every meal gets logged. Every macro tracked. All the heavy lifting done for you.</p>
       <ul class="feature-highlights">
         <li>Scan your fridge for instant recipes, or plan from scratch with a shopping list</li>
         <li>Every recipe tuned to your macros, goals, and restrictions</li>
         <li>Meal Analyser: snap any plate, get full macros in seconds</li>
-        <li>Eating out, cooking in, or on the go — TLC has a tool for every moment</li>
+        <li>Eating out, cooking in, or on the go: TLC has a tool for every moment</li>
       </ul>
       <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="feature-cta">Scan your fridge free &rarr;</a>
     </div>
