@@ -202,32 +202,41 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pillar-card.mind .pillar-data-tag { background: rgba(232,184,75,0.09); color: #927010; }
 .pillars-tagline { text-align: center; font-size: 20px; color: var(--ink); font-weight: 500; letter-spacing: -0.01em; }
 /* ── TLC PRO MEAL PLAN DEMO ── */
-.mock-mealplan { display: flex; flex-direction: column; }
-.mock-mp-header { background: linear-gradient(135deg, #1c1c1e 0%, #2d2d2f 100%); padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-radius: 8px 8px 0 0; }
-.mock-mp-pro-badge { font-size: 8.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; background: var(--green); color: white; padding: 3px 9px; border-radius: 4px; white-space: nowrap; }
-.mock-mp-hdr-title { font-size: 13px; font-weight: 700; color: white; line-height: 1.25; }
-.mock-mp-hdr-sub { font-size: 9px; color: rgba(255,255,255,0.38); font-weight: 500; }
-.mock-mp-body { padding: 10px 16px; }
-.mock-mp-meal-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.mock-mealplan { display: flex; flex-direction: column; background: var(--white); }
+.mock-mp-header { background: var(--white); padding: 13px 16px 8px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.mock-mp-pro-badge { font-size: 8px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; background: var(--green); color: white; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+.mock-mp-hdr-right { text-align: right; }
+.mock-mp-hdr-title { font-size: 11px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.mock-mp-hdr-sub { font-size: 8.5px; color: var(--muted); font-weight: 500; }
+.mock-mp-body { padding: 6px 14px 4px; flex-shrink: 0; }
+.mock-mp-meal-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--border); }
 .mock-mp-meal-row:last-child { border-bottom: none; }
-.mock-mp-type { font-size: 8px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); width: 58px; flex-shrink: 0; }
-.mock-mp-name { font-size: 11px; font-weight: 600; color: var(--ink); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transform: translateX(-4px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.mock-mp-type { font-size: 7.5px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); width: 52px; flex-shrink: 0; }
+.mock-mp-name { font-size: 10.5px; font-weight: 600; color: var(--ink); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transform: translateX(-4px); transition: opacity 0.45s ease, transform 0.45s ease; }
 .mock-mp-name.mp-visible { opacity: 1; transform: translateX(0); }
-.mock-mp-tag { font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+.mock-mp-tag { font-size: 7.5px; font-weight: 700; padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
 .mock-mp-tag.omega { background: rgba(57,140,186,0.10); color: #2b6e93; }
 .mock-mp-tag.pro { background: rgba(57,186,118,0.10); color: #2a9148; }
-.mock-mp-tag.lean { background: rgba(232,184,75,0.10); color: #927010; }
-.mock-mp-divider { height: 1px; background: var(--border); margin: 0 16px; }
-.mock-mp-shop { padding: 9px 16px; background: rgba(57,140,186,0.03); }
-.mock-mp-shop-title { font-size: 7px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
-.mock-mp-shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; }
-.mock-mp-shop-item { display: flex; align-items: center; gap: 6px; font-size: 9.5px; color: var(--ink-2); font-weight: 500; opacity: 0; transform: translateY(4px); transition: opacity 0.35s ease, transform 0.35s ease; }
+.mock-mp-tag.lean { background: rgba(232,184,75,0.12); color: #927010; }
+/* Why chosen panel */
+.mock-mp-why { padding: 7px 14px 6px; background: var(--surface); border-top: 1px solid var(--border); flex-shrink: 0; }
+.mock-mp-why-title { font-size: 7px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.mock-mp-why-row { display: flex; align-items: center; gap: 7px; padding: 2.5px 0; opacity: 0; transform: translateX(-5px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.mock-mp-why-row.mp-visible { opacity: 1; transform: translateX(0); }
+.mock-mp-why-check { width: 14px; height: 14px; border-radius: 50%; background: rgba(46,168,74,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mock-mp-why-label { font-size: 9px; color: var(--ink-2); font-weight: 600; }
+.mock-mp-why-detail { font-size: 8.5px; color: var(--muted); font-weight: 400; margin-left: 2px; }
+/* Shopping list */
+.mock-mp-shop { padding: 6px 14px 7px; border-top: 1px solid var(--border); flex-shrink: 0; }
+.mock-mp-shop-title { font-size: 7px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.mock-mp-shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; }
+.mock-mp-shop-item { display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--ink-2); font-weight: 500; opacity: 0; transform: translateY(4px); transition: opacity 0.35s ease, transform 0.35s ease; }
 .mock-mp-shop-item.mp-visible { opacity: 1; transform: translateY(0); }
 .mock-mp-shop-check { width: 13px; height: 13px; flex-shrink: 0; border-radius: 3px; background: rgba(57,186,118,0.14); display: flex; align-items: center; justify-content: center; }
-.mock-mp-savings { padding: 9px 16px; background: rgba(46,168,74,0.07); border-radius: 0 0 8px 8px; display: flex; align-items: center; justify-content: space-between; }
-.mock-mp-savings-num { font-family: var(--font-display); font-size: 28px; color: var(--green); line-height: 1; }
-.mock-mp-savings-label { font-size: 10px; font-weight: 700; color: var(--green-dark); display: block; text-align: right; }
-.mock-mp-savings-sub { font-size: 9px; color: var(--muted); text-align: right; }
+.mock-mp-savings { padding: 7px 14px; background: rgba(46,168,74,0.07); border-radius: 0 0 8px 8px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(46,168,74,0.12); flex-shrink: 0; }
+.mock-mp-savings-num { font-family: var(--font-display); font-size: 26px; color: var(--green); line-height: 1; }
+.mock-mp-savings-label { font-size: 9.5px; font-weight: 700; color: var(--green-dark); display: block; text-align: right; }
+.mock-mp-savings-sub { font-size: 8.5px; color: var(--muted); text-align: right; }
 
 /* ── STATS (Apple-style bold numbers) ── */
 .stats-bar { background: var(--surface); padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; z-index: 2; }
@@ -266,35 +275,33 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-di-badge { display: flex; align-items: center; gap: 5px; background: rgba(46,168,74,0.12); border: 1px solid rgba(46,168,74,0.2); border-radius: 50px; padding: 3px 9px; }
 .mock-di-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-accent); }
 .mock-di-badge-text { font-size: 9px; font-weight: 700; color: var(--green-accent); letter-spacing: 0.08em; }
-.mock-score-row { display: flex; align-items: center; gap: 14px; padding: 10px 15px 6px; flex-shrink: 0; }
-.mock-score-num { font-family: var(--font-display); font-size: 44px; color: var(--white); line-height: 1; flex-shrink: 0; letter-spacing: 0.02em; }
-.mock-score-info { flex: 1; }
-.mock-score-label { font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 5px; }
-.mock-score-good { font-size: 9px; font-weight: 700; color: var(--green-accent); letter-spacing: 0.06em; transition: opacity 0.5s ease; }
-.mock-score-scale { font-size: 8px; color: rgba(255,255,255,0.2); font-weight: 500; margin-top: 3px; }
-/* DI Chart */
-.mock-chart-area { padding: 6px 14px 8px; flex: 1; display: flex; flex-direction: column; }
-.mock-chart-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
-.mock-chart-title { font-size: 7.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.22); }
-.mock-chart-legend { display: flex; gap: 9px; }
-.mock-chart-leg-item { display: flex; align-items: center; gap: 4px; font-size: 7.5px; color: rgba(255,255,255,0.32); font-weight: 600; }
-.mock-chart-leg-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.mock-chart-svg { width: 100%; flex: 1; display: block; overflow: visible; }
-.mock-chart-line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.mock-chart-xaxis { display: flex; justify-content: space-between; padding: 3px 0 0; }
-.mock-chart-xday { font-size: 7px; color: rgba(255,255,255,0.18); font-weight: 700; text-align: center; width: 14px; }
-.mock-pillars-section { padding: 0 15px 6px; flex: 1; }
-.mock-pillar-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
-.mock-pillar-name { font-size: 10px; color: rgba(255,255,255,0.35); width: 54px; flex-shrink: 0; }
-.mock-pillar-bar { flex: 1; height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; }
-.mock-pillar-fill { height: 100%; border-radius: 2px; }
-.mock-pillar-fill.n { background: var(--nutrition); }
-.mock-pillar-fill.b { background: var(--body-blue); }
-.mock-pillar-fill.m { background: var(--mind); }
-.mock-pillar-score { font-size: 10px; color: rgba(255,255,255,0.5); width: 22px; text-align: right; flex-shrink: 0; font-weight: 600; }
-.mock-insight-preview { margin: 4px 13px 11px; padding: 8px 11px; background: rgba(46,168,74,0.06); border-left: 2px solid rgba(46,168,74,0.35); border-radius: 0 6px 6px 0; flex-shrink: 0; }
-.mock-insight-preview p { font-size: 9.5px; color: rgba(255,255,255,0.42); line-height: 1.55; font-style: italic; }
-.mock-chart-dot-end { transition: opacity 0.4s ease; }
+/* DI Narrative */
+.mock-di-narrative { padding: 10px 14px 6px; flex-shrink: 0; }
+.mock-di-narrative p { font-size: 9.5px; color: rgba(255,255,255,0.48); line-height: 1.60; }
+.mock-di-narrative strong { color: var(--green-accent); font-weight: 700; }
+/* DI Listen button */
+.mock-di-listen { display: flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 3px 8px 3px 7px; }
+.mock-di-listen svg { width: 9px; height: 9px; color: var(--green-accent); flex-shrink: 0; }
+.mock-di-listen-text { font-size: 8px; font-weight: 700; color: rgba(255,255,255,0.38); letter-spacing: 0.06em; text-transform: uppercase; }
+/* DI Wellbeing bars */
+.mock-wellbeing-section { padding: 4px 14px 6px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.mock-wb-header { font-size: 7.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.20); margin-bottom: 8px; }
+.mock-wb-row { display: flex; align-items: flex-end; gap: 8px; padding: 4px 0; }
+.mock-wb-label { font-size: 9px; font-weight: 700; width: 38px; flex-shrink: 0; align-self: center; }
+.mock-wb-bars { display: flex; align-items: flex-end; gap: 3px; flex: 1; height: 28px; }
+.mock-wb-bar { flex: 1; border-radius: 2px 2px 0 0; transform-origin: bottom; transform: scaleY(0); transition: transform 0.45s cubic-bezier(0.34,1.4,0.64,1); }
+.mock-wb-score { font-size: 10px; font-weight: 700; width: 24px; text-align: right; flex-shrink: 0; align-self: center; }
+/* TTS listening row */
+.mock-di-tts-row { display: flex; align-items: center; gap: 9px; margin: 0 13px 10px; padding: 6px 10px; background: rgba(46,168,74,0.07); border-radius: 6px; flex-shrink: 0; }
+.mock-tts-wave { display: flex; align-items: center; gap: 2.5px; height: 14px; }
+.mock-tts-bar { width: 2.5px; border-radius: 2px; background: var(--green-accent); animation: ttsWave 0.85s ease-in-out infinite; }
+.mock-tts-bar:nth-child(1) { height: 4px; animation-delay: 0s; }
+.mock-tts-bar:nth-child(2) { height: 8px; animation-delay: 0.14s; }
+.mock-tts-bar:nth-child(3) { height: 13px; animation-delay: 0.28s; }
+.mock-tts-bar:nth-child(4) { height: 8px; animation-delay: 0.42s; }
+.mock-tts-bar:nth-child(5) { height: 4px; animation-delay: 0.56s; }
+.mock-tts-label { font-size: 8.5px; color: rgba(255,255,255,0.40); font-weight: 500; }
+@keyframes ttsWave { 0%,100% { transform: scaleY(0.35); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
 
 /* Longevity Coach */
 .mock-coach { background: var(--white); }
@@ -501,7 +508,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 /* ── TESTIMONIALS (social proof, dark section) ── */
 .section-testimonials { padding: var(--section-pad) 0; background: var(--ink); position: relative; z-index: 2; overflow: hidden; }
-.section-testimonials::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 60%, rgba(46,168,74,0.05) 0%, transparent 55%), radial-gradient(ellipse at 75% 40%, rgba(57,140,186,0.04) 0%, transparent 55%); pointer-events: none; }
+#testimonialNebula { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.9; }
+.section-testimonials .container { position: relative; z-index: 1; }
 .testimonials-header { text-align: center; margin-bottom: 60px; position: relative; }
 .testimonials-header h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 14px; }
 .testimonials-header h2 em { color: var(--green-accent); font-style: normal; }
@@ -800,6 +808,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- TESTIMONIALS -->
 <section class="section-testimonials">
+  <canvas id="testimonialNebula"></canvas>
   <div class="container">
     <div class="testimonials-header reveal">
       <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:var(--green-accent);">Real Results</span>
@@ -922,85 +931,48 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <div class="mock-card mock-di" id="demo-di">
         <div class="mock-di-header">
           <span class="mock-di-title">Dynamic Insight</span>
-          <div class="mock-di-badge"><span class="mock-di-badge-dot"></span><span class="mock-di-badge-text">Today</span></div>
-        </div>
-        <div class="mock-score-row">
-          <div class="mock-score-num" id="di-score">0</div>
-          <div class="mock-score-info">
-            <div class="mock-score-label">Longevity Score</div>
-            <div class="mock-score-good" id="di-score-good" style="opacity:0;">Blueprint activated &uarr;</div>
-            <div class="mock-score-scale">out of 1000</div>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div class="mock-di-listen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              <span class="mock-di-listen-text">Listen</span>
+            </div>
+            <div class="mock-di-badge"><span class="mock-di-badge-dot"></span><span class="mock-di-badge-text">Today</span></div>
           </div>
         </div>
-        <!-- Three pillar rings -->
-        <div class="mock-rings">
-          <div class="mock-ring-wrap">
-            <div class="mock-ring-outer">
-              <svg class="mock-ring-svg" viewBox="0 0 54 54">
-                <circle class="mock-ring-track" cx="27" cy="27" r="22"/>
-                <circle class="mock-ring-fill" cx="27" cy="27" r="22" stroke="var(--nutrition)" id="ring-n"/>
-              </svg>
-              <div class="mock-ring-center"><span class="mock-ring-val" id="ring-n-val">84</span></div>
-            </div>
-            <span class="mock-ring-name">Nutrition</span>
+        <!-- Day 1 DI narrative -->
+        <div class="mock-di-narrative">
+          <p id="di-narrative-text" style="opacity:0;transition:opacity 0.8s ease;">Day 1 blueprint live. Targets set: <strong>2,340 kcal</strong> and <strong>165g protein</strong> for your Patagonia trek in 8 weeks. TLC tracks your Mood, Focus and Energy from today. Patterns emerging here drive every insight from now.</p>
+        </div>
+        <!-- Wellbeing bar charts: Mood / Focus / Energy -->
+        <div class="mock-wellbeing-section">
+          <div class="mock-wb-header">Wellbeing Journey &ndash; Week 1</div>
+          <div class="mock-wb-row">
+            <span class="mock-wb-label" style="color:var(--mind)">Mood</span>
+            <div class="mock-wb-bars" id="wb-bars-mood"></div>
+            <span class="mock-wb-score" id="wb-score-mood" style="color:var(--mind)">0.0</span>
           </div>
-          <div class="mock-ring-wrap">
-            <div class="mock-ring-outer">
-              <svg class="mock-ring-svg" viewBox="0 0 54 54">
-                <circle class="mock-ring-track" cx="27" cy="27" r="22"/>
-                <circle class="mock-ring-fill" cx="27" cy="27" r="22" stroke="var(--body-blue)" id="ring-b"/>
-              </svg>
-              <div class="mock-ring-center"><span class="mock-ring-val" id="ring-b-val">61</span></div>
-            </div>
-            <span class="mock-ring-name">Body</span>
+          <div class="mock-wb-row">
+            <span class="mock-wb-label" style="color:var(--body-blue)">Focus</span>
+            <div class="mock-wb-bars" id="wb-bars-focus"></div>
+            <span class="mock-wb-score" id="wb-score-focus" style="color:var(--body-blue)">0.0</span>
           </div>
-          <div class="mock-ring-wrap">
-            <div class="mock-ring-outer">
-              <svg class="mock-ring-svg" viewBox="0 0 54 54">
-                <circle class="mock-ring-track" cx="27" cy="27" r="22"/>
-                <circle class="mock-ring-fill" cx="27" cy="27" r="22" stroke="var(--mind)" id="ring-m"/>
-              </svg>
-              <div class="mock-ring-center"><span class="mock-ring-val" id="ring-m-val">91</span></div>
-            </div>
-            <span class="mock-ring-name">Mind</span>
+          <div class="mock-wb-row">
+            <span class="mock-wb-label" style="color:var(--nutrition)">Energy</span>
+            <div class="mock-wb-bars" id="wb-bars-energy"></div>
+            <span class="mock-wb-score" id="wb-score-energy" style="color:var(--nutrition)">0.0</span>
           </div>
         </div>
-        <!-- 7-Day trend chart (3 animated lines) -->
-        <div class="mock-chart-area">
-          <div class="mock-chart-hdr">
-            <span class="mock-chart-title">8-Week to Patagonia</span>
-            <div class="mock-chart-legend">
-              <span class="mock-chart-leg-item"><span class="mock-chart-leg-dot" style="background:var(--nutrition)"></span>Nutrition</span>
-              <span class="mock-chart-leg-item"><span class="mock-chart-leg-dot" style="background:var(--body-blue)"></span>Body</span>
-              <span class="mock-chart-leg-item"><span class="mock-chart-leg-dot" style="background:var(--mind)"></span>Mind</span>
-            </div>
+        <!-- TTS / listen indicator -->
+        <div class="mock-di-tts-row" id="di-tts-row" style="opacity:0;transition:opacity 0.6s ease;">
+          <div class="mock-tts-wave">
+            <div class="mock-tts-bar"></div>
+            <div class="mock-tts-bar"></div>
+            <div class="mock-tts-bar"></div>
+            <div class="mock-tts-bar"></div>
+            <div class="mock-tts-bar"></div>
           </div>
-          <svg class="mock-chart-svg" viewBox="0 0 258 58" preserveAspectRatio="none">
-            <line x1="0" y1="19" x2="258" y2="19" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <line x1="0" y1="38" x2="258" y2="38" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <!-- Nutrition line: improving endurance base -->
-            <path id="di-line-n" class="mock-chart-line" stroke="var(--nutrition)" d="M 6,42 L 48,36 L 90,38 L 132,28 L 174,25 L 216,29 L 252,21" stroke-dasharray="262" stroke-dashoffset="262" style="transition:none;"/>
-            <!-- Body line: building fitness -->
-            <path id="di-line-b" class="mock-chart-line" stroke="var(--body-blue)" d="M 6,50 L 48,46 L 90,48 L 132,42 L 174,38 L 216,40 L 252,35" stroke-dasharray="262" stroke-dashoffset="262" style="transition:none;"/>
-            <!-- Mind line: strong and consistent -->
-            <path id="di-line-m" class="mock-chart-line" stroke="var(--mind)" d="M 6,22 L 48,25 L 90,18 L 132,15 L 174,19 L 216,13 L 252,11" stroke-dasharray="262" stroke-dashoffset="262" style="transition:none;"/>
-            <!-- End-point dots -->
-            <circle id="di-dot-n" cx="252" cy="21" r="3" fill="var(--nutrition)" opacity="0"/>
-            <circle id="di-dot-b" cx="252" cy="35" r="3" fill="var(--body-blue)" opacity="0"/>
-            <circle id="di-dot-m" cx="252" cy="11" r="3" fill="var(--mind)" opacity="0"/>
-          </svg>
-          <div class="mock-chart-xaxis">
-            <span class="mock-chart-xday">W1</span>
-            <span class="mock-chart-xday">W2</span>
-            <span class="mock-chart-xday">W3</span>
-            <span class="mock-chart-xday">W4</span>
-            <span class="mock-chart-xday">W5</span>
-            <span class="mock-chart-xday">W6</span>
-            <span class="mock-chart-xday">June</span>
-          </div>
+          <span class="mock-tts-label">Reading your insight aloud...</span>
         </div>
-        <!-- Day 1 insight -->
-        <div class="mock-insight-preview"><p id="di-insight-text" style="opacity:0;transition:opacity 0.8s ease;">"Welcome to Day 1, Chris. Your Patagonia trek is 8 weeks away. Blueprint set: 2,340 kcal, 165g protein. Every insight builds your endurance base from here."</p></div>
       </div>
     </div>
     <div class="feature-copy reveal d2">
@@ -1198,9 +1170,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <div class="mock-card mock-mealplan" id="demo-mealplan">
         <div class="mock-mp-header">
           <span class="mock-mp-pro-badge">TLC Pro</span>
-          <div>
+          <div class="mock-mp-hdr-right">
             <div class="mock-mp-hdr-title">Your April Meal Plan</div>
-            <div class="mock-mp-hdr-sub">28 days &bull; tailored to your goals &amp; tastes</div>
+            <div class="mock-mp-hdr-sub">28 days &bull; tailored to your goals</div>
           </div>
         </div>
         <div class="mock-mp-body">
@@ -1225,14 +1197,36 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <span class="mock-mp-tag omega">Lean protein</span>
           </div>
         </div>
-        <div class="mock-mp-divider"></div>
+        <!-- Why we chose this meal -->
+        <div class="mock-mp-why">
+          <div class="mock-mp-why-title">Why we chose this for you</div>
+          <div class="mock-mp-why-row" id="mp-why-0">
+            <div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>
+            <span class="mock-mp-why-label">Taste match</span><span class="mock-mp-why-detail">Mediterranean, low-spice</span>
+          </div>
+          <div class="mock-mp-why-row" id="mp-why-1">
+            <div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>
+            <span class="mock-mp-why-label">Allergy safe</span><span class="mock-mp-why-detail">dairy-free, nut-free</span>
+          </div>
+          <div class="mock-mp-why-row" id="mp-why-2">
+            <div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>
+            <span class="mock-mp-why-label">Macros</span><span class="mock-mp-why-detail">38g protein &bull; 420 kcal</span>
+          </div>
+          <div class="mock-mp-why-row" id="mp-why-3">
+            <div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>
+            <span class="mock-mp-why-label">Kitchen fit</span><span class="mock-mp-why-detail">pan + oven, 20 min</span>
+          </div>
+        </div>
+        <!-- Smart shopping list -->
         <div class="mock-mp-shop">
           <div class="mock-mp-shop-title">Smart Zero-Waste Shopping List</div>
           <div class="mock-mp-shop-grid">
             <div class="mock-mp-shop-item" id="mp-shop-0"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Salmon fillet</div>
-            <div class="mock-mp-shop-item" id="mp-shop-1"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Greek yoghurt</div>
-            <div class="mock-mp-shop-item" id="mp-shop-2"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Quinoa (1 kg)</div>
+            <div class="mock-mp-shop-item" id="mp-shop-1"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Sea bass (2 fillets)</div>
+            <div class="mock-mp-shop-item" id="mp-shop-2"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Quinoa (500g)</div>
             <div class="mock-mp-shop-item" id="mp-shop-3"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Asparagus bunch</div>
+            <div class="mock-mp-shop-item" id="mp-shop-4"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Greek yoghurt</div>
+            <div class="mock-mp-shop-item" id="mp-shop-5"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Walnuts (150g)</div>
           </div>
         </div>
         <div class="mock-mp-savings">
@@ -1245,7 +1239,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       </div>
     </div>
     <div class="feature-copy reveal d2">
-      <span class="label" style="background:rgba(26,26,26,0.06);color:var(--muted-2);">Coming Soon &bull; TLC Pro</span>
+      <span class="label" style="background:rgba(46,168,74,0.08);color:var(--green);">TLC Pro</span>
       <h3>YOUR ENTIRE MONTH. PLANNED FOR YOU.</h3>
       <p>Every meal for the month, built from scratch around your taste preferences, nutritional targets, food restrictions, and health goals. Nothing generic. Nothing wasted.</p>
       <p>The Smart Shopping List consolidates your entire month's ingredients, eliminates duplicates, and sequences your shop to match what gets used when. Members typically save 10&ndash;15% on their monthly grocery bill.</p>
@@ -1299,17 +1293,6 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   </div>
 </div></section>
 
-<!-- VIDEO SECTION -->
-<section class="section-video"><div class="container">
-  <div class="section-header reveal" style="margin-bottom:56px;">
-    <span class="label" style="margin-bottom:20px;display:inline-flex;justify-content:center;">See It In Action</span>
-    <h2>WHAT DOES <em>TLC</em> ACTUALLY DO?</h2>
-    <p>Three pillars. One system. See how TLC connects nutrition, biometrics, and reflection to reveal the patterns that drive lasting change.</p>
-  </div>
-  <div class="video-wrapper reveal d1">
-    <iframe src="https://www.youtube.com/embed/mpR9ACpXwjs?si=KIrgtQ5_Td9bhtlN" title="The Longevity Chef: What Do We Do?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</div></section>
 
 <!-- FAQ -->
 <section class="faq-section"><div class="container"><div class="faq-list">
@@ -1438,69 +1421,57 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
   // ── DI DEMO ──
   function runDI() {
-    var scoreEl = document.getElementById('di-score');
-    var scoreGood = document.getElementById('di-score-good');
-    var ringN = document.getElementById('ring-n');
-    var ringB = document.getElementById('ring-b');
-    var ringM = document.getElementById('ring-m');
-    var lineN = document.getElementById('di-line-n');
-    var lineB = document.getElementById('di-line-b');
-    var lineM = document.getElementById('di-line-m');
-    var dotN = document.getElementById('di-dot-n');
-    var dotB = document.getElementById('di-dot-b');
-    var dotM = document.getElementById('di-dot-m');
-    var insightEl = document.getElementById('di-insight-text');
-    if (!scoreEl) return;
+    var narrativeEl = document.getElementById('di-narrative-text');
+    var ttsRow = document.getElementById('di-tts-row');
+    if (!narrativeEl) return;
+
+    // Wellbeing data: 7 days, scored 0–10
+    var wbData = [
+      {id:'mood',   col:'var(--mind)',     vals:[5.8,6.2,6.4,6.8,7.1,6.9,7.4]},
+      {id:'focus',  col:'var(--body-blue)',vals:[6.1,6.5,7.0,7.2,7.4,7.8,8.1]},
+      {id:'energy', col:'var(--nutrition)',vals:[5.5,5.9,6.2,6.8,7.0,7.3,7.6]}
+    ];
 
     // Reset
-    scoreEl.textContent = '0';
-    if (scoreGood) scoreGood.style.opacity = '0';
-    if (ringN) ringN.style.strokeDashoffset = C;
-    if (ringB) ringB.style.strokeDashoffset = C;
-    if (ringM) ringM.style.strokeDashoffset = C;
-    [lineN, lineB, lineM].forEach(function(l) { if(l) { l.style.transition = 'none'; l.style.strokeDashoffset = '262'; } });
-    [dotN, dotB, dotM].forEach(function(d) { if(d) d.style.opacity = '0'; });
-    if (insightEl) insightEl.style.opacity = '0';
-
-    // Phase 1: Count score 0 → 724 (scale 0–1000)
-    var score = 0;
-    var scoreTimer = setInterval(function() {
-      score = Math.min(724, score + 22);
-      scoreEl.textContent = score;
-      if (score >= 724) {
-        clearInterval(scoreTimer);
-        if (scoreGood) scoreGood.style.opacity = '1';
+    narrativeEl.style.opacity = '0';
+    if (ttsRow) ttsRow.style.opacity = '0';
+    wbData.forEach(function(d) {
+      var barsEl = document.getElementById('wb-bars-' + d.id);
+      var scoreEl = document.getElementById('wb-score-' + d.id);
+      if (barsEl) {
+        barsEl.innerHTML = '';
+        var maxVal = Math.max.apply(null, d.vals);
+        d.vals.forEach(function(v) {
+          var bar = document.createElement('div');
+          bar.className = 'mock-wb-bar';
+          bar.style.height = ((v / 10) * 28) + 'px';
+          bar.style.background = d.col;
+          bar.style.opacity = (v === maxVal) ? '1' : '0.5';
+          barsEl.appendChild(bar);
+        });
       }
-    }, 28);
+      if (scoreEl) scoreEl.textContent = '0.0';
+    });
 
-    // Phase 2: Fill rings at 1s
-    setTimeout(function() {
-      if (ringN) ringN.style.strokeDashoffset = C * (1 - 0.84);
-      if (ringB) ringB.style.strokeDashoffset = C * (1 - 0.61);
-      if (ringM) ringM.style.strokeDashoffset = C * (1 - 0.91);
-    }, 950);
+    // Phase 1: narrative fades in
+    setTimeout(function() { narrativeEl.style.opacity = '1'; }, 500);
 
-    // Phase 3: Draw chart lines sequentially at 2s
-    setTimeout(function() {
-      if (lineN) { lineN.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1)'; lineN.style.strokeDashoffset = '0'; }
-    }, 2000);
-    setTimeout(function() {
-      if (lineB) { lineB.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1)'; lineB.style.strokeDashoffset = '0'; }
-    }, 2280);
-    setTimeout(function() {
-      if (lineM) { lineM.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1)'; lineM.style.strokeDashoffset = '0'; }
-      // Endpoint dots appear when last line completes
-      setTimeout(function() {
-        if (dotN) dotN.style.opacity = '1';
-        if (dotB) dotB.style.opacity = '1';
-        if (dotM) dotM.style.opacity = '1';
-      }, 1150);
-    }, 2560);
+    // Phase 2: bars grow row by row
+    wbData.forEach(function(d, rowIdx) {
+      var barsEl = document.getElementById('wb-bars-' + d.id);
+      var scoreEl = document.getElementById('wb-score-' + d.id);
+      var baseDelay = 1200 + rowIdx * 380;
+      d.vals.forEach(function(v, barIdx) {
+        setTimeout(function() {
+          var bars = barsEl ? barsEl.querySelectorAll('.mock-wb-bar') : [];
+          if (bars[barIdx]) bars[barIdx].style.transform = 'scaleY(1)';
+          if (barIdx === d.vals.length - 1 && scoreEl) scoreEl.textContent = v.toFixed(1);
+        }, baseDelay + barIdx * 85);
+      });
+    });
 
-    // Phase 4: Day 1 insight at 4s
-    setTimeout(function() {
-      if (insightEl) insightEl.style.opacity = '1';
-    }, 4000);
+    // Phase 3: TTS row — "reading aloud" indicator appears
+    setTimeout(function() { if (ttsRow) ttsRow.style.opacity = '1'; }, 3800);
   }
 
   // ── COACH DEMO ──
@@ -1651,26 +1622,38 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
   // ── MEAL PLAN DEMO ──
   function runMealPlan() {
     var meals = [0,1,2,3].map(function(i) { return document.getElementById('mp-meal-'+i); });
-    var shops = [0,1,2,3].map(function(i) { return document.getElementById('mp-shop-'+i); });
+    var whys = [0,1,2,3].map(function(i) { return document.getElementById('mp-why-'+i); });
+    var shops = [0,1,2,3,4,5].map(function(i) { return document.getElementById('mp-shop-'+i); });
     var savingsEl = document.getElementById('mp-savings');
     if (!meals[0]) return;
     // Reset
     meals.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
+    whys.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
     shops.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
     if (savingsEl) savingsEl.textContent = '£0';
-    // Reveal meal names one by one
+
+    // Phase 1: Reveal meal names
     meals.forEach(function(el, i) {
       if (!el) return;
-      setTimeout(function() { el.classList.add('mp-visible'); }, 300 + i * 480);
+      setTimeout(function() { el.classList.add('mp-visible'); }, 300 + i * 420);
     });
-    // Shopping list items after meals complete
-    var shopStart = 300 + 4 * 480 + 350;
+
+    // Phase 2: "Why chosen" rows slide in after meals
+    var whyStart = 300 + 4 * 420 + 200;
+    whys.forEach(function(el, i) {
+      if (!el) return;
+      setTimeout(function() { el.classList.add('mp-visible'); }, whyStart + i * 160);
+    });
+
+    // Phase 3: Shopping list ticks in after "why"
+    var shopStart = whyStart + 4 * 160 + 200;
     shops.forEach(function(el, i) {
       if (!el) return;
-      setTimeout(function() { el.classList.add('mp-visible'); }, shopStart + i * 190);
+      setTimeout(function() { el.classList.add('mp-visible'); }, shopStart + i * 130);
     });
-    // Savings counter
-    var savingsStart = shopStart + 4 * 190 + 250;
+
+    // Phase 4: Savings counter
+    var savingsStart = shopStart + 6 * 130 + 200;
     setTimeout(function() {
       if (!savingsEl) return;
       var v = 0, tgt = 43;
@@ -1882,6 +1865,133 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
   window.addEventListener('resize', resize);
   // Delay first resize to allow DOM layout to settle
   setTimeout(resize, 50);
+  draw();
+})();
+
+// ── Testimonials Nebula (scoped to section, three-pillar colours) ──
+(function() {
+  const canvas = document.getElementById('testimonialNebula');
+  if (!canvas) return;
+  const section = canvas.closest('.section-testimonials');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rgba = (r,g,b,a) => \`rgba(\${r},\${g},\${b},\${a})\`;
+
+  function resize() {
+    const w = section.offsetWidth, h = section.offsetHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+  }
+  resize();
+
+  // Three pillar colour groups
+  const G = [46,168,74], B = [57,140,186], A = [232,184,75];
+
+  // 12 nodes: 4 per pillar, each cluster orbiting its own centre
+  const nodes = [
+    // Nutrition (green) — left third
+    {col:G, a:0,    rx:0.14,ry:0.30,cx:0.22,cy:0.50,spd:0.0032,dot:2.2,bright:0.30},
+    {col:G, a:1.57, rx:0.19,ry:0.22,cx:0.22,cy:0.50,spd:-0.004,dot:1.8,bright:0.24},
+    {col:G, a:3.14, rx:0.11,ry:0.34,cx:0.22,cy:0.50,spd:0.005, dot:1.6,bright:0.20},
+    {col:G, a:4.71, rx:0.22,ry:0.16,cx:0.22,cy:0.50,spd:-0.003,dot:2.0,bright:0.22},
+    // Body (blue) — right third
+    {col:B, a:0.52, rx:0.14,ry:0.30,cx:0.78,cy:0.50,spd:-0.004,dot:2.0,bright:0.26},
+    {col:B, a:2.09, rx:0.19,ry:0.20,cx:0.78,cy:0.50,spd:0.003, dot:1.8,bright:0.22},
+    {col:B, a:3.66, rx:0.11,ry:0.32,cx:0.78,cy:0.50,spd:-0.005,dot:1.6,bright:0.18},
+    {col:B, a:5.24, rx:0.22,ry:0.14,cx:0.78,cy:0.50,spd:0.004, dot:2.0,bright:0.24},
+    // Mind (amber) — centre
+    {col:A, a:0.26, rx:0.20,ry:0.28,cx:0.50,cy:0.50,spd:0.0038,dot:2.2,bright:0.28},
+    {col:A, a:1.83, rx:0.16,ry:0.32,cx:0.50,cy:0.50,spd:-0.004,dot:1.8,bright:0.22},
+    {col:A, a:3.40, rx:0.26,ry:0.18,cx:0.50,cy:0.50,spd:0.003, dot:1.6,bright:0.20},
+    {col:A, a:4.97, rx:0.14,ry:0.26,cx:0.50,cy:0.50,spd:-0.005,dot:2.0,bright:0.22},
+  ];
+
+  const pulses = [];
+  let t = 0, pulseT = 0, active = false;
+
+  function draw() {
+    animId = requestAnimationFrame(draw);
+    if (!active) return;
+    const W = canvas.width / dpr, H = canvas.height / dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,W,H);
+    t++;
+
+    // Update positions
+    for (const n of nodes) {
+      n.a += n.spd;
+      n.x = n.cx * W + Math.cos(n.a) * n.rx * W;
+      n.y = n.cy * H + Math.sin(n.a) * n.ry * H;
+    }
+
+    // Connections — cross-cluster lines are brighter to show "joining the dots"
+    const maxD = Math.min(W,H) * 0.55;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i+1; j < nodes.length; j++) {
+        const ni = nodes[i], nj = nodes[j];
+        const d = Math.hypot(ni.x-nj.x, ni.y-nj.y);
+        if (d < maxD) {
+          const base = (1 - d/maxD);
+          const alpha = ni.col === nj.col ? base * 0.10 : base * 0.20;
+          const lg = ctx.createLinearGradient(ni.x,ni.y,nj.x,nj.y);
+          lg.addColorStop(0, rgba(...ni.col, alpha));
+          lg.addColorStop(1, rgba(...nj.col, alpha));
+          ctx.beginPath(); ctx.moveTo(ni.x,ni.y); ctx.lineTo(nj.x,nj.y);
+          ctx.strokeStyle = lg; ctx.lineWidth = ni.col === nj.col ? 0.6 : 0.9; ctx.stroke();
+        }
+      }
+    }
+
+    // Pulses — prefer cross-cluster travel to animate "connecting"
+    pulseT++;
+    if (pulseT > 22) {
+      pulseT = 0;
+      const ni = nodes[Math.floor(Math.random()*nodes.length)];
+      // Bias toward different-colour partner
+      const candidates = nodes.filter(n => n !== ni && n.col !== ni.col);
+      const nj = candidates.length ? candidates[Math.floor(Math.random()*candidates.length)] : nodes[Math.floor(Math.random()*nodes.length)];
+      if (ni !== nj) pulses.push({fx:ni.x,fy:ni.y,tx:nj.x,ty:nj.y,colS:ni.col,colE:nj.col,p:0});
+    }
+    for (let k = pulses.length-1; k >= 0; k--) {
+      const pl = pulses[k]; pl.p += 0.020;
+      if (pl.p > 1) { pulses.splice(k,1); continue; }
+      // Update source/target to follow moving nodes (find nearest by start proximity)
+      const px = pl.fx + (pl.tx-pl.fx)*pl.p, py = pl.fy + (pl.ty-pl.fy)*pl.p;
+      const a = Math.sin(pl.p * Math.PI);
+      const r = Math.round(pl.colS[0]+(pl.colE[0]-pl.colS[0])*pl.p);
+      const g = Math.round(pl.colS[1]+(pl.colE[1]-pl.colS[1])*pl.p);
+      const b = Math.round(pl.colS[2]+(pl.colE[2]-pl.colS[2])*pl.p);
+      const pg = ctx.createRadialGradient(px,py,0,px,py,7);
+      pg.addColorStop(0, rgba(r,g,b,a*0.55)); pg.addColorStop(1, rgba(r,g,b,0));
+      ctx.beginPath(); ctx.arc(px,py,7,0,Math.PI*2); ctx.fillStyle=pg; ctx.fill();
+      ctx.beginPath(); ctx.arc(px,py,2,0,Math.PI*2); ctx.fillStyle=rgba(r,g,b,a*0.8); ctx.fill();
+    }
+
+    // Nodes with colour glow
+    for (const n of nodes) {
+      const pulse = 0.82 + 0.18 * Math.sin(t*0.02 + n.a);
+      const grd = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.dot*5);
+      grd.addColorStop(0, rgba(...n.col, n.bright*0.30*pulse));
+      grd.addColorStop(1, rgba(...n.col,0));
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.dot*5,0,Math.PI*2); ctx.fillStyle=grd; ctx.fill();
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.dot*pulse,0,Math.PI*2);
+      ctx.fillStyle = rgba(...n.col, n.bright*0.7); ctx.fill();
+    }
+  }
+
+  let animId;
+  const obs = new IntersectionObserver(entries => {
+    active = entries[0].isIntersecting;
+    if (active) resize();
+  }, {threshold: 0.05});
+  obs.observe(section);
+
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => { resize(); }).observe(section);
+  } else {
+    window.addEventListener('resize', () => setTimeout(resize, 100));
+  }
+
   draw();
 })();
 
