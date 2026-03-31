@@ -136,6 +136,16 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hic-quote { font-size: 10px; color: var(--muted-2); font-style: italic; line-height: 1.55; border-top: 1px solid rgba(26,26,26,0.07); padding-top: 11px; margin: 0; }
 @keyframes livePulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46,168,74,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(46,168,74,0); } }
 @media (max-width: 960px) { .hero-insight-card { display: none; } }
+/* ── Hero insight card — pillar rings ── */
+.hic-rings { display: flex; justify-content: space-between; gap: 4px; margin-bottom: 13px; }
+.hic-ring-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+.hic-ring-outer { position: relative; width: 48px; height: 48px; }
+.hic-ring-svg { width: 48px; height: 48px; transform: rotate(-90deg); overflow: visible; }
+.hic-ring-track { fill: none; stroke: rgba(26,26,26,0.07); stroke-width: 4; }
+.hic-ring-fill { fill: none; stroke-width: 4; stroke-linecap: round; }
+.hic-ring-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.hic-ring-val { font-size: 11px; font-weight: 800; color: var(--ink); line-height: 1; }
+.hic-ring-name { font-size: 7px; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 700; text-align: center; }
 .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3; opacity: 0; animation: fadeIn 1s ease 2s forwards; }
 .hero-scroll svg { width: 28px; height: 28px; stroke: var(--muted); animation: float 2.5s ease-in-out infinite; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -551,7 +561,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <span class="hero-headline-green">Knows You.</span>
     <p class="hero-body">TLC meets you exactly where you are: at the restaurant, in your kitchen, tracking your wearable, or winding down for the night. It learns your patterns, adapts to your body, and does the heavy lifting so you don't have to.</p>
     <div class="hero-actions">
-      <a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-black">Take Your Free Assessment</a>
+      <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-black">Take Your Free Assessment</a>
       <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
     </div>
     <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;·&nbsp; No wearable required.</p>
@@ -566,16 +576,44 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="hero-insight-card">
       <div class="hic-label"><span class="hic-live-dot"></span>Live Insight</div>
       <div class="hic-body">
-        <div class="hic-score">72</div>
+        <div class="hic-score" id="hic-score">0</div>
         <div class="hic-info">
           <div class="hic-title">Longevity Score</div>
           <div class="hic-sub">Strong day &middot; Insight ready</div>
         </div>
       </div>
-      <div class="hic-pillars">
-        <div class="hic-pillar"><span class="hic-pname">Nutrition</span><div class="hic-pbar"><div class="hic-pfill" style="width:78%;background:var(--nutrition)"></div></div><span class="hic-pval">78</span></div>
-        <div class="hic-pillar"><span class="hic-pname">Body</span><div class="hic-pbar"><div class="hic-pfill" style="width:65%;background:var(--body-blue)"></div></div><span class="hic-pval">65</span></div>
-        <div class="hic-pillar"><span class="hic-pname">Mind</span><div class="hic-pbar"><div class="hic-pfill" style="width:84%;background:var(--mind)"></div></div><span class="hic-pval">84</span></div>
+      <!-- Pillar rings (animated on load — r=14, c=87.96) -->
+      <div class="hic-rings">
+        <div class="hic-ring-wrap">
+          <div class="hic-ring-outer">
+            <svg class="hic-ring-svg" viewBox="0 0 36 36">
+              <circle class="hic-ring-track" cx="18" cy="18" r="14"/>
+              <circle class="hic-ring-fill" cx="18" cy="18" r="14" stroke="var(--nutrition)" stroke-dasharray="87.96" stroke-dashoffset="87.96" id="hic-ring-n" style="transition:stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1);"/>
+            </svg>
+            <div class="hic-ring-center"><span class="hic-ring-val">78</span></div>
+          </div>
+          <span class="hic-ring-name">Nutrition</span>
+        </div>
+        <div class="hic-ring-wrap">
+          <div class="hic-ring-outer">
+            <svg class="hic-ring-svg" viewBox="0 0 36 36">
+              <circle class="hic-ring-track" cx="18" cy="18" r="14"/>
+              <circle class="hic-ring-fill" cx="18" cy="18" r="14" stroke="var(--body-blue)" stroke-dasharray="87.96" stroke-dashoffset="87.96" id="hic-ring-b" style="transition:stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1) 0.12s;"/>
+            </svg>
+            <div class="hic-ring-center"><span class="hic-ring-val">65</span></div>
+          </div>
+          <span class="hic-ring-name">Body</span>
+        </div>
+        <div class="hic-ring-wrap">
+          <div class="hic-ring-outer">
+            <svg class="hic-ring-svg" viewBox="0 0 36 36">
+              <circle class="hic-ring-track" cx="18" cy="18" r="14"/>
+              <circle class="hic-ring-fill" cx="18" cy="18" r="14" stroke="var(--mind)" stroke-dasharray="87.96" stroke-dashoffset="87.96" id="hic-ring-m" style="transition:stroke-dashoffset 1.3s cubic-bezier(0.4,0,0.2,1) 0.24s;"/>
+            </svg>
+            <div class="hic-ring-center"><span class="hic-ring-val">84</span></div>
+          </div>
+          <span class="hic-ring-name">Mind</span>
+        </div>
       </div>
       <p class="hic-quote">"Your omega-3 intake is tracking well. Keep the salmon streak going."</p>
     </div>
@@ -1076,7 +1114,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <h2 class="reveal">THE SYSTEM THAT<br><span>KNOWS YOU.</span></h2>
   <p class="reveal d1">No rigid plans. No starting over. TLC meets you where you are, learns what works for your body, and gets sharper every single day. Start free. No card needed.</p>
   <div class="cta-actions reveal d2">
-    <a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
+    <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
     <span class="cta-note">Cancel anytime &nbsp;·&nbsp; No lock-in &nbsp;·&nbsp; No fees</span>
   </div>
 </div></div></section>
@@ -1153,6 +1191,30 @@ const counterObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+// ── HERO INSIGHT CARD ANIMATION ──
+(function() {
+  // Runs once, triggered after card fades in (1.4s animation delay in CSS)
+  setTimeout(function() {
+    // Count Longevity Score 0 → 72
+    var scoreEl = document.getElementById('hic-score');
+    if (scoreEl) {
+      var s = 0;
+      var t = setInterval(function() {
+        s = Math.min(72, s + 3);
+        scoreEl.textContent = s;
+        if (s >= 72) clearInterval(t);
+      }, 45);
+    }
+    // Fill pillar rings (c=87.96, targets: N=78%, B=65%, M=84%)
+    var ringN = document.getElementById('hic-ring-n');
+    var ringB = document.getElementById('hic-ring-b');
+    var ringM = document.getElementById('hic-ring-m');
+    if (ringN) ringN.style.strokeDashoffset = (87.96 * (1 - 0.78)).toFixed(2); // 19.4
+    if (ringB) ringB.style.strokeDashoffset = (87.96 * (1 - 0.65)).toFixed(2); // 30.8
+    if (ringM) ringM.style.strokeDashoffset = (87.96 * (1 - 0.84)).toFixed(2); // 14.1
+  }, 2200); // card fades in at 1.4s, give it a moment to settle
+})();
 
 // ── FEATURE DEMO ANIMATIONS ──
 (function() {
