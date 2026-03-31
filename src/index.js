@@ -136,6 +136,12 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hic-quote { font-size: 10px; color: var(--muted-2); font-style: italic; line-height: 1.55; border-top: 1px solid rgba(26,26,26,0.07); padding-top: 11px; margin: 0; }
 @keyframes livePulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46,168,74,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(46,168,74,0); } }
 @media (max-width: 960px) { .hero-insight-card { display: none; } }
+/* ── Hero insight card — speedometer dial ── */
+.hic-speedo-wrap { text-align: center; margin: 4px -4px 2px; position: relative; }
+.hic-speedo-svg { width: 100%; display: block; overflow: visible; }
+.hic-speedo-label { font-size: 11.5px; font-weight: 700; color: var(--ink); margin-top: -6px; margin-bottom: 1px; }
+.hic-speedo-sub { font-size: 10px; color: var(--muted); font-weight: 500; margin-bottom: 11px; }
+
 /* ── Hero insight card — pillar rings ── */
 .hic-rings { display: flex; justify-content: space-between; gap: 4px; margin-bottom: 13px; }
 .hic-ring-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
@@ -300,9 +306,18 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-match-bar { height: 3px; background: var(--surface-2); border-radius: 2px; margin-bottom: 8px; overflow: hidden; }
 .mock-match-bar-fill { height: 100%; width: 92%; background: var(--green); border-radius: 2px; }
 .mock-match-label { font-size: 9px; font-weight: 700; color: var(--green-dark); background: var(--green-light); padding: 4px 10px; border-radius: 4px; display: inline-block; align-self: flex-start; margin-top: auto; }
-.mock-recipe-meta-row { display: flex; gap: 10px; margin-bottom: 8px; }
+.mock-recipe-meta-row { display: flex; gap: 10px; margin-bottom: 7px; }
 .mock-recipe-meta-item { display: flex; align-items: center; gap: 4px; font-size: 9.5px; color: var(--muted-2); font-weight: 500; }
 .mock-recipe-meta-item svg { stroke: var(--muted); }
+/* Pantry ingredient list + shopping list */
+.mock-recipe-divider { height: 1px; background: var(--border); margin: 7px 0 6px; }
+.mock-section-hdr { font-size: 7px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+.mock-ing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px; margin-bottom: 4px; }
+.mock-ing-item { display: flex; align-items: center; gap: 4px; font-size: 9px; color: var(--ink-2); font-weight: 500; overflow: hidden; }
+.mock-ing-chk { width: 11px; height: 11px; flex-shrink: 0; stroke: var(--green); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.mock-shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px; margin-bottom: 4px; }
+.mock-shop-item { display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--body-blue); font-weight: 500; }
+.mock-shop-dot { width: 7px; height: 7px; flex-shrink: 0; border: 1.5px solid var(--body-blue); border-radius: 50%; background: rgba(57,140,186,0.08); }
 
 /* ── HOW IT WORKS (dark, WHOOP-style) ── */
 /* ── LONGEVITY LOOP (from original Bubble LP — animated SVG track) ── */
@@ -575,12 +590,22 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="hero-video-overlay"></div>
     <div class="hero-insight-card">
       <div class="hic-label"><span class="hic-live-dot"></span>Live Insight</div>
-      <div class="hic-body">
-        <div class="hic-score" id="hic-score">0</div>
-        <div class="hic-info">
-          <div class="hic-title">Longevity Score</div>
-          <div class="hic-sub">Strong day &middot; Insight ready</div>
-        </div>
+      <div class="hic-speedo-wrap">
+        <svg class="hic-speedo-svg" viewBox="0 0 200 110">
+          <defs>
+            <linearGradient id="hicGrad" gradientUnits="userSpaceOnUse" x1="18" y1="100" x2="182" y2="100">
+              <stop offset="0%" stop-color="#E8B84B"/>
+              <stop offset="55%" stop-color="#39BA76"/>
+              <stop offset="100%" stop-color="#2ea84a"/>
+            </linearGradient>
+          </defs>
+          <path d="M 18,100 A 82,82 0 0,1 182,100" stroke="rgba(26,26,26,0.08)" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path id="hic-speedo-fill" d="M 18,100 A 82,82 0 0,1 182,100" stroke="url(#hicGrad)" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="257.6" stroke-dashoffset="257.6" style="transition:stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1) 0.3s;"/>
+          <text id="hic-speedo-num" x="100" y="86" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="36" fill="#1a1a1a">0</text>
+          <text x="100" y="100" text-anchor="middle" font-family="'Figtree',sans-serif" font-size="9" fill="rgba(26,26,26,0.38)" font-weight="600">/ 1000</text>
+        </svg>
+        <div class="hic-speedo-label">Longevity Score</div>
+        <div class="hic-speedo-sub">Strong day &middot; Insight ready</div>
       </div>
       <!-- Pillar rings (animated on load — r=14, c=87.96) -->
       <div class="hic-rings">
@@ -1030,6 +1055,22 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           </div>
           <div class="mock-match-bar"><div class="mock-match-bar-fill"></div></div>
           <span class="mock-match-label">Macro match: Excellent</span>
+          <div class="mock-recipe-divider"></div>
+          <div class="mock-section-hdr">In your fridge</div>
+          <div class="mock-ing-grid">
+            <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Salmon fillet</div>
+            <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Fresh dill</div>
+            <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Lemon</div>
+            <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Capers</div>
+            <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Olive oil</div>
+            <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Black pepper</div>
+          </div>
+          <div class="mock-recipe-divider"></div>
+          <div class="mock-section-hdr">Shopping list</div>
+          <div class="mock-shop-grid">
+            <div class="mock-shop-item"><span class="mock-shop-dot"></span>Dijon mustard</div>
+            <div class="mock-shop-item"><span class="mock-shop-dot"></span>Panko crumbs</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1196,16 +1237,19 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 (function() {
   // Runs once, triggered after card fades in (1.4s animation delay in CSS)
   setTimeout(function() {
-    // Count Longevity Score 0 → 72
-    var scoreEl = document.getElementById('hic-score');
-    if (scoreEl) {
+    // Count Longevity Score 0 → 724 in SVG text (scale: 0–1000)
+    var numEl = document.getElementById('hic-speedo-num');
+    if (numEl) {
       var s = 0;
       var t = setInterval(function() {
-        s = Math.min(72, s + 3);
-        scoreEl.textContent = s;
-        if (s >= 72) clearInterval(t);
-      }, 45);
+        s = Math.min(724, s + 18);
+        numEl.textContent = s;
+        if (s >= 724) clearInterval(t);
+      }, 30);
     }
+    // Animate speedometer fill arc (c=257.6, target 724/1000 = 72.4% = offset 71.1)
+    var speedoFill = document.getElementById('hic-speedo-fill');
+    if (speedoFill) speedoFill.style.strokeDashoffset = (257.6 * (1 - 0.724)).toFixed(1); // 71.1
     // Fill pillar rings (c=87.96, targets: N=78%, B=65%, M=84%)
     var ringN = document.getElementById('hic-ring-n');
     var ringB = document.getElementById('hic-ring-b');
