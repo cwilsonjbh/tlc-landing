@@ -941,7 +941,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <!-- Day 1 DI narrative -->
         <div class="mock-di-narrative">
-          <p id="di-narrative-text" style="opacity:0;transition:opacity 0.8s ease;">Day 1 blueprint live. Targets set: <strong>2,340 kcal</strong> and <strong>165g protein</strong> for your Patagonia trek in 8 weeks. TLC tracks your Mood, Focus and Energy from today. Patterns emerging here drive every insight from now.</p>
+          <p id="di-narrative-text" style="opacity:0;transition:opacity 0.8s ease;">Day 1 blueprint live. Targets set: <strong>2,340 kcal</strong> and <strong>165g protein</strong> calibrated for your Patagonia trek in 8 weeks. Your longevity blueprint is active.</p>
+          <p id="di-narrative-p2" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">Your baseline is clear. RHR <strong>58 bpm</strong>, sleep averaging <strong>6.8h</strong>, energy at <strong>6.2/10</strong>. Mediterranean and seafood preferences locked in. Every number is a reference point from today.</p>
+          <p id="di-narrative-p3" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">Most systems track one pillar. TLC connects three. What you eat, how your body responds, and how you feel reveal patterns none of them show alone. That is what builds from here.</p>
         </div>
         <!-- Wellbeing bar charts: Mood / Focus / Energy -->
         <div class="mock-wellbeing-section">
@@ -1012,13 +1014,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="feature-copy reveal d2">
       <span class="label">With you wherever, whenever</span>
       <h3>LONGEVITY COACH</h3>
-      <p>Not a generic chatbot. Your coach knows your biometrics, your meals, your goals, and your exact patterns before you even ask the question.</p>
-      <p>Every conversation compounds. The longer you use it, the more precisely it can guide you. No repeating yourself. No context lost. Always grounded in what your body is actually doing right now.</p>
+      <p>A dietician, nutritionist, longevity specialist, and life coach combined into one. Not a generic chatbot. A single expert who holds your complete picture — biometrics, meals, goals, restrictions, and the full arc of your health journey — before you ask a single question.</p>
+      <p>As you evolve with TLC, so does the coach. Every conversation builds on the last. Every insight it has read. Every pattern it has spotted. The longer you use it, the more precisely it can guide you. No repeating yourself. No context lost. Always grounded in what your body is actually doing today.</p>
       <ul class="feature-highlights">
-        <li>Full 7-day context in every response</li>
-        <li>References your actual data, never generic advice</li>
-        <li>Knows your restrictions, goals, and lifestyle</li>
-        <li>Every conversation builds on the last</li>
+        <li>Dietician, nutritionist, longevity specialist and life coach in one</li>
+        <li>Full understanding of your needs, goals and journey</li>
+        <li>References your actual data in every response — never generic</li>
+        <li>Gets smarter with every session as you evolve</li>
       </ul>
       <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="feature-cta">Talk to your coach free &rarr;</a>
     </div>
@@ -1432,8 +1434,13 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
       {id:'energy', col:'var(--nutrition)',vals:[5.5,5.9,6.2,6.8,7.0,7.3,7.6]}
     ];
 
+    var narrativeP2 = document.getElementById('di-narrative-p2');
+    var narrativeP3 = document.getElementById('di-narrative-p3');
+
     // Reset
     narrativeEl.style.opacity = '0';
+    if (narrativeP2) narrativeP2.style.opacity = '0';
+    if (narrativeP3) narrativeP3.style.opacity = '0';
     if (ttsRow) ttsRow.style.opacity = '0';
     wbData.forEach(function(d) {
       var barsEl = document.getElementById('wb-bars-' + d.id);
@@ -1453,8 +1460,10 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
       if (scoreEl) scoreEl.textContent = '0.0';
     });
 
-    // Phase 1: narrative fades in
+    // Phase 1: narrative paragraphs fade in sequentially
     setTimeout(function() { narrativeEl.style.opacity = '1'; }, 500);
+    setTimeout(function() { if (narrativeP2) narrativeP2.style.opacity = '1'; }, 1000);
+    setTimeout(function() { if (narrativeP3) narrativeP3.style.opacity = '1'; }, 1500);
 
     // Phase 2: bars grow row by row
     wbData.forEach(function(d, rowIdx) {
@@ -1868,128 +1877,112 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
   draw();
 })();
 
-// ── Testimonials Nebula (scoped to section, three-pillar colours) ──
+// ── Testimonials Nebula (centralised cluster — matches Longevity Score dial backdrop) ──
 (function() {
-  const canvas = document.getElementById('testimonialNebula');
+  var canvas = document.getElementById('testimonialNebula');
   if (!canvas) return;
-  const section = canvas.closest('.section-testimonials');
-  const ctx = canvas.getContext('2d');
-  const dpr = window.devicePixelRatio || 1;
-  const rgba = (r,g,b,a) => \`rgba(\${r},\${g},\${b},\${a})\`;
+  var section = canvas.closest('.section-testimonials');
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
 
   function resize() {
-    const w = section.offsetWidth, h = section.offsetHeight;
+    var w = section.offsetWidth, h = section.offsetHeight;
     canvas.width = w * dpr; canvas.height = h * dpr;
     canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
   }
   resize();
 
-  // Three pillar colour groups
-  const G = [46,168,74], B = [57,140,186], A = [232,184,75];
-
-  // 12 nodes: 4 per pillar, each cluster orbiting its own centre
-  const nodes = [
-    // Nutrition (green) — left third
-    {col:G, a:0,    rx:0.14,ry:0.30,cx:0.22,cy:0.50,spd:0.0032,dot:2.2,bright:0.30},
-    {col:G, a:1.57, rx:0.19,ry:0.22,cx:0.22,cy:0.50,spd:-0.004,dot:1.8,bright:0.24},
-    {col:G, a:3.14, rx:0.11,ry:0.34,cx:0.22,cy:0.50,spd:0.005, dot:1.6,bright:0.20},
-    {col:G, a:4.71, rx:0.22,ry:0.16,cx:0.22,cy:0.50,spd:-0.003,dot:2.0,bright:0.22},
-    // Body (blue) — right third
-    {col:B, a:0.52, rx:0.14,ry:0.30,cx:0.78,cy:0.50,spd:-0.004,dot:2.0,bright:0.26},
-    {col:B, a:2.09, rx:0.19,ry:0.20,cx:0.78,cy:0.50,spd:0.003, dot:1.8,bright:0.22},
-    {col:B, a:3.66, rx:0.11,ry:0.32,cx:0.78,cy:0.50,spd:-0.005,dot:1.6,bright:0.18},
-    {col:B, a:5.24, rx:0.22,ry:0.14,cx:0.78,cy:0.50,spd:0.004, dot:2.0,bright:0.24},
-    // Mind (amber) — centre
-    {col:A, a:0.26, rx:0.20,ry:0.28,cx:0.50,cy:0.50,spd:0.0038,dot:2.2,bright:0.28},
-    {col:A, a:1.83, rx:0.16,ry:0.32,cx:0.50,cy:0.50,spd:-0.004,dot:1.8,bright:0.22},
-    {col:A, a:3.40, rx:0.26,ry:0.18,cx:0.50,cy:0.50,spd:0.003, dot:1.6,bright:0.20},
-    {col:A, a:4.97, rx:0.14,ry:0.26,cx:0.50,cy:0.50,spd:-0.005,dot:2.0,bright:0.22},
+  // Single centralized cluster — same node layout as the LS dial card, scaled to section
+  var nodes = [
+    {a:0,     rx:0.28, ry:0.32, spd: 0.003,  dot:2.0, bright:0.22},
+    {a:1.05,  rx:0.20, ry:0.26, spd:-0.004,  dot:1.6, bright:0.18},
+    {a:2.09,  rx:0.34, ry:0.28, spd: 0.0025, dot:2.2, bright:0.26},
+    {a:3.14,  rx:0.14, ry:0.30, spd:-0.005,  dot:1.4, bright:0.16},
+    {a:4.19,  rx:0.26, ry:0.20, spd: 0.0035, dot:1.6, bright:0.20},
+    {a:5.24,  rx:0.32, ry:0.18, spd:-0.003,  dot:1.5, bright:0.18},
   ];
 
-  const pulses = [];
-  let t = 0, pulseT = 0, active = false;
+  var rings = [];
+  var t = 0, ringT = 0, active = false;
 
   function draw() {
-    animId = requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
     if (!active) return;
-    const W = canvas.width / dpr, H = canvas.height / dpr;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.clearRect(0,0,W,H);
+    var W = canvas.width / dpr, H = canvas.height / dpr;
+    var cx = W * 0.5, cy = H * 0.5;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
     t++;
 
-    // Update positions
-    for (const n of nodes) {
+    // Update node positions (all orbit the single centre)
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
       n.a += n.spd;
-      n.x = n.cx * W + Math.cos(n.a) * n.rx * W;
-      n.y = n.cy * H + Math.sin(n.a) * n.ry * H;
+      n.x = cx + Math.cos(n.a) * n.rx * W;
+      n.y = cy + Math.sin(n.a) * n.ry * H;
     }
 
-    // Connections — cross-cluster lines are brighter to show "joining the dots"
-    const maxD = Math.min(W,H) * 0.55;
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i+1; j < nodes.length; j++) {
-        const ni = nodes[i], nj = nodes[j];
-        const d = Math.hypot(ni.x-nj.x, ni.y-nj.y);
-        if (d < maxD) {
-          const base = (1 - d/maxD);
-          const alpha = ni.col === nj.col ? base * 0.10 : base * 0.20;
-          const lg = ctx.createLinearGradient(ni.x,ni.y,nj.x,nj.y);
-          lg.addColorStop(0, rgba(...ni.col, alpha));
-          lg.addColorStop(1, rgba(...nj.col, alpha));
-          ctx.beginPath(); ctx.moveTo(ni.x,ni.y); ctx.lineTo(nj.x,nj.y);
-          ctx.strokeStyle = lg; ctx.lineWidth = ni.col === nj.col ? 0.6 : 0.9; ctx.stroke();
+    // Expanding rings from centre
+    ringT++;
+    if (ringT > 140) { ringT = 0; rings.push({r: 0, a: 0.18}); }
+    for (var j = rings.length - 1; j >= 0; j--) {
+      var rn = rings[j];
+      rn.r += 0.5; rn.a *= 0.977;
+      if (rn.a < 0.008) { rings.splice(j, 1); continue; }
+      ctx.beginPath(); ctx.arc(cx, cy, rn.r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,255,255,' + (rn.a * 0.18) + ')';
+      ctx.lineWidth = 0.7; ctx.stroke();
+    }
+
+    // Lines from centre to each node
+    for (var k = 0; k < nodes.length; k++) {
+      var nd = nodes[k];
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nd.x, nd.y);
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.05 + 0.025 * Math.sin(t * 0.02 + nd.a)) + ')';
+      ctx.lineWidth = 0.5; ctx.stroke();
+    }
+
+    // Inter-node connections (proximity-based)
+    for (var m = 0; m < nodes.length; m++) {
+      for (var p = m + 1; p < nodes.length; p++) {
+        var dx = nodes[m].x - nodes[p].x, dy = nodes[m].y - nodes[p].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < W * 0.38) {
+          var alpha = (1 - dist / (W * 0.38)) * 0.09;
+          ctx.beginPath(); ctx.moveTo(nodes[m].x, nodes[m].y); ctx.lineTo(nodes[p].x, nodes[p].y);
+          ctx.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
+          ctx.lineWidth = 0.45; ctx.stroke();
         }
       }
     }
 
-    // Pulses — prefer cross-cluster travel to animate "connecting"
-    pulseT++;
-    if (pulseT > 22) {
-      pulseT = 0;
-      const ni = nodes[Math.floor(Math.random()*nodes.length)];
-      // Bias toward different-colour partner
-      const candidates = nodes.filter(n => n !== ni && n.col !== ni.col);
-      const nj = candidates.length ? candidates[Math.floor(Math.random()*candidates.length)] : nodes[Math.floor(Math.random()*nodes.length)];
-      if (ni !== nj) pulses.push({fx:ni.x,fy:ni.y,tx:nj.x,ty:nj.y,colS:ni.col,colE:nj.col,p:0});
-    }
-    for (let k = pulses.length-1; k >= 0; k--) {
-      const pl = pulses[k]; pl.p += 0.020;
-      if (pl.p > 1) { pulses.splice(k,1); continue; }
-      // Update source/target to follow moving nodes (find nearest by start proximity)
-      const px = pl.fx + (pl.tx-pl.fx)*pl.p, py = pl.fy + (pl.ty-pl.fy)*pl.p;
-      const a = Math.sin(pl.p * Math.PI);
-      const r = Math.round(pl.colS[0]+(pl.colE[0]-pl.colS[0])*pl.p);
-      const g = Math.round(pl.colS[1]+(pl.colE[1]-pl.colS[1])*pl.p);
-      const b = Math.round(pl.colS[2]+(pl.colE[2]-pl.colS[2])*pl.p);
-      const pg = ctx.createRadialGradient(px,py,0,px,py,7);
-      pg.addColorStop(0, rgba(r,g,b,a*0.55)); pg.addColorStop(1, rgba(r,g,b,0));
-      ctx.beginPath(); ctx.arc(px,py,7,0,Math.PI*2); ctx.fillStyle=pg; ctx.fill();
-      ctx.beginPath(); ctx.arc(px,py,2,0,Math.PI*2); ctx.fillStyle=rgba(r,g,b,a*0.8); ctx.fill();
+    // Nodes (white dots with glow)
+    for (var q = 0; q < nodes.length; q++) {
+      var nn = nodes[q];
+      var pulse = nn.bright + 0.06 * Math.sin(t * 0.03 + nn.a);
+      ctx.beginPath(); ctx.arc(nn.x, nn.y, nn.dot, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + pulse + ')';
+      ctx.fill();
     }
 
-    // Nodes with colour glow
-    for (const n of nodes) {
-      const pulse = 0.82 + 0.18 * Math.sin(t*0.02 + n.a);
-      const grd = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.dot*5);
-      grd.addColorStop(0, rgba(...n.col, n.bright*0.30*pulse));
-      grd.addColorStop(1, rgba(...n.col,0));
-      ctx.beginPath(); ctx.arc(n.x,n.y,n.dot*5,0,Math.PI*2); ctx.fillStyle=grd; ctx.fill();
-      ctx.beginPath(); ctx.arc(n.x,n.y,n.dot*pulse,0,Math.PI*2);
-      ctx.fillStyle = rgba(...n.col, n.bright*0.7); ctx.fill();
-    }
+    // Central radial glow
+    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.22);
+    grad.addColorStop(0, 'rgba(255,255,255,0.05)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
   }
 
-  let animId;
-  const obs = new IntersectionObserver(entries => {
+  var obs = new IntersectionObserver(function(entries) {
     active = entries[0].isIntersecting;
     if (active) resize();
   }, {threshold: 0.05});
   obs.observe(section);
 
   if (window.ResizeObserver) {
-    new ResizeObserver(() => { resize(); }).observe(section);
+    new ResizeObserver(function() { resize(); }).observe(section);
   } else {
-    window.addEventListener('resize', () => setTimeout(resize, 100));
+    window.addEventListener('resize', function() { setTimeout(resize, 100); });
   }
 
   draw();
