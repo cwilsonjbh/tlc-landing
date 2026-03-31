@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | The Longevity Chef</title>
+<meta name="description" content="Get in touch with the TLC team. Support, partnerships, press, billing and general enquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --ink: #1a1a1a; --ink-2: #2e2e2e; --surface: #f5f4f0; --white: #ffffff;
+  --green: #2ea84a; --green-dark: #1a5c28; --green-light: #ebf7ee;
+  --muted: rgba(26,26,26,0.42); --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08); --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif; --font-body: 'Figtree', sans-serif;
+  --gutter: clamp(24px, 5vw, 72px); --content-max: 800px;
+}
+body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 20px var(--gutter); border-bottom: 1px solid var(--border); }
+header img { height: 44px; width: auto; }
+.header-back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+.header-back:hover { color: var(--ink); }
+.header-back svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+main { max-width: var(--content-max); margin: 0 auto; padding: clamp(48px,8vw,80px) var(--gutter) 120px; }
+.doc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+h1 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 72px); line-height: 0.92; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
+.doc-meta { font-size: 15px; color: var(--muted-2); line-height: 1.75; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 32px; }
+
+/* ── CATEGORY GRID ── */
+.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 40px; }
+.cat-btn { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border: 1.5px solid var(--border-mid); border-radius: 12px; background: var(--white); cursor: pointer; text-align: left; transition: all 0.2s; }
+.cat-btn:hover { border-color: var(--green); background: var(--green-light); }
+.cat-btn.selected { border-color: var(--green); background: var(--green-light); }
+.cat-btn svg { width: 20px; height: 20px; stroke: var(--muted); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
+.cat-btn:hover svg, .cat-btn.selected svg { stroke: var(--green); }
+.cat-label { font-size: 12px; font-weight: 700; color: var(--ink-2); letter-spacing: 0.03em; }
+.cat-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+/* ── FORM ── */
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-2); }
+.field input, .field textarea, .field select {
+  font-family: var(--font-body); font-size: 15px; color: var(--ink);
+  background: var(--surface); border: 1.5px solid transparent;
+  border-radius: 10px; padding: 14px 16px;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none; -webkit-appearance: none; appearance: none;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--green); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(46,168,74,0.08);
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+.field textarea { resize: vertical; min-height: 140px; line-height: 1.65; }
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 44px; cursor: pointer; }
+.field select option { background: var(--white); color: var(--ink); }
+#subjectField { display: none; }
+
+/* ── HIDDEN FIELD INDICATOR ── */
+#categoryHidden { display: none; }
+
+/* ── SUBMIT ── */
+.submit-row { display: flex; align-items: center; gap: 16px; }
+.btn-submit { display: inline-flex; align-items: center; gap: 10px; background: var(--green); color: #fff; border: none; border-radius: 10px; padding: 16px 36px; font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+.btn-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn-submit svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.privacy-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.privacy-note a { color: var(--green); text-decoration: none; }
+
+/* ── STATES ── */
+.form-error { font-size: 13px; color: #c0392b; background: #fdf0ef; border: 1px solid #f5c6c2; border-radius: 8px; padding: 12px 16px; display: none; }
+.form-success { text-align: center; padding: 48px 24px; display: none; }
+.form-success svg { width: 48px; height: 48px; stroke: var(--green); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 20px; }
+.form-success h2 { font-family: var(--font-display); font-size: 36px; color: var(--ink); letter-spacing: 0.03em; margin-bottom: 12px; }
+.form-success p { font-size: 15px; color: var(--muted-2); max-width: 400px; margin: 0 auto 24px; }
+.form-success a { color: var(--green); font-weight: 600; text-decoration: none; }
+
+/* ── RESPONSE TIMES ── */
+.response-times { background: var(--surface); border-radius: 12px; padding: 20px 24px; margin-top: 40px; border: 1px solid var(--border); }
+.response-times-title { font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.response-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.response-row:last-child { border-bottom: none; }
+.response-cat { color: var(--ink-2); font-weight: 500; }
+.response-time { color: var(--green); font-weight: 700; }
+
+footer { text-align: center; padding: 32px var(--gutter); border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+footer a { color: var(--green); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .category-grid { grid-template-columns: 1fr 1fr; }
+  .field-group { grid-template-columns: 1fr; }
+  .submit-row { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 400px) {
+  .category-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+</header>
+
+<main>
+  <div class="doc-label">Get in touch</div>
+  <h1>HOW CAN<br>WE HELP?</h1>
+  <p class="doc-meta">Choose what your message is about and we will route it to the right person. We aim to respond within 1 to 3 business days.</p>
+
+  <!-- SUCCESS STATE -->
+  <div class="form-success" id="successState">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+    <h2>MESSAGE SENT</h2>
+    <p>We have received your message and will be in touch within 1 to 3 business days.</p>
+    <a href="/">Back to TLC</a>
+  </div>
+
+  <!-- FORM -->
+  <div id="formWrapper">
+
+    <!-- CATEGORY SELECTOR -->
+    <div class="category-grid" id="categoryGrid">
+
+      <button type="button" class="cat-btn" data-category="General enquiry" data-subject="General enquiry">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span class="cat-label">General enquiry</span>
+        <span class="cat-desc">Anything that doesn't fit a category below</span>
+      </button>
+
+      <button type="button" class="cat-btn" data-category="Technical support" data-subject="Technical support">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M21 12h-2M5 12H3M19.07 19.07l-1.41-1.41M5.34 5.34l-1.41-1.41M12 21v-2M12 5V3"/></svg>
+        <span class="cat-label">Technical support</span>
+        <span class="cat-desc">App not working, sync issues, bugs</span>
+      </button>
+
+      <button type="button" class="cat-btn" data-category="Billing and account" data-subject="Billing and account">
+        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <span class="cat-label">Billing and account</span>
+        <span class="cat-desc">Subscriptions, charges, refunds, cancellations</span>
+      </button>
+
+      <button type="button" class="cat-btn" data-category="Partnership and business" data-subject="Partnership enquiry">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <span class="cat-label">Partnership and business</span>
+        <span class="cat-desc">Restaurants, hotels, corporate, integrations</span>
+      </button>
+
+      <button type="button" class="cat-btn" data-category="Press and media" data-subject="Press enquiry">
+        <svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg>
+        <span class="cat-label">Press and media</span>
+        <span class="cat-desc">Interviews, features, media requests</span>
+      </button>
+
+      <button type="button" class="cat-btn" data-category="Feature request or feedback" data-subject="Feature request or feedback">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span class="cat-label">Feature request or feedback</span>
+        <span class="cat-desc">Ideas, suggestions, what's working well</span>
+      </button>
+
+    </div>
+
+    <!-- CONTACT FORM (shown after category selected) -->
+    <form class="contact-form" id="contactForm" style="display:none;" novalidate>
+      <input type="hidden" id="categoryInput" name="category" value="">
+
+      <div class="field-group">
+        <div class="field">
+          <label for="nameInput">Your name</label>
+          <input type="text" id="nameInput" name="name" placeholder="Chris Wilson" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="emailInput">Email address</label>
+          <input type="email" id="emailInput" name="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="field" id="subjectField">
+        <label for="subjectInput">Subject</label>
+        <input type="text" id="subjectInput" name="subject" placeholder="Briefly describe your message" required>
+      </div>
+
+      <div class="field">
+        <label for="messageInput">Message</label>
+        <textarea id="messageInput" name="message" placeholder="Tell us as much detail as you can. The more context you provide, the faster we can help." required></textarea>
+      </div>
+
+      <div class="form-error" id="formError"></div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send message
+        </button>
+        <p class="privacy-note">Your message is private. We will never share your contact details.<br>Read our <a href="/privacy">Privacy Policy</a>.</p>
+      </div>
+    </form>
+
+  </div>
+
+  <!-- RESPONSE TIMES -->
+  <div class="response-times">
+    <div class="response-times-title">Typical response times</div>
+    <div class="response-row"><span class="response-cat">Technical support</span><span class="response-time">Within 24 hours</span></div>
+    <div class="response-row"><span class="response-cat">Billing and account</span><span class="response-time">Within 24 hours</span></div>
+    <div class="response-row"><span class="response-cat">General enquiry</span><span class="response-time">1 to 3 business days</span></div>
+    <div class="response-row"><span class="response-cat">Partnership and business</span><span class="response-time">2 to 5 business days</span></div>
+    <div class="response-row"><span class="response-cat">Press and media</span><span class="response-time">1 to 2 business days</span></div>
+    <div class="response-row"><span class="response-cat">Feature request or feedback</span><span class="response-time">We read every one</span></div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 The Longevity Chef. &nbsp;&middot;&nbsp; <a href="/terms">Terms of Service</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a>
+</footer>
+
+<script>
+// ── Category selection ──
+const catBtns = document.querySelectorAll('.cat-btn');
+const contactForm = document.getElementById('contactForm');
+const categoryInput = document.getElementById('categoryInput');
+const subjectField = document.getElementById('subjectField');
+
+catBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    catBtns.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    categoryInput.value = btn.dataset.category;
+    document.getElementById('subjectInput').placeholder = btn.dataset.subject;
+    contactForm.style.display = 'flex';
+    subjectField.style.display = 'block';
+    // Smooth scroll to form
+    setTimeout(() => contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+  });
+});
+
+// ── Form submission ──
+document.getElementById('contactForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const errEl = document.getElementById('formError');
+  const btn = document.getElementById('submitBtn');
+  errEl.style.display = 'none';
+
+  const name = document.getElementById('nameInput').value.trim();
+  const email = document.getElementById('emailInput').value.trim();
+  const subject = document.getElementById('subjectInput').value.trim();
+  const message = document.getElementById('messageInput').value.trim();
+  const category = categoryInput.value;
+
+  if (!name) { showErr('Please enter your name.'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('Please enter a valid email address.'); return; }
+  if (!subject) { showErr('Please enter a subject.'); return; }
+  if (!message || message.length < 10) { showErr('Please enter a message (at least 10 characters).'); return; }
+
+  btn.disabled = true;
+  btn.innerHTML = '<svg viewBox="0 0 24 24" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M12 3a9 9 0 019 9" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg> Sending...';
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, subject, message, category })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Something went wrong.');
+    document.getElementById('formWrapper').style.display = 'none';
+    document.getElementById('successState').style.display = 'block';
+    document.querySelector('.doc-meta').style.display = 'none';
+  } catch (err) {
+    showErr(err.message || 'Failed to send. Please try again or email us directly.');
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send message';
+  }
+
+  function showErr(msg) {
+    errEl.textContent = msg;
+    errEl.style.display = 'block';
+    errEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+});
+</script>
+
+<style>
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+
+</body>
+</html>
