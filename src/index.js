@@ -266,13 +266,23 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-di-badge { display: flex; align-items: center; gap: 5px; background: rgba(46,168,74,0.12); border: 1px solid rgba(46,168,74,0.2); border-radius: 50px; padding: 3px 9px; }
 .mock-di-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-accent); }
 .mock-di-badge-text { font-size: 9px; font-weight: 700; color: var(--green-accent); letter-spacing: 0.08em; }
-.mock-score-row { display: flex; align-items: center; gap: 14px; padding: 11px 15px 8px; flex-shrink: 0; }
+.mock-score-row { display: flex; align-items: center; gap: 14px; padding: 10px 15px 6px; flex-shrink: 0; }
 .mock-score-num { font-family: var(--font-display); font-size: 44px; color: var(--white); line-height: 1; flex-shrink: 0; letter-spacing: 0.02em; }
 .mock-score-info { flex: 1; }
-.mock-score-label { font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 7px; }
-.mock-score-bar { height: 3px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-bottom: 4px; }
-.mock-score-bar-fill { height: 100%; width: 72%; border-radius: 2px; background: linear-gradient(90deg, var(--green), var(--green-accent)); }
-.mock-score-good { font-size: 9px; font-weight: 700; color: var(--green-accent); letter-spacing: 0.06em; }
+.mock-score-label { font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 5px; }
+.mock-score-good { font-size: 9px; font-weight: 700; color: var(--green-accent); letter-spacing: 0.06em; transition: opacity 0.5s ease; }
+.mock-score-scale { font-size: 8px; color: rgba(255,255,255,0.2); font-weight: 500; margin-top: 3px; }
+/* DI Chart */
+.mock-chart-area { padding: 6px 14px 8px; flex: 1; display: flex; flex-direction: column; }
+.mock-chart-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+.mock-chart-title { font-size: 7.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.22); }
+.mock-chart-legend { display: flex; gap: 9px; }
+.mock-chart-leg-item { display: flex; align-items: center; gap: 4px; font-size: 7.5px; color: rgba(255,255,255,0.32); font-weight: 600; }
+.mock-chart-leg-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.mock-chart-svg { width: 100%; flex: 1; display: block; overflow: visible; }
+.mock-chart-line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.mock-chart-xaxis { display: flex; justify-content: space-between; padding: 3px 0 0; }
+.mock-chart-xday { font-size: 7px; color: rgba(255,255,255,0.18); font-weight: 700; text-align: center; width: 14px; }
 .mock-pillars-section { padding: 0 15px 6px; flex: 1; }
 .mock-pillar-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
 .mock-pillar-name { font-size: 10px; color: rgba(255,255,255,0.35); width: 54px; flex-shrink: 0; }
@@ -284,12 +294,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .mock-pillar-score { font-size: 10px; color: rgba(255,255,255,0.5); width: 22px; text-align: right; flex-shrink: 0; font-weight: 600; }
 .mock-insight-preview { margin: 4px 13px 11px; padding: 8px 11px; background: rgba(46,168,74,0.06); border-left: 2px solid rgba(46,168,74,0.35); border-radius: 0 6px 6px 0; flex-shrink: 0; }
 .mock-insight-preview p { font-size: 9.5px; color: rgba(255,255,255,0.42); line-height: 1.55; font-style: italic; }
-.mock-trend-row { display: flex; align-items: flex-end; gap: 8px; padding: 8px 15px 10px; border-top: 1px solid rgba(255,255,255,0.05); flex-shrink: 0; }
-.mock-trend-label { font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.22); flex-shrink: 0; align-self: center; }
-.mock-trend-bars { display: flex; align-items: flex-end; gap: 3px; flex: 1; height: 28px; }
-.mock-trend-bar { flex: 1; background: rgba(46,168,74,0.2); border-radius: 2px 2px 0 0; min-height: 4px; }
-.mock-trend-bar.active { background: var(--green-accent); }
-.mock-trend-up { font-size: 9px; font-weight: 700; color: var(--green-accent); flex-shrink: 0; align-self: center; }
+.mock-chart-dot-end { transition: opacity 0.4s ease; }
 
 /* Longevity Coach */
 .mock-coach { background: var(--white); }
@@ -923,11 +928,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <div class="mock-score-num" id="di-score">0</div>
           <div class="mock-score-info">
             <div class="mock-score-label">Longevity Score</div>
-            <div class="mock-score-bar"><div class="mock-score-bar-fill" id="di-score-bar" style="width:0%"></div></div>
-            <div class="mock-score-good">Good &uarr; +4 this week</div>
+            <div class="mock-score-good" id="di-score-good" style="opacity:0;">Blueprint activated &uarr;</div>
+            <div class="mock-score-scale">out of 1000</div>
           </div>
         </div>
-        <!-- Three pillar rings (matches real DI dashboard) -->
+        <!-- Three pillar rings -->
         <div class="mock-rings">
           <div class="mock-ring-wrap">
             <div class="mock-ring-outer">
@@ -960,20 +965,42 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <span class="mock-ring-name">Mind</span>
           </div>
         </div>
-        <div class="mock-insight-preview"><p id="di-insight-text" style="opacity:0;transition:opacity 0.8s ease;">"Sleep quality improved both nights you ate salmon. Pattern confirmed across 4 weeks. Omega-3s are working for your recovery."</p></div>
-        <div class="mock-trend-row">
-          <span class="mock-trend-label">7-day trend</span>
-          <div class="mock-trend-bars" id="di-bars">
-            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
-            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
-            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
-            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
-            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
-            <div class="mock-trend-bar" style="height:3px;transition:height 0.5s ease;"></div>
-            <div class="mock-trend-bar active" style="height:3px;transition:height 0.5s ease;"></div>
+        <!-- 7-Day trend chart (3 animated lines) -->
+        <div class="mock-chart-area">
+          <div class="mock-chart-hdr">
+            <span class="mock-chart-title">8-Week to Patagonia</span>
+            <div class="mock-chart-legend">
+              <span class="mock-chart-leg-item"><span class="mock-chart-leg-dot" style="background:var(--nutrition)"></span>Nutrition</span>
+              <span class="mock-chart-leg-item"><span class="mock-chart-leg-dot" style="background:var(--body-blue)"></span>Body</span>
+              <span class="mock-chart-leg-item"><span class="mock-chart-leg-dot" style="background:var(--mind)"></span>Mind</span>
+            </div>
           </div>
-          <span class="mock-trend-up" id="di-trend-up" style="opacity:0;transition:opacity 0.5s;">+4 pts</span>
+          <svg class="mock-chart-svg" viewBox="0 0 258 58" preserveAspectRatio="none">
+            <line x1="0" y1="19" x2="258" y2="19" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="0" y1="38" x2="258" y2="38" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <!-- Nutrition line: improving endurance base -->
+            <path id="di-line-n" class="mock-chart-line" stroke="var(--nutrition)" d="M 6,42 L 48,36 L 90,38 L 132,28 L 174,25 L 216,29 L 252,21" stroke-dasharray="262" stroke-dashoffset="262" style="transition:none;"/>
+            <!-- Body line: building fitness -->
+            <path id="di-line-b" class="mock-chart-line" stroke="var(--body-blue)" d="M 6,50 L 48,46 L 90,48 L 132,42 L 174,38 L 216,40 L 252,35" stroke-dasharray="262" stroke-dashoffset="262" style="transition:none;"/>
+            <!-- Mind line: strong and consistent -->
+            <path id="di-line-m" class="mock-chart-line" stroke="var(--mind)" d="M 6,22 L 48,25 L 90,18 L 132,15 L 174,19 L 216,13 L 252,11" stroke-dasharray="262" stroke-dashoffset="262" style="transition:none;"/>
+            <!-- End-point dots -->
+            <circle id="di-dot-n" cx="252" cy="21" r="3" fill="var(--nutrition)" opacity="0"/>
+            <circle id="di-dot-b" cx="252" cy="35" r="3" fill="var(--body-blue)" opacity="0"/>
+            <circle id="di-dot-m" cx="252" cy="11" r="3" fill="var(--mind)" opacity="0"/>
+          </svg>
+          <div class="mock-chart-xaxis">
+            <span class="mock-chart-xday">W1</span>
+            <span class="mock-chart-xday">W2</span>
+            <span class="mock-chart-xday">W3</span>
+            <span class="mock-chart-xday">W4</span>
+            <span class="mock-chart-xday">W5</span>
+            <span class="mock-chart-xday">W6</span>
+            <span class="mock-chart-xday">June</span>
+          </div>
         </div>
+        <!-- Day 1 insight -->
+        <div class="mock-insight-preview"><p id="di-insight-text" style="opacity:0;transition:opacity 0.8s ease;">"Welcome to Day 1, Chris. Your Patagonia trek is 8 weeks away. Blueprint set: 2,340 kcal, 165g protein. Every insight builds your endurance base from here."</p></div>
       </div>
     </div>
     <div class="feature-copy reveal d2">
@@ -1412,55 +1439,68 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
   // ── DI DEMO ──
   function runDI() {
     var scoreEl = document.getElementById('di-score');
-    var scoreBar = document.getElementById('di-score-bar');
+    var scoreGood = document.getElementById('di-score-good');
     var ringN = document.getElementById('ring-n');
     var ringB = document.getElementById('ring-b');
     var ringM = document.getElementById('ring-m');
+    var lineN = document.getElementById('di-line-n');
+    var lineB = document.getElementById('di-line-b');
+    var lineM = document.getElementById('di-line-m');
+    var dotN = document.getElementById('di-dot-n');
+    var dotB = document.getElementById('di-dot-b');
+    var dotM = document.getElementById('di-dot-m');
     var insightEl = document.getElementById('di-insight-text');
-    var barsContainer = document.getElementById('di-bars');
-    var trendUp = document.getElementById('di-trend-up');
     if (!scoreEl) return;
 
     // Reset
     scoreEl.textContent = '0';
-    if (scoreBar) scoreBar.style.width = '0%';
+    if (scoreGood) scoreGood.style.opacity = '0';
     if (ringN) ringN.style.strokeDashoffset = C;
     if (ringB) ringB.style.strokeDashoffset = C;
     if (ringM) ringM.style.strokeDashoffset = C;
+    [lineN, lineB, lineM].forEach(function(l) { if(l) { l.style.transition = 'none'; l.style.strokeDashoffset = '262'; } });
+    [dotN, dotB, dotM].forEach(function(d) { if(d) d.style.opacity = '0'; });
     if (insightEl) insightEl.style.opacity = '0';
-    if (trendUp) trendUp.style.opacity = '0';
-    var bars = barsContainer ? barsContainer.querySelectorAll('.mock-trend-bar') : [];
-    bars.forEach(function(b) { b.style.height = '3px'; });
 
-    // Phase 1: Count score 0 → 72
+    // Phase 1: Count score 0 → 724 (scale 0–1000)
     var score = 0;
     var scoreTimer = setInterval(function() {
-      score = Math.min(72, score + 3);
+      score = Math.min(724, score + 22);
       scoreEl.textContent = score;
-      if (scoreBar) scoreBar.style.width = (score / 100 * 100) + '%';
-      if (score >= 72) clearInterval(scoreTimer);
-    }, 45);
+      if (score >= 724) {
+        clearInterval(scoreTimer);
+        if (scoreGood) scoreGood.style.opacity = '1';
+      }
+    }, 28);
 
     // Phase 2: Fill rings at 1s
     setTimeout(function() {
-      if (ringN) ringN.style.strokeDashoffset = C * (1 - 0.84); // Nutrition 84%
-      if (ringB) ringB.style.strokeDashoffset = C * (1 - 0.61); // Body 61%
-      if (ringM) ringM.style.strokeDashoffset = C * (1 - 0.91); // Mind 91%
-    }, 900);
+      if (ringN) ringN.style.strokeDashoffset = C * (1 - 0.84);
+      if (ringB) ringB.style.strokeDashoffset = C * (1 - 0.61);
+      if (ringM) ringM.style.strokeDashoffset = C * (1 - 0.91);
+    }, 950);
 
-    // Phase 3: Animate trend bars at 2.2s
-    var barHeights = [40, 55, 48, 62, 58, 70, 72];
+    // Phase 3: Draw chart lines sequentially at 2s
     setTimeout(function() {
-      bars.forEach(function(b, i) {
-        setTimeout(function() { b.style.height = barHeights[i] + '%'; }, i * 90);
-      });
-    }, 2100);
+      if (lineN) { lineN.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1)'; lineN.style.strokeDashoffset = '0'; }
+    }, 2000);
+    setTimeout(function() {
+      if (lineB) { lineB.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1)'; lineB.style.strokeDashoffset = '0'; }
+    }, 2280);
+    setTimeout(function() {
+      if (lineM) { lineM.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1)'; lineM.style.strokeDashoffset = '0'; }
+      // Endpoint dots appear when last line completes
+      setTimeout(function() {
+        if (dotN) dotN.style.opacity = '1';
+        if (dotB) dotB.style.opacity = '1';
+        if (dotM) dotM.style.opacity = '1';
+      }, 1150);
+    }, 2560);
 
-    // Phase 4: Show insight at 3.2s
+    // Phase 4: Day 1 insight at 4s
     setTimeout(function() {
       if (insightEl) insightEl.style.opacity = '1';
-      if (trendUp) trendUp.style.opacity = '1';
-    }, 3200);
+    }, 4000);
   }
 
   // ── COACH DEMO ──
