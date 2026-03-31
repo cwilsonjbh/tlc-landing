@@ -257,6 +257,10 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .feature-copy .feature-highlights li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 .feature-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 28px; font-size: 13px; font-weight: 700; color: var(--green); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; transition: all 0.2s; }
 .feature-cta:hover { color: var(--green-dark); border-bottom-color: var(--green); }
+.feature-tier-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 50px; padding: 5px 14px; margin-bottom: 20px; }
+.feature-tier-pill.lite { background: rgba(0,0,0,0.04); color: var(--muted-2); border: 1px solid var(--border-mid); }
+.feature-tier-pill.tlc { background: rgba(46,168,74,0.08); color: var(--green); border: 1px solid rgba(46,168,74,0.22); }
+.feature-tier-pill.pro { background: rgba(21,77,51,0.08); color: #154D33; border: 1px solid rgba(21,77,51,0.18); }
 
 /* ── MOCK PRODUCT CARDS ── */
 .mock-card { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; font-family: var(--font-body); }
@@ -509,13 +513,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .testimonials-header > p { font-size: 17px; color: rgba(255,255,255,0.60); max-width: 480px; margin: 0 auto; line-height: 1.75; }
 .testimonials-header .label { background: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.75) !important; border: 1px solid rgba(255,255,255,0.20); }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.testimonial-card { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 36px 30px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+.testimonial-card { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 36px 30px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: all 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; }
 .testimonial-card:hover { border-color: rgba(255,255,255,0.30); background: rgba(255,255,255,0.16); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(21,77,51,0.30); }
 .t-stars { display: flex; gap: 4px; margin-bottom: 22px; }
 .t-star { width: 14px; height: 14px; fill: var(--mind); }
 .t-quote { font-size: 15.5px; color: rgba(255,255,255,0.82); line-height: 1.75; margin-bottom: 28px; font-weight: 300; }
 .t-quote strong { color: var(--white); font-weight: 700; }
-.t-author { display: flex; align-items: center; gap: 14px; }
+.t-author { display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 28px; }
 .t-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.22); }
 .t-avatar-letter { font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.5); font-family: var(--font-display); letter-spacing: 0.02em; }
 .t-info { flex: 1; }
@@ -741,7 +745,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           </div>
         </div>
         <h3>Nutrition</h3>
-        <p class="pillar-hook">Food is the lever most people pull blindly.</p>
+        <p class="pillar-hook">Food is your most powerful lever for how you look, feel, and live. Now you get to use it with precision.</p>
         <p class="pillar-body">TLC maps every meal to your goals, flags patterns before they become problems, and shows you exactly how what you eat drives your sleep, energy, and recovery.</p>
         <div class="pillar-data-tags">
           <span class="pillar-data-tag">Calories</span>
@@ -759,7 +763,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           </div>
         </div>
         <h3>Body</h3>
-        <p class="pillar-hook">Your wearable data means nothing in isolation.</p>
+        <p class="pillar-hook">Your wearable is already capturing something extraordinary. TLC is what turns that signal into real direction.</p>
         <p class="pillar-body">25+ wearables feed sleep, HRV, strain, and recovery into every insight. Your plan adapts in real time to what your body is actually doing today, not what a formula assumed.</p>
         <div class="pillar-data-tags">
           <span class="pillar-data-tag">HRV</span>
@@ -778,7 +782,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           </div>
         </div>
         <h3>Mind</h3>
-        <p class="pillar-hook">No wearable tracks how you actually feel.</p>
+        <p class="pillar-hook">How you feel is data. The most powerful kind. TLC captures it every day and connects it to everything else.</p>
         <p class="pillar-body">A 60-second evening reflection captures mood, stress, focus, and energy. TLC connects it to your nutrition and sleep data, surfacing links no other platform can see.</p>
         <div class="pillar-data-tags">
           <span class="pillar-data-tag">Mood</span>
@@ -973,9 +977,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="feature-copy reveal d2">
       <span class="label">Always learning</span>
+      <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
       <h3>DYNAMIC INSIGHTS</h3>
-      <p>Every day, TLC draws a line between what you ate, how your body performed, and how you felt. Connections you'd never spot yourself, delivered as one clear daily insight.</p>
-      <p>Weekly deep-dives go further, recalibrating your targets as your body adapts. The system never forgets what it knows about you. Every insight is smarter than the last.</p>
+      <p>Every day, TLC connects what you ate, how your body performed, and how you felt. Patterns that take years to discover on your own, delivered as one clear, actionable insight. That is where the breakthrough lives.</p>
+      <p>Weekly deep-dives go further, recalibrating your targets as your body evolves. The system builds on everything it knows about you. Every insight sharper than the last. Every week better than the one before.</p>
       <ul class="feature-highlights">
         <li>Connects nutrition, biometrics, and reflection simultaneously</li>
         <li>Weekly Longevity Score tracks your trajectory</li>
@@ -1007,9 +1012,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="feature-copy reveal d2">
       <span class="label">With you wherever, whenever</span>
+      <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
       <h3>LONGEVITY COACH</h3>
-      <p>A dietician, nutritionist, longevity specialist, and life coach combined into one. Not a generic chatbot. A single expert who holds your complete picture: biometrics, meals, goals, restrictions, and the full arc of your health journey, before you ask a single question.</p>
-      <p>As you evolve with TLC, so does the coach. Every conversation builds on the last. Every insight it has read. Every pattern it has spotted. The longer you use it, the more precisely it can guide you. No repeating yourself. No context lost. Always grounded in what your body is actually doing today.</p>
+      <p>A dietician, nutritionist, longevity specialist, and life coach, combined into one. Not a generic chatbot. Your own expert who holds your complete picture: biometrics, meals, goals, restrictions, and the full arc of your health journey, before you ask a single question.</p>
+      <p>As you grow with TLC, so does the coach. Every conversation builds on the last. Every insight it has seen. Every pattern it has spotted. The longer you use it, the more precisely it guides you. No repeating yourself. No context lost. Always rooted in exactly where you are right now.</p>
       <ul class="feature-highlights">
         <li>Dietician, nutritionist, longevity specialist and life coach in one</li>
         <li>Full understanding of your needs, goals and journey</li>
@@ -1073,9 +1079,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="feature-copy reveal d2">
       <span class="label">Always with you. Always up to date.</span>
+      <div class="feature-tier-pill lite">TLC Lite &middot; Free</div>
       <h3>MEAL MATCHMAKER</h3>
-      <p>Work trip to Tokyo. Business lunch in a city you don't know. Dinner at a friend's favourite spot with a laminated menu you've never seen. Meal Matchmaker handles all of it. TLC knows your macros, your restrictions, and your live goals, and finds the single best dish for you, right now, wherever you are.</p>
-      <p>No more guessing. No opening another tab. Just open TLC, see what's nearby, and eat with precision. Your standards travel with you because the tool travels with you.</p>
+      <p>Work trip to Tokyo. Business lunch somewhere new. Dinner at a friend's favourite spot with a menu you have never seen before. Meal Matchmaker is ready for all of it. TLC knows your macros, your restrictions, and your live goals, and finds exactly the right dish for you, right now, wherever you are.</p>
+      <p>Total clarity at every meal. Open TLC, see what is nearby, and eat with the confidence of someone who knows exactly what their body needs. Your plan travels with you, because TLC travels with you.</p>
       <ul class="feature-highlights">
         <li>Any city, any country. Your plan never stays home.</li>
         <li>Macro-matched, allergy-verified, and goal-aligned, every time</li>
@@ -1147,9 +1154,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="feature-copy reveal d2">
       <span class="label">At home, in your kitchen</span>
+      <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
       <h3>PANTRY PAL + RECIPES</h3>
-      <p>Point your camera at your fridge. TLC identifies what you have and builds a recipe that hits your macros, suits your goal, and uses what's already there. Or planning a shop with an empty fridge? TLC builds the recipe from scratch and hands you a ready-to-go shopping list. Either way, nutrition lands exactly where it needs to.</p>
-      <p>Whatever your day looks like, TLC meets you there. Cooking at home, eating out, grabbing something on the go, or somewhere in between. There is a TLC tool built for that moment. Every meal gets logged. Every macro tracked. All the heavy lifting done for you.</p>
+      <p>Point your camera at your fridge. TLC identifies what you have and builds a recipe that hits your macros, matches your goal, and works with what you already own. Planning a shop instead? TLC builds the recipe from scratch and hands you a ready-to-go shopping list. Either way, your nutrition lands exactly where it needs to.</p>
+      <p>Your kitchen is one of the most powerful longevity tools you have. TLC makes every meal you cook a precise step toward the life you are building. Eating out, cooking in, on the go, or somewhere in between. There is a TLC tool built for that exact moment. Every meal logged. Every macro tracked. All the heavy lifting done for you.</p>
       <ul class="feature-highlights">
         <li>Scan your fridge for instant recipes, or plan from scratch with a shopping list</li>
         <li>Every recipe tuned to your macros, goals, and restrictions</li>
@@ -1236,6 +1244,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="feature-copy reveal d2">
       <span class="label" style="background:rgba(46,168,74,0.08);color:var(--green);">TLC Pro</span>
+      <div class="feature-tier-pill pro">TLC Pro &middot; $19.99/mo</div>
       <h3>YOUR ENTIRE MONTH. PLANNED FOR YOU.</h3>
       <p>TLC Pro is for those who are serious about their longevity. Not dipping a toe in. Committing to it. This is the level where TLC maps your entire month in advance, every meal curated specifically for you with zero compromise.</p>
       <p>Every breakfast, lunch, dinner, and snack is calibrated to your macro targets, taste preferences, food restrictions, cooking skill, budget, and whatever is already in your kitchen. We even build in batch prep instructions so you can get ahead on the week when it suits you.</p>
