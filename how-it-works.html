@@ -315,7 +315,7 @@ footer { background: var(--black); padding: 60px 0 0; }
     <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
-    <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+    <li><a href="/start" class="nav-cta">Start Free</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -333,7 +333,7 @@ footer { background: var(--black); padding: 60px 0 0; }
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
-  <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a>
+  <a href="/start" class="btn btn-green">Start Free</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -662,6 +662,43 @@ footer { background: var(--black); padding: 60px 0 0; }
   </div>
 </section>
 
+<!-- SOCIAL PROOF QUOTE -->
+<section style="padding:clamp(80px,10vw,120px) 0;background:var(--surface);border-top:1px solid var(--border);position:relative;z-index:2;">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;text-align:center;" class="reveal">
+      <svg width="32" height="24" viewBox="0 0 32 24" fill="none" style="margin-bottom:24px;opacity:0.18;"><path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 2.4C11.2 3.2 8.8 5.6 8 9.6H14.4V24H0zm17.6 0V14.4C17.6 6.4 22.4 1.6 32 0l1.6 2.4C28.8 3.2 26.4 5.6 25.6 9.6H32V24H17.6z" fill="var(--ink)"/></svg>
+      <p style="font-family:var(--font-display);font-size:clamp(24px,3vw,40px);line-height:1.1;letter-spacing:0.02em;color:var(--ink);margin-bottom:20px;">TLC does not tell you what to eat. It shows you what your body is already trying to tell you.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:white;">M</div>
+        <div style="text-align:left;">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);">Marcus T.</div>
+          <div style="font-size:11px;color:var(--muted);">WHOOP 4.0 &bull; Muscle gain goal</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px;text-align:center;" class="reveal d1">
+      <div>
+        <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:var(--green);line-height:1;">7</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Days to first pattern</div>
+        <div style="font-size:13px;color:var(--muted-2);margin-top:6px;">Most members notice a connection they had never seen before within their first week.</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:var(--green);line-height:1;">5<span style="font-size:0.5em;">min</span></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">To get started</div>
+        <div style="font-size:13px;color:var(--muted-2);margin-top:6px;">Assessment, wearable connection, and personal blueprint. No lengthy setup, no waiting period.</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:var(--green);line-height:1;">52</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Strategies a year</div>
+        <div style="font-size:13px;color:var(--muted-2);margin-top:6px;">A new game plan every week, built from what actually happened the week before. Not a template.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal d2">
+      <a href="/pricing" style="font-size:13px;font-weight:700;color:var(--green);text-decoration:none;letter-spacing:0.04em;border-bottom:1.5px solid rgba(46,168,74,0.25);padding-bottom:2px;">See all plans and pricing &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="section-cta">
   <div class="container">
@@ -670,7 +707,7 @@ footer { background: var(--black); padding: 60px 0 0; }
       <h2 class="reveal">YOUR FIRST<br><span>INSIGHT</span><br>TONIGHT.</h2>
       <p class="reveal d1">Five minutes to set up. Your personal longevity blueprint generated immediately. Your first Dynamic Insight delivered tonight. Start free with Meal Matchmaker, no card required.</p>
       <div class="cta-actions reveal d2">
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take the Free Assessment</a>
+        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take the Free Assessment</a>
         <a href="/features" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Explore all features</a>
         <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
       </div>
@@ -697,8 +734,8 @@ footer { background: var(--black); padding: 60px 0 0; }
       <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
-      <li><a href="https://docs.google.com/document/d/11IzYrOfZytm4r-7FN0oNnuch-_ViIhAdLSYgSO4v-oE/edit?usp=sharing">Privacy Policy</a></li>
-      <li><a href="https://docs.google.com/document/d/1gp9xA3yyTfraTdyJCT4uTM33jaDDf_Vg6Z8Dt4gMkzQ/edit?usp=sharing">Terms &amp; Conditions</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms &amp; Conditions</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -707,7 +744,7 @@ footer { background: var(--black); padding: 60px 0 0; }
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">

@@ -5,6 +5,9 @@
 //   GET /how-it-works -> how it works page
 //   GET /why-tlc      -> why tlc page
 //   GET /pricing      -> pricing page
+//   GET /start        -> goal selection / tier chooser
+//   GET /privacy      -> privacy policy
+//   GET /terms        -> terms of service
 //   GET /health       -> health check
 //   OPTIONS *         -> CORS preflight
 
@@ -360,7 +363,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
-    <li><a href="https://tlc-onboarding.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+    <li><a href="/start" class="nav-cta">Start Free</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileNav()" aria-label="Open menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -377,7 +380,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
-  <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green">Start Free</a>
+  <a href="/start" class="btn btn-green">Start Free</a>
 </div>
 
 <!-- STICKY SUB-NAV -->
@@ -400,7 +403,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <span class="hero-headline-green">Knows You.</span>
     <p class="hero-body">TLC meets you exactly where you are: at the restaurant, in your kitchen, tracking your wearable, or winding down for the night. It learns your patterns, adapts to your body, and does the heavy lifting so you don't have to.</p>
     <div class="hero-actions">
-      <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-black">Take Your Free Assessment</a>
+      <a href="/start" class="btn btn-black">Take Your Free Assessment</a>
       <a href="/how-it-works" class="btn btn-outline">See How It Works</a>
     </div>
     <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;&middot;&nbsp; No wearable required.</p>
@@ -636,6 +639,77 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   </div>
 </section>
 
+<!-- COMPETITOR DIFFERENTIATION -->
+<section class="section-diff-table" style="padding:var(--section-pad) 0;background:var(--white);border-top:1px solid var(--border);position:relative;z-index:2;">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:64px;">
+      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">Why TLC</span>
+      <h2>NOT ANOTHER<br><em>CALORIE COUNTER</em></h2>
+      <p>Every health app on the market tracks your day in isolation. TLC connects the dots between days, weeks, and months.</p>
+    </div>
+    <div style="overflow-x:auto;" class="reveal d1">
+      <table style="width:100%;border-collapse:collapse;min-width:560px;">
+        <thead>
+          <tr>
+            <th style="text-align:left;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:0 20px 18px 0;border-bottom:2px solid var(--border);width:36%;">Capability</th>
+            <th style="text-align:center;font-size:12px;font-weight:800;color:var(--green);padding:0 16px 18px;border-bottom:2px solid var(--green);background:rgba(46,168,74,0.04);">TLC</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">MyFitnessPal</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">WHOOP/Oura</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Noom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Connects food, sleep, and mood</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Finds dishes at nearby restaurants</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Wearable data (HRV, sleep, recovery)</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Personalised daily insight (cross-pillar)</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Weekly strategy built on your patterns</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+          </tr>
+          <tr>
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Free tier (no card)</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal d2" style="text-align:center;margin-top:40px;">
+      <a href="/why-tlc" style="font-size:13px;font-weight:700;color:var(--green);text-decoration:none;letter-spacing:0.04em;border-bottom:1.5px solid rgba(46,168,74,0.25);padding-bottom:2px;">See the full case for TLC &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING SUMMARY -->
 <section class="section-pricing" id="pricing">
   <div class="container">
@@ -701,7 +775,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <h2 class="reveal">THE SYSTEM THAT<br><span>KNOWS YOU.</span></h2>
   <p class="reveal d1">No rigid plans. No starting over. TLC meets you where you are, learns what works for your body, and gets sharper every single day. Start free. No card needed.</p>
   <div class="cta-actions reveal d2">
-    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
+    <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
     <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
   </div>
 </div></div></section>
@@ -725,8 +799,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
-      <li><a href="https://docs.google.com/document/d/11IzYrOfZytm4r-7FN0oNnuch-_ViIhAdLSYgSO4v-oE/edit?usp=sharing">Privacy Policy</a></li>
-      <li><a href="https://docs.google.com/document/d/1gp9xA3yyTfraTdyJCT4uTM33jaDDf_Vg6Z8Dt4gMkzQ/edit?usp=sharing">Terms &amp; Conditions</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms &amp; Conditions</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -735,7 +809,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
@@ -1365,7 +1439,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
-    <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+    <li><a href="/start" class="nav-cta">Start Free</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -1383,7 +1457,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
-  <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a>
+  <a href="/start" class="btn btn-green">Start Free</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -1787,7 +1861,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <h2 class="reveal">THE SYSTEM<br>THAT <span>GROWS</span><br>WITH YOU.</h2>
       <p class="reveal d1">Start free. No card needed. Meal Matchmaker is yours from day one. Unlock the full system when you are ready to see the connections that change everything.</p>
       <div class="cta-actions reveal d2">
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
+        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
         <a href="/pricing" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Compare all plans</a>
         <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
       </div>
@@ -1814,8 +1888,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
-      <li><a href="https://docs.google.com/document/d/11IzYrOfZytm4r-7FN0oNnuch-_ViIhAdLSYgSO4v-oE/edit?usp=sharing">Privacy Policy</a></li>
-      <li><a href="https://docs.google.com/document/d/1gp9xA3yyTfraTdyJCT4uTM33jaDDf_Vg6Z8Dt4gMkzQ/edit?usp=sharing">Terms &amp; Conditions</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms &amp; Conditions</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -1824,7 +1898,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
@@ -2446,7 +2520,7 @@ footer { background: var(--black); padding: 60px 0 0; }
     <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
-    <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+    <li><a href="/start" class="nav-cta">Start Free</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -2464,7 +2538,7 @@ footer { background: var(--black); padding: 60px 0 0; }
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
-  <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a>
+  <a href="/start" class="btn btn-green">Start Free</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -2793,6 +2867,43 @@ footer { background: var(--black); padding: 60px 0 0; }
   </div>
 </section>
 
+<!-- SOCIAL PROOF QUOTE -->
+<section style="padding:clamp(80px,10vw,120px) 0;background:var(--surface);border-top:1px solid var(--border);position:relative;z-index:2;">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;text-align:center;" class="reveal">
+      <svg width="32" height="24" viewBox="0 0 32 24" fill="none" style="margin-bottom:24px;opacity:0.18;"><path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 2.4C11.2 3.2 8.8 5.6 8 9.6H14.4V24H0zm17.6 0V14.4C17.6 6.4 22.4 1.6 32 0l1.6 2.4C28.8 3.2 26.4 5.6 25.6 9.6H32V24H17.6z" fill="var(--ink)"/></svg>
+      <p style="font-family:var(--font-display);font-size:clamp(24px,3vw,40px);line-height:1.1;letter-spacing:0.02em;color:var(--ink);margin-bottom:20px;">TLC does not tell you what to eat. It shows you what your body is already trying to tell you.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:white;">M</div>
+        <div style="text-align:left;">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);">Marcus T.</div>
+          <div style="font-size:11px;color:var(--muted);">WHOOP 4.0 &bull; Muscle gain goal</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px;text-align:center;" class="reveal d1">
+      <div>
+        <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:var(--green);line-height:1;">7</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Days to first pattern</div>
+        <div style="font-size:13px;color:var(--muted-2);margin-top:6px;">Most members notice a connection they had never seen before within their first week.</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:var(--green);line-height:1;">5<span style="font-size:0.5em;">min</span></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">To get started</div>
+        <div style="font-size:13px;color:var(--muted-2);margin-top:6px;">Assessment, wearable connection, and personal blueprint. No lengthy setup, no waiting period.</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:var(--green);line-height:1;">52</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;">Strategies a year</div>
+        <div style="font-size:13px;color:var(--muted-2);margin-top:6px;">A new game plan every week, built from what actually happened the week before. Not a template.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal d2">
+      <a href="/pricing" style="font-size:13px;font-weight:700;color:var(--green);text-decoration:none;letter-spacing:0.04em;border-bottom:1.5px solid rgba(46,168,74,0.25);padding-bottom:2px;">See all plans and pricing &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="section-cta">
   <div class="container">
@@ -2801,7 +2912,7 @@ footer { background: var(--black); padding: 60px 0 0; }
       <h2 class="reveal">YOUR FIRST<br><span>INSIGHT</span><br>TONIGHT.</h2>
       <p class="reveal d1">Five minutes to set up. Your personal longevity blueprint generated immediately. Your first Dynamic Insight delivered tonight. Start free with Meal Matchmaker, no card required.</p>
       <div class="cta-actions reveal d2">
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take the Free Assessment</a>
+        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take the Free Assessment</a>
         <a href="/features" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Explore all features</a>
         <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
       </div>
@@ -2828,8 +2939,8 @@ footer { background: var(--black); padding: 60px 0 0; }
       <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
-      <li><a href="https://docs.google.com/document/d/11IzYrOfZytm4r-7FN0oNnuch-_ViIhAdLSYgSO4v-oE/edit?usp=sharing">Privacy Policy</a></li>
-      <li><a href="https://docs.google.com/document/d/1gp9xA3yyTfraTdyJCT4uTM33jaDDf_Vg6Z8Dt4gMkzQ/edit?usp=sharing">Terms &amp; Conditions</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms &amp; Conditions</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -2838,7 +2949,7 @@ footer { background: var(--black); padding: 60px 0 0; }
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
@@ -3209,7 +3320,7 @@ footer { background: var(--black); padding: 60px 0 0; }
     <li><a href="/why-tlc" class="active-page">Why TLC</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
-    <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+    <li><a href="/start" class="nav-cta">Start Free</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -3227,7 +3338,7 @@ footer { background: var(--black); padding: 60px 0 0; }
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
-  <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a>
+  <a href="/start" class="btn btn-green">Start Free</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -3239,7 +3350,7 @@ footer { background: var(--black); padding: 60px 0 0; }
         <h1>THE DOTS<br>WERE<br>ALWAYS<br><em>THERE.</em></h1>
         <p class="page-hero-body">You have probably tracked your food. You might wear a wearable. You occasionally notice how you feel. <strong>The data already exists.</strong> The connections between it do not. That is what TLC was built to fix. One system that joins the dots and shows you what they mean together.</p>
         <div class="page-hero-actions">
-          <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free Today</a>
+          <a href="/start" class="btn btn-green">Start Free Today</a>
           <a href="/pricing" class="btn btn-outline">See Plans</a>
         </div>
       </div>
@@ -3538,8 +3649,8 @@ footer { background: var(--black); padding: 60px 0 0; }
       <h2 class="reveal">THE DOTS<br>ARE <span>ALREADY</span><br>THERE.</h2>
       <p class="reveal d1">You have been generating the signal every day. TLC is the system that reads it. Start with Meal Matchmaker, free forever. Add the full connection layer when you are ready.</p>
       <div class="cta-actions reveal d2">
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
-        <a href="/how-it-works" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">See how it works</a>
+        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Start TLC &middot; $9.99/mo</a>
         <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
       </div>
     </div>
@@ -3565,8 +3676,8 @@ footer { background: var(--black); padding: 60px 0 0; }
       <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
-      <li><a href="https://docs.google.com/document/d/11IzYrOfZytm4r-7FN0oNnuch-_ViIhAdLSYgSO4v-oE/edit?usp=sharing">Privacy Policy</a></li>
-      <li><a href="https://docs.google.com/document/d/1gp9xA3yyTfraTdyJCT4uTM33jaDDf_Vg6Z8Dt4gMkzQ/edit?usp=sharing">Terms &amp; Conditions</a></li>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms &amp; Conditions</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -3575,7 +3686,7 @@ footer { background: var(--black); padding: 60px 0 0; }
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
@@ -4022,7 +4133,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   </ul>
   <div style="display:flex;align-items:center;gap:20px;">
     <a href="#" class="nav-login" id="navLoginBtn">Log in</a>
-    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a>
+    <a href="/start" class="nav-cta">Start Free</a>
   </div>
   <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -4036,7 +4147,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <div class="mobile-overlay-cta">
-    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="width:220px;justify-content:center;">Start Free</a>
+    <a href="/start" class="btn btn-green" style="width:220px;justify-content:center;">Start Free</a>
     <a href="#" class="btn btn-outline" style="width:220px;justify-content:center;" id="mobileLoginBtn">Log in</a>
   </div>
 </div>
@@ -4185,20 +4296,20 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 
       <!-- TLC PRO -->
       <div class="plan-card">
-        <div class="plan-label">Coming soon</div>
+        <div class="plan-label">Full system</div>
         <div class="plan-name">TLC Pro</div>
         <div class="plan-price-row">
           <div class="plan-price" id="proPrice">$19.99</div>
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Join waitlist</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Start TLC Pro</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in TLC, plus</div>
         <ul class="plan-features">
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Weekly personalised meal plan <span class="plan-feature-tag tag-soon">Soon</span></span>
+            <span>Weekly personalised meal plan</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -4407,45 +4518,79 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 </section>
 
 <!-- FAQ -->
+<!-- IS TLC RIGHT FOR YOU -->
+<section style="padding:clamp(80px,10vw,120px) 0;background:var(--white);border-top:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;" class="reveal">
+      <div>
+        <div class="label" style="margin-bottom:18px;">Honest assessment</div>
+        <h2 style="font-family:var(--font-display);font-size:clamp(40px,5vw,72px);line-height:0.9;letter-spacing:0.01em;color:var(--ink);margin-bottom:24px;">IS TLC<br>RIGHT FOR<br>YOU?</h2>
+        <p style="font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);line-height:1.8;margin-bottom:0;">Not every tool is right for every person. Here is an honest picture of who TLC is built for and who would be better served elsewhere.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <div style="background:var(--green-light);border:1.5px solid rgba(46,168,74,0.18);border-radius:12px 12px 0 0;padding:28px 28px 24px;">
+          <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px;">TLC is built for you if</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You want to understand why your body responds the way it does</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You are interested in patterns over time, not just today's numbers</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You use or want to use a wearable (though not required)</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You eat at restaurants and need guidance that travels with you</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You value personalised intelligence over generic plans</li>
+          </ul>
+        </div>
+        <div style="background:var(--surface);border:1.5px solid var(--border-mid);border-radius:0 0 12px 12px;padding:28px 28px 24px;">
+          <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">A different tool might suit you better if</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--muted);"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You just want to count calories (MyFitnessPal does this well and is free)</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--muted);"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You want meal delivery or pre-packaged food (try Factor or Freshly)</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--muted);"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Your primary goal is workout tracking rather than nutrition (try Garmin or Strava)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="faq-section">
   <div class="container">
     <div class="label reveal">Common questions</div>
     <h2 class="reveal d1">EVERYTHING<br>YOU WANT<br>TO KNOW</h2>
     <div class="faq-grid reveal d2">
 
+
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          Do I need a wearable device to use TLC?
+          How is TLC different from MyFitnessPal, Cronometer, or Noom?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">No. A wearable enriches TLC significantly - connecting your sleep quality, HRV, and activity data into the insight layer - but it is entirely optional. Without one, you enter biometric baselines manually and TLC works from your nutrition and reflection data alone. Many members find this more than enough to start seeing patterns. You can connect a wearable at any point.</div>
+          <div class="faq-a-inner">Those tools track what you do. TLC explains what it means. MyFitnessPal and Cronometer are excellent calorie logs, but they treat each day in isolation. They have no way to connect your food choices to how you sleep, how your HRV changes, or how you feel the next day. Noom applies behavioural coaching to eating habits, but without live wearable data. TLC connects all three pillars simultaneously: every meal feeds into your nightly Dynamic Insight, which is also shaped by your wearable data and your evening reflection. That cross-pillar connection is what none of the others do.</div>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          Can I cancel at any time?
+          How does the Daily Dynamic Insight work?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">Yes, with no penalty and no questions asked. Cancel from your profile settings in under 30 seconds and your access continues until the end of the billing period. You will never be charged again after cancellation. Your data is retained for 12 months in case you return.</div>
+          <div class="faq-a-inner">Each evening at your chosen time (default 8pm), TLC generates a personalised narrative that pulls together everything from that day: your meals, your wearable data (HRV, sleep, recovery, strain), your evening reflection, and your goals. It surfaces patterns across all three, flags anything worth your attention, and closes with a recommendation for tomorrow. After seven days it generates a Weekly Deep-Dive and a new strategy for the week ahead. The longer you use it, the more specific and accurate the insights become.</div>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          How is TLC different from a calorie tracker?
+          What is Meal Matchmaker and how does it work?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">A calorie tracker tells you how much you ate. TLC tells you why it matters. The difference is interpretation. TLC connects your food choices to how you sleep, how you recover, how you feel, and how those things compound over time. Calorie trackers produce logs. TLC produces insight - and then translates that insight into your next best decision, whether that is what to cook tonight or where to eat at lunch tomorrow.</div>
+          <div class="faq-a-inner">Meal Matchmaker uses your GPS location to find nearby restaurants, then browses their actual menus to identify the dish that best fits your macro targets, dietary restrictions, allergies, spice tolerance, and health goal. It returns the specific dish name, estimated macros, and a link to the menu. It works at breakfast, lunch, or dinner, in any city, and adapts to your goals automatically. Available free in TLC Lite (3 searches per day) and unlimited in TLC and TLC Pro.</div>
         </div>
       </div>
 
@@ -4457,7 +4602,19 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">The Longevity Score is a weekly composite measure of how well your three pillars are aligning. It factors in nutritional consistency, biometric trends, sleep quality, recovery patterns, and reflection data - weighted by your personal goals. It is not a perfect number. It is a directional signal designed to show whether your daily choices are compounding towards your long-term goals or drifting away from them. TLC (paid) receives it weekly. TLC Pro will receive it daily.</div>
+          <div class="faq-a-inner">The Longevity Score is a composite measure of how well your three pillars are aligning over time. It draws on nutritional consistency, biometric trends (HRV, sleep quality, recovery), reflection data, and goal progress, all weighted by what matters most for your specific goals. It is not a perfect number. It is a directional signal: are your daily choices compounding toward better health, or drifting away from it? TLC members receive it weekly. TLC Pro members receive it daily.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need a wearable device to use TLC?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">No. A wearable enriches TLC significantly by feeding live HRV, sleep quality, recovery, and strain data into every insight. But it is entirely optional. Without one, you enter a manual biometric baseline (resting heart rate, daily steps) and TLC builds from your nutrition and reflection data alone. Many members find this more than enough to start seeing meaningful patterns. You can connect a wearable at any point. TLC supports 25+ devices including Oura, WHOOP, Fitbit, Garmin, and Apple Watch.</div>
         </div>
       </div>
 
@@ -4469,7 +4626,19 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">The assessment takes around 5 minutes. Connecting a wearable takes another 2 minutes. Your first Dynamic Insight is generated on the same evening. There is no lengthy setup, no manual data entry, and no waiting period. TLC starts working from day one.</div>
+          <div class="faq-a-inner">The onboarding assessment takes around 5 minutes. It covers your goals, dietary preferences, allergies, spice tolerance, health conditions, and lifestyle. Connecting a wearable takes another 2 minutes. Your personalised nutrition blueprint is generated instantly. Your first Dynamic Insight arrives the same evening. There is no lengthy setup, no food diary to manually populate, and no waiting period.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I cancel at any time?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes, with no penalty and no questions asked. Cancel from your profile settings in under 30 seconds and your access continues until the end of the billing period. You will never be charged again after cancellation. If you return within 12 months, your full data history is waiting for you exactly as you left it.</div>
         </div>
       </div>
 
@@ -4481,19 +4650,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">Your data is stored securely and used exclusively to generate your personal insights. It is never sold to third parties, never used for advertising, and never shared without your explicit consent. Wearable data is accessed via the Terra API, a regulated health data platform. You can request a full data export or deletion at any time from your profile settings.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          What happens to my data if I cancel?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Your data is retained for 12 months after cancellation, so if you return, your history picks up where it left off. After 12 months, data is permanently and automatically deleted. You can request immediate deletion at any time via your profile settings - no waiting, no forms, no email chains required.</div>
+          <div class="faq-a-inner">Your data is stored securely and used exclusively to power your personal insights. It is never sold to third parties, never used for advertising, and never shared without your explicit consent. Wearable data is accessed via the Terra API, a regulated health data integration platform. You can request a full export or permanent deletion of your data at any time from your profile settings, with no delay and no forms to complete.</div>
         </div>
       </div>
 
@@ -4551,15 +4708,15 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
         <ul>
           <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Lite (free)</a></li>
           <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC ($9.99/mo)</a></li>
-          <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Pro (waitlist)</a></li>
+          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC Pro ($19.99/mo)</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
           <li><a href="mailto:hello@thelongevitychef.io">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
         </ul>
       </div>
     </div>
@@ -4685,6 +4842,805 @@ document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.obser
 `;
 // PRICING_HTML_END
 
+// START_HTML_START
+const START_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | The Longevity Chef</title>
+<meta name="description" content="Tell us what you are looking to achieve. TLC will find the right path for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #0d0d0d;
+  --ink: #1a1a1a;
+  --ink-2: #2e2e2e;
+  --surface: #f5f4f0;
+  --surface-2: #eeecea;
+  --white: #ffffff;
+  --green: #2ea84a;
+  --green-dark: #1a5c28;
+  --green-mid: #3d7a30;
+  --green-light: #ebf7ee;
+  --green-accent: #46c461;
+  --nutrition: #39BA76;
+  --body-blue: #398CBA;
+  --mind: #E8B84B;
+  --muted: rgba(26,26,26,0.42);
+  --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08);
+  --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#nebulaCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* ── HEADER ── */
+header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px clamp(24px, 5vw, 72px);
+  background: rgba(245,244,240,0);
+}
+.header-logo img { height: 48px; width: auto; display: block; }
+.header-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.header-back:hover { color: var(--ink); }
+.header-back svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
+  position: relative;
+  z-index: 1;
+}
+
+.start-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.1s forwards;
+}
+.start-eyebrow::before { content: ''; width: 18px; height: 1.5px; background: var(--green); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+.start-headline {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards;
+}
+
+.start-sub {
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 300;
+  color: var(--muted-2);
+  text-align: center;
+  max-width: 420px;
+  line-height: 1.75;
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards;
+}
+
+/* ── GOAL CARDS ── */
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.4s forwards;
+}
+
+.goal-card {
+  background: var(--white);
+  border: 1.5px solid var(--border-mid);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.goal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.10);
+  border-color: transparent;
+}
+.goal-card:hover::before { opacity: 1; }
+
+.goal-card.gc-free::before { background: linear-gradient(90deg, var(--nutrition), var(--green)); }
+.goal-card.gc-tlc::before { background: linear-gradient(90deg, var(--green), var(--green-dark)); }
+.goal-card.gc-pro::before { background: linear-gradient(90deg, var(--body-blue), #1d5c7a); }
+
+.goal-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.gc-free .goal-icon { background: rgba(57,186,118,0.10); }
+.gc-tlc .goal-icon { background: rgba(46,168,74,0.10); }
+.gc-pro .goal-icon { background: rgba(57,140,186,0.10); }
+.goal-icon svg { width: 26px; height: 26px; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gc-free .goal-icon svg { stroke: var(--nutrition); }
+.gc-tlc .goal-icon svg { stroke: var(--green); }
+.gc-pro .goal-icon svg { stroke: var(--body-blue); }
+
+.goal-tier-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+.gc-free .goal-tier-pill { background: rgba(57,186,118,0.10); color: #2a9148; }
+.gc-tlc .goal-tier-pill { background: rgba(46,168,74,0.10); color: var(--green-dark); }
+.gc-pro .goal-tier-pill { background: rgba(57,140,186,0.10); color: #2b6e93; }
+
+.goal-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.goal-body {
+  font-size: 13.5px;
+  color: var(--muted-2);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.goal-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 24px;
+}
+.goal-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--muted-2);
+}
+.goal-features li svg { flex-shrink: 0; }
+
+.goal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.goal-cta-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.gc-free .goal-cta-text { color: var(--nutrition); }
+.gc-tlc .goal-cta-text { color: var(--green); }
+.gc-pro .goal-cta-text { color: var(--body-blue); }
+.goal-cta-price {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.goal-cta-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.gc-free .goal-cta-arrow { background: rgba(57,186,118,0.10); }
+.gc-tlc .goal-cta-arrow { background: rgba(46,168,74,0.10); }
+.gc-pro .goal-cta-arrow { background: rgba(57,140,186,0.10); }
+.goal-card:hover .goal-cta-arrow { transform: translateX(3px); }
+.goal-cta-arrow svg { width: 14px; height: 14px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.gc-free .goal-cta-arrow svg { stroke: var(--nutrition); }
+.gc-tlc .goal-cta-arrow svg { stroke: var(--green); }
+.gc-pro .goal-cta-arrow svg { stroke: var(--body-blue); }
+
+.start-note {
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s forwards;
+}
+.start-note span { color: var(--green); font-weight: 600; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .goal-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+@media (max-width: 520px) {
+  .start-headline { font-size: clamp(42px, 12vw, 72px); }
+}
+</style>
+</head>
+<body>
+
+<canvas id="nebulaCanvas"></canvas>
+
+<header>
+  <a href="/" class="header-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+</header>
+
+<main>
+  <div class="start-eyebrow">Your path</div>
+  <h1 class="start-headline">WHAT ARE YOU<br>LOOKING TO<br>ACHIEVE?</h1>
+  <p class="start-sub">Choose what matters most to you right now. You can always change direction later.</p>
+
+  <div class="goal-grid">
+
+    <!-- FREE TIER -->
+    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC Lite &middot; Free</div>
+      <h2 class="goal-title">SMARTER EATING<br>WHEN I'M OUT</h2>
+      <p class="goal-body">Find dishes at nearby restaurants that fit your macros, allergies, and health goal. Any city, any menu, in seconds.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Meal Matchmaker (3 searches/day)
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Personal nutrition blueprint
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Allergy and goal-aware matching
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start free</div>
+          <div class="goal-cta-price">No card required</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TLC PAID TIER -->
+    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="goal-card gc-tlc">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
+      <h2 class="goal-title">DAILY INSIGHT<br>INTO MY HEALTH</h2>
+      <p class="goal-body">Connect your wearable, log meals, and receive a daily insight that joins the dots between nutrition, sleep, and how you feel.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Daily Dynamic Insights
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Longevity Coach with full context
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          25+ wearables &bull; Pantry Pal &bull; Meal Analyser
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start TLC</div>
+          <div class="goal-cta-price">7-day free trial</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TLC PRO TIER -->
+    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="goal-card gc-pro">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC Pro &middot; $19.99/mo</div>
+      <h2 class="goal-title">COMPLETE MEAL<br>PLANNING SYSTEM</h2>
+      <p class="goal-body">Every meal of every day, planned around your biology, goals, and schedule. Auto-generated shopping lists, zero waste, fully adaptable.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Weekly personalised meal plan
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Smart zero-waste shopping list
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Everything in TLC, plus daily Longevity Score
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start TLC Pro</div>
+          <div class="goal-cta-price">7-day free trial</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="start-note">Not sure which to pick? <span>TLC Lite is always free.</span> You can upgrade at any time with no data loss.</p>
+</main>
+
+<script>
+// ── Nebula ──
+(function() {
+  const canvas = document.getElementById('nebulaCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  function initParticles() {
+    particles = [];
+    const count = Math.floor((W * H) / 14000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.8 + 0.4,
+        a: Math.random() * 0.6 + 0.2
+      });
+    }
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = \`rgba(46,168,74,\${p.a})\`;
+      ctx.fill();
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = \`rgba(46,168,74,\${0.08 * (1 - dist / 100)})\`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  resize();
+  initParticles();
+  draw();
+  window.addEventListener('resize', () => { resize(); initParticles(); });
+})();
+</script>
+
+</body>
+</html>
+`;
+// START_HTML_END
+
+// PRIVACY_HTML_START
+const PRIVACY_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | The Longevity Chef</title>
+<meta name="description" content="How The Longevity Chef collects, uses, and protects your personal and health data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --ink: #1a1a1a; --ink-2: #2e2e2e; --surface: #f5f4f0; --white: #ffffff;
+  --green: #2ea84a; --green-dark: #1a5c28; --green-light: #ebf7ee;
+  --muted: rgba(26,26,26,0.42); --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08); --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif; --font-body: 'Figtree', sans-serif;
+  --gutter: clamp(24px, 5vw, 72px); --content-max: 800px;
+}
+body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 20px var(--gutter); border-bottom: 1px solid var(--border); }
+header img { height: 44px; width: auto; }
+.header-back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+.header-back:hover { color: var(--ink); }
+.header-back svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+main { max-width: var(--content-max); margin: 0 auto; padding: clamp(48px,8vw,80px) var(--gutter) 120px; }
+.doc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+h1 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 72px); line-height: 0.92; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
+.doc-meta { font-size: 13px; color: var(--muted); margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+h2 { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.03em; color: var(--ink); margin: 40px 0 12px; }
+h3 { font-size: 15px; font-weight: 700; color: var(--ink-2); margin: 24px 0 8px; }
+p { font-size: 15px; color: var(--muted-2); line-height: 1.75; margin-bottom: 16px; }
+ul { padding-left: 20px; margin-bottom: 16px; }
+ul li { font-size: 15px; color: var(--muted-2); line-height: 1.75; margin-bottom: 6px; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.highlight-box { background: var(--green-light); border: 1.5px solid rgba(46,168,74,0.18); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.highlight-box p { color: var(--ink-2); margin: 0; }
+footer { text-align: center; padding: 32px var(--gutter); border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+footer a { color: var(--green); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+</header>
+
+<main>
+  <div class="doc-label">Legal</div>
+  <h1>PRIVACY<br>POLICY</h1>
+  <p class="doc-meta">Last updated: 1 April 2026 &nbsp;&middot;&nbsp; The Longevity Chef Ltd &nbsp;&middot;&nbsp; hello@thelongevitychef.io</p>
+
+  <div class="highlight-box">
+    <p><strong>The short version:</strong> Your health data is yours. We use it exclusively to power your personal insights. We never sell it, never share it for advertising, and you can delete it at any time.</p>
+  </div>
+
+  <h2>1. WHO WE ARE</h2>
+  <p>The Longevity Chef ("TLC", "we", "us") operates the web application available at thelongevitychef.io. We are committed to protecting your privacy and handling your health data with the highest level of care.</p>
+
+  <h2>2. WHAT DATA WE COLLECT</h2>
+
+  <h3>Account information</h3>
+  <ul>
+    <li>Email address (used for login and notifications)</li>
+    <li>Name (optional, used for personalisation)</li>
+    <li>Account creation date and tier</li>
+  </ul>
+
+  <h3>Health and wellness data</h3>
+  <ul>
+    <li>Age, sex, height, weight, and body composition data you provide</li>
+    <li>Health goals, dietary restrictions, allergies, and food preferences</li>
+    <li>Meals logged through the app or analysed via photo</li>
+    <li>Evening reflections including mood, energy, focus, and stress ratings</li>
+    <li>Wearable biometric data (HRV, sleep, resting heart rate, activity) accessed via Terra API with your explicit consent</li>
+    <li>Manual biometric baselines (daily steps, resting heart rate) if no wearable is connected</li>
+  </ul>
+
+  <h3>Usage data</h3>
+  <ul>
+    <li>Pages visited and features used within the application</li>
+    <li>Search queries within Meal Matchmaker (location is used in real-time and not stored)</li>
+    <li>Error logs and performance data to improve the service</li>
+  </ul>
+
+  <h2>3. HOW WE USE YOUR DATA</h2>
+  <p>Your data is used exclusively to:</p>
+  <ul>
+    <li>Generate your personalised Daily Dynamic Insights and weekly strategy</li>
+    <li>Provide context to your Longevity Coach</li>
+    <li>Match restaurant dishes to your macro targets, goals, and dietary restrictions in Meal Matchmaker</li>
+    <li>Calculate your Longevity Score</li>
+    <li>Send you optional email notifications (daily insight, weekly summary, reminders)</li>
+    <li>Improve the accuracy of our insight and recommendation systems</li>
+  </ul>
+
+  <p>We do not use your health data to train generalised machine learning models or share it in aggregated form without complete anonymisation.</p>
+
+  <h2>4. WEARABLE DATA (TERRA API)</h2>
+  <p>If you connect a wearable device, your biometric data is accessed through Terra API, a regulated health data integration platform. Terra acts as a data processor on our behalf. Data is accessed only with your explicit authorisation and is stored securely within our system. You can disconnect your wearable and revoke Terra's access at any time from your profile settings.</p>
+
+  <h2>5. DATA SHARING</h2>
+  <p>We do not sell your personal or health data. We do not share your data with advertisers or marketing partners. Data may be shared only with:</p>
+  <ul>
+    <li><strong>Service providers</strong> who operate under strict data processing agreements (e.g., Cloudflare for infrastructure, OpenAI for insight generation, Terra for wearable integration, Google Places for restaurant discovery)</li>
+    <li><strong>Legal authorities</strong> if required by applicable law</li>
+  </ul>
+
+  <h2>6. DATA RETENTION</h2>
+  <p>Your data is retained for the duration of your account plus 12 months after cancellation, giving you time to return without losing your history. After 12 months following cancellation, all personal data is permanently deleted. You can request immediate deletion at any time from your profile settings.</p>
+
+  <h2>7. YOUR RIGHTS</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>Access all data we hold about you (available in profile settings)</li>
+    <li>Export your full data history at any time</li>
+    <li>Correct inaccurate data</li>
+    <li>Delete your account and all associated data</li>
+    <li>Opt out of email notifications at any time</li>
+    <li>Disconnect your wearable and revoke biometric data access</li>
+  </ul>
+  <p>To exercise any of these rights, use your profile settings or contact us at <a href="mailto:hello@thelongevitychef.io">hello@thelongevitychef.io</a>.</p>
+
+  <h2>8. SECURITY</h2>
+  <p>Your data is stored on Cloudflare's global infrastructure, encrypted in transit (TLS) and at rest. We use magic link authentication, meaning you never create a password and credential theft is not a risk for your account access. We conduct regular security reviews and follow OWASP security best practices.</p>
+
+  <h2>9. COOKIES AND TRACKING</h2>
+  <p>TLC uses minimal session cookies necessary for authentication and preference storage. We do not use third-party advertising cookies or cross-site tracking pixels.</p>
+
+  <h2>10. CHANGES TO THIS POLICY</h2>
+  <p>We will notify you by email if we make material changes to this policy. The "last updated" date at the top of this page will always reflect the most recent version.</p>
+
+  <h2>11. CONTACT</h2>
+  <p>For privacy questions or data requests, contact us at <a href="mailto:hello@thelongevitychef.io">hello@thelongevitychef.io</a>. We respond within 3 business days.</p>
+</main>
+
+<footer>
+  &copy; 2026 The Longevity Chef. &nbsp;&middot;&nbsp; <a href="/terms">Terms of Service</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
+`;
+// PRIVACY_HTML_END
+
+// TERMS_HTML_START
+const TERMS_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | The Longevity Chef</title>
+<meta name="description" content="The terms and conditions governing your use of The Longevity Chef application and services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --ink: #1a1a1a; --ink-2: #2e2e2e; --surface: #f5f4f0; --white: #ffffff;
+  --green: #2ea84a; --green-dark: #1a5c28; --green-light: #ebf7ee;
+  --muted: rgba(26,26,26,0.42); --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08); --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif; --font-body: 'Figtree', sans-serif;
+  --gutter: clamp(24px, 5vw, 72px); --content-max: 800px;
+}
+body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 20px var(--gutter); border-bottom: 1px solid var(--border); }
+header img { height: 44px; width: auto; }
+.header-back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+.header-back:hover { color: var(--ink); }
+.header-back svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+main { max-width: var(--content-max); margin: 0 auto; padding: clamp(48px,8vw,80px) var(--gutter) 120px; }
+.doc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+h1 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 72px); line-height: 0.92; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
+.doc-meta { font-size: 13px; color: var(--muted); margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+h2 { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.03em; color: var(--ink); margin: 40px 0 12px; }
+h3 { font-size: 15px; font-weight: 700; color: var(--ink-2); margin: 24px 0 8px; }
+p { font-size: 15px; color: var(--muted-2); line-height: 1.75; margin-bottom: 16px; }
+ul { padding-left: 20px; margin-bottom: 16px; }
+ul li { font-size: 15px; color: var(--muted-2); line-height: 1.75; margin-bottom: 6px; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.highlight-box { background: var(--surface); border: 1.5px solid rgba(26,26,26,0.10); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.highlight-box p { color: var(--ink-2); margin: 0; }
+footer { text-align: center; padding: 32px var(--gutter); border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+footer a { color: var(--green); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+</header>
+
+<main>
+  <div class="doc-label">Legal</div>
+  <h1>TERMS OF<br>SERVICE</h1>
+  <p class="doc-meta">Last updated: 1 April 2026 &nbsp;&middot;&nbsp; The Longevity Chef Ltd &nbsp;&middot;&nbsp; hello@thelongevitychef.io</p>
+
+  <div class="highlight-box">
+    <p><strong>Important:</strong> TLC provides wellness information and personalised insights for educational purposes. It is not a medical service and does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical concerns.</p>
+  </div>
+
+  <h2>1. ACCEPTANCE OF TERMS</h2>
+  <p>By creating an account or using The Longevity Chef application ("TLC", "the Service"), you agree to these Terms of Service. If you do not agree, do not use the Service.</p>
+
+  <h2>2. DESCRIPTION OF SERVICE</h2>
+  <p>TLC is a personal wellness application that connects nutritional data, wearable biometric data, and personal reflections to generate insights, recommendations, and strategies for improving health and longevity. The Service includes:</p>
+  <ul>
+    <li>Daily Dynamic Insights and weekly strategy generation</li>
+    <li>Meal Matchmaker (restaurant dish recommendations)</li>
+    <li>Longevity Coach (personalised wellness guidance)</li>
+    <li>Pantry Pal (recipe generation)</li>
+    <li>Meal Analyser (photo-based nutritional analysis)</li>
+    <li>Longevity Score (composite wellness metric)</li>
+    <li>Wearable device integration via Terra API</li>
+  </ul>
+
+  <h2>3. ELIGIBILITY</h2>
+  <p>You must be at least 18 years of age to use TLC. By using the Service, you represent and warrant that you meet this requirement.</p>
+
+  <h2>4. ACCOUNT REGISTRATION</h2>
+  <p>You must provide accurate information when creating your account. You are responsible for maintaining the security of your account. TLC uses magic link authentication sent to your registered email; you are responsible for keeping your email account secure. Notify us immediately if you suspect unauthorised access to your account.</p>
+
+  <h2>5. SUBSCRIPTIONS AND BILLING</h2>
+
+  <h3>TLC Lite</h3>
+  <p>TLC Lite is free forever with no credit card required. Access to Meal Matchmaker (3 searches per day) and your personal nutrition blueprint is included at no cost.</p>
+
+  <h3>TLC ($9.99/month)</h3>
+  <p>TLC is a monthly subscription billed at $9.99 per month. A 7-day free trial is available for new subscribers. Your subscription renews automatically each month until cancelled.</p>
+
+  <h3>TLC Pro ($19.99/month)</h3>
+  <p>TLC Pro is a monthly subscription billed at $19.99 per month. A 7-day free trial is available for new subscribers. Your subscription renews automatically each month until cancelled.</p>
+
+  <h3>Cancellation</h3>
+  <p>You may cancel your subscription at any time from your profile settings. Cancellation takes effect at the end of the current billing period. You will not be charged again after cancellation. No refunds are provided for partial billing periods, except where required by applicable law.</p>
+
+  <h3>30-day Promise</h3>
+  <p>If TLC has not shown you something genuinely useful about your health patterns within your first 30 days, contact us at hello@thelongevitychef.io and we will issue a full refund. No conditions apply.</p>
+
+  <h2>6. HEALTH DISCLAIMER</h2>
+  <p>TLC is a wellness information service and not a medical service. The insights, recommendations, and coaching provided by TLC:</p>
+  <ul>
+    <li>Are for informational and educational purposes only</li>
+    <li>Do not constitute medical advice, diagnosis, or treatment</li>
+    <li>Should not replace consultation with a qualified healthcare professional</li>
+    <li>Should not be used as the sole basis for health-related decisions</li>
+  </ul>
+  <p>If you have a medical condition, are pregnant, or have specific health concerns, consult your doctor before making changes to your diet, exercise, or lifestyle based on TLC insights.</p>
+
+  <h2>7. NUTRITIONAL AND MACRO DATA</h2>
+  <p>Calorie and macronutrient estimates provided by TLC (particularly within Meal Matchmaker and Meal Analyser) are estimates based on publicly available nutritional information and computational analysis. They are not guaranteed to be accurate and should not be relied upon for medical nutrition therapy. TLC provides confidence indicators where available.</p>
+
+  <h2>8. ACCEPTABLE USE</h2>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Use the Service in any way that violates applicable laws or regulations</li>
+    <li>Attempt to access other users' accounts or data</li>
+    <li>Reverse engineer, decompile, or attempt to extract the source code of the Service</li>
+    <li>Use automated means to access the Service without our express permission</li>
+    <li>Provide false health information that could result in inappropriate recommendations</li>
+  </ul>
+
+  <h2>9. INTELLECTUAL PROPERTY</h2>
+  <p>All content, features, and functionality of TLC (including but not limited to the Dynamic Insight system, scoring algorithms, and design) are owned by The Longevity Chef Ltd and are protected by applicable intellectual property laws. Your personal data and health information remain yours.</p>
+
+  <h2>10. LIMITATION OF LIABILITY</h2>
+  <p>To the maximum extent permitted by applicable law, The Longevity Chef Ltd shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Service. Our total liability to you for any claim arising from these Terms shall not exceed the amount you paid to us in the 12 months preceding the claim.</p>
+
+  <h2>11. CHANGES TO THE SERVICE</h2>
+  <p>We reserve the right to modify, suspend, or discontinue any part of the Service at any time. We will provide reasonable notice for material changes that affect paid subscribers.</p>
+
+  <h2>12. TERMINATION</h2>
+  <p>We may suspend or terminate your account if you violate these Terms. You may delete your account at any time from your profile settings. Upon termination, your data will be retained for 12 months in accordance with our Privacy Policy, then permanently deleted.</p>
+
+  <h2>13. GOVERNING LAW</h2>
+  <p>These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+  <h2>14. CONTACT</h2>
+  <p>For questions about these Terms, contact us at <a href="mailto:hello@thelongevitychef.io">hello@thelongevitychef.io</a>.</p>
+</main>
+
+<footer>
+  &copy; 2026 The Longevity Chef. &nbsp;&middot;&nbsp; <a href="/terms">Terms of Service</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
+`;
+// TERMS_HTML_END
+
 function corsHeaders(request) {
   const origin = request.headers.get('Origin') || '*';
   return {
@@ -4722,6 +5678,9 @@ export default {
       else if (path === '/how-it-works') html = HOW_IT_WORKS_HTML;
       else if (path === '/why-tlc') html = WHY_TLC_HTML;
       else if (path === '/pricing') html = PRICING_HTML;
+      else if (path === '/start') html = START_HTML;
+      else if (path === '/privacy') html = PRIVACY_HTML;
+      else if (path === '/terms') html = TERMS_HTML;
       else {
         return new Response('Not Found', { status: 404, headers: cors });
       }

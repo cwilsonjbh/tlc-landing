@@ -303,7 +303,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   </ul>
   <div style="display:flex;align-items:center;gap:20px;">
     <a href="#" class="nav-login" id="navLoginBtn">Log in</a>
-    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a>
+    <a href="/start" class="nav-cta">Start Free</a>
   </div>
   <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -317,7 +317,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <div class="mobile-overlay-cta">
-    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="width:220px;justify-content:center;">Start Free</a>
+    <a href="/start" class="btn btn-green" style="width:220px;justify-content:center;">Start Free</a>
     <a href="#" class="btn btn-outline" style="width:220px;justify-content:center;" id="mobileLoginBtn">Log in</a>
   </div>
 </div>
@@ -466,20 +466,20 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 
       <!-- TLC PRO -->
       <div class="plan-card">
-        <div class="plan-label">Coming soon</div>
+        <div class="plan-label">Full system</div>
         <div class="plan-name">TLC Pro</div>
         <div class="plan-price-row">
           <div class="plan-price" id="proPrice">$19.99</div>
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Join waitlist</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Start TLC Pro</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in TLC, plus</div>
         <ul class="plan-features">
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Weekly personalised meal plan <span class="plan-feature-tag tag-soon">Soon</span></span>
+            <span>Weekly personalised meal plan</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -688,45 +688,79 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 </section>
 
 <!-- FAQ -->
+<!-- IS TLC RIGHT FOR YOU -->
+<section style="padding:clamp(80px,10vw,120px) 0;background:var(--white);border-top:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;" class="reveal">
+      <div>
+        <div class="label" style="margin-bottom:18px;">Honest assessment</div>
+        <h2 style="font-family:var(--font-display);font-size:clamp(40px,5vw,72px);line-height:0.9;letter-spacing:0.01em;color:var(--ink);margin-bottom:24px;">IS TLC<br>RIGHT FOR<br>YOU?</h2>
+        <p style="font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);line-height:1.8;margin-bottom:0;">Not every tool is right for every person. Here is an honest picture of who TLC is built for and who would be better served elsewhere.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <div style="background:var(--green-light);border:1.5px solid rgba(46,168,74,0.18);border-radius:12px 12px 0 0;padding:28px 28px 24px;">
+          <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:16px;">TLC is built for you if</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You want to understand why your body responds the way it does</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You are interested in patterns over time, not just today's numbers</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You use or want to use a wearable (though not required)</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You eat at restaurants and need guidance that travels with you</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--green);"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You value personalised intelligence over generic plans</li>
+          </ul>
+        </div>
+        <div style="background:var(--surface);border:1.5px solid var(--border-mid);border-radius:0 0 12px 12px;padding:28px 28px 24px;">
+          <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">A different tool might suit you better if</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--muted);"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You just want to count calories (MyFitnessPal does this well and is free)</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--muted);"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You want meal delivery or pre-packaged food (try Factor or Freshly)</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted-2);line-height:1.5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px;color:var(--muted);"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Your primary goal is workout tracking rather than nutrition (try Garmin or Strava)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="faq-section">
   <div class="container">
     <div class="label reveal">Common questions</div>
     <h2 class="reveal d1">EVERYTHING<br>YOU WANT<br>TO KNOW</h2>
     <div class="faq-grid reveal d2">
 
+
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          Do I need a wearable device to use TLC?
+          How is TLC different from MyFitnessPal, Cronometer, or Noom?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">No. A wearable enriches TLC significantly - connecting your sleep quality, HRV, and activity data into the insight layer - but it is entirely optional. Without one, you enter biometric baselines manually and TLC works from your nutrition and reflection data alone. Many members find this more than enough to start seeing patterns. You can connect a wearable at any point.</div>
+          <div class="faq-a-inner">Those tools track what you do. TLC explains what it means. MyFitnessPal and Cronometer are excellent calorie logs, but they treat each day in isolation. They have no way to connect your food choices to how you sleep, how your HRV changes, or how you feel the next day. Noom applies behavioural coaching to eating habits, but without live wearable data. TLC connects all three pillars simultaneously: every meal feeds into your nightly Dynamic Insight, which is also shaped by your wearable data and your evening reflection. That cross-pillar connection is what none of the others do.</div>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          Can I cancel at any time?
+          How does the Daily Dynamic Insight work?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">Yes, with no penalty and no questions asked. Cancel from your profile settings in under 30 seconds and your access continues until the end of the billing period. You will never be charged again after cancellation. Your data is retained for 12 months in case you return.</div>
+          <div class="faq-a-inner">Each evening at your chosen time (default 8pm), TLC generates a personalised narrative that pulls together everything from that day: your meals, your wearable data (HRV, sleep, recovery, strain), your evening reflection, and your goals. It surfaces patterns across all three, flags anything worth your attention, and closes with a recommendation for tomorrow. After seven days it generates a Weekly Deep-Dive and a new strategy for the week ahead. The longer you use it, the more specific and accurate the insights become.</div>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          How is TLC different from a calorie tracker?
+          What is Meal Matchmaker and how does it work?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">A calorie tracker tells you how much you ate. TLC tells you why it matters. The difference is interpretation. TLC connects your food choices to how you sleep, how you recover, how you feel, and how those things compound over time. Calorie trackers produce logs. TLC produces insight - and then translates that insight into your next best decision, whether that is what to cook tonight or where to eat at lunch tomorrow.</div>
+          <div class="faq-a-inner">Meal Matchmaker uses your GPS location to find nearby restaurants, then browses their actual menus to identify the dish that best fits your macro targets, dietary restrictions, allergies, spice tolerance, and health goal. It returns the specific dish name, estimated macros, and a link to the menu. It works at breakfast, lunch, or dinner, in any city, and adapts to your goals automatically. Available free in TLC Lite (3 searches per day) and unlimited in TLC and TLC Pro.</div>
         </div>
       </div>
 
@@ -738,7 +772,19 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">The Longevity Score is a weekly composite measure of how well your three pillars are aligning. It factors in nutritional consistency, biometric trends, sleep quality, recovery patterns, and reflection data - weighted by your personal goals. It is not a perfect number. It is a directional signal designed to show whether your daily choices are compounding towards your long-term goals or drifting away from them. TLC (paid) receives it weekly. TLC Pro will receive it daily.</div>
+          <div class="faq-a-inner">The Longevity Score is a composite measure of how well your three pillars are aligning over time. It draws on nutritional consistency, biometric trends (HRV, sleep quality, recovery), reflection data, and goal progress, all weighted by what matters most for your specific goals. It is not a perfect number. It is a directional signal: are your daily choices compounding toward better health, or drifting away from it? TLC members receive it weekly. TLC Pro members receive it daily.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need a wearable device to use TLC?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">No. A wearable enriches TLC significantly by feeding live HRV, sleep quality, recovery, and strain data into every insight. But it is entirely optional. Without one, you enter a manual biometric baseline (resting heart rate, daily steps) and TLC builds from your nutrition and reflection data alone. Many members find this more than enough to start seeing meaningful patterns. You can connect a wearable at any point. TLC supports 25+ devices including Oura, WHOOP, Fitbit, Garmin, and Apple Watch.</div>
         </div>
       </div>
 
@@ -750,7 +796,19 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">The assessment takes around 5 minutes. Connecting a wearable takes another 2 minutes. Your first Dynamic Insight is generated on the same evening. There is no lengthy setup, no manual data entry, and no waiting period. TLC starts working from day one.</div>
+          <div class="faq-a-inner">The onboarding assessment takes around 5 minutes. It covers your goals, dietary preferences, allergies, spice tolerance, health conditions, and lifestyle. Connecting a wearable takes another 2 minutes. Your personalised nutrition blueprint is generated instantly. Your first Dynamic Insight arrives the same evening. There is no lengthy setup, no food diary to manually populate, and no waiting period.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I cancel at any time?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes, with no penalty and no questions asked. Cancel from your profile settings in under 30 seconds and your access continues until the end of the billing period. You will never be charged again after cancellation. If you return within 12 months, your full data history is waiting for you exactly as you left it.</div>
         </div>
       </div>
 
@@ -762,19 +820,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </div>
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">Your data is stored securely and used exclusively to generate your personal insights. It is never sold to third parties, never used for advertising, and never shared without your explicit consent. Wearable data is accessed via the Terra API, a regulated health data platform. You can request a full data export or deletion at any time from your profile settings.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          What happens to my data if I cancel?
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Your data is retained for 12 months after cancellation, so if you return, your history picks up where it left off. After 12 months, data is permanently and automatically deleted. You can request immediate deletion at any time via your profile settings - no waiting, no forms, no email chains required.</div>
+          <div class="faq-a-inner">Your data is stored securely and used exclusively to power your personal insights. It is never sold to third parties, never used for advertising, and never shared without your explicit consent. Wearable data is accessed via the Terra API, a regulated health data integration platform. You can request a full export or permanent deletion of your data at any time from your profile settings, with no delay and no forms to complete.</div>
         </div>
       </div>
 
@@ -832,15 +878,15 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
         <ul>
           <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Lite (free)</a></li>
           <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC ($9.99/mo)</a></li>
-          <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Pro (waitlist)</a></li>
+          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC Pro ($19.99/mo)</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
           <li><a href="mailto:hello@thelongevitychef.io">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
         </ul>
       </div>
     </div>

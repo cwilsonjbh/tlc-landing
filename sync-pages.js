@@ -13,6 +13,9 @@ const pages = [
   { file: 'how-it-works.html', start: '// HOW_IT_WORKS_HTML_START',end: '// HOW_IT_WORKS_HTML_END',const: 'HOW_IT_WORKS_HTML' },
   { file: 'why-tlc.html',      start: '// WHY_TLC_HTML_START',     end: '// WHY_TLC_HTML_END',     const: 'WHY_TLC_HTML' },
   { file: 'pricing.html',      start: '// PRICING_HTML_START',     end: '// PRICING_HTML_END',     const: 'PRICING_HTML' },
+  { file: 'start.html',        start: '// START_HTML_START',       end: '// START_HTML_END',       const: 'START_HTML' },
+  { file: 'privacy.html',      start: '// PRIVACY_HTML_START',     end: '// PRIVACY_HTML_END',     const: 'PRIVACY_HTML' },
+  { file: 'terms.html',        start: '// TERMS_HTML_START',       end: '// TERMS_HTML_END',       const: 'TERMS_HTML' },
 ];
 
 let workerSource = fs.readFileSync(workerPath, 'utf8');

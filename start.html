@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | The Longevity Chef</title>
+<meta name="description" content="Tell us what you are looking to achieve. TLC will find the right path for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #0d0d0d;
+  --ink: #1a1a1a;
+  --ink-2: #2e2e2e;
+  --surface: #f5f4f0;
+  --surface-2: #eeecea;
+  --white: #ffffff;
+  --green: #2ea84a;
+  --green-dark: #1a5c28;
+  --green-mid: #3d7a30;
+  --green-light: #ebf7ee;
+  --green-accent: #46c461;
+  --nutrition: #39BA76;
+  --body-blue: #398CBA;
+  --mind: #E8B84B;
+  --muted: rgba(26,26,26,0.42);
+  --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08);
+  --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#nebulaCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* ── HEADER ── */
+header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px clamp(24px, 5vw, 72px);
+  background: rgba(245,244,240,0);
+}
+.header-logo img { height: 48px; width: auto; display: block; }
+.header-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.header-back:hover { color: var(--ink); }
+.header-back svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
+  position: relative;
+  z-index: 1;
+}
+
+.start-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.1s forwards;
+}
+.start-eyebrow::before { content: ''; width: 18px; height: 1.5px; background: var(--green); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+.start-headline {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards;
+}
+
+.start-sub {
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 300;
+  color: var(--muted-2);
+  text-align: center;
+  max-width: 420px;
+  line-height: 1.75;
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards;
+}
+
+/* ── GOAL CARDS ── */
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.4s forwards;
+}
+
+.goal-card {
+  background: var(--white);
+  border: 1.5px solid var(--border-mid);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.goal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.10);
+  border-color: transparent;
+}
+.goal-card:hover::before { opacity: 1; }
+
+.goal-card.gc-free::before { background: linear-gradient(90deg, var(--nutrition), var(--green)); }
+.goal-card.gc-tlc::before { background: linear-gradient(90deg, var(--green), var(--green-dark)); }
+.goal-card.gc-pro::before { background: linear-gradient(90deg, var(--body-blue), #1d5c7a); }
+
+.goal-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.gc-free .goal-icon { background: rgba(57,186,118,0.10); }
+.gc-tlc .goal-icon { background: rgba(46,168,74,0.10); }
+.gc-pro .goal-icon { background: rgba(57,140,186,0.10); }
+.goal-icon svg { width: 26px; height: 26px; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gc-free .goal-icon svg { stroke: var(--nutrition); }
+.gc-tlc .goal-icon svg { stroke: var(--green); }
+.gc-pro .goal-icon svg { stroke: var(--body-blue); }
+
+.goal-tier-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+.gc-free .goal-tier-pill { background: rgba(57,186,118,0.10); color: #2a9148; }
+.gc-tlc .goal-tier-pill { background: rgba(46,168,74,0.10); color: var(--green-dark); }
+.gc-pro .goal-tier-pill { background: rgba(57,140,186,0.10); color: #2b6e93; }
+
+.goal-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.goal-body {
+  font-size: 13.5px;
+  color: var(--muted-2);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.goal-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 24px;
+}
+.goal-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--muted-2);
+}
+.goal-features li svg { flex-shrink: 0; }
+
+.goal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.goal-cta-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.gc-free .goal-cta-text { color: var(--nutrition); }
+.gc-tlc .goal-cta-text { color: var(--green); }
+.gc-pro .goal-cta-text { color: var(--body-blue); }
+.goal-cta-price {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.goal-cta-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.gc-free .goal-cta-arrow { background: rgba(57,186,118,0.10); }
+.gc-tlc .goal-cta-arrow { background: rgba(46,168,74,0.10); }
+.gc-pro .goal-cta-arrow { background: rgba(57,140,186,0.10); }
+.goal-card:hover .goal-cta-arrow { transform: translateX(3px); }
+.goal-cta-arrow svg { width: 14px; height: 14px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.gc-free .goal-cta-arrow svg { stroke: var(--nutrition); }
+.gc-tlc .goal-cta-arrow svg { stroke: var(--green); }
+.gc-pro .goal-cta-arrow svg { stroke: var(--body-blue); }
+
+.start-note {
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s forwards;
+}
+.start-note span { color: var(--green); font-weight: 600; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .goal-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+@media (max-width: 520px) {
+  .start-headline { font-size: clamp(42px, 12vw, 72px); }
+}
+</style>
+</head>
+<body>
+
+<canvas id="nebulaCanvas"></canvas>
+
+<header>
+  <a href="/" class="header-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="header-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+</header>
+
+<main>
+  <div class="start-eyebrow">Your path</div>
+  <h1 class="start-headline">WHAT ARE YOU<br>LOOKING TO<br>ACHIEVE?</h1>
+  <p class="start-sub">Choose what matters most to you right now. You can always change direction later.</p>
+
+  <div class="goal-grid">
+
+    <!-- FREE TIER -->
+    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC Lite &middot; Free</div>
+      <h2 class="goal-title">SMARTER EATING<br>WHEN I'M OUT</h2>
+      <p class="goal-body">Find dishes at nearby restaurants that fit your macros, allergies, and health goal. Any city, any menu, in seconds.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Meal Matchmaker (3 searches/day)
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Personal nutrition blueprint
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Allergy and goal-aware matching
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start free</div>
+          <div class="goal-cta-price">No card required</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TLC PAID TIER -->
+    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="goal-card gc-tlc">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
+      <h2 class="goal-title">DAILY INSIGHT<br>INTO MY HEALTH</h2>
+      <p class="goal-body">Connect your wearable, log meals, and receive a daily insight that joins the dots between nutrition, sleep, and how you feel.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Daily Dynamic Insights
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Longevity Coach with full context
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          25+ wearables &bull; Pantry Pal &bull; Meal Analyser
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start TLC</div>
+          <div class="goal-cta-price">7-day free trial</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- TLC PRO TIER -->
+    <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="goal-card gc-pro">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC Pro &middot; $19.99/mo</div>
+      <h2 class="goal-title">COMPLETE MEAL<br>PLANNING SYSTEM</h2>
+      <p class="goal-body">Every meal of every day, planned around your biology, goals, and schedule. Auto-generated shopping lists, zero waste, fully adaptable.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Weekly personalised meal plan
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Smart zero-waste shopping list
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Everything in TLC, plus daily Longevity Score
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start TLC Pro</div>
+          <div class="goal-cta-price">7-day free trial</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="start-note">Not sure which to pick? <span>TLC Lite is always free.</span> You can upgrade at any time with no data loss.</p>
+</main>
+
+<script>
+// ── Nebula ──
+(function() {
+  const canvas = document.getElementById('nebulaCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  function initParticles() {
+    particles = [];
+    const count = Math.floor((W * H) / 14000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.8 + 0.4,
+        a: Math.random() * 0.6 + 0.2
+      });
+    }
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(46,168,74,${p.a})`;
+      ctx.fill();
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = `rgba(46,168,74,${0.08 * (1 - dist / 100)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  resize();
+  initParticles();
+  draw();
+  window.addEventListener('resize', () => { resize(); initParticles(); });
+})();
+</script>
+
+</body>
+</html>
