@@ -4504,25 +4504,25 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
         <tbody>
           <tr class="comp-section-header"><td colspan="4">Dynamic Insights</td></tr>
           <tr>
-            <td>Daily Dynamic Insight</td>
+            <td><span class="feat-label">Daily Dynamic Insight<span class="feat-info">i<span class="feat-tooltip">A personalised evening analysis generated from your meals, biometrics, and reflection data. Surfaces patterns across all three pillars that no single data source could reveal alone.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Weekly Dynamic Insight</td>
+            <td><span class="feat-label">Weekly Dynamic Insight<span class="feat-info">i<span class="feat-tooltip">A deeper pattern analysis generated at the end of your personal 7-day week. Identifies trends across meals, sleep, energy, and body data that only become visible at a weekly scale.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Weekly strategy</td>
+            <td><span class="feat-label">Weekly strategy<span class="feat-info">i<span class="feat-tooltip">A practical, personalised action plan generated after each weekly insight. Sets your focus for the week ahead based on your actual data, not generic advice.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Longevity Score</td>
+            <td><span class="feat-label">Longevity Score<span class="feat-info">i<span class="feat-tooltip">A weekly composite score (0-100) reflecting your nutrition consistency, sleep quality, activity, and wellbeing data. Tracks your trajectory over time so progress is always visible.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
@@ -4578,37 +4578,37 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </tr>
           <tr class="comp-section-header"><td colspan="4">Data and integration</td></tr>
           <tr>
-            <td>Wearable integration (25+ devices)</td>
+            <td><span class="feat-label">Wearable integration (25+ devices)<span class="feat-info">i<span class="feat-tooltip">Connects Fitbit, Garmin, Whoop, Oura, and 20+ other devices via the Terra platform. Sleep, HRV, resting heart rate, steps, and readiness data flow into TLC automatically each day.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Evening reflection (8 wellbeing charts)</td>
+            <td><span class="feat-label">Evening reflection (8 wellbeing charts)<span class="feat-info">i<span class="feat-tooltip">A 60-second daily check-in capturing mood, energy, focus, stress, digestion, recovery, motivation, and sleep quality. Tracked across 8 charts so TLC can spot mind-body connections over time.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>30-day personalised goals</td>
+            <td><span class="feat-label">30-day personalised goals<span class="feat-info">i<span class="feat-tooltip">Three goals generated from your biometric and lifestyle data at the start of each 30-day period. Tracked automatically through your daily data and refreshed when completed or at period end.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Sustainability tips and equivalences</td>
+            <td><span class="feat-label">Sustainability tips and equivalences<span class="feat-info">i<span class="feat-tooltip">Puts your food choices in context with real-world equivalences (e.g. the CO2 saved by swapping beef for salmon). Motivating rather than prescriptive, surfaced in your daily insight.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Dynamic challenges</td>
+            <td><span class="feat-label">Dynamic challenges<span class="feat-info">i<span class="feat-tooltip">Short-term nutrition and lifestyle challenges generated from your current gaps and goals. Designed to build positive habits incrementally, updated as you complete them or your data shifts.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Smart Shopping List (saves 10–15% on grocery bills)</td>
+            <td><span class="feat-label">Smart Shopping List (saves 10–15% on grocery bills)<span class="feat-info">i<span class="feat-tooltip">Auto-generated from your 28-day meal plan. Consolidates ingredients across all meals, eliminates duplicates, and organises by store section to cut average grocery spend by 10-15%.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
@@ -4854,7 +4854,6 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <span class="cta-sub reveal d2">Free to start. No credit card required.</span>
     <div class="cta-actions reveal d3">
       <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
-      <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="btn btn-outline-white" style="padding:18px 48px;font-size:13px;">Start TLC ($9.99/mo)</a>
     </div>
   </div>
 </section>
