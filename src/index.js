@@ -3840,12 +3840,6 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .page-hero-sub { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(22px, 3vw, 36px); color: var(--green); display: block; margin-bottom: 28px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards; }
 .page-hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 540px; margin: 0 auto; line-height: 1.85; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
 
-/* ── BILLING TOGGLE ── */
-.billing-toggle-wrap { padding: clamp(48px, 6vw, 72px) 0 clamp(16px, 3vw, 24px); text-align: center; }
-.billing-toggle { display: inline-flex; align-items: center; gap: 14px; background: var(--surface); border-radius: 100px; padding: 6px; }
-.billing-toggle-btn { font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 22px; border-radius: 100px; border: none; cursor: pointer; transition: all 0.25s; color: var(--muted-2); background: transparent; }
-.billing-toggle-btn.active { background: var(--white); color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-.billing-save-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: 3px 10px; border-radius: 100px; margin-left: 4px; }
 
 /* ── PRICING GRID ── */
 .pricing-section { padding: 0 0 clamp(100px, 12vw, 160px); }
@@ -3863,10 +3857,6 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .plan-card.featured .plan-price { color: var(--white); }
 .plan-price-period { font-size: 13px; font-weight: 500; color: var(--muted); padding-bottom: 10px; }
 .plan-card.featured .plan-price-period { color: rgba(255,255,255,0.4); }
-.plan-price-annual { font-size: 12px; color: var(--muted); margin-bottom: 6px; height: 18px; }
-.plan-card.featured .plan-price-annual { color: rgba(255,255,255,0.4); }
-.plan-price-annual .save { color: var(--green); font-weight: 700; }
-.plan-card.featured .plan-price-annual .save { color: var(--green-accent); }
 .plan-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; margin-bottom: 28px; min-height: 52px; }
 .plan-card.featured .plan-desc { color: rgba(255,255,255,0.55); }
 .plan-cta { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; padding: 15px 24px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); width: 100%; margin-bottom: 32px; }
@@ -4082,13 +4072,6 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   </div>
 </section>
 
-<!-- BILLING TOGGLE -->
-<div class="billing-toggle-wrap reveal">
-  <div class="billing-toggle">
-    <button class="billing-toggle-btn active" id="monthlyBtn" onclick="setBilling('monthly')">Monthly</button>
-    <button class="billing-toggle-btn" id="annualBtn" onclick="setBilling('annual')">Annual <span class="billing-save-pill">Save 17%</span></button>
-  </div>
-</div>
 
 <!-- PRICING GRID -->
 <section class="pricing-section">
@@ -4103,7 +4086,6 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price">$0</div>
           <div class="plan-price-period">/month</div>
         </div>
-        <div class="plan-price-annual">&nbsp;</div>
         <div class="plan-desc">A genuine taste of what TLC does. No credit card. No expiry. No catch.</div>
         <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-free">Get started free</a>
         <div class="plan-divider"></div>
@@ -4157,7 +4139,6 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price" id="tlcPrice">$9.99</div>
           <div class="plan-price-period">/month</div>
         </div>
-        <div class="plan-price-annual" id="tlcAnnual">&nbsp;</div>
         <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
         <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
         <div class="plan-divider"></div>
@@ -4210,7 +4191,6 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price" id="proPrice">$19.99</div>
           <div class="plan-price-period">/month</div>
         </div>
-        <div class="plan-price-annual" id="proAnnual">&nbsp;</div>
         <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
         <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Join waitlist</a>
         <div class="plan-divider"></div>
@@ -4633,31 +4613,6 @@ document.getElementById('loginSubmit').addEventListener('click', async () => {
   } catch { errorEl.textContent = 'Connection error. Please try again.'; errorEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
 });
 
-// ── BILLING TOGGLE ──
-let billingMode = 'monthly';
-function setBilling(mode) {
-  billingMode = mode;
-  document.getElementById('monthlyBtn').classList.toggle('active', mode === 'monthly');
-  document.getElementById('annualBtn').classList.toggle('active', mode === 'annual');
-  const tlcP = document.getElementById('tlcPrice');
-  const tlcA = document.getElementById('tlcAnnual');
-  const proP = document.getElementById('proPrice');
-  const proA = document.getElementById('proAnnual');
-  const tlcCta = document.getElementById('tlcCta');
-  if (mode === 'annual') {
-    tlcP.textContent = '$8.32';
-    tlcA.innerHTML = 'Billed $99.99/year — <span class="save">save $19.89</span>';
-    proP.textContent = '$16.66';
-    proA.innerHTML = 'Billed $199.99/year — <span class="save">save $39.89</span>';
-    tlcCta.textContent = 'Start TLC (annual)';
-  } else {
-    tlcP.textContent = '$9.99';
-    tlcA.innerHTML = '&nbsp;';
-    proP.textContent = '$19.99';
-    proA.innerHTML = '&nbsp;';
-    tlcCta.textContent = 'Start TLC';
-  }
-}
 
 // ── FAQ ──
 function toggleFaq(el) {
