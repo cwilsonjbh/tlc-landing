@@ -128,7 +128,17 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hic-pval { font-size: 10px; font-weight: 700; color: var(--ink-2); width: 22px; text-align: right; flex-shrink: 0; }
 .hic-quote { font-size: 10px; color: var(--muted-2); font-style: italic; line-height: 1.55; border-top: 1px solid rgba(26,26,26,0.07); padding-top: 11px; margin: 0; }
 @keyframes livePulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46,168,74,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(46,168,74,0); } }
-@media (max-width: 960px) { .hero-insight-card { display: none; } }
+@media (max-width: 960px) {
+  .hero-insight-card {
+    display: block;
+    width: 200px;
+    padding: 13px 15px;
+    bottom: 14px;
+    right: 50%;
+    transform: translateX(50%);
+    animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 1.4s forwards;
+  }
+}
 /* ── Hero insight card — speedometer dial ── */
 .hic-speedo-wrap { text-align: center; margin: 4px -4px 2px; position: relative; }
 .hic-speedo-svg { width: 100%; display: block; overflow: visible; }
@@ -161,17 +171,56 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .section-header h2 em { font-style: normal; color: var(--green); }
 .section-header > p { font-size: 18px; color: var(--muted-2); max-width: 540px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
-.pillar-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 12px; padding: 40px 30px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; }
-.pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-.pillar-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); }
+.pillar-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 16px; padding: 40px 30px 32px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; }
+.pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 16px 16px 0 0; }
+.pillar-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(0,0,0,0.08); }
+.pillar-card.nutrition { background: linear-gradient(160deg, rgba(57,186,118,0.05) 0%, rgba(255,255,255,0) 55%); }
+.pillar-card.body-pillar { background: linear-gradient(160deg, rgba(57,140,186,0.05) 0%, rgba(255,255,255,0) 55%); }
+.pillar-card.mind { background: linear-gradient(160deg, rgba(232,184,75,0.05) 0%, rgba(255,255,255,0) 55%); }
 .pillar-card.nutrition::before { background: var(--nutrition); }
 .pillar-card.body-pillar::before { background: var(--body-blue); }
 .pillar-card.mind::before { background: var(--mind); }
-.pillar-visual { margin-bottom: 26px; height: 44px; display: flex; align-items: center; justify-content: center; }
-.pillar-visual svg { display: block; overflow: visible; }
-.pillar-card h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 12px; text-align: center; }
-.pillar-card p { font-size: 15px; color: var(--muted-2); line-height: 1.75; text-align: center; }
+.pillar-visual { margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
+.pillar-icon-wrap { width: 68px; height: 68px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+.pillar-card.nutrition .pillar-icon-wrap { background: rgba(57,186,118,0.12); }
+.pillar-card.body-pillar .pillar-icon-wrap { background: rgba(57,140,186,0.12); }
+.pillar-card.mind .pillar-icon-wrap { background: rgba(232,184,75,0.12); }
+.pillar-card h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-align: center; }
+.pillar-hook { font-size: 13px; font-weight: 600; color: var(--ink); text-align: center; margin-bottom: 12px; }
+.pillar-card p.pillar-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; text-align: center; }
+.pillar-data-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 20px; }
+.pillar-data-tag { font-size: 10px; font-weight: 700; padding: 4px 11px; border-radius: 5px; letter-spacing: 0.01em; }
+.pillar-card.nutrition .pillar-data-tag { background: rgba(57,186,118,0.09); color: #2a9148; }
+.pillar-card.body-pillar .pillar-data-tag { background: rgba(57,140,186,0.09); color: #2b6e93; }
+.pillar-card.mind .pillar-data-tag { background: rgba(232,184,75,0.09); color: #927010; }
 .pillars-tagline { text-align: center; font-size: 20px; color: var(--ink); font-weight: 500; letter-spacing: -0.01em; }
+/* ── TLC PRO MEAL PLAN DEMO ── */
+.mock-mealplan { display: flex; flex-direction: column; }
+.mock-mp-header { background: linear-gradient(135deg, #1c1c1e 0%, #2d2d2f 100%); padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-radius: 8px 8px 0 0; }
+.mock-mp-pro-badge { font-size: 8.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; background: var(--green); color: white; padding: 3px 9px; border-radius: 4px; white-space: nowrap; }
+.mock-mp-hdr-title { font-size: 13px; font-weight: 700; color: white; line-height: 1.25; }
+.mock-mp-hdr-sub { font-size: 9px; color: rgba(255,255,255,0.38); font-weight: 500; }
+.mock-mp-body { padding: 10px 16px; }
+.mock-mp-meal-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.mock-mp-meal-row:last-child { border-bottom: none; }
+.mock-mp-type { font-size: 8px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); width: 58px; flex-shrink: 0; }
+.mock-mp-name { font-size: 11px; font-weight: 600; color: var(--ink); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transform: translateX(-4px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.mock-mp-name.mp-visible { opacity: 1; transform: translateX(0); }
+.mock-mp-tag { font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+.mock-mp-tag.omega { background: rgba(57,140,186,0.10); color: #2b6e93; }
+.mock-mp-tag.pro { background: rgba(57,186,118,0.10); color: #2a9148; }
+.mock-mp-tag.lean { background: rgba(232,184,75,0.10); color: #927010; }
+.mock-mp-divider { height: 1px; background: var(--border); margin: 0 16px; }
+.mock-mp-shop { padding: 9px 16px; background: rgba(57,140,186,0.03); }
+.mock-mp-shop-title { font-size: 7px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+.mock-mp-shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px; }
+.mock-mp-shop-item { display: flex; align-items: center; gap: 6px; font-size: 9.5px; color: var(--ink-2); font-weight: 500; opacity: 0; transform: translateY(4px); transition: opacity 0.35s ease, transform 0.35s ease; }
+.mock-mp-shop-item.mp-visible { opacity: 1; transform: translateY(0); }
+.mock-mp-shop-check { width: 13px; height: 13px; flex-shrink: 0; border-radius: 3px; background: rgba(57,186,118,0.14); display: flex; align-items: center; justify-content: center; }
+.mock-mp-savings { padding: 9px 16px; background: rgba(46,168,74,0.07); border-radius: 0 0 8px 8px; display: flex; align-items: center; justify-content: space-between; }
+.mock-mp-savings-num { font-family: var(--font-display); font-size: 28px; color: var(--green); line-height: 1; }
+.mock-mp-savings-label { font-size: 10px; font-weight: 700; color: var(--green-dark); display: block; text-align: right; }
+.mock-mp-savings-sub { font-size: 9px; color: var(--muted); text-align: right; }
 
 /* ── STATS (Apple-style bold numbers) ── */
 .stats-bar { background: var(--surface); padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; z-index: 2; }
@@ -495,9 +544,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 @keyframes ingPop { 0% { transform: scale(0.6); opacity: 0; } 75% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
 
 /* ── MOBILE STICKY CTA ── */
-.mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 12px var(--gutter); z-index: 190; text-align: center; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
-.mobile-cta.show { transform: translateY(0); }
-.mobile-cta .btn { width: 100%; justify-content: center; }
+.mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.97); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 12px var(--gutter); padding-bottom: max(12px, calc(8px + env(safe-area-inset-bottom, 0px))); z-index: 300; text-align: center; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); -webkit-transform: translateY(100%); will-change: transform; }
+.mobile-cta.show { transform: translateY(0); -webkit-transform: translateY(0); }
+.mobile-cta .btn { width: 100%; justify-content: center; display: flex; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
@@ -520,6 +569,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .nav-links { display: none; }
   .sub-nav-links { display: none; }
   .mobile-cta { display: block; }
+  body { padding-bottom: 72px; }
 }
 @media (max-width: 640px) {
   :root { --section-pad: clamp(72px, 10vw, 100px); }
@@ -670,32 +720,58 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="pillars-grid">
       <div class="pillar-card nutrition reveal-scale d1">
         <div class="pillar-visual">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
-          </svg>
+          <div class="pillar-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+            </svg>
+          </div>
         </div>
         <h3>Nutrition</h3>
-        <p>What you eat shapes everything. TLC tracks every meal, macro, and pattern, then shows you exactly how food drives your energy, recovery, and long-term health outcomes.</p>
+        <p class="pillar-hook">Food is the lever most people pull blindly.</p>
+        <p class="pillar-body">TLC maps every meal to your goals, flags patterns before they become problems, and shows you exactly how what you eat drives your sleep, energy, and recovery.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">Calories</span>
+          <span class="pillar-data-tag">Macros</span>
+          <span class="pillar-data-tag">Meal timing</span>
+          <span class="pillar-data-tag">Food patterns</span>
+        </div>
       </div>
       <div class="pillar-card body-pillar reveal-scale d2">
         <div class="pillar-visual">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
+          <div class="pillar-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
         </div>
         <h3>Body</h3>
-        <p>Sleep, recovery, HRV, strain. 25+ wearables feed your real biometric data directly into every insight, so your plan adapts to what your body is actually doing, not a generic formula.</p>
+        <p class="pillar-hook">Your wearable data means nothing in isolation.</p>
+        <p class="pillar-body">25+ wearables feed sleep, HRV, strain, and recovery into every insight. Your plan adapts in real time to what your body is actually doing today, not what a formula assumed.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">HRV</span>
+          <span class="pillar-data-tag">Sleep quality</span>
+          <span class="pillar-data-tag">Recovery</span>
+          <span class="pillar-data-tag">Strain</span>
+        </div>
       </div>
       <div class="pillar-card mind reveal-scale d3">
         <div class="pillar-visual">
-          <!-- Brain (Lucide) -->
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
-            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
-          </svg>
+          <div class="pillar-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+              <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+            </svg>
+          </div>
         </div>
         <h3>Mind</h3>
-        <p>Mood, stress, focus, and energy. A 60-second daily reflection captures what wearables miss. TLC finds the link between how you feel today and what you ate, did, or skipped yesterday.</p>
+        <p class="pillar-hook">No wearable tracks how you actually feel.</p>
+        <p class="pillar-body">A 60-second evening reflection captures mood, stress, focus, and energy. TLC connects it to your nutrition and sleep data, surfacing links no other platform can see.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">Mood</span>
+          <span class="pillar-data-tag">Stress</span>
+          <span class="pillar-data-tag">Focus</span>
+          <span class="pillar-data-tag">Energy</span>
+        </div>
       </div>
     </div>
     <p class="pillars-tagline reveal d4" style="font-size:22px;font-weight:600;letter-spacing:-0.01em;">Nobody else connects all three. <em style="font-style:normal;color:var(--green);">That's where the hidden insights live.</em></p>
@@ -1082,6 +1158,73 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
   </div></div></div>
 
+  <!-- TLC Pro — Monthly Meal Plan -->
+  <div class="feature-block"><div class="container"><div class="feature-inner">
+    <div class="feature-visual reveal-scale">
+      <div class="mock-card mock-mealplan" id="demo-mealplan">
+        <div class="mock-mp-header">
+          <span class="mock-mp-pro-badge">TLC Pro</span>
+          <div>
+            <div class="mock-mp-hdr-title">Your April Meal Plan</div>
+            <div class="mock-mp-hdr-sub">28 days &bull; tailored to your goals &amp; tastes</div>
+          </div>
+        </div>
+        <div class="mock-mp-body">
+          <div class="mock-mp-meal-row">
+            <span class="mock-mp-type">Breakfast</span>
+            <span class="mock-mp-name" id="mp-meal-0">Smoked Salmon Scramble</span>
+            <span class="mock-mp-tag omega">Omega-3</span>
+          </div>
+          <div class="mock-mp-meal-row">
+            <span class="mock-mp-type">Lunch</span>
+            <span class="mock-mp-name" id="mp-meal-1">Mediterranean Grain Bowl</span>
+            <span class="mock-mp-tag pro">High fibre</span>
+          </div>
+          <div class="mock-mp-meal-row">
+            <span class="mock-mp-type">Snack</span>
+            <span class="mock-mp-name" id="mp-meal-2">Greek Yoghurt &amp; Walnuts</span>
+            <span class="mock-mp-tag lean">Anti-inflam.</span>
+          </div>
+          <div class="mock-mp-meal-row">
+            <span class="mock-mp-type">Dinner</span>
+            <span class="mock-mp-name" id="mp-meal-3">Herb Sea Bass &amp; Asparagus</span>
+            <span class="mock-mp-tag omega">Lean protein</span>
+          </div>
+        </div>
+        <div class="mock-mp-divider"></div>
+        <div class="mock-mp-shop">
+          <div class="mock-mp-shop-title">Smart Zero-Waste Shopping List</div>
+          <div class="mock-mp-shop-grid">
+            <div class="mock-mp-shop-item" id="mp-shop-0"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Salmon fillet</div>
+            <div class="mock-mp-shop-item" id="mp-shop-1"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Greek yoghurt</div>
+            <div class="mock-mp-shop-item" id="mp-shop-2"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Quinoa (1 kg)</div>
+            <div class="mock-mp-shop-item" id="mp-shop-3"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Asparagus bunch</div>
+          </div>
+        </div>
+        <div class="mock-mp-savings">
+          <span class="mock-mp-savings-num" id="mp-savings">£0</span>
+          <div>
+            <span class="mock-mp-savings-label">saved this month</span>
+            <span class="mock-mp-savings-sub">Zero waste &bull; 12% under budget</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-copy reveal d2">
+      <span class="label" style="background:rgba(26,26,26,0.06);color:var(--muted-2);">Coming Soon &bull; TLC Pro</span>
+      <h3>YOUR ENTIRE MONTH. PLANNED FOR YOU.</h3>
+      <p>Every meal for the month, built from scratch around your taste preferences, nutritional targets, food restrictions, and health goals. Nothing generic. Nothing wasted.</p>
+      <p>The Smart Shopping List consolidates your entire month's ingredients, eliminates duplicates, and sequences your shop to match what gets used when. Members typically save 10&ndash;15% on their monthly grocery bill.</p>
+      <ul class="feature-highlights">
+        <li>28-day meal plan tailored to goals, tastes, and restrictions</li>
+        <li>Smart zero-waste shopping list across all meals</li>
+        <li>10&ndash;15% average monthly grocery saving</li>
+        <li>Adapts weekly as your goals and biometrics evolve</li>
+      </ul>
+      <a href="mailto:chris@thelongevitychef.com" class="feature-cta">Join the Pro waitlist &rarr;</a>
+    </div>
+  </div></div></div>
+
 </section>
 
 <!-- THE DIFFERENCE -->
@@ -1164,7 +1307,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="footer-bottom"><span class="footer-copy">&copy; 2026 The Longevity Chef. All rights reserved.</span><span class="footer-copy">Food for Life</span></div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
 
 <script>
 // ── Nav + sub-nav scroll ──
@@ -1458,11 +1601,46 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
     obs.observe(el);
   }
 
+  // ── MEAL PLAN DEMO ──
+  function runMealPlan() {
+    var meals = [0,1,2,3].map(function(i) { return document.getElementById('mp-meal-'+i); });
+    var shops = [0,1,2,3].map(function(i) { return document.getElementById('mp-shop-'+i); });
+    var savingsEl = document.getElementById('mp-savings');
+    if (!meals[0]) return;
+    // Reset
+    meals.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
+    shops.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
+    if (savingsEl) savingsEl.textContent = '£0';
+    // Reveal meal names one by one
+    meals.forEach(function(el, i) {
+      if (!el) return;
+      setTimeout(function() { el.classList.add('mp-visible'); }, 300 + i * 480);
+    });
+    // Shopping list items after meals complete
+    var shopStart = 300 + 4 * 480 + 350;
+    shops.forEach(function(el, i) {
+      if (!el) return;
+      setTimeout(function() { el.classList.add('mp-visible'); }, shopStart + i * 190);
+    });
+    // Savings counter
+    var savingsStart = shopStart + 4 * 190 + 250;
+    setTimeout(function() {
+      if (!savingsEl) return;
+      var v = 0, tgt = 43;
+      var t = setInterval(function() {
+        v = Math.min(tgt, v + 2);
+        savingsEl.textContent = '£' + v;
+        if (v >= tgt) clearInterval(t);
+      }, 40);
+    }, savingsStart);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     startWhenVisible('demo-di', runDI, 9000);
     startWhenVisible('demo-coach', runCoach, 10000);
     startWhenVisible('demo-mm', runMM, 8500);
     startWhenVisible('demo-pantry', runPantry, 8000);
+    startWhenVisible('demo-mealplan', runMealPlan, 9500);
   });
 })();
 
