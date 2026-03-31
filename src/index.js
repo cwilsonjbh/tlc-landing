@@ -94,6 +94,27 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .nav-links a:hover { color: var(--ink); }
 .nav-cta { background: var(--ink); color: var(--white) !important; padding: 10px 24px; border-radius: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.25s; text-decoration: none; }
 .nav-cta:hover { background: #333; transform: translateY(-1px); }
+.nav-login { color: var(--muted-2) !important; font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
+.nav-login:hover { color: var(--ink) !important; }
+
+/* ── LOGIN MODAL ── */
+.login-overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,26,0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 9000; align-items: center; justify-content: center; padding: 24px; }
+.login-overlay.open { display: flex; }
+.login-modal { background: #fff; border-radius: 16px; padding: 40px 36px; max-width: 420px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.18); position: relative; }
+.login-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--muted-2); padding: 4px; line-height: 1; }
+.login-modal-close:hover { color: var(--ink); }
+.login-modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
+.login-modal p { font-size: 14px; color: var(--muted-2); margin: 0 0 24px; line-height: 1.5; }
+.login-modal input[type="email"] { width: 100%; box-sizing: border-box; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Figtree', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+.login-modal input[type="email"]:focus { border-color: var(--green); }
+.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Figtree', sans-serif; }
+.login-modal .btn-login-submit:hover { background: #259940; transform: translateY(-1px); }
+.login-modal .btn-login-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
+.login-modal-success { display: none; text-align: center; padding: 8px 0; }
+.login-modal-success svg { color: var(--green); margin-bottom: 12px; }
+.login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 0 0 8px; }
+.login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
+.login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
 
 /* ── STICKY SUB-NAV (Apple-style, appears on scroll) ── */
 .sub-nav { position: fixed; top: -50px; left: 0; right: 0; z-index: 190; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--border); padding: 0; transition: top 0.35s cubic-bezier(0.4,0,0.2,1); }
@@ -619,7 +640,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#features">Features</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+    <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
+    <li><a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
   </ul>
 </nav>
 
@@ -1097,7 +1119,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <li>Synced live with your current goals and restrictions</li>
         <li>Always on. Always relevant. Never a generic suggestion.</li>
       </ul>
-      <a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="feature-cta">Find your next meal free &rarr;</a>
+      <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="feature-cta">Find your next meal free &rarr;</a>
     </div>
   </div></div></div>
 
@@ -1280,7 +1302,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <p>Most health tools give you a plan and expect you to fit your life around it. Rigid. Generic. Built for nobody in particular.</p>
     <p>TLC starts with <span class="highlight-pill">who you actually are</span>: your wearable data, your food patterns, your goals, your restrictions, your daily reality. Then it comes to you. At the restaurant. At home. When you're tired and need the answer now.</p>
     <p>Every insight is built from your data. Every coaching response knows your week. Every strategy reflects where you actually are, not where a formula assumed you'd be.</p>
-    <a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
+    <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
   </div>
 </div></div></section>
 
@@ -1343,7 +1365,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="footer-bottom"><span class="footer-copy">&copy; 2026 The Longevity Chef. All rights reserved.</span><span class="footer-copy">Food for Life</span></div>
 </footer>
 
-<div class="mobile-cta" id="mobileCta"><a href="https://tlc-express-onboarding.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+<div class="mobile-cta" id="mobileCta"><a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
 
 <script>
 // ── Nav + sub-nav scroll ──
@@ -2043,6 +2065,93 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
     requestAnimationFrame(draw);
   }
   draw();
+})();
+</script>
+
+<!-- ── LOGIN MODAL ── -->
+<div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
+  <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <button class="login-modal-close" onclick="closeLoginModal()" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="loginForm">
+      <h3 id="loginTitle">Welcome back</h3>
+      <p>Enter your email and we will send you a login link. No password needed.</p>
+      <div class="login-modal-error" id="loginError"></div>
+      <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')submitMagicLink()" />
+      <button class="btn-login-submit" id="loginSubmitBtn" onclick="submitMagicLink()">Send login link</button>
+    </div>
+    <div class="login-modal-success" id="loginSuccess">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.18 2 2 0 012.07.01h3a2 2 0 012 1.72c.13.97.37 1.92.72 2.83a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.86.59 2.83.72A2 2 0 0122 14.9v2.02z"/></svg>
+      <h4>Check your inbox</h4>
+      <p>A login link is on its way. It expires in 15 minutes.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLoginModal() {
+  document.getElementById('loginOverlay').classList.add('open');
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginError').style.display = 'none';
+  document.getElementById('loginForm').style.display = 'block';
+  document.getElementById('loginSuccess').style.display = 'none';
+  setTimeout(function() { document.getElementById('loginEmail').focus(); }, 80);
+  document.addEventListener('keydown', loginEscHandler);
+}
+function closeLoginModal() {
+  document.getElementById('loginOverlay').classList.remove('open');
+  document.removeEventListener('keydown', loginEscHandler);
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('loginOverlay')) closeLoginModal();
+}
+function loginEscHandler(e) {
+  if (e.key === 'Escape') closeLoginModal();
+}
+async function submitMagicLink() {
+  var email = document.getElementById('loginEmail').value.trim();
+  var errorEl = document.getElementById('loginError');
+  var btn = document.getElementById('loginSubmitBtn');
+  errorEl.style.display = 'none';
+  if (!email || !email.includes('@')) {
+    errorEl.textContent = 'Please enter a valid email address.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  try {
+    var res = await fetch('https://tlc-di-engine.chris-ec5.workers.dev/api/magic-link', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email }),
+    });
+    if (res.ok) {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('loginSuccess').style.display = 'block';
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch (_) {
+    errorEl.textContent = 'Something went wrong. Please try again.';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send login link';
+  }
+}
+// Show expired/invalid token message if redirected back with error param
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var loginStatus = params.get('login');
+  if (loginStatus === 'expired' || loginStatus === 'invalid') {
+    openLoginModal();
+    var errorEl = document.getElementById('loginError');
+    errorEl.textContent = loginStatus === 'expired'
+      ? 'That login link has expired. Please request a new one.'
+      : 'That login link is not valid. Please request a new one.';
+    errorEl.style.display = 'block';
+  }
 })();
 </script>
 </body>
