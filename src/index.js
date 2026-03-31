@@ -1822,7 +1822,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
                   25 min
                 </span>
                 <span class="mock-recipe-meta-item">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
                   7 ingredients
                 </span>
                 <span class="mock-recipe-meta-item">
@@ -2086,7 +2086,7 @@ const sectionObs = new IntersectionObserver(entries => {
       if (active) active.classList.add('active');
     }
   });
-}, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+}, { threshold: 0.1, rootMargin: '-80px 0px -20% 0px' });
 featureSections.forEach(s => sectionObs.observe(s));
 
 // ── Reveal on scroll ──
@@ -2864,7 +2864,7 @@ footer { background: var(--black); padding: 60px 0 0; }
       <div class="next-day-loop">
         <div class="loop-step">
           <div class="loop-icon" style="background:rgba(57,186,118,0.10);">
-            <svg viewBox="0 0 24 24" stroke="var(--nutrition)"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--nutrition)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
           </div>
           <span class="loop-step-label">Eat</span>
           <span class="loop-step-sub">Meals logged</span>
@@ -3495,7 +3495,7 @@ footer { background: var(--black); padding: 60px 0 0; }
         <div class="hero-manifesto">
           <div class="manifesto-line">
             <div class="manifesto-icon" style="background:rgba(57,186,118,0.10);">
-              <svg viewBox="0 0 24 24" stroke="var(--nutrition)"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--nutrition)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
             </div>
             <div class="manifesto-text">
               <strong>Nutrition alone is incomplete</strong>
@@ -3973,7 +3973,7 @@ const PRICING_HTML = `<!DOCTYPE html>
 <title>Pricing | The Longevity Chef</title>
 <meta name="description" content="TLC Lite is free. TLC is $9.99 per month. Five connected tools. One intelligence layer. Less than the cost of a single nutritionist session.">
 <meta property="og:title" content="Pricing | The Longevity Chef">
-<meta property="og:description" content="Five connected tools. One monthly fee. Less than one hour with a nutritionist.">
+<meta property="og:description" content="Five connected tools. One monthly fee. Costs less than one hour with a nutritionist.">
 <meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -4315,7 +4315,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   <div class="container">
     <div class="label">Membership</div>
     <h1>ONE INVESTMENT.<br>FIVE TOOLS.</h1>
-    <span class="page-hero-sub">Less than one hour with a nutritionist.</span>
+    <span class="page-hero-sub">Costs less than one hour with a nutritionist.</span>
     <p class="page-hero-body">Every TLC tool shares the same intelligence. Your meals inform your coach. Your wearable sharpens your insights. Your insights evolve your plan. Nothing works in isolation.</p>
   </div>
 </section>

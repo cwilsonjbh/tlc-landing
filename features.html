@@ -662,7 +662,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
                   25 min
                 </span>
                 <span class="mock-recipe-meta-item">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
                   7 ingredients
                 </span>
                 <span class="mock-recipe-meta-item">
@@ -926,7 +926,7 @@ const sectionObs = new IntersectionObserver(entries => {
       if (active) active.classList.add('active');
     }
   });
-}, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+}, { threshold: 0.1, rootMargin: '-80px 0px -20% 0px' });
 featureSections.forEach(s => sectionObs.observe(s));
 
 // ── Reveal on scroll ──
