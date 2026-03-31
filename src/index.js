@@ -5311,7 +5311,7 @@ main {
     <!-- FREE TIER -->
     <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
       <div class="goal-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="6.5"/><circle cx="12" cy="14" r="3.5"/><path d="M3 3v4a2.5 2.5 0 005 0V3"/><line x1="5.5" y1="7.5" x2="5.5" y2="21"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
       </div>
       <div class="goal-tier-pill">TLC Lite &middot; Free</div>
       <h2 class="goal-title">SMARTER EATING<br>WHEN I'M OUT</h2>
