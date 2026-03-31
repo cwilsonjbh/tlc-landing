@@ -4388,7 +4388,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in Lite, plus</div>
         <ul class="plan-features">
@@ -4426,7 +4426,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Evening reflection and mood tracking</span>
+            <span>Evening reflection and 8 wellbeing charts</span>
           </li>
         </ul>
       </div>
@@ -4440,7 +4440,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Start TLC Pro</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in TLC, plus</div>
         <ul class="plan-features">
@@ -4450,7 +4450,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Auto-generated shopping lists</span>
+            <span>Smart Shopping List (saves 10–15% on groceries)</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -4462,7 +4462,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Advanced biometric trend analysis</span>
+            <span>Smart Shopping List eliminates duplicates across all 28 days</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -4848,7 +4848,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <span class="cta-sub reveal d2">Free to start. No credit card required.</span>
     <div class="cta-actions reveal d3">
       <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
-      <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline-white" style="padding:18px 48px;font-size:13px;">Start TLC ($9.99/mo)</a>
+      <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="btn btn-outline-white" style="padding:18px 48px;font-size:13px;">Start TLC ($9.99/mo)</a>
     </div>
   </div>
 </section>
@@ -4874,8 +4874,8 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
         <h4>Get started</h4>
         <ul>
           <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Lite (free)</a></li>
-          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC ($9.99/mo)</a></li>
-          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC Pro ($19.99/mo)</a></li>
+          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc">TLC ($9.99/mo)</a></li>
+          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro">TLC Pro ($19.99/mo)</a></li>
         </ul>
       </div>
       <div class="footer-col">
