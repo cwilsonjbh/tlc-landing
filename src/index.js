@@ -493,7 +493,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <div class="stats-bar"><div class="container"><div class="stats-grid">
   <div class="stat-item reveal d1"><span class="stat-num" data-count="3">0</span><span class="stat-label">Pillars Connected</span><span class="stat-sub">No other system joins food, body, and mind.</span></div>
   <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Real biometric data in every insight.</span></div>
-  <div class="stat-item reveal d3"><span class="stat-num" style="font-size:clamp(28px,4vw,52px);">Full</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every response knows your complete history.</span></div>
+  <div class="stat-item reveal d3"><span class="stat-num">Full</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every response knows your complete history.</span></div>
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
 
@@ -1588,7 +1588,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .nav-hamburger { display: block; }
   .feature-inner { grid-template-columns: 1fr; gap: 40px; direction: ltr !important; }
   .feature-block:nth-child(even) .feature-inner { direction: ltr; }
-  .feature-visual { aspect-ratio: 16/10; max-width: 520px; margin: 0 auto; }
+  .feature-visual { aspect-ratio: 4/3; max-width: 520px; margin: 0 auto; }
   .difference-inner { grid-template-columns: 1fr; }
   .difference-quote { border-left: none; padding-left: 0; border-top: 2px solid rgba(255,255,255,0.10); padding-top: 32px; }
   .mobile-cta { display: block; }
