@@ -498,7 +498,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <!-- STATS -->
 <div class="stats-bar"><div class="container"><div class="stats-grid">
   <div class="stat-item reveal d1"><span class="stat-num" data-count="3">0</span><span class="stat-label">Pillars Connected</span><span class="stat-sub">No other system joins food, body, and mind.</span></div>
-  <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Real biometric data in every insight.</span></div>
+  <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Your biometric data in every insight.</span></div>
   <div class="stat-item reveal d3"><span class="stat-num">24/7</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every interaction, analysis and conversation.</span></div>
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
@@ -587,7 +587,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
         <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE FUEL LOAD</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">What powers every hour of your day. Logged in isolation, food data tells you what went in, but not how the system responded once you were in motion.</p>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Nutrition powers every hour of your day. Logged in isolation, food data tells you what went in, but not how the system responded once you were in motion.</p>
       </div>
 
       <!-- BODY: THE INSTRUMENT PANEL -->
@@ -666,18 +666,16 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="signals-tlc-wrap reveal d2">
       <div style="background:linear-gradient(160deg,rgba(46,168,74,0.07) 0%,rgba(255,255,255,0) 60%);border:1.5px solid rgba(46,168,74,0.25);border-radius:16px;padding:36px 32px;text-align:center;animation:tlcGlow 3s ease-in-out infinite;">
         <div style="width:64px;height:64px;border-radius:18px;background:rgba(46,168,74,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;overflow:visible;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="20" stroke="rgba(46,168,74,0.22)" stroke-width="1.5"/>
-            <circle cx="24" cy="24" r="13" stroke="rgba(46,168,74,0.15)" stroke-width="1" stroke-dasharray="4,3"/>
-            <text x="24" y="8.5" text-anchor="middle" font-size="6.5" font-family="Figtree,sans-serif" font-weight="700" fill="rgba(46,168,74,0.7)">N</text>
-            <text x="40.5" y="26.5" text-anchor="middle" font-size="5.5" font-family="Figtree,sans-serif" fill="rgba(46,168,74,0.4)">E</text>
-            <text x="7.5" y="26.5" text-anchor="middle" font-size="5.5" font-family="Figtree,sans-serif" fill="rgba(46,168,74,0.4)">W</text>
-            <g style="transform-origin:24px 24px;animation:compassSettle 5s ease-out infinite;">
-              <polygon points="24,7 21.5,24 24,22 26.5,24" fill="#2ea84a"/>
-              <polygon points="24,41 21.5,24 24,26 26.5,24" fill="rgba(46,168,74,0.28)"/>
-            </g>
-            <circle cx="24" cy="24" r="3" fill="#2ea84a"/>
-            <circle cx="24" cy="24" r="1.5" fill="white"/>
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="transform-origin:24px 24px;animation:tlcGlow 4s ease-in-out infinite;">
+            <!-- Fuselage: tapered nose to blunt tail -->
+            <path d="M24 4C25.1 4 26.5 5.8 27 9L27.5 20L27 36C26.5 39 25.2 42 24 44C22.8 42 21.5 39 21 36L20.5 20L21 9C21.5 5.8 22.9 4 24 4Z" fill="#2ea84a"/>
+            <!-- Main wings — swept, thin aerofoil -->
+            <path d="M21.5 19L3 30L3.5 32.5L21.5 25L26.5 25L44.5 32.5L45 30L26.5 19Z" fill="#2ea84a" opacity="0.80"/>
+            <!-- Horizontal tail stabilizers — smaller -->
+            <path d="M22.5 37L13 43L13.5 44.5L22.5 40L25.5 40L34.5 44.5L35 43L25.5 37Z" fill="#2ea84a" opacity="0.60"/>
+            <!-- Engine nacelles on wings -->
+            <ellipse cx="14.5" cy="26" rx="3.5" ry="1.4" fill="#2ea84a" opacity="0.5" transform="rotate(-22 14.5 26)"/>
+            <ellipse cx="33.5" cy="26" rx="3.5" ry="1.4" fill="#2ea84a" opacity="0.5" transform="rotate(22 33.5 26)"/>
           </svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
@@ -696,7 +694,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="section-header reveal">
       <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">What TLC Gives You</span>
-      <h2>FIVE TOOLS.<br><em>ONE SYSTEM.</em></h2>
+      <h2>THREE TOOLS.<br><em>ONE SYSTEM.</em></h2>
       <p>Each tool is built to stand alone. Together, they share a single picture of you. The longer you use them, the more precisely the whole system understands what you need.</p>
     </div>
     <div class="teasers-grid">
@@ -708,7 +706,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
         <h3 class="teaser-h">YOUR PATTERNS,<br>DECODED</h3>
         <p class="teaser-sub">Where data becomes understanding</p>
-        <p class="teaser-body">Your sleep, your meals, your stress. Tracked separately, they're noise. Dynamic Insights connects them into a single daily narrative that tells you what's actually happening, and why. The breakthrough isn't in the numbers. It's in the connections between them.</p>
+        <p class="teaser-body">Your sleep, your meals, your stress. Tracked separately, they're noise. <span style="color:var(--green);font-weight:600;">Dynamic Insights</span> connects them into a single daily narrative that tells you what's actually happening, and why. The breakthrough isn't in the numbers. It's in the connections between them.</p>
         <span class="teaser-cta">See how Insights work &rarr;</span>
       </a>
 
@@ -771,7 +769,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition hasn't slipped in six months.</p>
+        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition has barely slipped in the past six months, and even when it did, TLC knew exactly what to do to get me back on track.</p>
         <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">J</span></div><div><div class="t-name">James K.</div><div class="t-device">WHOOP 4.0 &bull; Longevity goal</div></div></div>
       </div>
       <div class="testimonial-card reveal d3">
@@ -795,7 +793,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">Why TLC</span>
       <h2>NOT ANOTHER<br><em>CALORIE COUNTER</em></h2>
-      <p>Every health app on the market tracks your day in isolation. TLC connects the dots between days, weeks, and months.</p>
+      <p>Most tools do one job well. TLC connects the dots between them, turning isolated data into a picture that gets clearer every day.</p>
     </div>
     <div style="overflow-x:auto;" class="reveal d1">
       <table style="width:100%;border-collapse:collapse;min-width:560px;">
@@ -803,53 +801,53 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <tr>
             <th style="text-align:left;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:0 20px 18px 0;border-bottom:2px solid var(--border);width:36%;">Capability</th>
             <th style="text-align:center;font-size:12px;font-weight:800;color:var(--green);padding:0 16px 18px;border-bottom:2px solid var(--green);background:rgba(46,168,74,0.04);">TLC</th>
-            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">MyFitnessPal</th>
-            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">WHOOP/Oura</th>
-            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">ZOE</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Nutrition Trackers</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Wearables</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Health Tests</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--border);">
             <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Connects food, sleep, and mood</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
             <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Finds dishes at nearby restaurants</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
             <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Wearable data (HRV, sleep, recovery)</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
             <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
             <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Daily insight connecting food, sleep and mood</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
             <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Weekly strategy built on your patterns</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
           </tr>
           <tr>
             <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Free tier (no card)</td>
             <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
             <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
-            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(26,26,26,0.06)"/><path d="M6 12l6-6M12 12L6 6" stroke="rgba(26,26,26,0.32)" stroke-width="1.5" stroke-linecap="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
           </tr>
         </tbody>
       </table>
@@ -946,7 +944,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="footer-col"><ul>
       <li><a href="https://www.instagram.com/thelongevitychef_">Instagram</a></li>
       <li><a href="/pricing#faq">FAQs</a></li>
-      <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
+      <li><a href="#" onclick="openContactModal();return false;">Contact</a></li>
     </ul></div>
     <div class="footer-col"><ul>
       <li><a href="/privacy">Privacy Policy</a></li>
@@ -960,6 +958,92 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 </footer>
 
 <div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
+
+<!-- CONTACT MODAL -->
+<div class="login-overlay" id="contactOverlay" onclick="if(event.target===this)closeContactModal()" style="display:none;">
+  <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" style="max-width:460px;">
+    <button class="login-modal-close" onclick="closeContactModal()" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="contactFormWrap">
+      <h3 id="contactTitle" style="font-family:var(--font-display);font-size:clamp(20px,2.4vw,26px);letter-spacing:0.01em;color:var(--ink);margin-bottom:8px;">Get in touch</h3>
+      <p style="font-size:14px;color:var(--muted-2);margin-bottom:24px;line-height:1.6;">Questions, feedback, or partnership enquiries — we read everything.</p>
+      <div id="contactError" style="display:none;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.2);border-radius:8px;padding:10px 14px;font-size:13px;color:#dc2626;margin-bottom:16px;"></div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <label style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;">Name</label>
+          <input id="cName" type="text" placeholder="Your name" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:var(--surface);" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border-mid)'">
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;">Email</label>
+          <input id="cEmail" type="email" placeholder="you@example.com" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:var(--surface);" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border-mid)'">
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;">Message</label>
+          <textarea id="cMessage" placeholder="How can we help?" rows="4" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:var(--surface);resize:vertical;line-height:1.6;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border-mid)'"></textarea>
+        </div>
+        <button id="cSubmitBtn" onclick="submitContact()" style="width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;font-family:var(--font-body);">Send Message</button>
+      </div>
+    </div>
+    <div id="contactSuccess" style="display:none;text-align:center;padding:24px 0;">
+      <div style="width:56px;height:56px;border-radius:50%;background:rgba(46,168,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 style="font-family:var(--font-display);font-size:22px;color:var(--ink);margin-bottom:8px;">Message sent</h3>
+      <p style="font-size:14px;color:var(--muted-2);line-height:1.6;">We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openContactModal() {
+  document.getElementById('contactOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('cName').focus(), 100);
+}
+function closeContactModal() {
+  document.getElementById('contactOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+async function submitContact() {
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const message = document.getElementById('cMessage').value.trim();
+  const errEl = document.getElementById('contactError');
+  const btn = document.getElementById('cSubmitBtn');
+  errEl.style.display = 'none';
+  if (!name || !email || !message) {
+    errEl.textContent = 'Please fill in all fields.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.style.display = 'block';
+    return;
+  }
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    });
+    if (res.ok) {
+      document.getElementById('contactFormWrap').style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch(e) {
+    errEl.textContent = 'Something went wrong. Please try again or email chris@thelongevitychef.io directly.';
+    errEl.style.display = 'block';
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+  }
+}
+</script>
 
 <!-- LOGIN MODAL -->
 <div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
@@ -5625,7 +5709,7 @@ footer a { color: var(--green); }
 
 <header>
   <a href="/"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
-  <a href="/" class="header-back">
+  <a href="/" onclick="if(history.length>1){history.back();return false;}" class="header-back">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
     Back
   </a>
@@ -5910,6 +5994,52 @@ export default {
       }), {
         headers: { ...cors, 'Content-Type': 'application/json' }
       });
+    }
+
+    // Contact form submission
+    if (request.method === 'POST' && url.pathname === '/contact') {
+      try {
+        const { name, email, message } = await request.json();
+        if (!name || !email || !message) {
+          return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
+        }
+        if (!env.SENDGRID_API_KEY) {
+          console.error('SENDGRID_API_KEY not set on landing worker');
+          return new Response(JSON.stringify({ error: 'Email not configured' }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+        }
+        const html = `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px;">
+          <h2 style="color:#2ea84a;margin-bottom:4px;">New Contact Form Submission</h2>
+          <p style="color:#666;font-size:13px;margin-bottom:24px;">via thelongevitychef.io</p>
+          <table style="width:100%;border-collapse:collapse;">
+            <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;width:80px;">Name</td><td style="padding:10px 0;color:#333;">${name}</td></tr>
+            <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;">Email</td><td style="padding:10px 0;color:#333;"><a href="mailto:${email}" style="color:#2ea84a;">${email}</a></td></tr>
+            <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;vertical-align:top;">Message</td><td style="padding:10px 0;color:#333;line-height:1.6;">${message.replace(/\n/g,'<br>')}</td></tr>
+          </table>
+        </div>`;
+        const sgRes = await fetch('https://api.sendgrid.com/v3/mail/send', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + env.SENDGRID_API_KEY,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            personalizations: [{ to: [{ email: 'chris@thelongevitychef.io' }] }],
+            from: { email: 'chris@thelongevitychef.io', name: 'TLC Contact Form' },
+            reply_to: { email: email, name: name },
+            subject: `Contact: ${name}`,
+            content: [{ type: 'text/html', value: html }],
+          }),
+        });
+        if (sgRes.ok || sgRes.status === 202) {
+          return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { ...cors, 'Content-Type': 'application/json' } });
+        }
+        const err = await sgRes.text();
+        console.error('SendGrid error:', err);
+        return new Response(JSON.stringify({ error: 'Send failed' }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      } catch(e) {
+        console.error('Contact handler error:', e);
+        return new Response(JSON.stringify({ error: 'Server error' }), { status: 500, headers: { ...cors, 'Content-Type': 'application/json' } });
+      }
     }
 
     if (request.method === 'GET') {
