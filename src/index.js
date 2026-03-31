@@ -27,6 +27,7 @@ const LANDING_HTML = `<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -128,6 +129,11 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 8px 0; }
 .login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
 .login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
+.login-google-wrap { display: flex; justify-content: center; margin-bottom: 4px; min-height: 44px; }
+.login-divider { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+.login-divider-line { flex: 1; height: 1px; background: var(--border); }
+.login-divider-text { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.login-google-loading { font-size: 13px; color: var(--muted-2); text-align: center; padding: 10px 0; }
 
 /* ── STICKY SUB-NAV ── */
 .sub-nav { position: fixed; top: -50px; left: 0; right: 0; z-index: 190; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--border); padding: 0; transition: top 0.35s cubic-bezier(0.4,0,0.2,1); }
@@ -486,7 +492,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <div class="stats-bar"><div class="container"><div class="stats-grid">
   <div class="stat-item reveal d1"><span class="stat-num" data-count="3">0</span><span class="stat-label">Pillars Connected</span><span class="stat-sub">No other system joins food, body, and mind.</span></div>
   <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Real biometric data in every insight.</span></div>
-  <div class="stat-item reveal d3"><span class="stat-num" data-count="7">0</span><span class="stat-label">Days in Context</span><span class="stat-sub">Every coaching response knows your full week.</span></div>
+  <div class="stat-item reveal d3"><span class="stat-num" style="font-size:clamp(28px,4vw,52px);">Full</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every response knows your complete history.</span></div>
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
 
@@ -956,8 +962,29 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </button>
     <div id="loginForm">
       <h3 id="loginTitle">Welcome back</h3>
-      <p>Enter your email and we will send you a login link. No password needed.</p>
+      <p>Sign in to access your dashboard and insights.</p>
       <div class="login-modal-error" id="loginError"></div>
+      <div id="g_id_onload"
+           data-client_id="47955518563-ol1ecapjk22k43h1oiqismodg8fr9f2o.apps.googleusercontent.com"
+           data-callback="handleLoginGoogleCredential"
+           data-auto_prompt="false">
+      </div>
+      <div class="login-google-wrap" id="loginGoogleWrap">
+        <div class="g_id_signin"
+             data-type="standard"
+             data-size="large"
+             data-theme="outline"
+             data-text="signin_with"
+             data-shape="rectangular"
+             data-logo_alignment="left"
+             data-width="348">
+        </div>
+      </div>
+      <div class="login-divider">
+        <div class="login-divider-line"></div>
+        <span class="login-divider-text">or use a magic link</span>
+        <div class="login-divider-line"></div>
+      </div>
       <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')submitMagicLink()" />
       <button class="btn-login-submit" id="loginSubmitBtn" onclick="submitMagicLink()">Send login link</button>
     </div>
@@ -1036,6 +1063,32 @@ function toggleMobileNav() {
 function openLoginModal() { document.getElementById('loginOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeLoginModal() { document.getElementById('loginOverlay').classList.remove('open'); document.body.style.overflow = ''; }
 function handleOverlayClick(e) { if (e.target === e.currentTarget) closeLoginModal(); }
+window.handleLoginGoogleCredential = async function(response) {
+  var wrap = document.getElementById('loginGoogleWrap');
+  var saved = wrap ? wrap.innerHTML : '';
+  if (wrap) wrap.innerHTML = '<div class="login-google-loading">Signing in\\u2026</div>';
+  var errEl = document.getElementById('loginError');
+  try {
+    var res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/google-auth', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ credential: response.credential })
+    });
+    var data = await res.json();
+    if (data.status === 'existing') {
+      if (wrap) wrap.innerHTML = '<div class="login-google-loading">Redirecting to your dashboard\\u2026</div>';
+      window.location.href = 'https://tlc-engine.chris-ec5.workers.dev/dashboard?user_id=' + encodeURIComponent(data.user_id);
+    } else {
+      // No account found — send them to start
+      if (wrap) wrap.innerHTML = saved;
+      errEl.textContent = 'No account found for that Google account. Start free below to create yours.';
+      errEl.style.display = 'block';
+    }
+  } catch(_) {
+    if (wrap) wrap.innerHTML = saved;
+    errEl.textContent = 'Something went wrong. Please try the magic link instead.';
+    errEl.style.display = 'block';
+  }
+};
 async function submitMagicLink() {
   const email = document.getElementById('loginEmail').value.trim();
   const btn = document.getElementById('loginSubmitBtn');
@@ -3679,7 +3732,7 @@ footer { background: var(--black); padding: 60px 0 0; }
     <div class="stats-grid">
       <div class="stat-item reveal d1"><span class="stat-num" data-count="3">0</span><span class="stat-label">Pillars Connected</span><span class="stat-sub">No other system joins food, body, and mind.</span></div>
       <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Real biometric data in every insight.</span></div>
-      <div class="stat-item reveal d3"><span class="stat-num" data-count="7">0</span><span class="stat-label">Days of Context</span><span class="stat-sub">Every coaching response knows your full week.</span></div>
+      <div class="stat-item reveal d3"><span class="stat-num" style="font-size:clamp(28px,4vw,52px);">Full</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every response knows your complete history.</span></div>
       <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan built from your patterns.</span></div>
     </div>
   </div>
@@ -3787,7 +3840,6 @@ footer { background: var(--black); padding: 60px 0 0; }
       <p class="reveal d1">You have been generating the signal every day. TLC is the system that reads it. Start with Meal Matchmaker, free forever. Add the full connection layer when you are ready.</p>
       <div class="cta-actions reveal d2">
         <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Start TLC &middot; $9.99/mo</a>
         <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
       </div>
     </div>
@@ -4547,7 +4599,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td><span class="feat-label">Longevity Coach<span class="feat-info">i<span class="feat-tooltip">An expert nutrition and lifestyle coach with full access to your data. Ask questions, get analysis, and receive personalised guidance in real time.</span></span></span></td>
+            <td><span class="feat-label">Longevity Coach<span class="feat-info">i<span class="feat-tooltip">An expert nutrition and lifestyle coach with full lifetime access to your data. Every response draws on your complete history — meals, biometrics, sleep, goals, and reflections — not just the last 7 days.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
