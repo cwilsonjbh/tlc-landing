@@ -4153,6 +4153,12 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .comp-section-header td { background: rgba(46,168,74,0.04); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); padding: 12px 20px; border-bottom: 1px solid var(--green-light); }
 .comparison-table th:nth-child(3), .comparison-table td:nth-child(3) { background: rgba(26,26,26,0.02); border-left: 2px solid rgba(46,168,74,0.18); border-right: 2px solid rgba(46,168,74,0.18); }
 .comparison-table tr:last-child td:nth-child(3) { border-bottom: 2px solid rgba(46,168,74,0.18); }
+.feat-label { display: inline-flex; align-items: center; gap: 6px; }
+.feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; font-family: var(--font-body); cursor: default; flex-shrink: 0; line-height: 1; }
+.feat-info:hover { border-color: var(--green); color: var(--green); }
+.feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+.feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
+.feat-info:hover .feat-tooltip { opacity: 1; }
 
 /* ── VALUE SECTION ── */
 .value-section { padding: clamp(100px, 12vw, 160px) 0; background: var(--white); }
@@ -4458,7 +4464,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Longevity Score (daily)</span>
+            <span>Longevity Score (weekly)</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -4519,53 +4525,53 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
             <td>Longevity Score</td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
-            <td class="center"><span class="comp-check partial">Daily</span></td>
+            <td class="center"><span class="comp-check partial">Weekly</span></td>
           </tr>
           <tr class="comp-section-header"><td colspan="4">Tools</td></tr>
           <tr>
-            <td>Personal nutrition blueprint</td>
+            <td><span class="feat-label">Personal nutrition blueprint<span class="feat-info">i<span class="feat-tooltip">Your personalised calorie and macro targets, calculated from your body stats, goals, and activity level. Displayed on your dashboard as your daily blueprint.</span></span></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Meal Matchmaker</td>
+            <td><span class="feat-label">Meal Matchmaker<span class="feat-info">i<span class="feat-tooltip">Finds nearby restaurants in real time and recommends the best dish on their menu, matched to your calorie targets, allergies, and taste preferences.</span></span></span></td>
             <td class="center"><span class="comp-check partial">3/day</span></td>
             <td class="center"><span class="comp-check partial">Unlimited</span></td>
             <td class="center"><span class="comp-check partial">Unlimited</span></td>
           </tr>
           <tr>
-            <td>Menu Scanner</td>
+            <td><span class="feat-label">Menu Scanner<span class="feat-info">i<span class="feat-tooltip">Photograph any restaurant menu and instantly get a personalised dish recommendation matched to your targets, dietary requirements, and restrictions.</span></span></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Longevity Coach</td>
+            <td><span class="feat-label">Longevity Coach<span class="feat-info">i<span class="feat-tooltip">An expert nutrition and lifestyle coach with full access to your data. Ask questions, get analysis, and receive personalised guidance in real time.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Pantry Pal</td>
+            <td><span class="feat-label">Pantry Pal<span class="feat-info">i<span class="feat-tooltip">Enter the ingredients you have at home and get personalised recipes with full macros, a smart shopping list, and step-by-step cooking instructions.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Recipe Suggester</td>
+            <td><span class="feat-label">Recipe Suggester<span class="feat-info">i<span class="feat-tooltip">Browse longevity-focused recipes matched to your nutrition targets and dietary preferences, with macros calculated and auto-logged to your dashboard.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Weekly meal plan</td>
+            <td><span class="feat-label">Weekly meal plan<span class="feat-info">i<span class="feat-tooltip">A full 7-day meal plan built around your goals, preferences, and available ingredients. Includes a consolidated smart shopping list. TLC Pro only.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td>Photo meal analysis</td>
+            <td><span class="feat-label">Photo meal analysis<span class="feat-info">i<span class="feat-tooltip">Take a photo of any meal and get an instant nutritional breakdown estimated from ingredients. Automatically logged to your meal history.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
