@@ -475,50 +475,158 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
 
-<!-- CAR ANALOGY EXPLAINER -->
+<!-- THREE SIGNALS SECTION -->
 <section style="padding:clamp(72px,9vw,120px) 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:2;">
+<style>
+@keyframes gaugeNerve{0%{transform:rotate(-55deg)}15%{transform:rotate(-25deg)}30%{transform:rotate(-72deg)}45%{transform:rotate(-18deg)}62%{transform:rotate(-60deg)}78%{transform:rotate(-38deg)}90%{transform:rotate(-68deg)}100%{transform:rotate(-55deg)}}
+@keyframes fuelRise{0%,100%{transform:translateY(4px);opacity:.22}50%{transform:translateY(-5px);opacity:.42}}
+@keyframes mindPulse{0%,100%{stroke-opacity:.25;transform:scale(1)}50%{stroke-opacity:.65;transform:scale(1.1)}}
+@keyframes tlcGlow{0%,100%{box-shadow:0 4px 32px rgba(46,168,74,0.06)}50%{box-shadow:0 8px 48px rgba(46,168,74,0.16)}}
+@keyframes compassSettle{0%{transform:rotate(55deg)}18%{transform:rotate(-40deg)}36%{transform:rotate(22deg)}51%{transform:rotate(-9deg)}62%{transform:rotate(4deg)}72%,100%{transform:rotate(0deg)}}
+.signals-top-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:880px;margin:0 auto;}
+.signals-tlc-wrap{max-width:500px;margin:0 auto;width:100%;}
+.signals-conv{max-width:880px;margin:0 auto;height:72px;}
+@media(max-width:640px){.signals-top-grid{grid-template-columns:1fr;gap:16px;}.signals-conv{display:none;}.signals-mobile-sep{display:flex !important;}}
+</style>
   <div class="container">
     <div style="text-align:center;margin-bottom:52px;" class="reveal">
       <span class="label" style="justify-content:center;margin-bottom:16px;display:inline-flex;">How TLC is different</span>
-      <h2 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,60px);line-height:0.95;letter-spacing:0.02em;color:var(--ink);">YOUR BODY IS A PRECISION ENGINE.<br><em style="font-style:normal;color:var(--green);">THE PARTS JUST NEED CONNECTING.</em></h2>
+      <h2 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,60px);line-height:0.95;letter-spacing:0.02em;color:var(--ink);">THREE SIGNALS.<br><em style="font-style:normal;color:var(--green);">ONE INSIGHT THAT FINALLY MAKES SENSE.</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:16px;align-items:center;max-width:960px;margin:0 auto;" class="reveal d1">
 
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:32px 24px;text-align:center;">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(57,140,186,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Wearables</div>
-        <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);line-height:1;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE DASHBOARD</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">HRV, sleep stages, resting heart rate. Hundreds of data points — and without context, they do not clarify. They overwhelm.</p>
-      </div>
+    <!-- Three input cards -->
+    <div class="signals-top-grid reveal d1">
 
-      <div style="font-family:var(--font-display);font-size:clamp(28px,3vw,40px);color:var(--muted);text-align:center;flex-shrink:0;">+</div>
-
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:32px 24px;text-align:center;">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(57,186,118,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      <!-- NUTRITION: THE FUEL LOAD -->
+      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
+        <div style="width:60px;height:60px;border-radius:16px;background:rgba(57,186,118,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:hidden;">
+          <svg width="32" height="44" viewBox="0 0 32 44" fill="none">
+            <path d="M16 2 C16 2 2 17 2 27 A14 14 0 0 0 30 27 C30 17 16 2 16 2z" stroke="#39BA76" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            <clipPath id="fdc1"><path d="M16 2 C16 2 2 17 2 27 A14 14 0 0 0 30 27 C30 17 16 2 16 2z"/></clipPath>
+            <rect x="2" y="2" width="28" height="40" clip-path="url(#fdc1)" fill="rgba(57,186,118,0.3)" style="animation:fuelRise 3.5s ease-in-out infinite;"/>
+          </svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
-        <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);line-height:1;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE FUEL</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Every meal is a signal your body responds to. But tracked in isolation, it is just a number with nowhere to go.</p>
+        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE FUEL LOAD</div>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">What powers every hour of your day. Logged in isolation, food data tells you what went in. It cannot tell you how your body responded.</p>
       </div>
 
-      <div style="font-family:var(--font-display);font-size:clamp(28px,3vw,40px);color:var(--muted);text-align:center;flex-shrink:0;">=</div>
-
-      <div style="background:linear-gradient(160deg,rgba(46,168,74,0.06) 0%,rgba(255,255,255,0) 60%);border:1.5px solid rgba(46,168,74,0.22);border-radius:16px;padding:32px 24px;text-align:center;position:relative;">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(46,168,74,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="12 8 15.09 14.26 22 15.27 17 20.14 18.18 27.02 12 23.77 5.82 27.02 7 20.14 2 15.27 8.91 14.26 12 8"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/></svg>
+      <!-- BODY: THE INSTRUMENT PANEL -->
+      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
+        <div style="width:60px;height:60px;border-radius:16px;background:rgba(57,140,186,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
+          <svg width="50" height="36" viewBox="0 0 50 36" fill="none">
+            <path d="M2 33 A22 22 0 0 1 48 33" stroke="rgba(57,140,186,0.18)" stroke-width="4" stroke-linecap="round"/>
+            <line x1="2.5" y1="32.5" x2="6" y2="26" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="25" y1="11" x2="25" y2="16" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="47.5" y1="32.5" x2="44" y2="26" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9" y1="17" x2="12" y2="21" stroke="rgba(57,140,186,0.2)" stroke-width="1" stroke-linecap="round"/>
+            <line x1="41" y1="17" x2="38" y2="21" stroke="rgba(57,140,186,0.2)" stroke-width="1" stroke-linecap="round"/>
+            <line x1="25" y1="33" x2="25" y2="14" stroke="#398CBA" stroke-width="2.5" stroke-linecap="round" style="transform-origin:25px 33px;animation:gaugeNerve 3.2s ease-in-out infinite;display:block;"/>
+            <circle cx="25" cy="33" r="4" fill="#398CBA"/>
+            <circle cx="25" cy="33" r="2" fill="white"/>
+          </svg>
         </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
-        <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);line-height:1;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE NAVIGATION</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Reads what the wearable sees. Understands what you are fuelling it with. Translates both into one clear direction — so you stop guessing and start performing.</p>
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
+        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE INSTRUMENT PANEL</div>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable measures sleep depth, HRV, and resting heart rate with precision. But instruments without context produce numbers, not answers.</p>
+      </div>
+
+      <!-- MIND: CREW READINESS -->
+      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
+        <div style="width:60px;height:60px;border-radius:16px;background:rgba(232,184,75,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="19" stroke="rgba(232,184,75,0.2)" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="19" stroke="#E8B84B" stroke-width="1.5" style="transform-origin:24px 24px;animation:mindPulse 2.8s ease-in-out infinite;stroke-dasharray:119;stroke-dashoffset:30;"/>
+            <circle cx="24" cy="24" r="7" fill="rgba(232,184,75,0.18)" style="animation:fuelRise 2.8s 0.4s ease-in-out infinite;"/>
+            <circle cx="24" cy="24" r="3.5" fill="#E8B84B"/>
+            <line x1="24" y1="5" x2="24" y2="9" stroke="rgba(232,184,75,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="39.5" y1="13.5" x2="36.2" y2="15.4" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="8.5" y1="13.5" x2="11.8" y2="15.4" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="39.5" y1="34.5" x2="36.2" y2="32.6" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="8.5" y1="34.5" x2="11.8" y2="32.6" stroke="rgba(232,184,75,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="24" y1="43" x2="24" y2="39" stroke="rgba(232,184,75,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
+        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">CREW READINESS</div>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Energy, mood, and stress are not soft data. They are the human variable that explains everything the instruments cannot capture on their own.</p>
       </div>
 
     </div>
-    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:600px;margin:40px auto 0;line-height:1.8;" class="reveal d2">Your wearable has been recording data for months. Your meals contain signals nobody has decoded yet. In isolation, neither tells you much. Connected, they change everything. That is the engine TLC builds for you.</p>
+
+    <!-- Animated convergence connector (desktop only) -->
+    <div class="signals-conv">
+      <svg width="100%" height="72" viewBox="0 0 100 72" preserveAspectRatio="none" fill="none" style="display:block;overflow:visible;">
+        <defs>
+          <path id="pN" d="M16.5 0 C16.5 36 50 36 50 72"/>
+          <path id="pB" d="M50 0 L50 72"/>
+          <path id="pM" d="M83.5 0 C83.5 36 50 36 50 72"/>
+        </defs>
+        <use href="#pN" stroke="rgba(57,186,118,0.22)" stroke-width="0.4"/>
+        <use href="#pB" stroke="rgba(57,140,186,0.22)" stroke-width="0.4"/>
+        <use href="#pM" stroke="rgba(232,184,75,0.22)" stroke-width="0.4"/>
+        <!-- Nutrition dots -->
+        <circle r="1.2" fill="rgba(57,186,118,0.75)"><animateMotion dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
+        <circle r="1.2" fill="rgba(57,186,118,0.55)"><animateMotion dur="2.2s" begin="-0.73s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
+        <circle r="1.2" fill="rgba(57,186,118,0.4)"><animateMotion dur="2.2s" begin="-1.46s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
+        <!-- Body dots -->
+        <circle r="1.2" fill="rgba(57,140,186,0.75)"><animateMotion dur="2.2s" begin="-0.25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
+        <circle r="1.2" fill="rgba(57,140,186,0.55)"><animateMotion dur="2.2s" begin="-0.98s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
+        <circle r="1.2" fill="rgba(57,140,186,0.4)"><animateMotion dur="2.2s" begin="-1.71s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
+        <!-- Mind dots -->
+        <circle r="1.2" fill="rgba(232,184,75,0.75)"><animateMotion dur="2.2s" begin="-0.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
+        <circle r="1.2" fill="rgba(232,184,75,0.55)"><animateMotion dur="2.2s" begin="-1.23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
+        <circle r="1.2" fill="rgba(232,184,75,0.4)"><animateMotion dur="2.2s" begin="-1.96s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
+        <!-- Convergence dot at bottom -->
+        <circle cx="50" cy="72" r="3" fill="rgba(46,168,74,0.3)"><animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.2s" repeatCount="indefinite"/></circle>
+      </svg>
+    </div>
+
+    <!-- Mobile separator (hidden on desktop) -->
+    <div class="signals-mobile-sep" style="display:none;align-items:center;justify-content:center;padding:16px 0;gap:6px;">
+      <div style="width:6px;height:6px;border-radius:50%;background:rgba(57,186,118,0.6);"></div>
+      <div style="width:6px;height:6px;border-radius:50%;background:rgba(57,140,186,0.6);"></div>
+      <div style="width:6px;height:6px;border-radius:50%;background:rgba(232,184,75,0.6);"></div>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(46,168,74,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+
+    <!-- TLC synthesis card -->
+    <div class="signals-tlc-wrap reveal d2">
+      <div style="background:linear-gradient(160deg,rgba(46,168,74,0.07) 0%,rgba(255,255,255,0) 60%);border:1.5px solid rgba(46,168,74,0.25);border-radius:16px;padding:36px 32px;text-align:center;animation:tlcGlow 3s ease-in-out infinite;">
+        <div style="width:64px;height:64px;border-radius:18px;background:rgba(46,168,74,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;overflow:visible;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="20" stroke="rgba(46,168,74,0.22)" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="13" stroke="rgba(46,168,74,0.15)" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="24" y="8.5" text-anchor="middle" font-size="6.5" font-family="Figtree,sans-serif" font-weight="700" fill="rgba(46,168,74,0.7)">N</text>
+            <text x="40.5" y="26.5" text-anchor="middle" font-size="5.5" font-family="Figtree,sans-serif" fill="rgba(46,168,74,0.4)">E</text>
+            <text x="7.5" y="26.5" text-anchor="middle" font-size="5.5" font-family="Figtree,sans-serif" fill="rgba(46,168,74,0.4)">W</text>
+            <g style="transform-origin:24px 24px;animation:compassSettle 5s ease-out infinite;">
+              <polygon points="24,7 21.5,24 24,22 26.5,24" fill="#2ea84a"/>
+              <polygon points="24,41 21.5,24 24,26 26.5,24" fill="rgba(46,168,74,0.28)"/>
+            </g>
+            <circle cx="24" cy="24" r="3" fill="#2ea84a"/>
+            <circle cx="24" cy="24" r="1.5" fill="white"/>
+          </svg>
+        </div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
+        <div style="font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:14px;">THE FLIGHT MANAGEMENT SYSTEM</div>
+        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one system alone. TLC takes your nutrition, biometrics, and reflections simultaneously, finds the connections between all three, and builds a picture that gets sharper every single day.</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:600px;margin:40px auto 0;line-height:1.8;" class="reveal d3">No airline would let a pilot fly on one system alone. Yet every wellness tracker in the world asks you to do exactly that. TLC does not.</p>
   </div>
 </section>
+
+<!-- SIMPLICITY REASSURANCE STRIP -->
+<div style="background:var(--green-light);border-top:1px solid rgba(46,168,74,0.14);border-bottom:1px solid rgba(46,168,74,0.14);padding:28px var(--gutter);">
+  <div style="max-width:var(--content-max);margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;text-align:center;">
+    <div style="width:36px;height:36px;border-radius:10px;background:rgba(46,168,74,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2ea84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <p style="font-size:15px;color:var(--green-dark);font-weight:500;line-height:1.6;margin:0;max-width:640px;">Sounds like a lot? It is not. <strong>Log a meal. Reflect for two minutes. Connect your wearable once.</strong> TLC does everything else — the analysis, the pattern finding, the daily insight. You just live your life.</p>
+  </div>
+</div>
 
 <!-- THREE PILLARS -->
 <section class="section-pillars" id="pillars">
