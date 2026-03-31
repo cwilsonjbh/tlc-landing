@@ -1154,13 +1154,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="feature-copy reveal d2">
       <span class="label">At home, in your kitchen</span>
       <h3>PANTRY PAL + RECIPES</h3>
-      <p>Point your camera at your fridge. TLC identifies what you have and builds a recipe that hits your macros, suits your goal, and uses what's already there. No shopping required.</p>
-      <p>Snapped something already-cooked? The Meal Analyser breaks down any plate into calories and macros in seconds, from a restaurant dish to a home-cooked meal. Every bite accounted for, zero effort.</p>
+      <p>Point your camera at your fridge. TLC identifies what you have and builds a recipe that hits your macros, suits your goal, and uses what's already there. Or planning a shop with an empty fridge? TLC builds the recipe from scratch and hands you a ready-to-go shopping list. Either way, nutrition lands exactly where it needs to.</p>
+      <p>Whatever your day looks like, TLC meets you there. Cooking at home, eating out, grabbing something on the go, or somewhere in between — there is a TLC tool built for that moment. Every meal gets logged. Every macro tracked. All the heavy lifting done for you.</p>
       <ul class="feature-highlights">
-        <li>Photo-based pantry scan builds recipes from scratch</li>
-        <li>Every recipe tuned to your active goals</li>
-        <li>Meal Analyser: snap any plate, get instant macros</li>
-        <li>Recipes on Demand when you need inspiration now</li>
+        <li>Scan your fridge for instant recipes, or plan from scratch with a shopping list</li>
+        <li>Every recipe tuned to your macros, goals, and restrictions</li>
+        <li>Meal Analyser: snap any plate, get full macros in seconds</li>
+        <li>Eating out, cooking in, or on the go — TLC has a tool for every moment</li>
       </ul>
       <a href="https://tlc-tier2-onboarding.chris-ec5.workers.dev" class="feature-cta">Scan your fridge free &rarr;</a>
     </div>
