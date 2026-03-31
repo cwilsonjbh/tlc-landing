@@ -4,8 +4,8 @@
   "description": "The Longevity Chef - Landing Page",
   "scripts": {
     "dev": "wrangler dev",
-    "sync": "node sync-landing.js",
-    "deploy": "node sync-landing.js && wrangler deploy"
+    "sync": "node sync-pages.js",
+    "deploy": "node sync-pages.js && wrangler deploy"
   },
   "devDependencies": {
     "wrangler": "^3.0.0"

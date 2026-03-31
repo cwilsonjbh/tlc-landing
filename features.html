@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features | The Longevity Chef</title>
+<meta name="description" content="Five tools built for one purpose: connecting the dots between what you eat, how your body responds, and how you feel. This is how lasting change happens.">
+<meta property="og:title" content="Features | The Longevity Chef">
+<meta property="og:description" content="Dynamic Insights, Longevity Coach, Meal Matchmaker, Pantry Pal, and TLC Pro Meal Planning. Tools that talk to each other.">
+<meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #0d0d0d;
+  --ink: #1a1a1a;
+  --ink-2: #2e2e2e;
+  --surface: #f5f4f0;
+  --surface-2: #eeecea;
+  --white: #ffffff;
+  --green: #2ea84a;
+  --green-dark: #1a5c28;
+  --green-mid: #3d7a30;
+  --green-light: #ebf7ee;
+  --green-accent: #46c461;
+  --nutrition: #39BA76;
+  --body-blue: #398CBA;
+  --mind: #E8B84B;
+  --muted: rgba(26,26,26,0.42);
+  --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08);
+  --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+  --section-pad: clamp(100px, 12vw, 160px);
+  --gutter: clamp(24px, 5vw, 72px);
+  --content-max: 1180px;
+}
+
+body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes livePulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46,168,74,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(46,168,74,0); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes matchFill { to { width: 88%; } }
+@keyframes waveBar { 0%,100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gutter); }
+.label { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+.label::before { content: ''; width: 18px; height: 1.5px; background: var(--green); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); white-space: nowrap; }
+.btn:hover { transform: translateY(-2px); }
+.btn-black { background: var(--ink); color: var(--white); padding: 16px 40px; }
+.btn-black:hover { background: #333; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.btn-green { background: var(--green); color: var(--white); padding: 16px 40px; box-shadow: 0 4px 16px rgba(46,168,74,0.2); }
+.btn-green:hover { background: var(--green-mid); box-shadow: 0 8px 28px rgba(46,168,74,0.3); }
+.btn-outline { background: transparent; color: var(--ink); padding: 15px 38px; border: 1.5px solid var(--border-mid); }
+.btn-outline:hover { border-color: var(--ink); }
+.btn-outline-white { background: transparent; color: var(--white); padding: 15px 38px; border: 1.5px solid rgba(255,255,255,0.25); }
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.6); }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.25,0.46,0.45,0.94), transform 1s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-scale { opacity: 0; transform: scale(0.94); transition: opacity 1s cubic-bezier(0.25,0.46,0.45,0.94), transform 1s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 18px var(--gutter); background: rgba(255,255,255,0); border-bottom: 1px solid transparent; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) saturate(1.4); border-bottom-color: var(--border); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 56px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { color: var(--muted-2); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active-page { color: var(--ink); }
+.nav-cta { background: var(--ink); color: var(--white) !important; padding: 10px 24px; border-radius: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.25s; text-decoration: none; }
+.nav-cta:hover { background: #333; transform: translateY(-1px); }
+.nav-login { color: var(--muted-2) !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--ink); }
+.nav-hamburger svg { width: 24px; height: 24px; display: block; }
+
+/* ── MOBILE NAV ── */
+.mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); z-index: 199; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { font-size: 22px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); text-decoration: none; font-family: var(--font-display); }
+.mobile-nav a:hover { color: var(--green); }
+.mobile-nav-close { position: absolute; top: 20px; right: var(--gutter); background: none; border: none; cursor: pointer; color: var(--muted-2); }
+.mobile-nav-close svg { width: 28px; height: 28px; }
+.mobile-nav .btn { margin-top: 8px; }
+
+/* ── LOGIN MODAL ── */
+.login-overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,26,0.55); backdrop-filter: blur(4px); z-index: 9000; align-items: center; justify-content: center; padding: 24px; }
+.login-overlay.open { display: flex; }
+.login-modal { background: #fff; border-radius: 16px; padding: 40px 36px; max-width: 420px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.18); position: relative; }
+.login-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--muted-2); padding: 4px; }
+.login-modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
+.login-modal p { font-size: 14px; color: var(--muted-2); margin: 0 0 24px; line-height: 1.5; }
+.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Figtree', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+.login-modal input[type="email"]:focus { border-color: var(--green); }
+.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Figtree', sans-serif; }
+.login-modal .btn-login-submit:hover { background: #259940; transform: translateY(-1px); }
+.login-modal .btn-login-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
+.login-modal-success { display: none; text-align: center; padding: 8px 0; }
+.login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 8px 0; }
+.login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
+.login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
+
+/* ── STICKY FEATURE SUB-NAV ── */
+.sub-nav { position: fixed; top: -50px; left: 0; right: 0; z-index: 190; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--border); transition: top 0.35s cubic-bezier(0.4,0,0.2,1); }
+.sub-nav.show { top: 0; }
+.sub-nav-inner { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.sub-nav-title { font-family: var(--font-display); font-size: 17px; letter-spacing: 0.04em; color: var(--ink); white-space: nowrap; }
+.sub-nav-links { display: flex; gap: 4px; list-style: none; overflow-x: auto; }
+.sub-nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; padding: 12px 12px; border-bottom: 2px solid transparent; white-space: nowrap; }
+.sub-nav-links a:hover, .sub-nav-links a.active { color: var(--ink); border-bottom-color: var(--green); }
+
+/* ── PAGE HERO ── */
+.page-hero { padding: clamp(140px, 16vw, 200px) 0 clamp(80px, 10vw, 120px); text-align: center; position: relative; overflow: hidden; background: var(--white); border-bottom: 1px solid var(--border); }
+.page-hero-eyebrow { margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards; }
+.page-hero h1 { font-family: var(--font-display); font-size: clamp(64px, 9vw, 128px); line-height: 0.88; letter-spacing: 0.01em; color: var(--ink); margin-bottom: 12px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s forwards; }
+.page-hero h1 em { font-style: normal; color: var(--green); }
+.page-hero-sub { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(22px, 2.8vw, 36px); color: var(--muted-2); line-height: 1.4; margin-bottom: 32px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards; }
+.page-hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 600px; margin: 0 auto 48px; line-height: 1.85; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
+.page-hero-nav { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.8s forwards; }
+.hero-feature-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1.5px solid var(--border-mid); border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--muted-2); transition: all 0.25s; background: var(--white); }
+.hero-feature-pill:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
+.hero-feature-pill .pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── FEATURE SHOWCASE ── */
+.section-features { position: relative; z-index: 2; background: var(--white); }
+.feature-block { padding: var(--section-pad) 0; border-bottom: 1px solid var(--border); }
+.feature-block:last-child { border-bottom: none; }
+.feature-block.alt-bg { background: var(--surface); }
+.feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.feature-block:nth-child(even) .feature-inner { direction: rtl; }
+.feature-block:nth-child(even) .feature-inner > * { direction: ltr; }
+.feature-visual { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; background: var(--surface); display: block; box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.04); }
+.feature-copy .label { margin-bottom: 20px; display: inline-flex; }
+.feature-copy h3 { font-family: var(--font-display); font-size: clamp(36px, 4vw, 52px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
+.feature-copy > p { font-size: 16px; color: var(--muted-2); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+.feature-copy .feature-highlights { list-style: none; margin-top: 24px; }
+.feature-copy .feature-highlights li { font-size: 14px; color: var(--ink); padding: 8px 0; display: flex; align-items: flex-start; gap: 12px; font-weight: 500; border-bottom: 1px solid var(--border); }
+.feature-copy .feature-highlights li:last-child { border-bottom: none; }
+.feature-copy .feature-highlights li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 6px; }
+.feature-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 28px; font-size: 13px; font-weight: 700; color: var(--green); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; transition: all 0.2s; }
+.feature-cta:hover { color: var(--green-dark); border-bottom-color: var(--green); }
+.feature-tier-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 50px; padding: 5px 14px; margin-bottom: 20px; }
+.feature-tier-pill.lite { background: rgba(0,0,0,0.04); color: var(--muted-2); border: 1px solid var(--border-mid); }
+.feature-tier-pill.tlc { background: rgba(46,168,74,0.08); color: var(--green); border: 1px solid rgba(46,168,74,0.22); }
+.feature-tier-pill.pro { background: rgba(21,77,51,0.08); color: #154D33; border: 1px solid rgba(21,77,51,0.18); }
+
+/* ── MOCK CARDS ── */
+.mock-card { width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; font-family: var(--font-body); }
+
+/* Dynamic Insights */
+.mock-di { background: #0d1210; }
+.mock-di-header { display: flex; align-items: center; justify-content: space-between; padding: 13px 15px 10px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-shrink: 0; }
+.mock-di-title { font-size: 9.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.mock-di-badge { display: flex; align-items: center; gap: 5px; background: rgba(46,168,74,0.12); border: 1px solid rgba(46,168,74,0.2); border-radius: 50px; padding: 3px 9px; }
+.mock-di-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-accent); animation: livePulse 2s ease-in-out infinite; }
+.mock-di-badge-text { font-size: 9px; font-weight: 700; color: var(--green-accent); letter-spacing: 0.08em; }
+.mock-di-listen { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 50px; padding: 3px 9px; cursor: pointer; }
+.mock-di-listen svg { width: 9px; height: 9px; stroke: rgba(255,255,255,0.50); }
+.mock-di-listen-text { font-size: 8.5px; font-weight: 600; color: rgba(255,255,255,0.50); letter-spacing: 0.06em; }
+.mock-di-narrative { padding: 10px 14px 6px; flex-shrink: 0; }
+.mock-di-narrative p { font-size: 9.5px; color: rgba(255,255,255,0.48); line-height: 1.60; }
+.mock-di-narrative strong { color: var(--green-accent); font-weight: 700; }
+.mock-wellbeing-section { padding: 6px 14px 4px; flex-shrink: 0; }
+.mock-wb-header { font-size: 7.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 8px; }
+.mock-wb-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.mock-wb-label { font-size: 8px; font-weight: 700; letter-spacing: 0.04em; width: 34px; flex-shrink: 0; text-align: right; }
+.mock-wb-bars { display: flex; align-items: flex-end; gap: 2.5px; flex: 1; height: 28px; }
+.mock-wb-bar { width: 100%; border-radius: 2px 2px 0 0; transform: scaleY(0); transform-origin: bottom; transition: transform 0.55s cubic-bezier(0.34,1.2,0.64,1); }
+.mock-wb-score { font-size: 10px; font-weight: 700; width: 28px; text-align: right; flex-shrink: 0; }
+.mock-di-tts-row { display: flex; align-items: center; gap: 9px; padding: 7px 14px; background: rgba(46,168,74,0.07); border-top: 1px solid rgba(46,168,74,0.15); flex-shrink: 0; }
+.mock-tts-wave { display: flex; align-items: center; gap: 2px; }
+.mock-tts-bar { width: 3px; height: 12px; background: var(--green-accent); border-radius: 2px; animation: waveBar 0.7s ease-in-out infinite; }
+.mock-tts-bar:nth-child(2) { animation-delay: 0.1s; height: 18px; }
+.mock-tts-bar:nth-child(3) { animation-delay: 0.2s; height: 14px; }
+.mock-tts-bar:nth-child(4) { animation-delay: 0.15s; height: 20px; }
+.mock-tts-bar:nth-child(5) { animation-delay: 0.05s; height: 10px; }
+.mock-tts-label { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; }
+
+/* Longevity Coach */
+.mock-coach { background: var(--white); border: 1.5px solid var(--border-mid); }
+.mock-coach-context { display: flex; flex-wrap: wrap; gap: 5px; padding: 12px 14px 10px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.mock-chip { font-size: 8.5px; font-weight: 700; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 50px; background: var(--surface); color: var(--muted-2); border: 1px solid var(--border-mid); }
+.mock-chip.alert { background: rgba(234,88,12,0.07); color: #ea580c; border-color: rgba(234,88,12,0.18); }
+.mock-chip.low { background: rgba(239,68,68,0.07); color: #ef4444; border-color: rgba(239,68,68,0.18); }
+.mock-chat-area { flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 8px; padding: 11px 12px; min-height: 0; }
+.mock-bubble { font-size: 9.5px; line-height: 1.55; padding: 8px 11px; border-radius: 10px; max-width: 85%; }
+.mock-bubble.user { align-self: flex-end; background: var(--surface); color: var(--muted-2); border-radius: 10px 10px 2px 10px; font-style: italic; }
+.mock-bubble.coach { align-self: flex-start; background: rgba(46,168,74,0.08); color: var(--ink); border-radius: 10px 10px 10px 2px; border: 1px solid rgba(46,168,74,0.15); }
+.mock-coach-label { font-size: 7.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+.mock-typing-row { display: flex; align-items: center; gap: 4px; padding: 6px 10px; background: rgba(46,168,74,0.06); border-radius: 10px 10px 10px 2px; border: 1px solid rgba(46,168,74,0.12); align-self: flex-start; }
+.typing-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: livePulse 1s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+.mock-input-row { display: flex; gap: 8px; align-items: center; padding: 10px 12px; border-top: 1px solid var(--border); flex-shrink: 0; }
+.mock-input-bar { flex: 1; height: 30px; background: var(--surface); border-radius: 6px; border: 1px solid var(--border); }
+.mock-send-btn { width: 30px; height: 30px; background: var(--green); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mock-send-btn svg { width: 13px; height: 13px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Meal Matchmaker */
+.mock-mm-skeleton { width: 100%; height: 100%; padding: 18px; display: flex; flex-direction: column; gap: 10px; background: var(--white); }
+.skel { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; }
+.skel-title { height: 18px; width: 65%; }
+.skel-sub { height: 12px; width: 45%; }
+.skel-gap { height: 8px; background: transparent !important; animation: none !important; }
+.skel-full { height: 14px; width: 100%; }
+.skel-macro { height: 10px; width: 100%; }
+.mock-card.mock-mm-result { background: var(--white); }
+.mock-mm-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px 8px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.mock-mm-restaurant { font-size: 12px; font-weight: 700; color: var(--ink); }
+.mock-mm-score { font-size: 10px; font-weight: 800; color: var(--green); background: rgba(46,168,74,0.10); border: 1px solid rgba(46,168,74,0.22); border-radius: 50px; padding: 3px 10px; }
+.mock-mm-meta { display: flex; align-items: center; gap: 8px; padding: 6px 14px 4px; flex-shrink: 0; }
+.mock-mm-cuisine { font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted-2); background: var(--surface); padding: 3px 8px; border-radius: 4px; }
+.mock-mm-dist { font-size: 9px; color: var(--muted); }
+.mock-mm-dish { padding: 8px 14px; flex-shrink: 0; }
+.mock-mm-dish-name { font-size: 11.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.mock-mm-kcal { font-size: 9px; font-weight: 700; color: var(--muted-2); margin-bottom: 8px; letter-spacing: 0.04em; }
+.mock-macro-row { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+.mock-macro-label { font-size: 7.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); width: 36px; flex-shrink: 0; }
+.mock-macro-bar { flex: 1; height: 5px; background: rgba(26,26,26,0.06); border-radius: 3px; overflow: hidden; }
+.mock-macro-fill { height: 100%; background: var(--nutrition); border-radius: 3px; transition: width 0.9s ease; }
+.mock-macro-fill.carbs { background: var(--body-blue); }
+.mock-macro-fill.fat { background: var(--mind); }
+.mock-macro-val { font-size: 9px; font-weight: 700; color: var(--ink-2); width: 26px; text-align: right; flex-shrink: 0; }
+.mock-mm-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 5px 14px; flex-shrink: 0; }
+.mock-mm-tag { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+.mock-mm-tag.safe { background: rgba(57,186,118,0.08); color: #2a9148; }
+.mock-mm-tag.goal { background: rgba(57,140,186,0.08); color: #2b6e93; }
+.mock-mm-why { margin: 0 14px; padding: 8px 10px; background: var(--green-light); border-radius: 6px; font-size: 9px; color: var(--green-dark); font-style: italic; line-height: 1.5; font-weight: 500; border: 1px solid rgba(46,168,74,0.15); flex-shrink: 0; }
+.mock-mm-alts { padding: 7px 14px 10px; flex-shrink: 0; }
+.mock-mm-alt { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid var(--border); }
+.mock-mm-alt:last-child { border-bottom: none; }
+.mock-mm-alt-name { font-size: 9.5px; color: var(--muted-2); font-weight: 500; }
+.mock-mm-alt-pct { font-size: 9px; font-weight: 700; color: var(--nutrition); }
+
+/* Pantry Pal */
+.mock-pantry { background: var(--white); }
+.mock-pantry-scan { padding: 14px 14px 10px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.mock-pantry-title { font-size: 8px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.mock-ingredients-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.mock-ingredient { font-size: 9.5px; font-weight: 600; padding: 4px 10px; background: var(--surface); border: 1.5px solid var(--border-mid); border-radius: 50px; color: var(--ink-2); }
+.mock-ingredient.more { background: rgba(46,168,74,0.08); color: var(--green); border-color: rgba(46,168,74,0.22); }
+.mock-recipe-card-inner { padding: 10px 14px 12px; flex: 1; overflow: hidden; }
+.mock-recipe-eyebrow { font-size: 7px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+.mock-recipe-name { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.mock-recipe-sub { font-size: 9px; color: var(--muted); margin-top: 3px; margin-bottom: 7px; }
+.mock-macro-pills { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 7px; }
+.mock-macro-pill { font-size: 8px; font-weight: 700; padding: 2.5px 7px; border-radius: 4px; }
+.mock-macro-pill.cal { background: rgba(26,26,26,0.06); color: var(--ink-2); }
+.mock-macro-pill.pro { background: rgba(57,186,118,0.10); color: #2a9148; }
+.mock-recipe-meta-row { display: flex; gap: 10px; margin-bottom: 6px; }
+.mock-recipe-meta-item { display: flex; align-items: center; gap: 3px; font-size: 8px; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; }
+.mock-match-bar { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; margin-bottom: 4px; }
+.mock-match-bar-fill { height: 100%; width: 91%; background: linear-gradient(90deg, var(--nutrition), var(--green)); border-radius: 2px; }
+.mock-match-label { font-size: 7.5px; font-weight: 700; color: var(--green); letter-spacing: 0.04em; }
+.mock-recipe-divider { height: 1px; background: var(--border); margin: 6px 0; }
+.mock-section-hdr { font-size: 7px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+.mock-ing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 10px; margin-bottom: 2px; }
+.mock-ing-item { display: flex; align-items: center; gap: 4px; font-size: 8.5px; color: var(--ink-2); font-weight: 500; }
+.mock-ing-chk { width: 12px; height: 12px; flex-shrink: 0; }
+.mock-ing-chk path { fill: none; stroke: var(--green); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.mock-shop-grid { display: flex; flex-direction: column; gap: 2px; }
+.mock-shop-item { display: flex; align-items: center; gap: 6px; font-size: 8.5px; color: var(--muted-2); }
+.mock-shop-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--border-mid); flex-shrink: 0; }
+
+/* TLC Pro Meal Plan */
+.mock-mealplan { background: var(--white); }
+.mock-mp-header { background: var(--white); padding: 13px 16px 8px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.mock-mp-pro-badge { font-size: 8px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; background: var(--green); color: white; padding: 3px 8px; border-radius: 4px; }
+.mock-mp-hdr-right { text-align: right; }
+.mock-mp-hdr-title { font-size: 11px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.mock-mp-hdr-sub { font-size: 8.5px; color: var(--muted); font-weight: 500; }
+.mock-mp-body { padding: 6px 14px 4px; flex-shrink: 0; }
+.mock-mp-meal-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.mock-mp-meal-row:last-child { border-bottom: none; }
+.mock-mp-type { font-size: 7.5px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); width: 52px; flex-shrink: 0; }
+.mock-mp-name { font-size: 10.5px; font-weight: 600; color: var(--ink); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transform: translateX(-4px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.mock-mp-name.mp-visible { opacity: 1; transform: translateX(0); }
+.mock-mp-tag { font-size: 7.5px; font-weight: 700; padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
+.mock-mp-tag.omega { background: rgba(57,140,186,0.10); color: #2b6e93; }
+.mock-mp-tag.pro { background: rgba(57,186,118,0.10); color: #2a9148; }
+.mock-mp-tag.lean { background: rgba(232,184,75,0.12); color: #927010; }
+.mock-mp-why { padding: 7px 14px 6px; background: var(--surface); border-top: 1px solid var(--border); flex-shrink: 0; }
+.mock-mp-why-title { font-size: 7px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.mock-mp-why-row { display: flex; align-items: center; gap: 7px; padding: 2.5px 0; opacity: 0; transform: translateX(-5px); transition: opacity 0.4s ease, transform 0.4s ease; }
+.mock-mp-why-row.mp-visible { opacity: 1; transform: translateX(0); }
+.mock-mp-why-check { width: 14px; height: 14px; border-radius: 50%; background: rgba(46,168,74,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mock-mp-why-label { font-size: 9px; color: var(--ink-2); font-weight: 600; }
+.mock-mp-why-detail { font-size: 8.5px; color: var(--muted); font-weight: 400; margin-left: 2px; }
+.mock-mp-shop { padding: 6px 14px 7px; border-top: 1px solid var(--border); flex-shrink: 0; }
+.mock-mp-shop-title { font-size: 7px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.mock-mp-shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; }
+.mock-mp-shop-item { display: flex; align-items: center; gap: 5px; font-size: 9px; color: var(--ink-2); font-weight: 500; opacity: 0; transform: translateY(4px); transition: opacity 0.35s ease, transform 0.35s ease; }
+.mock-mp-shop-item.mp-visible { opacity: 1; transform: translateY(0); }
+.mock-mp-shop-check { width: 13px; height: 13px; flex-shrink: 0; border-radius: 3px; background: rgba(57,186,118,0.14); display: flex; align-items: center; justify-content: center; }
+.mock-mp-savings { padding: 7px 14px; background: rgba(46,168,74,0.07); border-radius: 0 0 8px 8px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(46,168,74,0.12); flex-shrink: 0; }
+.mock-mp-savings-num { font-family: var(--font-display); font-size: 26px; color: var(--green); line-height: 1; }
+.mock-mp-savings-label { font-size: 9.5px; font-weight: 700; color: var(--green-dark); display: block; text-align: right; }
+.mock-mp-savings-sub { font-size: 8.5px; color: var(--muted); text-align: right; }
+
+/* ── HIGHLIGHT PILL ── */
+.highlight-pill { display: inline; background: rgba(46,168,74,0.10); color: var(--green-dark); border-radius: 4px; padding: 1px 7px; font-weight: 600; }
+
+/* ── THE DIFFERENCE ── */
+.section-difference { padding: var(--section-pad) 0; background: var(--ink); position: relative; overflow: hidden; }
+.section-difference::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(46,168,74,0.06) 0%, transparent 55%); }
+.difference-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; position: relative; }
+.difference-quote { border-left: 2px solid rgba(255,255,255,0.10); padding-left: 40px; }
+.quote-pre { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 12px; }
+.quote-mark { font-family: var(--font-display); font-size: 120px; line-height: 0.7; color: rgba(255,255,255,0.05); margin-bottom: -20px; }
+.quote-text { font-size: clamp(22px, 2.5vw, 30px); color: rgba(255,255,255,0.60); font-weight: 300; line-height: 1.5; font-style: italic; }
+.quote-text em { font-style: normal; color: rgba(255,255,255,0.85); }
+.difference-answer h2 { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 56px); line-height: 1; color: var(--white); margin-bottom: 28px; letter-spacing: 0.02em; }
+.difference-answer > p { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+.difference-answer span.label { color: var(--green-accent); margin-bottom: 22px; display: inline-flex; }
+.difference-answer span.label::before { background: var(--green-accent); }
+
+/* ── WEARABLES ── */
+.section-wearables { background: var(--surface); padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.wearables-inner { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; justify-content: center; }
+.wearable-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.wearable-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 8px 18px; border: 1.5px solid var(--border-mid); border-radius: 50px; background: var(--white); }
+.wearable-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.wearable-tag-muted { color: var(--muted); border-style: dashed; }
+
+/* ── FINAL CTA ── */
+.section-cta { padding: var(--section-pad) 0; background: var(--ink); position: relative; overflow: hidden; }
+.section-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(46,168,74,0.05) 0%, transparent 60%); }
+.cta-inner { text-align: center; position: relative; max-width: 640px; margin: 0 auto; }
+.cta-inner h2 { font-family: var(--font-display); font-size: clamp(52px, 7vw, 88px); line-height: 0.92; color: var(--white); margin-bottom: 24px; }
+.cta-inner h2 span { color: var(--green-accent); }
+.cta-inner > p { font-size: 18px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 44px; font-weight: 300; }
+.cta-actions { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.cta-note { font-size: 12px; color: rgba(255,255,255,0.28); letter-spacing: 0.06em; }
+
+/* ── FOOTER ── */
+footer { background: var(--black); padding: 60px 0 0; position: relative; z-index: 2; }
+.footer-inner { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.footer-logo img { height: 40px; width: auto; margin-bottom: 14px; filter: brightness(0) invert(1); }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.65; max-width: 280px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; font-weight: 500; }
+.footer-col ul li a:hover { color: rgba(255,255,255,0.80); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); margin-top: 48px; padding: 20px var(--gutter); max-width: var(--content-max); margin-left: auto; margin-right: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.22); letter-spacing: 0.04em; }
+
+/* ── MOBILE CTA ── */
+.mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 14px var(--gutter); background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-top: 1px solid var(--border); z-index: 180; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); transform: translateY(100%); }
+.mobile-cta.show { transform: translateY(0); }
+.mobile-cta .btn { width: 100%; justify-content: center; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .feature-inner { gap: 48px; }
+  .difference-inner { gap: 48px; }
+}
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: block; }
+  .feature-inner { grid-template-columns: 1fr; gap: 40px; direction: ltr !important; }
+  .feature-block:nth-child(even) .feature-inner { direction: ltr; }
+  .feature-visual { aspect-ratio: 16/10; max-width: 520px; margin: 0 auto; }
+  .difference-inner { grid-template-columns: 1fr; }
+  .difference-quote { border-left: none; padding-left: 0; border-top: 2px solid rgba(255,255,255,0.10); padding-top: 32px; }
+  .mobile-cta { display: block; }
+  .sub-nav-title { display: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .page-hero-nav { flex-direction: column; align-items: center; }
+  .hero-feature-pill { width: 100%; justify-content: center; max-width: 280px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .sub-nav-links { gap: 0; }
+  .sub-nav-links a { padding: 12px 8px; font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY SUB-NAV -->
+<nav id="subNav" class="sub-nav">
+  <div class="sub-nav-inner">
+    <span class="sub-nav-title">Features</span>
+    <ul class="sub-nav-links">
+      <li><a href="#dynamic-insights">Dynamic Insights</a></li>
+      <li><a href="#longevity-coach">Coach</a></li>
+      <li><a href="#meal-matchmaker">Meal Matchmaker</a></li>
+      <li><a href="#pantry-pal">Pantry Pal</a></li>
+      <li><a href="#meal-plan">Meal Plan</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MAIN NAV -->
+<nav id="mainNav">
+  <a href="/" class="nav-logo">
+    <img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/features" class="active-page">Features</a></li>
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/why-tlc">Why TLC</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
+    <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="/" onclick="toggleMobileNav()">Home</a>
+  <a href="/features" onclick="toggleMobileNav()">Features</a>
+  <a href="/how-it-works" onclick="toggleMobileNav()">How It Works</a>
+  <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
+  <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
+  <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
+  <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow"><span class="label">Five Tools. One System.</span></div>
+    <h1>TOOLS THAT<br><em>TALK TO</em><br>EACH OTHER</h1>
+    <p class="page-hero-sub">Each one sharpens the rest.</p>
+    <p class="page-hero-body">Every other health app gives you a collection of features. TLC gives you a system. What you learn from your evening insight changes what your coach says tomorrow. What your coach says changes how you eat next week. What you eat changes what the insight reveals next month. The connections are what make it work.</p>
+    <div class="page-hero-nav">
+      <a href="#dynamic-insights" class="hero-feature-pill"><span class="pill-dot" style="background:var(--nutrition);"></span>Dynamic Insights</a>
+      <a href="#longevity-coach" class="hero-feature-pill"><span class="pill-dot" style="background:var(--body-blue);"></span>Longevity Coach</a>
+      <a href="#meal-matchmaker" class="hero-feature-pill"><span class="pill-dot" style="background:var(--green);"></span>Meal Matchmaker</a>
+      <a href="#pantry-pal" class="hero-feature-pill"><span class="pill-dot" style="background:var(--mind);"></span>Pantry Pal</a>
+      <a href="#meal-plan" class="hero-feature-pill"><span class="pill-dot" style="background:#154D33;"></span>Meal Plan</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section-features">
+
+  <!-- 1. Dynamic Insights -->
+  <div class="feature-block" id="dynamic-insights">
+    <div class="container">
+      <div class="feature-inner">
+        <div class="feature-visual reveal-scale">
+          <div class="mock-card mock-di" id="demo-di">
+            <div class="mock-di-header">
+              <span class="mock-di-title">Dynamic Insight</span>
+              <div style="display:flex;align-items:center;gap:7px;">
+                <div class="mock-di-listen">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                  <span class="mock-di-listen-text">Listen</span>
+                </div>
+                <div class="mock-di-badge"><span class="mock-di-badge-dot"></span><span class="mock-di-badge-text">Tonight's Insight</span></div>
+              </div>
+            </div>
+            <div class="mock-di-narrative">
+              <p id="di-narrative-text" style="opacity:0;transition:opacity 0.8s ease;">Your omega-3 intake tracked <strong>31% above target</strong> this week. On every day you hit that threshold, your evening energy score was <strong>7.8 or higher</strong>. The pattern is consistent. Keep the salmon streak going.</p>
+              <p id="di-narrative-p2" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">HRV averaged <strong>58ms</strong> this week against your <strong>52ms</strong> baseline. Your sleep Tuesday and Wednesday drove most of that gain. Strength training on Thursday correlated with a <strong>+14% recovery uplift</strong> by Friday morning.</p>
+              <p id="di-narrative-p3" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">This week's Longevity Score: <strong>741/1000</strong>. Up 17 from last week. Your weekly strategy lands tomorrow morning. The patterns are compounding.</p>
+            </div>
+            <div class="mock-wellbeing-section">
+              <div class="mock-wb-header">Wellbeing Journey / Week 4</div>
+              <div class="mock-wb-row">
+                <span class="mock-wb-label" style="color:var(--mind)">Mood</span>
+                <div class="mock-wb-bars" id="wb-bars-mood"></div>
+                <span class="mock-wb-score" id="wb-score-mood" style="color:var(--mind)">0.0</span>
+              </div>
+              <div class="mock-wb-row">
+                <span class="mock-wb-label" style="color:var(--body-blue)">Focus</span>
+                <div class="mock-wb-bars" id="wb-bars-focus"></div>
+                <span class="mock-wb-score" id="wb-score-focus" style="color:var(--body-blue)">0.0</span>
+              </div>
+              <div class="mock-wb-row">
+                <span class="mock-wb-label" style="color:var(--nutrition)">Energy</span>
+                <div class="mock-wb-bars" id="wb-bars-energy"></div>
+                <span class="mock-wb-score" id="wb-score-energy" style="color:var(--nutrition)">0.0</span>
+              </div>
+            </div>
+            <div class="mock-di-tts-row" id="di-tts-row" style="opacity:0;transition:opacity 0.6s ease;">
+              <div class="mock-tts-wave">
+                <div class="mock-tts-bar"></div><div class="mock-tts-bar"></div><div class="mock-tts-bar"></div><div class="mock-tts-bar"></div><div class="mock-tts-bar"></div>
+              </div>
+              <span class="mock-tts-label">Reading your insight aloud...</span>
+            </div>
+          </div>
+        </div>
+        <div class="feature-copy reveal d2">
+          <span class="label">The intelligence layer</span>
+          <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
+          <h3>DYNAMIC INSIGHTS</h3>
+          <p>Every evening at 8pm, TLC does something no other platform can. It takes what you ate, what your body measured, and how you felt, and draws specific, named connections across all three. Not a summary of your day. A revelation about the pattern behind it.</p>
+          <p>Week by week, the picture deepens. Your Longevity Score tracks the trajectory your habits are building. After 30 days, TLC has seen your individual patterns across hundreds of data points. Every insight that follows is built on that foundation, not a template.</p>
+          <ul class="feature-highlights">
+            <li>Connects nutrition, biometrics, and reflection in one daily insight</li>
+            <li>Longevity Score tracks your trajectory week over week</li>
+            <li>Targets that evolve as your body adapts</li>
+            <li>Listen mode reads your insight aloud. Hands-free, eyes-free.</li>
+            <li>Never starts from scratch. Every week builds on the last.</li>
+          </ul>
+          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Start your first insight free &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Longevity Coach -->
+  <div class="feature-block alt-bg" id="longevity-coach">
+    <div class="container">
+      <div class="feature-inner">
+        <div class="feature-visual reveal-scale">
+          <div class="mock-card mock-coach" id="demo-coach">
+            <div class="mock-coach-context">
+              <span class="mock-chip alert">HRV: 41ms</span>
+              <span class="mock-chip alert">Sleep: 6.2h</span>
+              <span class="mock-chip low">Recovery: Low</span>
+              <span class="mock-chip">Goal: Longevity</span>
+            </div>
+            <div class="mock-chat-area" id="coach-chat"></div>
+            <div class="mock-input-row">
+              <div class="mock-input-bar"></div>
+              <div class="mock-send-btn"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-copy reveal d2">
+          <span class="label">Always in context</span>
+          <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
+          <h3>LONGEVITY COACH</h3>
+          <p>Before you type a word, your coach already knows. Your biometrics from this morning. Every meal you logged this week. Your active goals, your health conditions, your dietary restrictions. The last seven insights and every pattern TLC has seen in your data. That context is loaded before the conversation starts.</p>
+          <p>This is the difference between a generic chatbot and a coach who has been following your journey since day one. Ask it anything. It answers from your data. Come back six months later. It has not forgotten a single pattern. The longer you use TLC, the more precisely it guides you.</p>
+          <ul class="feature-highlights">
+            <li>Dietician, nutritionist, longevity specialist, and life coach in one</li>
+            <li>Full context loaded before you say a word: biometrics, meals, goals, history</li>
+            <li>References your actual data. Never a generic response.</li>
+            <li>Gets sharper with every session as your patterns compound</li>
+            <li>Opens Meal Matchmaker with your current context when you ask about food</li>
+          </ul>
+          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Talk to your coach free &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Meal Matchmaker -->
+  <div class="feature-block" id="meal-matchmaker">
+    <div class="container">
+      <div class="feature-inner">
+        <div class="feature-visual reveal-scale" id="demo-mm" style="position:relative;">
+          <div class="mock-mm-skeleton" id="mm-skeleton">
+            <div class="skel skel-title"></div>
+            <div class="skel skel-sub"></div>
+            <div class="skel skel-gap"></div>
+            <div class="skel skel-full" style="height:14px;"></div>
+            <div class="skel skel-sub"></div>
+            <div class="skel skel-gap"></div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div class="skel skel-macro"></div>
+              <div class="skel skel-macro"></div>
+              <div class="skel skel-macro"></div>
+            </div>
+            <div class="skel skel-gap"></div>
+            <div style="display:flex;gap:6px;">
+              <div class="skel" style="width:70px;height:22px;border-radius:50px;"></div>
+              <div class="skel" style="width:80px;height:22px;border-radius:50px;"></div>
+            </div>
+          </div>
+          <div class="mock-card mock-mm mock-mm-result" id="mm-result" style="position:absolute;inset:0;opacity:0;transition:opacity 0.5s;">
+            <div class="mock-mm-header">
+              <span class="mock-mm-restaurant">Sushi Yoshi</span>
+              <span class="mock-mm-score" id="mm-score-badge">0% Match</span>
+            </div>
+            <div class="mock-mm-meta">
+              <span class="mock-mm-cuisine">Japanese</span>
+              <span class="mock-mm-dist">0.8km away &bull; Open now</span>
+            </div>
+            <div class="mock-mm-dish">
+              <div class="mock-mm-dish-name">Salmon Avocado Bowl</div>
+              <div class="mock-mm-kcal">680 kcal</div>
+              <div class="mock-macro-row"><span class="mock-macro-label">Protein</span><div class="mock-macro-bar"><div class="mock-macro-fill" id="mm-bar-p" style="width:0%;transition:width 0.9s ease;"></div></div><span class="mock-macro-val">44g</span></div>
+              <div class="mock-macro-row"><span class="mock-macro-label">Carbs</span><div class="mock-macro-bar"><div class="mock-macro-fill carbs" id="mm-bar-c" style="width:0%;transition:width 0.9s ease;"></div></div><span class="mock-macro-val">28g</span></div>
+              <div class="mock-macro-row"><span class="mock-macro-label">Fat</span><div class="mock-macro-bar"><div class="mock-macro-fill fat" id="mm-bar-f" style="width:0%;transition:width 0.9s ease;"></div></div><span class="mock-macro-val">18g</span></div>
+            </div>
+            <div class="mock-mm-tags">
+              <span class="mock-mm-tag safe">Allergy-safe</span>
+              <span class="mock-mm-tag goal">Goal-matched</span>
+              <span class="mock-mm-tag goal">Anti-inflammatory</span>
+            </div>
+            <div class="mock-mm-why">"Omega-3 profile supports your recovery goal. Calorie distance: 12 kcal."</div>
+            <div class="mock-mm-alts">
+              <div class="mock-mm-alt"><span class="mock-mm-alt-name">Tuna Tataki</span><span class="mock-mm-alt-pct">87%</span></div>
+              <div class="mock-mm-alt"><span class="mock-mm-alt-name">Edamame Ramen (miso broth)</span><span class="mock-mm-alt-pct">79%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-copy reveal d2">
+          <span class="label">Your goals travel with you</span>
+          <div class="feature-tier-pill lite">TLC Lite &middot; Free</div>
+          <h3>MEAL MATCHMAKER</h3>
+          <p>You are in a city you do not know. A restaurant you have never heard of. A menu you are seeing for the first time. Meal Matchmaker already has your macros, your current goals, your allergies, and your calorie target. It browses the actual menu and finds the dish that fits. Not approximately. To within 12 calories.</p>
+          <p>This works anywhere. Any city, any country, any cuisine. Menu Scanner extends it further: point your camera at any printed, digital, or overhead menu and TLC reads it instantly. Every meal an informed decision, wherever life takes you. Your plan never stays home, because TLC never stays home.</p>
+          <ul class="feature-highlights">
+            <li>Any city, any country. Works globally in any cuisine.</li>
+            <li>Macro-matched, allergy-verified, and goal-aligned every time</li>
+            <li>Menu Scanner reads any menu: printed, digital, or overhead board</li>
+            <li>Synced live with your current goals, not last week's settings</li>
+            <li>Free forever on TLC Lite. No subscription required.</li>
+          </ul>
+          <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="feature-cta">Find your next meal free &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Pantry Pal + Recipes -->
+  <div class="feature-block alt-bg" id="pantry-pal">
+    <div class="container">
+      <div class="feature-inner">
+        <div class="feature-visual reveal-scale">
+          <div class="mock-card mock-pantry" id="demo-pantry">
+            <div class="mock-pantry-scan">
+              <div class="mock-pantry-title">Detected in your fridge</div>
+              <div class="mock-ingredients-row" id="pantry-ings">
+                <span class="mock-ingredient" style="opacity:0;">Salmon</span>
+                <span class="mock-ingredient" style="opacity:0;">Lemon</span>
+                <span class="mock-ingredient" style="opacity:0;">Dill</span>
+                <span class="mock-ingredient" style="opacity:0;">Capers</span>
+                <span class="mock-ingredient more" style="opacity:0;">+7 more</span>
+              </div>
+            </div>
+            <div class="mock-recipe-card-inner" id="pantry-recipe" style="opacity:0;transition:opacity 0.7s ease;">
+              <div class="mock-recipe-eyebrow">Generated for you</div>
+              <div class="mock-recipe-name">Herb-Crusted Salmon</div>
+              <div class="mock-recipe-sub">with Caper Butter &bull; 25 min</div>
+              <div class="mock-macro-pills">
+                <span class="mock-macro-pill cal">520 kcal</span>
+                <span class="mock-macro-pill pro">38g protein</span>
+                <span class="mock-macro-pill cal">12g fat</span>
+              </div>
+              <div class="mock-recipe-meta-row">
+                <span class="mock-recipe-meta-item">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  25 min
+                </span>
+                <span class="mock-recipe-meta-item">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/></svg>
+                  7 ingredients
+                </span>
+                <span class="mock-recipe-meta-item">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  Anti-inflam.
+                </span>
+              </div>
+              <div class="mock-match-bar"><div class="mock-match-bar-fill"></div></div>
+              <span class="mock-match-label">Macro match: Excellent</span>
+              <div class="mock-recipe-divider"></div>
+              <div class="mock-section-hdr">In your fridge</div>
+              <div class="mock-ing-grid">
+                <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Salmon fillet</div>
+                <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Fresh dill</div>
+                <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Lemon</div>
+                <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Capers</div>
+                <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Olive oil</div>
+                <div class="mock-ing-item"><svg class="mock-ing-chk" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>Black pepper</div>
+              </div>
+              <div class="mock-recipe-divider"></div>
+              <div class="mock-section-hdr">Shopping list</div>
+              <div class="mock-shop-grid">
+                <div class="mock-shop-item"><span class="mock-shop-dot"></span>Dijon mustard</div>
+                <div class="mock-shop-item"><span class="mock-shop-dot"></span>Panko crumbs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-copy reveal d2">
+          <span class="label">At home, in your kitchen</span>
+          <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
+          <h3>PANTRY PAL + RECIPES</h3>
+          <p>Open your fridge. Point your camera. TLC identifies everything you have and generates a recipe that hits your macro targets, aligns with your active goal, and works with exactly what is already there. No shopping required. No compromise. Just precise, purposeful food from your own kitchen.</p>
+          <p>Planning ahead instead? Start from scratch and TLC builds the recipe with a ready-to-go shopping list. Meal Analyser completes the loop: snap any finished plate and receive full macros in seconds. Cooking in, eating out, ordering ahead. TLC has a tool for every moment your nutrition needs you.</p>
+          <ul class="feature-highlights">
+            <li>Scan your fridge for instant recipes, or plan from scratch</li>
+            <li>Every recipe tuned to your macros, goals, and dietary restrictions</li>
+            <li>Shopping list generated in seconds when you plan from scratch</li>
+            <li>Meal Analyser: snap any plate for full macros instantly</li>
+            <li>Connects to your Daily Insight. Every meal logged automatically.</li>
+          </ul>
+          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Scan your fridge free &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TLC Pro Meal Plan -->
+  <div class="feature-block" id="meal-plan">
+    <div class="container">
+      <div class="feature-inner">
+        <div class="feature-visual reveal-scale">
+          <div class="mock-card mock-mealplan" id="demo-mealplan">
+            <div class="mock-mp-header">
+              <span class="mock-mp-pro-badge">TLC Pro</span>
+              <div class="mock-mp-hdr-right">
+                <div class="mock-mp-hdr-title">Your April Meal Plan</div>
+                <div class="mock-mp-hdr-sub">28 days &bull; tailored to your goals</div>
+              </div>
+            </div>
+            <div class="mock-mp-body">
+              <div class="mock-mp-meal-row">
+                <span class="mock-mp-type">Breakfast</span>
+                <span class="mock-mp-name" id="mp-meal-0">Smoked Salmon Scramble</span>
+                <span class="mock-mp-tag omega">Omega-3</span>
+              </div>
+              <div class="mock-mp-meal-row">
+                <span class="mock-mp-type">Lunch</span>
+                <span class="mock-mp-name" id="mp-meal-1">Mediterranean Grain Bowl</span>
+                <span class="mock-mp-tag pro">High fibre</span>
+              </div>
+              <div class="mock-mp-meal-row">
+                <span class="mock-mp-type">Snack</span>
+                <span class="mock-mp-name" id="mp-meal-2">Greek Yoghurt &amp; Walnuts</span>
+                <span class="mock-mp-tag lean">Anti-inflam.</span>
+              </div>
+              <div class="mock-mp-meal-row">
+                <span class="mock-mp-type">Dinner</span>
+                <span class="mock-mp-name" id="mp-meal-3">Herb Sea Bass &amp; Asparagus</span>
+                <span class="mock-mp-tag omega">Lean protein</span>
+              </div>
+            </div>
+            <div class="mock-mp-why">
+              <div class="mock-mp-why-title">Why we chose this for you</div>
+              <div class="mock-mp-why-row" id="mp-why-0"><div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div><span class="mock-mp-why-label">Taste match</span><span class="mock-mp-why-detail">Mediterranean, low-spice</span></div>
+              <div class="mock-mp-why-row" id="mp-why-1"><div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div><span class="mock-mp-why-label">Allergy safe</span><span class="mock-mp-why-detail">dairy-free, nut-free</span></div>
+              <div class="mock-mp-why-row" id="mp-why-2"><div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div><span class="mock-mp-why-label">Macros</span><span class="mock-mp-why-detail">38g protein &bull; 420 kcal</span></div>
+              <div class="mock-mp-why-row" id="mp-why-3"><div class="mock-mp-why-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div><span class="mock-mp-why-label">Kitchen fit</span><span class="mock-mp-why-detail">pan + oven, 20 min</span></div>
+            </div>
+            <div class="mock-mp-shop">
+              <div class="mock-mp-shop-title">Smart Zero-Waste Shopping List</div>
+              <div class="mock-mp-shop-grid">
+                <div class="mock-mp-shop-item" id="mp-shop-0"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Salmon fillet</div>
+                <div class="mock-mp-shop-item" id="mp-shop-1"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Sea bass (2 fillets)</div>
+                <div class="mock-mp-shop-item" id="mp-shop-2"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Quinoa (500g)</div>
+                <div class="mock-mp-shop-item" id="mp-shop-3"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Asparagus bunch</div>
+                <div class="mock-mp-shop-item" id="mp-shop-4"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Greek yoghurt</div>
+                <div class="mock-mp-shop-item" id="mp-shop-5"><div class="mock-mp-shop-check"><svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#39BA76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l2.5 2.5 3.5-4"/></svg></div>Walnuts (150g)</div>
+              </div>
+            </div>
+            <div class="mock-mp-savings">
+              <span class="mock-mp-savings-num" id="mp-savings">&pound;0</span>
+              <div>
+                <span class="mock-mp-savings-label">saved this month</span>
+                <span class="mock-mp-savings-sub">Zero waste &bull; 12% under budget</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-copy reveal d2">
+          <span class="label">The committed path</span>
+          <div class="feature-tier-pill pro">TLC Pro &middot; $19.99/mo</div>
+          <h3>YOUR ENTIRE MONTH. PLANNED.</h3>
+          <p>TLC Pro is for those who are done with improvising. Every breakfast, lunch, dinner, and snack for 28 days, built around your macro targets, taste preferences, dietary restrictions, cooking ability, and kitchen. Not a rotation. Not a template. A completely unique plan built specifically for you.</p>
+          <p>The Smart Shopping List consolidates every ingredient across all 28 days, eliminates duplicates, and sequences your shop around what gets used when. Members typically cut their grocery bill by 10 to 15 percent. And when life gets in the way, it does not unravel. Miss a meal, eat out, or raid the pantry and TLC recalibrates automatically. The plan works around real life.</p>
+          <ul class="feature-highlights">
+            <li>Full 28-day plan built in advance, laser-focused on your goals</li>
+            <li>Matched to your cooking skill, budget, and kitchen equipment</li>
+            <li>Smart zero-waste shopping list across every meal</li>
+            <li>Optional batch prep instructions to get ahead on the week</li>
+            <li>Recalibrates automatically when life disrupts the plan</li>
+            <li>Mixes freely with Meal Matchmaker and Pantry Pal</li>
+          </ul>
+          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Start your Pro journey &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- THE DIFFERENCE -->
+<section class="section-difference">
+  <div class="container">
+    <div class="difference-inner">
+      <div class="difference-quote reveal">
+        <div class="quote-pre">The question we get</div>
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Can't I just use<br><em>any health app?</em></p>
+      </div>
+      <div class="difference-answer reveal d2">
+        <span class="label" style="margin-bottom:22px;display:inline-flex;color:var(--green-accent);">The Difference</span>
+        <h2>IT ADAPTS TO YOU.<br>NOT THE OTHER WAY.</h2>
+        <p>Most health tools hand you a plan and expect you to fit your life around it. Rigid. Generic. Built for a hypothetical average person who is not you.</p>
+        <p>TLC starts with <span class="highlight-pill">who you actually are</span>: your wearable data, your food patterns, your goals, your restrictions, your daily reality. Then it meets you where you are. At the restaurant. At home. When you are exhausted and need the answer in 10 seconds.</p>
+        <p>Five tools that talk to each other. Every insight built from your data. Every coaching response that knows your week. Every plan that reflects where you actually are, not where a formula assumed you would be.</p>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEARABLES -->
+<section class="section-wearables">
+  <div class="container">
+    <div class="wearables-inner">
+      <span class="wearable-label">Syncs with:</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>WHOOP</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>OURA</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>FITBIT</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>GARMIN</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>ULTRAHUMAN</span>
+      <span class="wearable-tag wearable-tag-muted">+ 20 more</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-cta">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="label" style="justify-content:center;margin-bottom:28px;display:inline-flex;color:var(--green-accent);">Where It Starts</span>
+      <h2 class="reveal">THE SYSTEM<br>THAT <span>GROWS</span><br>WITH YOU.</h2>
+      <p class="reveal d1">Start free. No card needed. Meal Matchmaker is yours from day one. Unlock the full system when you are ready to see the connections that change everything.</p>
+      <div class="cta-actions reveal d2">
+        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
+        <a href="/pricing" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Compare all plans</a>
+        <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></div>
+      <p>Connecting the dots between nutrition, body, and mind. Eat smarter, feel better, live longer.</p>
+    </div>
+    <div class="footer-col"><ul>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/how-it-works">How It Works</a></li>
+      <li><a href="/why-tlc">Why TLC</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+    </ul></div>
+    <div class="footer-col"><ul>
+      <li><a href="https://www.instagram.com/thelongevitychef_">Instagram</a></li>
+      <li><a href="https://docs.google.com/document/d/1ZXE0c5gG4ep34tESNVOQF0SWg7lPpPb4KaQ7fkIcPFg/edit?usp=sharing">FAQs</a></li>
+      <li><a href="https://tally.so/r/D4k8eZ">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><ul>
+      <li><a href="https://docs.google.com/document/d/11IzYrOfZytm4r-7FN0oNnuch-_ViIhAdLSYgSO4v-oE/edit?usp=sharing">Privacy Policy</a></li>
+      <li><a href="https://docs.google.com/document/d/1gp9xA3yyTfraTdyJCT4uTM33jaDDf_Vg6Z8Dt4gMkzQ/edit?usp=sharing">Terms &amp; Conditions</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 The Longevity Chef. All rights reserved.</span>
+    <span class="footer-copy">Food for Life</span>
+  </div>
+</footer>
+
+<div class="mobile-cta" id="mobileCta"><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green">Start Free</a></div>
+
+<!-- LOGIN MODAL -->
+<div class="login-overlay" id="loginOverlay" onclick="handleOverlayClick(event)">
+  <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <button class="login-modal-close" onclick="closeLoginModal()" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="loginForm">
+      <h3 id="loginTitle">Welcome back</h3>
+      <p>Enter your email and we will send you a login link. No password needed.</p>
+      <div class="login-modal-error" id="loginError"></div>
+      <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')submitMagicLink()" />
+      <button class="btn-login-submit" id="loginSubmitBtn" onclick="submitMagicLink()">Send login link</button>
+    </div>
+    <div class="login-modal-success" id="loginSuccess">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <h4>Check your inbox</h4>
+      <p>A login link is on its way. It expires in 15 minutes.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Nav scroll ──
+const mainNav = document.getElementById('mainNav');
+const subNav = document.getElementById('subNav');
+const mobileCta = document.getElementById('mobileCta');
+
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  mainNav.classList.toggle('scrolled', sy > 50);
+  // Sub-nav: appears after hero (approx 600px)
+  const heroEl = document.querySelector('.page-hero');
+  const heroH = heroEl ? heroEl.offsetHeight : 600;
+  if (subNav) subNav.classList.toggle('show', sy > heroH - 100);
+  if (subNav && sy > heroH - 100) mainNav.style.top = '-80px'; else mainNav.style.top = '0';
+  if (mobileCta) mobileCta.classList.toggle('show', sy > 400);
+});
+
+// ── Active sub-nav link ──
+const featureSections = document.querySelectorAll('.feature-block[id]');
+const subLinks = document.querySelectorAll('.sub-nav-links a');
+const sectionObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      subLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector('.sub-nav-links a[href="#' + e.target.id + '"]');
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+featureSections.forEach(s => sectionObs.observe(s));
+
+// ── Reveal on scroll ──
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -80px 0px' });
+document.querySelectorAll('.reveal, .reveal-scale').forEach(el => revealObs.observe(el));
+
+// ── Mobile nav ──
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileNav').classList.contains('open') ? 'hidden' : '';
+}
+
+// ── Login modal ──
+function openLoginModal() { document.getElementById('loginOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeLoginModal() { document.getElementById('loginOverlay').classList.remove('open'); document.body.style.overflow = ''; }
+function handleOverlayClick(e) { if (e.target === e.currentTarget) closeLoginModal(); }
+async function submitMagicLink() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const btn = document.getElementById('loginSubmitBtn');
+  const errEl = document.getElementById('loginError');
+  if (!email || !email.includes('@')) { errEl.textContent = 'Please enter a valid email address.'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
+    else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
+  } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
+}
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const s = params.get('login');
+  if (s === 'expired' || s === 'invalid') {
+    openLoginModal();
+    const e = document.getElementById('loginError');
+    e.textContent = s === 'expired' ? 'That login link has expired. Please request a new one.' : 'That login link is not valid. Please request a new one.';
+    e.style.display = 'block';
+  }
+})();
+
+// ── FEATURE DEMO ANIMATIONS ──
+(function() {
+  'use strict';
+
+  // ── DI DEMO ──
+  function runDI() {
+    var narrativeEl = document.getElementById('di-narrative-text');
+    var ttsRow = document.getElementById('di-tts-row');
+    if (!narrativeEl) return;
+    var wbData = [
+      {id:'mood',   col:'var(--mind)',     vals:[6.1,6.5,6.8,7.0,7.3,7.1,7.6]},
+      {id:'focus',  col:'var(--body-blue)',vals:[6.4,6.8,7.2,7.5,7.7,8.0,8.3]},
+      {id:'energy', col:'var(--nutrition)',vals:[5.8,6.2,6.5,7.0,7.2,7.5,7.8]}
+    ];
+    var narrativeP2 = document.getElementById('di-narrative-p2');
+    var narrativeP3 = document.getElementById('di-narrative-p3');
+    narrativeEl.style.opacity = '0';
+    if (narrativeP2) narrativeP2.style.opacity = '0';
+    if (narrativeP3) narrativeP3.style.opacity = '0';
+    if (ttsRow) ttsRow.style.opacity = '0';
+    wbData.forEach(function(d) {
+      var barsEl = document.getElementById('wb-bars-' + d.id);
+      var scoreEl = document.getElementById('wb-score-' + d.id);
+      if (barsEl) {
+        barsEl.innerHTML = '';
+        var maxVal = Math.max.apply(null, d.vals);
+        d.vals.forEach(function(v) {
+          var bar = document.createElement('div');
+          bar.className = 'mock-wb-bar';
+          bar.style.height = ((v / 10) * 28) + 'px';
+          bar.style.background = d.col;
+          bar.style.opacity = (v === maxVal) ? '1' : '0.5';
+          barsEl.appendChild(bar);
+        });
+      }
+      if (scoreEl) scoreEl.textContent = '0.0';
+    });
+    setTimeout(function() { narrativeEl.style.opacity = '1'; }, 500);
+    setTimeout(function() { if (narrativeP2) narrativeP2.style.opacity = '1'; }, 1100);
+    setTimeout(function() { if (narrativeP3) narrativeP3.style.opacity = '1'; }, 1700);
+    wbData.forEach(function(d, rowIdx) {
+      var barsEl = document.getElementById('wb-bars-' + d.id);
+      var scoreEl = document.getElementById('wb-score-' + d.id);
+      var baseDelay = 1300 + rowIdx * 380;
+      d.vals.forEach(function(v, barIdx) {
+        setTimeout(function() {
+          var bars = barsEl ? barsEl.querySelectorAll('.mock-wb-bar') : [];
+          if (bars[barIdx]) bars[barIdx].style.transform = 'scaleY(1)';
+          if (barIdx === d.vals.length - 1 && scoreEl) scoreEl.textContent = v.toFixed(1);
+        }, baseDelay + barIdx * 85);
+      });
+    });
+    setTimeout(function() { if (ttsRow) ttsRow.style.opacity = '1'; }, 4200);
+  }
+
+  // ── COACH DEMO ──
+  function runCoach() {
+    var chatEl = document.getElementById('coach-chat');
+    if (!chatEl) return;
+    chatEl.innerHTML = '';
+    function addBubble(type, text, delay) {
+      setTimeout(function() {
+        var div = document.createElement('div');
+        div.className = 'mock-bubble ' + type;
+        if (type === 'coach') {
+          div.innerHTML = '<div class="mock-coach-label">TLC Coach</div>' + text;
+        } else {
+          div.textContent = text;
+        }
+        div.style.opacity = '0';
+        div.style.transform = 'translateY(10px)';
+        div.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+        chatEl.appendChild(div);
+        requestAnimationFrame(function() { requestAnimationFrame(function() { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; }); });
+      }, delay);
+    }
+    function addTyping(delay) {
+      setTimeout(function() {
+        var div = document.createElement('div');
+        div.className = 'mock-typing-row';
+        div.id = 'typing-ind';
+        div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+        div.style.opacity = '0';
+        div.style.transition = 'opacity 0.25s';
+        chatEl.appendChild(div);
+        requestAnimationFrame(function() { div.style.opacity = '1'; });
+      }, delay);
+    }
+    function removeTyping(delay) {
+      setTimeout(function() { var t = document.getElementById('typing-ind'); if (t) t.remove(); }, delay);
+    }
+    addBubble('user', '"I didn\'t sleep well last night. What should I focus on today?"', 400);
+    addTyping(1400);
+    removeTyping(2900);
+    addBubble('coach', 'Your HRV is at 41ms this morning and sleep was 6.2h. Lean anti-inflammatory today: the salmon dinner last Tuesday gave you your best recovery score this week. Leafy greens and walnuts will help too. Avoid caffeine after 1pm.', 2900);
+    addBubble('user', '"Any restaurants nearby that fit that?"', 5200);
+    addTyping(6000);
+    removeTyping(7300);
+    addBubble('coach', 'Opening Meal Matchmaker with your anti-inflammatory filter and current location. I\'ll look for high omega-3 options first.', 7300);
+  }
+
+  // ── MM DEMO ──
+  function runMM() {
+    var skeleton = document.getElementById('mm-skeleton');
+    var result = document.getElementById('mm-result');
+    var badge = document.getElementById('mm-score-badge');
+    var barP = document.getElementById('mm-bar-p');
+    var barC = document.getElementById('mm-bar-c');
+    var barF = document.getElementById('mm-bar-f');
+    if (!skeleton) return;
+    skeleton.style.opacity = '1';
+    if (result) result.style.opacity = '0';
+    if (badge) badge.textContent = '0% Match';
+    if (barP) barP.style.width = '0%';
+    if (barC) barC.style.width = '0%';
+    if (barF) barF.style.width = '0%';
+    setTimeout(function() {
+      skeleton.style.transition = 'opacity 0.4s';
+      skeleton.style.opacity = '0';
+      if (result) {
+        result.style.opacity = '1';
+        var s = 0;
+        var t = setInterval(function() {
+          s = Math.min(94, s + 3);
+          if (badge) badge.textContent = s + '% Match';
+          if (s >= 94) clearInterval(t);
+        }, 35);
+        setTimeout(function() {
+          if (barP) barP.style.width = '88%';
+          if (barC) barC.style.width = '56%';
+          if (barF) barF.style.width = '36%';
+        }, 300);
+      }
+    }, 2500);
+  }
+
+  // ── PANTRY DEMO ──
+  function runPantry() {
+    var ingsEl = document.getElementById('pantry-ings');
+    var recipeEl = document.getElementById('pantry-recipe');
+    if (!ingsEl) return;
+    var ings = ingsEl.querySelectorAll('.mock-ingredient');
+    ings.forEach(function(i) { i.style.opacity = '0'; i.style.transform = 'scale(0.6)'; });
+    if (recipeEl) recipeEl.style.opacity = '0';
+    ings.forEach(function(ing, i) {
+      setTimeout(function() {
+        ing.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1)';
+        ing.style.opacity = '1';
+        ing.style.transform = 'scale(1)';
+      }, 500 + i * 320);
+    });
+    var totalIngTime = 500 + ings.length * 320 + 500;
+    setTimeout(function() { if (recipeEl) recipeEl.style.opacity = '1'; }, totalIngTime);
+  }
+
+  // ── MEAL PLAN DEMO ──
+  function runMealPlan() {
+    var meals = [0,1,2,3].map(function(i) { return document.getElementById('mp-meal-'+i); });
+    var whys = [0,1,2,3].map(function(i) { return document.getElementById('mp-why-'+i); });
+    var shops = [0,1,2,3,4,5].map(function(i) { return document.getElementById('mp-shop-'+i); });
+    var savingsEl = document.getElementById('mp-savings');
+    if (!meals[0]) return;
+    meals.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
+    whys.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
+    shops.forEach(function(el) { if(el) el.classList.remove('mp-visible'); });
+    if (savingsEl) savingsEl.textContent = '\u00a30';
+    meals.forEach(function(el, i) { if (!el) return; setTimeout(function() { el.classList.add('mp-visible'); }, 300 + i * 420); });
+    var whyStart = 300 + 4 * 420 + 200;
+    whys.forEach(function(el, i) { if (!el) return; setTimeout(function() { el.classList.add('mp-visible'); }, whyStart + i * 160); });
+    var shopStart = whyStart + 4 * 160 + 200;
+    shops.forEach(function(el, i) { if (!el) return; setTimeout(function() { el.classList.add('mp-visible'); }, shopStart + i * 130); });
+    setTimeout(function() {
+      if (!savingsEl) return;
+      var v = 0, tgt = 43;
+      var t = setInterval(function() { v = Math.min(tgt, v + 2); savingsEl.textContent = '\u00a3' + v; if (v >= tgt) clearInterval(t); }, 40);
+    }, shopStart + 6 * 130 + 200);
+  }
+
+  // ── INIT WITH INTERSECTION OBSERVER ──
+  function startWhenVisible(containerId, runFn, loopMs) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var started = false;
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting && !started) {
+          started = true;
+          runFn();
+          setInterval(runFn, loopMs);
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    obs.observe(el);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    startWhenVisible('demo-di', runDI, 9000);
+    startWhenVisible('demo-coach', runCoach, 10000);
+    startWhenVisible('demo-mm', runMM, 8500);
+    startWhenVisible('demo-pantry', runPantry, 8000);
+    startWhenVisible('demo-mealplan', runMealPlan, 9500);
+  });
+})();
+</script>
+</body>
+</html>

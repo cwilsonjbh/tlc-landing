@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing | The Longevity Chef</title>
+<meta name="description" content="TLC Lite is free. TLC is $9.99 per month. Five connected tools. One intelligence layer. Less than the cost of a single nutritionist session.">
+<meta property="og:title" content="Pricing | The Longevity Chef">
+<meta property="og:description" content="Five connected tools. One monthly fee. Less than one hour with a nutritionist.">
+<meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #0d0d0d;
+  --ink: #1a1a1a;
+  --ink-2: #2e2e2e;
+  --surface: #f5f4f0;
+  --surface-2: #eeecea;
+  --white: #ffffff;
+  --green: #2ea84a;
+  --green-dark: #1a5c28;
+  --green-mid: #3d7a30;
+  --green-light: #ebf7ee;
+  --green-accent: #46c461;
+  --nutrition: #39BA76;
+  --body-blue: #398CBA;
+  --mind: #E8B84B;
+  --muted: rgba(26,26,26,0.42);
+  --muted-2: rgba(26,26,26,0.65);
+  --border: rgba(26,26,26,0.08);
+  --border-mid: rgba(26,26,26,0.14);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+  --section-pad: clamp(100px, 12vw, 160px);
+  --gutter: clamp(24px, 5vw, 72px);
+  --content-max: 1180px;
+}
+
+body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes livePulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46,168,74,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(46,168,74,0); } }
+
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gutter); }
+.label { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+.label::before { content: ''; width: 18px; height: 1.5px; background: var(--green); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); white-space: nowrap; }
+.btn:hover { transform: translateY(-2px); }
+.btn-black { background: var(--ink); color: var(--white); padding: 16px 40px; }
+.btn-black:hover { background: #333; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.btn-green { background: var(--green); color: var(--white); padding: 16px 40px; box-shadow: 0 4px 16px rgba(46,168,74,0.2); }
+.btn-green:hover { background: var(--green-mid); box-shadow: 0 8px 28px rgba(46,168,74,0.3); }
+.btn-outline { background: transparent; color: var(--ink); padding: 15px 38px; border: 1.5px solid var(--border-mid); }
+.btn-outline:hover { border-color: var(--ink); }
+.btn-outline-white { background: transparent; color: var(--white); padding: 15px 38px; border: 1.5px solid rgba(255,255,255,0.25); }
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.6); }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.25,0.46,0.45,0.94), transform 1s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-scale { opacity: 0; transform: scale(0.94); transition: opacity 1s cubic-bezier(0.25,0.46,0.45,0.94), transform 1s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+.d5 { transition-delay: 0.5s; } .d6 { transition-delay: 0.6s; } .d7 { transition-delay: 0.7s; }
+
+/* ── PRIMARY NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 18px var(--gutter); background: rgba(255,255,255,0); border-bottom: 1px solid transparent; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) saturate(1.4); border-bottom-color: var(--border); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 56px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { color: var(--muted-2); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-cta { background: var(--ink); color: var(--white) !important; padding: 10px 24px; border-radius: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.25s; text-decoration: none; }
+.nav-cta:hover { background: #333; transform: translateY(-1px); }
+.nav-login { color: var(--muted-2) !important; font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
+.nav-login:hover { color: var(--ink) !important; }
+
+/* ── HAMBURGER ── */
+.nav-hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 300; }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); transform-origin: center; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mobile-overlay { display: none; position: fixed; inset: 0; background: var(--white); z-index: 250; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-overlay.open { display: flex; }
+.mobile-overlay a { font-family: var(--font-display); font-size: 42px; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.mobile-overlay a:hover { color: var(--green); }
+.mobile-overlay-cta { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 16px; }
+
+/* ── LOGIN MODAL ── */
+.login-overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,26,0.55); backdrop-filter: blur(4px); z-index: 9000; align-items: center; justify-content: center; padding: 24px; }
+.login-overlay.open { display: flex; }
+.login-modal { background: #fff; border-radius: 16px; padding: 40px 36px; max-width: 420px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.18); position: relative; }
+.login-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--muted-2); padding: 4px; }
+.login-modal-close:hover { color: var(--ink); }
+.login-modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
+.login-modal p { font-size: 14px; color: var(--muted-2); margin: 0 0 24px; line-height: 1.5; }
+.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Figtree', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+.login-modal input[type="email"]:focus { border-color: var(--green); }
+.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Figtree', sans-serif; }
+.login-modal .btn-login-submit:hover { background: #259940; transform: translateY(-1px); }
+.login-modal .btn-login-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
+.login-modal-success { display: none; text-align: center; padding: 8px 0; }
+.login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 0 0 8px; }
+.login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
+.login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
+
+/* ── PAGE HERO ── */
+.page-hero { padding: clamp(140px, 18vw, 220px) 0 clamp(80px, 10vw, 120px); background: var(--white); text-align: center; border-bottom: 1px solid var(--border); }
+.page-hero .label { justify-content: center; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards; }
+.page-hero h1 { font-family: var(--font-display); font-size: clamp(64px, 10vw, 140px); line-height: 0.86; letter-spacing: 0.01em; color: var(--ink); margin-bottom: 12px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s forwards; }
+.page-hero-sub { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(22px, 3vw, 36px); color: var(--green); display: block; margin-bottom: 28px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards; }
+.page-hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 540px; margin: 0 auto; line-height: 1.85; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
+
+/* ── BILLING TOGGLE ── */
+.billing-toggle-wrap { padding: clamp(48px, 6vw, 72px) 0 clamp(16px, 3vw, 24px); text-align: center; }
+.billing-toggle { display: inline-flex; align-items: center; gap: 14px; background: var(--surface); border-radius: 100px; padding: 6px; }
+.billing-toggle-btn { font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 22px; border-radius: 100px; border: none; cursor: pointer; transition: all 0.25s; color: var(--muted-2); background: transparent; }
+.billing-toggle-btn.active { background: var(--white); color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.billing-save-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: 3px 10px; border-radius: 100px; margin-left: 4px; }
+
+/* ── PRICING GRID ── */
+.pricing-section { padding: 0 0 clamp(100px, 12vw, 160px); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,0.06); }
+.plan-card { background: var(--white); padding: clamp(32px, 4vw, 48px) clamp(28px, 3.5vw, 40px); position: relative; display: flex; flex-direction: column; }
+.plan-card.featured { background: var(--ink); }
+.plan-card-badge { position: absolute; top: 20px; right: 20px; font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); background: var(--mind); padding: 4px 12px; border-radius: 100px; }
+.plan-card.featured .plan-card-badge { color: var(--ink); background: var(--mind); }
+.plan-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.plan-card.featured .plan-label { color: rgba(255,255,255,0.45); }
+.plan-name { font-family: var(--font-display); font-size: 38px; letter-spacing: 0.03em; color: var(--ink); margin-bottom: 6px; line-height: 1; }
+.plan-card.featured .plan-name { color: var(--white); }
+.plan-price-row { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 8px; }
+.plan-price { font-family: var(--font-display); font-size: clamp(52px, 6vw, 72px); line-height: 1; color: var(--ink); letter-spacing: -0.01em; }
+.plan-card.featured .plan-price { color: var(--white); }
+.plan-price-period { font-size: 13px; font-weight: 500; color: var(--muted); padding-bottom: 10px; }
+.plan-card.featured .plan-price-period { color: rgba(255,255,255,0.4); }
+.plan-price-annual { font-size: 12px; color: var(--muted); margin-bottom: 6px; height: 18px; }
+.plan-card.featured .plan-price-annual { color: rgba(255,255,255,0.4); }
+.plan-price-annual .save { color: var(--green); font-weight: 700; }
+.plan-card.featured .plan-price-annual .save { color: var(--green-accent); }
+.plan-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; margin-bottom: 28px; min-height: 52px; }
+.plan-card.featured .plan-desc { color: rgba(255,255,255,0.55); }
+.plan-cta { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; padding: 15px 24px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); width: 100%; margin-bottom: 32px; }
+.plan-cta:hover { transform: translateY(-2px); }
+.plan-cta-free { background: var(--surface); color: var(--ink); }
+.plan-cta-free:hover { background: var(--surface-2); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.plan-cta-featured { background: var(--green); color: var(--white); box-shadow: 0 4px 20px rgba(46,168,74,0.35); }
+.plan-cta-featured:hover { background: var(--green-mid); box-shadow: 0 8px 32px rgba(46,168,74,0.4); }
+.plan-cta-pro { background: transparent; color: var(--ink); border: 1.5px solid var(--border-mid); }
+.plan-cta-pro:hover { border-color: var(--ink); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+
+.plan-divider { height: 1px; background: var(--border); margin-bottom: 28px; }
+.plan-card.featured .plan-divider { background: rgba(255,255,255,0.1); }
+.plan-features-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.plan-card.featured .plan-features-label { color: rgba(255,255,255,0.35); }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.plan-feature { display: flex; align-items: flex-start; gap: 12px; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); }
+.plan-card.featured .plan-feature { color: rgba(255,255,255,0.78); }
+.plan-feature-check { flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px; }
+.plan-feature-check.yes { color: var(--green); }
+.plan-card.featured .plan-feature-check.yes { color: var(--green-accent); }
+.plan-feature-check.no { color: var(--muted); opacity: 0.4; }
+.plan-feature span { flex: 1; }
+.plan-feature-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+.tag-new { background: rgba(46,168,74,0.12); color: var(--green); }
+.plan-card.featured .tag-new { background: rgba(70,196,97,0.18); color: var(--green-accent); }
+.tag-soon { background: rgba(232,184,75,0.15); color: #b8891e; }
+
+/* ── COMPARISON TABLE ── */
+.comparison-section { padding: clamp(80px, 10vw, 130px) 0; background: var(--surface); }
+.comparison-section .label { margin-bottom: 16px; }
+.comparison-section h2 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 88px); line-height: 0.88; letter-spacing: 0.01em; color: var(--ink); margin-bottom: 16px; }
+.comparison-section .section-sub { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 520px; line-height: 1.75; margin-bottom: clamp(48px, 6vw, 72px); }
+.comparison-table { width: 100%; border-collapse: collapse; }
+.comparison-table th, .comparison-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.comparison-table th { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); background: transparent; padding-bottom: 20px; border-bottom: 2px solid var(--border-mid); }
+.comparison-table th.featured-col { color: var(--green); }
+.comparison-table td:first-child { font-weight: 500; color: var(--ink); }
+.comparison-table td.center { text-align: center; }
+.comparison-table tr:hover td { background: rgba(46,168,74,0.02); }
+.comparison-table tr:last-child td { border-bottom: none; }
+.comp-check { display: inline-flex; align-items: center; justify-content: center; }
+.comp-check.yes { color: var(--green); }
+.comp-check.no { color: var(--muted); opacity: 0.35; }
+.comp-check.partial { font-size: 11px; font-weight: 700; color: var(--muted-2); letter-spacing: 0.04em; }
+.comp-section-header td { background: rgba(46,168,74,0.04); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); padding: 12px 20px; border-bottom: 1px solid var(--green-light); }
+.comparison-table th:nth-child(3), .comparison-table td:nth-child(3) { background: rgba(26,26,26,0.02); border-left: 2px solid rgba(46,168,74,0.18); border-right: 2px solid rgba(46,168,74,0.18); }
+.comparison-table tr:last-child td:nth-child(3) { border-bottom: 2px solid rgba(46,168,74,0.18); }
+
+/* ── VALUE SECTION ── */
+.value-section { padding: clamp(100px, 12vw, 160px) 0; background: var(--white); }
+.value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 80px); align-items: center; }
+.value-left .label { margin-bottom: 20px; }
+.value-left h2 { font-family: var(--font-display); font-size: clamp(52px, 6vw, 96px); line-height: 0.88; letter-spacing: 0.01em; color: var(--ink); margin-bottom: 24px; }
+.value-left p { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); line-height: 1.85; margin-bottom: 16px; }
+.value-comparisons { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
+.value-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 16px; padding: 16px 20px; background: var(--surface); border-radius: 4px; }
+.value-row:first-child { border-radius: 4px 4px 0 0; }
+.value-row:last-child { border-radius: 0 0 4px 4px; background: var(--ink); }
+.value-item-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.value-row:last-child .value-item-name { color: var(--white); font-weight: 700; }
+.value-item-price { font-family: var(--font-display); font-size: 22px; color: var(--muted); letter-spacing: 0.03em; }
+.value-row:last-child .value-item-price { color: var(--green-accent); }
+.value-item-freq { font-size: 11px; color: var(--muted); text-align: right; line-height: 1.4; }
+.value-row:last-child .value-item-freq { color: rgba(255,255,255,0.45); }
+
+.value-right { position: relative; }
+.value-card { background: var(--ink); border-radius: 20px; padding: 40px 36px; box-shadow: 0 32px 80px rgba(0,0,0,0.18); }
+.value-card-label { font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-accent); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.value-card-pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--green-accent); animation: livePulse 2s ease-in-out infinite; }
+.value-card h3 { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 8px; }
+.value-card-quote { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; font-style: italic; }
+.value-features { display: flex; flex-direction: column; gap: 10px; }
+.value-feat { display: flex; align-items: center; gap: 12px; font-size: 13.5px; color: rgba(255,255,255,0.75); }
+.value-feat svg { color: var(--green-accent); flex-shrink: 0; }
+.value-card-price-row { display: flex; align-items: flex-end; gap: 8px; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+.value-card-price { font-family: var(--font-display); font-size: 56px; color: var(--white); line-height: 1; }
+.value-card-price-detail { padding-bottom: 8px; }
+.value-card-price-detail .per { font-size: 13px; color: rgba(255,255,255,0.4); }
+.value-card-price-detail .equiv { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-accent); margin-top: 2px; }
+
+/* ── FAQ ── */
+.faq-section { padding: clamp(100px, 12vw, 160px) 0; background: var(--surface); }
+.faq-section .label { margin-bottom: 16px; }
+.faq-section h2 { font-family: var(--font-display); font-size: clamp(48px, 6vw, 88px); line-height: 0.88; letter-spacing: 0.01em; color: var(--ink); margin-bottom: clamp(48px, 6vw, 80px); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.faq-item { background: var(--white); }
+.faq-item:first-child { border-radius: 12px 12px 0 0; }
+.faq-item:last-child { border-radius: 0 0 12px 12px; }
+.faq-grid .faq-item:nth-child(odd):nth-last-child(1) { grid-column: 1 / -1; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 28px; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.4; user-select: none; transition: color 0.2s; }
+.faq-q:hover { color: var(--green); }
+.faq-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--surface); display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-icon { background: var(--green); transform: rotate(45deg); }
+.faq-icon svg { color: var(--muted-2); }
+.faq-item.open .faq-icon svg { color: var(--white); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+.faq-item.open .faq-a { max-height: 400px; }
+.faq-a-inner { padding: 0 28px 24px; font-size: 14px; font-weight: 300; color: var(--muted-2); line-height: 1.8; }
+
+/* ── GUARANTEE ── */
+.guarantee-section { padding: clamp(80px, 10vw, 120px) 0; background: var(--white); text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.guarantee-icon { width: 60px; height: 60px; background: var(--green-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.guarantee-section h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px); line-height: 0.9; color: var(--ink); margin-bottom: 16px; letter-spacing: 0.01em; }
+.guarantee-section p { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 520px; margin: 0 auto; line-height: 1.85; }
+
+/* ── CTA ── */
+.cta-section { padding: clamp(100px, 12vw, 160px) 0; background: var(--ink); position: relative; overflow: hidden; text-align: center; }
+.cta-nebula { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.cta-inner { position: relative; z-index: 1; }
+.cta-section .label { color: var(--green-accent); justify-content: center; margin-bottom: 24px; }
+.cta-section .label::before { background: var(--green-accent); }
+.cta-section h2 { font-family: var(--font-display); font-size: clamp(64px, 10vw, 140px); line-height: 0.86; color: var(--white); letter-spacing: 0.01em; margin-bottom: 12px; }
+.cta-section .cta-sub { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(22px, 3vw, 36px); color: rgba(255,255,255,0.5); margin-bottom: 48px; display: block; }
+.cta-actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
+.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: clamp(32px, 5vw, 60px); margin-bottom: clamp(48px, 6vw, 72px); }
+.footer-brand img { height: 48px; width: auto; display: block; margin-bottom: 18px; filter: brightness(0) invert(1) opacity(0.8); }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 240px; }
+.footer-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 18px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-col ul a:hover { color: rgba(255,255,255,0.85); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-legal { font-size: 12px; color: rgba(255,255,255,0.25); }
+.footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; }
+.footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .pricing-grid { grid-template-columns: 1fr; gap: 2px; }
+  .plan-card.featured { order: -1; }
+  .comparison-section { display: none; }
+  .value-grid { grid-template-columns: 1fr; }
+  .value-right { display: none; }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .nav-links, .nav-login, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .value-comparisons { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="/" class="nav-logo" aria-label="The Longevity Chef home">
+    <img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/features">Features</a></li>
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/why-tlc">Why TLC</a></li>
+    <li><a href="/pricing" class="active">Pricing</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <a href="#" class="nav-login" id="navLoginBtn">Log in</a>
+    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="nav-cta">Start Free</a>
+  </div>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <a href="/features" onclick="toggleMobileNav()">Features</a>
+  <a href="/how-it-works" onclick="toggleMobileNav()">How It Works</a>
+  <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
+  <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
+  <div class="mobile-overlay-cta">
+    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="width:220px;justify-content:center;">Start Free</a>
+    <a href="#" class="btn btn-outline" style="width:220px;justify-content:center;" id="mobileLoginBtn">Log in</a>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-modal">
+    <button class="login-modal-close" id="loginClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <div id="loginForm">
+      <h3>Welcome back</h3>
+      <p>Enter your email and we'll send you a secure login link.</p>
+      <div class="login-modal-error" id="loginError"></div>
+      <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="email">
+      <button class="btn-login-submit" id="loginSubmit">Send login link</button>
+    </div>
+    <div class="login-modal-success" id="loginSuccess">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#ebf7ee"/><path d="M12 20l6 6 10-12" stroke="#2ea84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h4>Check your inbox</h4>
+      <p>We sent a magic link to your email. Click it to sign in.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="label">Membership</div>
+    <h1>ONE INVESTMENT.<br>FIVE TOOLS.</h1>
+    <span class="page-hero-sub">Less than one hour with a nutritionist.</span>
+    <p class="page-hero-body">Every TLC tool shares the same intelligence. Your meals inform your coach. Your wearable sharpens your insights. Your insights evolve your plan. Nothing works in isolation.</p>
+  </div>
+</section>
+
+<!-- BILLING TOGGLE -->
+<div class="billing-toggle-wrap reveal">
+  <div class="billing-toggle">
+    <button class="billing-toggle-btn active" id="monthlyBtn" onclick="setBilling('monthly')">Monthly</button>
+    <button class="billing-toggle-btn" id="annualBtn" onclick="setBilling('annual')">Annual <span class="billing-save-pill">Save 17%</span></button>
+  </div>
+</div>
+
+<!-- PRICING GRID -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-grid reveal">
+
+      <!-- TLC LITE (FREE) -->
+      <div class="plan-card">
+        <div class="plan-label">Free forever</div>
+        <div class="plan-name">TLC Lite</div>
+        <div class="plan-price-row">
+          <div class="plan-price">$0</div>
+          <div class="plan-price-period">/month</div>
+        </div>
+        <div class="plan-price-annual">&nbsp;</div>
+        <div class="plan-desc">A genuine taste of what TLC does. No credit card. No expiry. No catch.</div>
+        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-free">Get started free</a>
+        <div class="plan-divider"></div>
+        <div class="plan-features-label">What's included</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Meal Matchmaker (3 searches per day)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Weekly Dynamic Insight</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Basic nutrition logging</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Macro targets and calorie goals</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Daily Dynamic Insights</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Longevity Coach</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Pantry Pal</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Wearable integration</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Longevity Score</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- TLC (FEATURED) -->
+      <div class="plan-card featured">
+        <div class="plan-card-badge">Most popular</div>
+        <div class="plan-label">Best value</div>
+        <div class="plan-name">TLC</div>
+        <div class="plan-price-row">
+          <div class="plan-price" id="tlcPrice">$9.99</div>
+          <div class="plan-price-period">/month</div>
+        </div>
+        <div class="plan-price-annual" id="tlcAnnual">&nbsp;</div>
+        <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
+        <div class="plan-divider"></div>
+        <div class="plan-features-label">Everything in Lite, plus</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Daily Dynamic Insights</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Weekly Deep-Dive and strategy</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Longevity Coach (unlimited sessions)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Meal Matchmaker (unlimited searches)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Pantry Pal (recipes from what you have)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Wearable sync (25+ devices)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Longevity Score (weekly)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Photo meal analysis</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Evening reflection and mood tracking</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- TLC PRO -->
+      <div class="plan-card">
+        <div class="plan-label">Coming soon</div>
+        <div class="plan-name">TLC Pro</div>
+        <div class="plan-price-row">
+          <div class="plan-price" id="proPrice">$19.99</div>
+          <div class="plan-price-period">/month</div>
+        </div>
+        <div class="plan-price-annual" id="proAnnual">&nbsp;</div>
+        <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
+        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-pro">Join waitlist</a>
+        <div class="plan-divider"></div>
+        <div class="plan-features-label">Everything in TLC, plus</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Weekly personalised meal plan <span class="plan-feature-tag tag-soon">Soon</span></span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Auto-generated shopping lists</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Plan adjusts weekly based on your data</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Longevity Score (daily)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Advanced biometric trend analysis</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Priority email support</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Early access to new features</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="label reveal">Feature breakdown</div>
+    <h2 class="reveal d1">COMPARE<br>THE PLANS</h2>
+    <p class="section-sub reveal d2">Every feature, clearly listed. No asterisks.</p>
+    <div class="reveal d2" style="overflow-x:auto;">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:40%;">Feature</th>
+            <th class="center" style="width:20%;">TLC Lite</th>
+            <th class="center featured-col" style="width:20%;">TLC</th>
+            <th class="center" style="width:20%;">TLC Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="comp-section-header"><td colspan="4">Dynamic Insights</td></tr>
+          <tr>
+            <td>Daily Dynamic Insight</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Weekly Dynamic Insight</td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Weekly strategy</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Longevity Score</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check partial">Weekly</span></td>
+            <td class="center"><span class="comp-check partial">Daily</span></td>
+          </tr>
+          <tr class="comp-section-header"><td colspan="4">Tools</td></tr>
+          <tr>
+            <td>Meal Matchmaker</td>
+            <td class="center"><span class="comp-check partial">3/day</span></td>
+            <td class="center"><span class="comp-check partial">Unlimited</span></td>
+            <td class="center"><span class="comp-check partial">Unlimited</span></td>
+          </tr>
+          <tr>
+            <td>Longevity Coach</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Pantry Pal</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Weekly meal plan</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Photo meal analysis</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr class="comp-section-header"><td colspan="4">Data and integration</td></tr>
+          <tr>
+            <td>Wearable integration (25+ devices)</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Evening reflection and mood</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Advanced biometric trends</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+          <tr>
+            <td>Shopping list generation</td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
+            <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE / PRICE ANCHORING -->
+<section class="value-section">
+  <div class="container">
+    <div class="value-grid">
+      <div class="value-left">
+        <div class="label reveal">In perspective</div>
+        <h2 class="reveal d1">WHAT ELSE<br>$9.99<br>BUYS YOU</h2>
+        <p class="reveal d2">A single session with a nutritionist typically costs $80 to $150. One hour with a dietitian. No continuity. No data. No connection between what you eat, how you move, and how you feel.</p>
+        <p class="reveal d3">TLC does the connective work automatically - every day, across all three pillars, for less than a dollar per day.</p>
+        <div class="value-comparisons reveal d3">
+          <div class="value-row">
+            <div class="value-item-name">One nutritionist session</div>
+            <div class="value-item-price">$120</div>
+            <div class="value-item-freq">Per visit<br>No continuity</div>
+          </div>
+          <div class="value-row">
+            <div class="value-item-name">Fitness app (Strava / MyFitnessPal)</div>
+            <div class="value-item-price">$12.99</div>
+            <div class="value-item-freq">Per month<br>No insight layer</div>
+          </div>
+          <div class="value-row">
+            <div class="value-item-name">Sleep tracker app (Oura Ring app)</div>
+            <div class="value-item-price">$5.99</div>
+            <div class="value-item-freq">Per month<br>Sleep only</div>
+          </div>
+          <div class="value-row">
+            <div class="value-item-name">TLC (all three pillars)</div>
+            <div class="value-item-price">$9.99</div>
+            <div class="value-item-freq">Per month<br>Everything connected</div>
+          </div>
+        </div>
+      </div>
+      <div class="value-right reveal d2">
+        <div class="value-card">
+          <div class="value-card-label">
+            <div class="value-card-pulse"></div>
+            Live daily insight
+          </div>
+          <h3>Your daily briefing</h3>
+          <p class="value-card-quote">"Your HRV dropped 14% this week, tracking alongside three days of lower vegetable intake. Tonight's recommendation focuses on magnesium and fibre."</p>
+          <div class="value-features">
+            <div class="value-feat">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Connects food, sleep and energy automatically
+            </div>
+            <div class="value-feat">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Gets sharper with every day of data
+            </div>
+            <div class="value-feat">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Delivered every evening at your chosen time
+            </div>
+            <div class="value-feat">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l3.5 3.5L14 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Included in TLC from day one
+            </div>
+          </div>
+          <div class="value-card-price-row">
+            <div class="value-card-price">$9.99</div>
+            <div class="value-card-price-detail">
+              <div class="per">/month</div>
+              <div class="equiv">33 cents per day</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="label reveal">Common questions</div>
+    <h2 class="reveal d1">EVERYTHING<br>YOU WANT<br>TO KNOW</h2>
+    <div class="faq-grid reveal d2">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need a wearable device to use TLC?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">No. A wearable enriches TLC significantly - connecting your sleep quality, HRV, and activity data into the insight layer - but it is entirely optional. Without one, you enter biometric baselines manually and TLC works from your nutrition and reflection data alone. Many members find this more than enough to start seeing patterns. You can connect a wearable at any point.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I cancel at any time?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes, with no penalty and no questions asked. Cancel from your profile settings in under 30 seconds and your access continues until the end of the billing period. You will never be charged again after cancellation. Your data is retained for 12 months in case you return.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How is TLC different from a calorie tracker?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">A calorie tracker tells you how much you ate. TLC tells you why it matters. The difference is interpretation. TLC connects your food choices to how you sleep, how you recover, how you feel, and how those things compound over time. Calorie trackers produce logs. TLC produces insight - and then translates that insight into your next best decision, whether that is what to cook tonight or where to eat at lunch tomorrow.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What is the Longevity Score?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">The Longevity Score is a weekly composite measure of how well your three pillars are aligning. It factors in nutritional consistency, biometric trends, sleep quality, recovery patterns, and reflection data - weighted by your personal goals. It is not a perfect number. It is a directional signal designed to show whether your daily choices are compounding towards your long-term goals or drifting away from them. TLC (paid) receives it weekly. TLC Pro will receive it daily.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does getting started take?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">The assessment takes around 5 minutes. Connecting a wearable takes another 2 minutes. Your first Dynamic Insight is generated on the same evening. There is no lengthy setup, no manual data entry, and no waiting period. TLC starts working from day one.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How does TLC handle my health data?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Your data is stored securely and used exclusively to generate your personal insights. It is never sold to third parties, never used for advertising, and never shared without your explicit consent. Wearable data is accessed via the Terra API, a regulated health data platform. You can request a full data export or deletion at any time from your profile settings.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What happens to my data if I cancel?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Your data is retained for 12 months after cancellation, so if you return, your history picks up where it left off. After 12 months, data is permanently and automatically deleted. You can request immediate deletion at any time via your profile settings - no waiting, no forms, no email chains required.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-icon reveal">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M14 3L5 7v8c0 5.25 3.85 10.15 9 11.35C19.15 25.15 23 20.25 23 15V7L14 3z" stroke="#2ea84a" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M9.5 14l3 3 6-6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="reveal d1">30-DAY PROMISE</h2>
+    <p class="reveal d2">If TLC has not shown you something genuinely useful about your health patterns within the first 30 days, email us and we will refund every penny. No conditions, no hoops, no need to justify it.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <canvas class="cta-nebula" id="ctaNebula"></canvas>
+  <div class="container cta-inner">
+    <div class="label reveal">Start today</div>
+    <h2 class="reveal d1">YOUR FIRST<br>INSIGHT TONIGHT.</h2>
+    <span class="cta-sub reveal d2">Free to start. No credit card required.</span>
+    <div class="cta-actions reveal d3">
+      <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
+      <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline-white" style="padding:18px 48px;font-size:13px;">Start TLC ($9.99/mo)</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef">
+        <p>Joining the dots between nutrition, body, and mind - so you can see the patterns that matter.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/why-tlc">Why TLC</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Lite (free)</a></li>
+          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev">TLC ($9.99/mo)</a></li>
+          <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Pro (waitlist)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="mailto:hello@thelongevitychef.io">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-legal">2026 The Longevity Chef. All rights reserved.</span>
+      <span class="footer-legal">Built for people who want to understand their body, not just track it.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+function toggleMobileNav() {
+  const btn = document.getElementById('hamburgerBtn');
+  const overlay = document.getElementById('mobileOverlay');
+  btn.classList.toggle('open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+}
+document.getElementById('hamburgerBtn').addEventListener('click', toggleMobileNav);
+
+// ── LOGIN MODAL ──
+function openLogin() {
+  document.getElementById('loginOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('loginEmail').focus(), 100);
+}
+function closeLogin() {
+  document.getElementById('loginOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('navLoginBtn').addEventListener('click', e => { e.preventDefault(); openLogin(); });
+document.getElementById('mobileLoginBtn').addEventListener('click', e => { e.preventDefault(); toggleMobileNav(); setTimeout(openLogin, 300); });
+document.getElementById('loginClose').addEventListener('click', closeLogin);
+document.getElementById('loginOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeLogin(); });
+document.getElementById('loginSubmit').addEventListener('click', async () => {
+  const email = document.getElementById('loginEmail').value.trim();
+  const errorEl = document.getElementById('loginError');
+  const btn = document.getElementById('loginSubmit');
+  errorEl.style.display = 'none';
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
+  btn.disabled = true; btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const data = await res.json();
+    if (data.success) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
+    else { errorEl.textContent = data.error || 'Something went wrong. Please try again.'; errorEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
+  } catch { errorEl.textContent = 'Connection error. Please try again.'; errorEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
+});
+
+// ── BILLING TOGGLE ──
+let billingMode = 'monthly';
+function setBilling(mode) {
+  billingMode = mode;
+  document.getElementById('monthlyBtn').classList.toggle('active', mode === 'monthly');
+  document.getElementById('annualBtn').classList.toggle('active', mode === 'annual');
+  const tlcP = document.getElementById('tlcPrice');
+  const tlcA = document.getElementById('tlcAnnual');
+  const proP = document.getElementById('proPrice');
+  const proA = document.getElementById('proAnnual');
+  const tlcCta = document.getElementById('tlcCta');
+  if (mode === 'annual') {
+    tlcP.textContent = '$8.32';
+    tlcA.innerHTML = 'Billed $99.99/year — <span class="save">save $19.89</span>';
+    proP.textContent = '$16.66';
+    proA.innerHTML = 'Billed $199.99/year — <span class="save">save $39.89</span>';
+    tlcCta.textContent = 'Start TLC (annual)';
+  } else {
+    tlcP.textContent = '$9.99';
+    tlcA.innerHTML = '&nbsp;';
+    proP.textContent = '$19.99';
+    proA.innerHTML = '&nbsp;';
+    tlcCta.textContent = 'Start TLC';
+  }
+}
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── REVEAL (Intersection Observer) ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+
+// ── NEBULA CANVAS (CTA) ──
+(function() {
+  const canvas = document.getElementById('ctaNebula');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  function init() {
+    resize();
+    particles = [];
+    const count = Math.min(Math.floor(W * H / 5200), 90);
+    for (let i = 0; i < count; i++) {
+      particles.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.4 + 0.3, vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22, opacity: Math.random() * 0.5 + 0.15 });
+    }
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(70,196,97,${p.opacity})`;
+      ctx.fill();
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+    });
+    // lines
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(70,196,97,${0.08 * (1 - dist / 100)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', () => { resize(); init(); });
+  init(); draw();
+})();
+</script>
+</body>
+</html>
