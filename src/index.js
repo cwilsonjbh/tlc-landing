@@ -114,10 +114,28 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 440px; line-height: 1.85; margin-bottom: 48px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.8s forwards; }
 .hero-trust { font-size: 12px; color: var(--muted); margin-top: 14px; margin-bottom: 0; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.95s forwards; letter-spacing: 0.02em; }
-.hero-right { position: relative; overflow: hidden; z-index: 1; }
-.hero-photo { position: absolute; inset: 0; background-image: url(https://img.freepik.com/free-photo/happy-athletic-woman-using-smart-phone-listening-music-while-exercising-gym_637285-396.jpg); background-size: cover; background-position: 60% 25%; opacity: 0; animation: fadeIn 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards; will-change: transform; }
-.hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 28%, rgba(255,255,255,0) 50%); }
-.hero-photo::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, transparent 15%, transparent 85%, rgba(255,255,255,0.6) 100%); }
+.hero-right { position: relative; overflow: hidden; z-index: 1; background: #1a2018; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-video-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.6) 22%, rgba(255,255,255,0.1) 42%, rgba(0,0,0,0.08) 55%, rgba(0,0,0,0.32) 100%); pointer-events: none; }
+
+/* ── FLOATING INSIGHT CARD ── */
+.hero-insight-card { position: absolute; bottom: 18%; right: 7%; z-index: 3; width: 232px; background: rgba(255,255,255,0.93); backdrop-filter: blur(24px) saturate(1.5); -webkit-backdrop-filter: blur(24px) saturate(1.5); border-radius: 16px; padding: 18px 20px; box-shadow: 0 24px 64px rgba(0,0,0,0.20), 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.55); opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 1.4s forwards; }
+.hic-label { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+.hic-live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: livePulse 2s ease-in-out infinite; flex-shrink: 0; }
+.hic-body { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.hic-score { font-family: var(--font-display); font-size: 50px; color: var(--ink); line-height: 1; letter-spacing: 0.01em; }
+.hic-info { flex: 1; min-width: 0; }
+.hic-title { font-size: 11px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.hic-sub { font-size: 10px; color: var(--muted); font-weight: 500; }
+.hic-pillars { display: flex; flex-direction: column; gap: 6px; margin-bottom: 13px; }
+.hic-pillar { display: flex; align-items: center; gap: 8px; }
+.hic-pname { font-size: 9px; color: var(--muted); width: 54px; flex-shrink: 0; font-weight: 600; letter-spacing: 0.03em; }
+.hic-pbar { flex: 1; height: 3px; background: rgba(26,26,26,0.07); border-radius: 2px; overflow: hidden; }
+.hic-pfill { height: 100%; border-radius: 2px; }
+.hic-pval { font-size: 10px; font-weight: 700; color: var(--ink-2); width: 22px; text-align: right; flex-shrink: 0; }
+.hic-quote { font-size: 10px; color: var(--muted-2); font-style: italic; line-height: 1.55; border-top: 1px solid rgba(26,26,26,0.07); padding-top: 11px; margin: 0; }
+@keyframes livePulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46,168,74,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(46,168,74,0); } }
+@media (max-width: 960px) { .hero-insight-card { display: none; } }
 .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3; opacity: 0; animation: fadeIn 1s ease 2s forwards; }
 .hero-scroll svg { width: 28px; height: 28px; stroke: var(--muted); animation: float 2.5s ease-in-out infinite; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -482,7 +500,30 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;·&nbsp; No wearable required.</p>
   </div>
-  <div class="hero-right"><div class="hero-photo" id="heroPhoto"></div></div>
+  <div class="hero-right">
+    <video class="hero-video" autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80">
+      <source src="https://videos.pexels.com/video-files/3310491/3310491-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/3253502/3253502-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div class="hero-insight-card">
+      <div class="hic-label"><span class="hic-live-dot"></span>Live Insight</div>
+      <div class="hic-body">
+        <div class="hic-score">72</div>
+        <div class="hic-info">
+          <div class="hic-title">Longevity Score</div>
+          <div class="hic-sub">Strong day &middot; Insight ready</div>
+        </div>
+      </div>
+      <div class="hic-pillars">
+        <div class="hic-pillar"><span class="hic-pname">Nutrition</span><div class="hic-pbar"><div class="hic-pfill" style="width:78%;background:var(--nutrition)"></div></div><span class="hic-pval">78</span></div>
+        <div class="hic-pillar"><span class="hic-pname">Body</span><div class="hic-pbar"><div class="hic-pfill" style="width:65%;background:var(--body-blue)"></div></div><span class="hic-pval">65</span></div>
+        <div class="hic-pillar"><span class="hic-pname">Mind</span><div class="hic-pbar"><div class="hic-pfill" style="width:84%;background:var(--mind)"></div></div><span class="hic-pval">84</span></div>
+      </div>
+      <p class="hic-quote">"Your omega-3 intake is tracking well. Keep the salmon streak going."</p>
+    </div>
+  </div>
   <div class="hero-scroll"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
 </section>
 
@@ -900,7 +941,6 @@ const nav = document.getElementById('mainNav');
 const subNav = document.getElementById('subNav');
 const mobileCta = document.getElementById('mobileCta');
 const heroSection = document.querySelector('.hero');
-const heroPhoto = document.getElementById('heroPhoto');
 
 window.addEventListener('scroll', () => {
   const sy = window.scrollY;
@@ -911,11 +951,9 @@ window.addEventListener('scroll', () => {
   if (subNav && sy > heroH) nav.style.top = '-80px'; else nav.style.top = '0';
   // Mobile CTA
   if (mobileCta) mobileCta.classList.toggle('show', sy > heroH);
-  // Parallax hero photo (subtle)
-  if (heroPhoto) heroPhoto.style.transform = 'translateY(' + (sy * 0.15) + 'px) scale(' + (1 + sy * 0.0001) + ')';
   // Nebula fade
-  const canvas = document.getElementById('nebulaCanvas');
-  if (canvas) canvas.style.opacity = Math.max(0.1, 0.45 - sy / window.innerHeight * 0.4);
+  const nebulaEl = document.getElementById('nebulaCanvas');
+  if (nebulaEl) nebulaEl.style.opacity = Math.max(0.1, 0.45 - sy / window.innerHeight * 0.4);
 });
 
 // ── Active sub-nav link ──
@@ -956,6 +994,200 @@ const counterObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+// ── Nebula placeholder (constellation removed — video hero in use) ──
+(function() { return; })();
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let mob = window.innerWidth < 768;
+
+  // TLC brand colors
+  const COL = [[57,186,118],[57,140,186],[232,184,75]];
+  const NAMES = ['NUTRITION','BODY','MIND'];
+  const METRICS = [
+    ['Protein 48g','1840 kcal','Fibre 28g','Hydration'],
+    ['Sleep 92','HRV 68ms','Recovery 87','Steps 8.2k'],
+    ['Focus 91','Mood 88','Stress Low','Energy']
+  ];
+  // Hub centers (normalized 0–1)
+  const HUB = [[0.28,0.28],[0.72,0.33],[0.50,0.72]];
+
+  let W, H, parts = [], pulses = [], t = 0, mx = 0.5, my = 0.5, paused = false;
+
+  function col(i, a) { return 'rgba('+COL[i][0]+','+COL[i][1]+','+COL[i][2]+','+a+')'; }
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    W = rect.width || 600;
+    H = rect.height || window.innerHeight;
+    mob = window.innerWidth < 768;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    build();
+  }
+
+  function build() {
+    parts = []; pulses = [];
+    const per = mob ? 7 : 13;
+    for (let pi = 0; pi < 3; pi++) {
+      // Hub
+      parts.push({ bx:HUB[pi][0], by:HUB[pi][1], ox:0, oy:0, orA:0, orR:0, orS:0,
+        pi, sz:5, op:1, ph:Math.random()*6.28, hub:true, lbl:NAMES[pi] });
+      // Satellites
+      const mets = METRICS[pi];
+      for (let i = 0; i < per; i++) {
+        const a = (i/per)*6.28 + Math.random()*0.5;
+        const r = 0.07 + Math.random()*0.16;
+        parts.push({ bx:HUB[pi][0]+Math.cos(a)*r, by:HUB[pi][1]+Math.sin(a)*r*0.72,
+          ox:0, oy:0, orA:Math.random()*6.28,
+          orR:0.009+Math.random()*0.026, orS:(Math.random()-0.5)*0.007,
+          pi, sz:1.4+Math.random()*2.2, op:0.4+Math.random()*0.6,
+          ph:Math.random()*6.28, hub:false,
+          lbl:(!mob && i<mets.length) ? mets[i] : null });
+      }
+    }
+  }
+
+  function gx(p) { return (p.bx + p.ox + (mx-0.5)*0.018) * W; }
+  function gy(p) { return (p.by + p.oy + (my-0.5)*0.012) * H; }
+
+  function draw() {
+    if (paused) { requestAnimationFrame(draw); return; }
+    t++;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,W,H);
+
+    // Background
+    ctx.fillStyle = '#090d0b';
+    ctx.fillRect(0,0,W,H);
+
+    // Dot grid
+    ctx.fillStyle = 'rgba(255,255,255,0.022)';
+    for (let x=26; x<W; x+=28) for (let y=26; y<H; y+=28) {
+      ctx.beginPath(); ctx.arc(x,y,0.65,0,6.28); ctx.fill();
+    }
+
+    // Update orbits
+    for (const p of parts) if (!p.hub) {
+      p.orA += p.orS;
+      p.ox = Math.cos(p.orA)*p.orR;
+      p.oy = Math.sin(p.orA)*p.orR*0.7;
+    }
+
+    const thr = W*(mob?0.30:0.38);
+
+    // Connections
+    for (let i=0; i<parts.length; i++) for (let j=i+1; j<parts.length; j++) {
+      const a=parts[i], b=parts[j];
+      const ax=gx(a), ay=gy(a), bx2=gx(b), by2=gy(b);
+      const d=Math.hypot(ax-bx2,ay-by2);
+      if (d>thr) continue;
+      const fade=1-d/thr, cross=a.pi!==b.pi;
+      const alpha=cross?fade*0.20:fade*0.07;
+      const g=ctx.createLinearGradient(ax,ay,bx2,by2);
+      g.addColorStop(0,col(a.pi,alpha)); g.addColorStop(1,col(b.pi,alpha));
+      ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(bx2,by2);
+      ctx.strokeStyle=g; ctx.lineWidth=cross?0.9:0.45; ctx.stroke();
+    }
+
+    // Spawn pulses
+    if (t%50===0 && pulses.length<10) {
+      const a=parts[Math.floor(Math.random()*parts.length)];
+      let b, att=0;
+      do { b=parts[Math.floor(Math.random()*parts.length)]; att++; }
+      while ((b===a||b.pi===a.pi) && att<20);
+      if (b && b.pi!==a.pi && Math.hypot(gx(a)-gx(b),gy(a)-gy(b))<thr)
+        pulses.push({a,b,p:0,s:0.012+Math.random()*0.009});
+    }
+
+    // Draw pulses
+    for (let i=pulses.length-1; i>=0; i--) {
+      const pl=pulses[i]; pl.p+=pl.s;
+      if (pl.p>=1) { pulses.splice(i,1); continue; }
+      const ax=gx(pl.a),ay=gy(pl.a),bx2=gx(pl.b),by2=gy(pl.b);
+      const ppx=ax+(bx2-ax)*pl.p, ppy=ay+(by2-ay)*pl.p;
+      const al=Math.sin(pl.p*Math.PI);
+      const ci=pl.p<0.5?pl.a.pi:pl.b.pi;
+      const pg=ctx.createRadialGradient(ppx,ppy,0,ppx,ppy,6);
+      pg.addColorStop(0,col(ci,al*0.75)); pg.addColorStop(1,col(ci,0));
+      ctx.beginPath(); ctx.arc(ppx,ppy,6,0,6.28); ctx.fillStyle=pg; ctx.fill();
+      ctx.beginPath(); ctx.arc(ppx,ppy,1.6,0,6.28); ctx.fillStyle=col(ci,al); ctx.fill();
+    }
+
+    // Draw nodes
+    for (const p of parts) {
+      const x=gx(p), y=gy(p);
+      const pulse=0.85+0.15*Math.sin(t*0.022+p.ph);
+      const op=p.op*pulse;
+      const gR=p.hub?p.sz*5.5:p.sz*4;
+      const g=ctx.createRadialGradient(x,y,0,x,y,gR);
+      g.addColorStop(0,col(p.pi,op*(p.hub?0.28:0.20)));
+      g.addColorStop(1,col(p.pi,0));
+      ctx.beginPath(); ctx.arc(x,y,gR,0,6.28); ctx.fillStyle=g; ctx.fill();
+      ctx.beginPath(); ctx.arc(x,y,p.sz,0,6.28); ctx.fillStyle=col(p.pi,op); ctx.fill();
+      if (p.hub) {
+        ctx.beginPath(); ctx.arc(x,y,p.sz+3.5,0,6.28);
+        ctx.strokeStyle=col(p.pi,0.35); ctx.lineWidth=0.8; ctx.stroke();
+      }
+    }
+
+    // Labels
+    ctx.textBaseline='middle';
+    for (const p of parts) {
+      if (!p.lbl) continue;
+      const x=gx(p), y=gy(p);
+      if (p.hub) {
+        ctx.font='700 9.5px Figtree,sans-serif';
+        const tw=ctx.measureText(p.lbl).width;
+        const lx=x-tw/2, ly=y+p.sz+18;
+        ctx.fillStyle=col(p.pi,0.13);
+        ctx.beginPath(); ctx.roundRect(lx-8,ly-9,tw+16,18,6); ctx.fill();
+        ctx.fillStyle=col(p.pi,0.85);
+        ctx.fillText(p.lbl,lx,ly);
+      } else {
+        ctx.font='500 8px Figtree,sans-serif';
+        const tw=ctx.measureText(p.lbl).width;
+        const lx=x+p.sz+7, ly=y;
+        ctx.fillStyle='rgba(8,12,10,0.80)';
+        ctx.beginPath(); ctx.roundRect(lx-3,ly-7,tw+7,14,4); ctx.fill();
+        ctx.fillStyle=col(p.pi,0.72);
+        ctx.fillText(p.lbl,lx,ly);
+      }
+    }
+
+    // Left-edge fade to white (blends with hero-left)
+    const lg=ctx.createLinearGradient(0,0,W*0.18,0);
+    lg.addColorStop(0,'rgba(255,255,255,1)');
+    lg.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=lg; ctx.fillRect(0,0,W*0.18,H);
+
+    requestAnimationFrame(draw);
+  }
+
+  // Mouse/touch parallax
+  canvas.parentElement.addEventListener('mousemove', e => {
+    const r=canvas.getBoundingClientRect();
+    mx=(e.clientX-r.left)/r.width; my=(e.clientY-r.top)/r.height;
+  });
+  document.addEventListener('touchmove', e => {
+    const r=canvas.getBoundingClientRect();
+    mx=(e.touches[0].clientX-r.left)/r.width;
+    my=(e.touches[0].clientY-r.top)/r.height;
+  },{passive:true});
+
+  // Pause when off-screen
+  new IntersectionObserver(e=>{paused=!e[0].isIntersecting;},{threshold:0}).observe(canvas);
+
+  window.addEventListener('resize', resize);
+  // Delay first resize to allow DOM layout to settle
+  setTimeout(resize, 50);
+  draw();
+})();
 
 // ── Nebula ──
 (function() {
