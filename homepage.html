@@ -1172,10 +1172,12 @@ window.addEventListener('scroll', () => {
   const heroH = heroSection ? heroSection.offsetHeight : 700;
   if (subNav) subNav.classList.toggle('show', sy > heroH);
   if (subNav && sy > heroH) nav.style.top = '-80px'; else nav.style.top = '0';
-  if (mobileCta) mobileCta.classList.toggle('show', sy > heroH);
+  if (mobileCta) mobileCta.classList.toggle('show', window.innerWidth <= 960 || sy > heroH);
   const nebulaEl = document.getElementById('nebulaCanvas');
   if (nebulaEl) nebulaEl.style.opacity = Math.max(0.1, 0.45 - sy / window.innerHeight * 0.4);
 });
+// Show mobile CTA immediately on page load without waiting for scroll
+if (mobileCta && window.innerWidth <= 960) mobileCta.classList.add('show');
 
 // ── Active sub-nav ──
 const sections = document.querySelectorAll('section[id]');
