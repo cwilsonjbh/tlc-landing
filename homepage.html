@@ -207,8 +207,8 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pillar-card.nutrition::before { background: var(--nutrition); }
 .pillar-card.body-pillar::before { background: var(--body-blue); }
 .pillar-card.mind::before { background: var(--mind); }
-.pillar-visual { margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
-.pillar-icon-wrap { width: 68px; height: 68px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+.pillar-visual { margin-top: 12px; margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
+.pillar-icon-wrap { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
 .pillar-card.nutrition .pillar-icon-wrap { background: rgba(57,186,118,0.12); }
 .pillar-card.body-pillar .pillar-icon-wrap { background: rgba(57,140,186,0.12); }
 .pillar-card.mind .pillar-icon-wrap { background: rgba(232,184,75,0.12); }
@@ -256,6 +256,10 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-card.tc-mind .teaser-icon svg { stroke: var(--mind); }
 .teaser-card.tc-mind .teaser-cta { color: #927010; border-bottom-color: rgba(232,184,75,0.3); }
 .teaser-card.tc-mind:hover .teaser-cta { border-bottom-color: var(--mind); }
+.teaser-card.tc-di .teaser-prop-label { color: var(--nutrition); }
+.teaser-card.tc-di .teaser-prop-badge { color: var(--nutrition); background: rgba(57,186,118,0.12); }
+.teaser-card.tc-mind .teaser-prop-label { color: var(--mind); }
+.teaser-card.tc-mind .teaser-prop-badge { color: var(--mind); background: rgba(232,184,75,0.12); }
 .teaser-tool-list { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
 .teaser-tool-item { display: flex; flex-direction: column; gap: 2px; }
 .teaser-tool-name { font-size: 12px; font-weight: 700; color: var(--ink-2); }
@@ -360,6 +364,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .hero-left { padding-top: 120px; padding-bottom: 56px; }
   .hero-left::after { display: none; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pillar-card { padding: 32px 22px 28px; }
   .teasers-grid { grid-template-columns: 1fr; }
   .teaser-card { padding: 28px 22px 24px; }
   .teaser-toggle { margin-top: 16px; font-size: 12px; padding: 8px 0; }
@@ -599,7 +604,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <!-- NUTRITION -->
       <div class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--nutrition)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
         <h3 class="teaser-h">WHAT YOU EAT,<br>PERFECTED</h3>
@@ -629,7 +634,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label" style="color:var(--nutrition);">Nutrition Intelligence <span class="teaser-prop-badge" style="color:var(--nutrition);background:rgba(57,186,118,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-label">Nutrition Intelligence <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Macro Alignment Score</span>
               <span class="teaser-prop-desc">How consistently your daily intake matches your goals across the week. Reveals when you're nailing targets vs. when flexibility serves you better.</span>
@@ -687,7 +692,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
         </div>
-        <a href="/features#body" class="teaser-cta" style="color:var(--body-blue);border-bottom-color:rgba(57,140,186,0.25);">See how body data works &rarr;</a>
+        <a href="/features#body" class="teaser-cta">Explore body tools &rarr;</a>
       </div>
 
       <!-- MIND -->
@@ -719,7 +724,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label" style="color:var(--mind);">Insight Engine <span class="teaser-prop-badge" style="color:var(--mind);background:rgba(232,184,75,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-label">Insight Engine <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Wellbeing Trend</span>
               <span class="teaser-prop-desc">Your 7-day rolling average of energy, mood, focus, motivation, and recovery from your evening reflection. Spots momentum shifts before you feel them.</span>
@@ -734,7 +739,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
         </div>
-        <a href="/features#mind" class="teaser-cta" style="color:#927010;border-bottom-color:rgba(232,184,75,0.3);">Explore mind tools &rarr;</a>
+        <a href="/features#mind" class="teaser-cta">Explore mind tools &rarr;</a>
       </div>
 
     </div>
