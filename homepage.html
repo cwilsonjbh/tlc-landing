@@ -271,7 +271,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
 .teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease; opacity: 0; }
 .teaser-card.tc-expanded .teaser-expandable { max-height: 1400px; opacity: 1; }
-.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding: 6px 0; transition: color 0.2s; font-family: var(--font-body); }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); }
 .teaser-toggle:hover { color: var(--ink-2); }
 .teaser-toggle-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s; }
 .teaser-card.tc-expanded .teaser-toggle-icon { transform: rotate(45deg); }
@@ -1501,9 +1501,13 @@ setTimeout(function() {
 </script>
 <script>
 function toggleTeaser(btn) {
-  const card = btn.closest('.teaser-card');
-  const isExpanded = card.classList.toggle('tc-expanded');
-  btn.querySelector('.teaser-toggle-label').textContent = isExpanded ? 'Show less' : "See what's included";
+  const cards = document.querySelectorAll('.teaser-card');
+  const isExpanded = cards[0].classList.contains('tc-expanded');
+  const newState = !isExpanded;
+  cards.forEach(function(card) {
+    card.classList.toggle('tc-expanded', newState);
+    card.querySelector('.teaser-toggle-label').textContent = newState ? 'Show less' : "See what's included";
+  });
 }
 </script>
 </body>
