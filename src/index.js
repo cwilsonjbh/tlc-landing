@@ -212,7 +212,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .section-header h2 em { font-style: normal; color: var(--green); }
 .section-header > p { font-size: 18px; color: var(--muted-2); max-width: 540px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
-.pillar-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 16px; padding: 40px 30px 32px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; }
+.pillar-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 16px; padding: 40px 30px 32px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; display: flex; flex-direction: column; }
 .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 16px 16px 0 0; }
 .pillar-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(0,0,0,0.08); }
 .pillar-card.nutrition { background: linear-gradient(160deg, rgba(57,186,118,0.05) 0%, rgba(255,255,255,0) 55%); }
@@ -221,16 +221,16 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pillar-card.nutrition::before { background: var(--nutrition); }
 .pillar-card.body-pillar::before { background: var(--body-blue); }
 .pillar-card.mind::before { background: var(--mind); }
-.pillar-visual { margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
-.pillar-icon-wrap { width: 68px; height: 68px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+.pillar-visual { margin-top: 12px; margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
+.pillar-icon-wrap { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
 .pillar-card.nutrition .pillar-icon-wrap { background: rgba(57,186,118,0.12); }
 .pillar-card.body-pillar .pillar-icon-wrap { background: rgba(57,140,186,0.12); }
 .pillar-card.mind .pillar-icon-wrap { background: rgba(232,184,75,0.12); }
 .pillar-card h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-align: center; }
 .pillar-hook { font-size: 15px; font-weight: 600; color: var(--ink); text-align: center; margin-bottom: 12px; }
 .pillar-card p.pillar-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; text-align: center; }
-.pillar-data-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 20px; }
-.pillar-data-tag { font-size: 10px; font-weight: 700; padding: 4px 11px; border-radius: 5px; letter-spacing: 0.01em; }
+.pillar-data-tags { display: flex; flex-wrap: nowrap; gap: 4px; justify-content: center; margin-top: auto; padding-top: 20px; overflow: hidden; width: 100%; }
+.pillar-data-tag { font-size: 8.5px; font-weight: 700; padding: 2px 5px; border-radius: 5px; letter-spacing: 0.01em; white-space: nowrap; }
 .pillar-card.nutrition .pillar-data-tag { background: rgba(57,186,118,0.09); color: #2a9148; }
 .pillar-card.body-pillar .pillar-data-tag { background: rgba(57,140,186,0.09); color: #2b6e93; }
 .pillar-card.mind .pillar-data-tag { background: rgba(232,184,75,0.09); color: #927010; }
@@ -258,7 +258,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-h { font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 34px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 8px; }
 .teaser-sub { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
 .teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; }
-.teaser-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
+.teaser-cta { display: inline-flex; align-items: center; gap: 6px; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
 .teaser-card:hover .teaser-cta { border-bottom-color: var(--green); }
 .teaser-card.tc-body::before { background: linear-gradient(90deg, var(--body-blue), #2b6e93); }
 .teaser-card.tc-body .teaser-icon { background: rgba(57,140,186,0.10); }
@@ -270,6 +270,10 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-card.tc-mind .teaser-icon svg { stroke: var(--mind); }
 .teaser-card.tc-mind .teaser-cta { color: #927010; border-bottom-color: rgba(232,184,75,0.3); }
 .teaser-card.tc-mind:hover .teaser-cta { border-bottom-color: var(--mind); }
+.teaser-card.tc-di .teaser-prop-label { color: var(--nutrition); }
+.teaser-card.tc-di .teaser-prop-badge { color: var(--nutrition); background: rgba(57,186,118,0.12); }
+.teaser-card.tc-mind .teaser-prop-label { color: var(--mind); }
+.teaser-card.tc-mind .teaser-prop-badge { color: var(--mind); background: rgba(232,184,75,0.12); }
 .teaser-tool-list { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
 .teaser-tool-item { display: flex; flex-direction: column; gap: 2px; }
 .teaser-tool-name { font-size: 12px; font-weight: 700; color: var(--ink-2); }
@@ -283,9 +287,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-prop-desc { font-size: 12px; color: var(--muted-2); line-height: 1.5; }
 .teaser-data-tags { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
 .teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
-.teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease; opacity: 0; }
-.teaser-card.tc-expanded .teaser-expandable { max-height: 1400px; opacity: 1; }
-.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); }
+.teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.tc-expanded .teaser-expandable { max-height: 2000px; }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); align-self: flex-start; }
 .teaser-toggle:hover { color: var(--ink-2); }
 .teaser-toggle-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s; }
 .teaser-card.tc-expanded .teaser-toggle-icon { transform: rotate(45deg); }
@@ -374,6 +378,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .hero-left { padding-top: 120px; padding-bottom: 56px; }
   .hero-left::after { display: none; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pillar-card { padding: 32px 22px 28px; }
   .teasers-grid { grid-template-columns: 1fr; }
   .teaser-card { padding: 28px 22px 24px; }
   .teaser-toggle { margin-top: 16px; font-size: 12px; padding: 8px 0; }
@@ -460,7 +465,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="hero-eyebrow"><span class="label">The Data &middot; The Body &middot; The Mind</span></div>
     <h1 class="hero-headline">YOUR MIND KNEW.<br>YOUR BODY KNEW.<br>YOUR WEARABLE KNEW.</h1>
     <span class="hero-headline-green">Nobody connected them. Until now.</span>
-    <p class="hero-body">TLC reads your meals, your sleep, your stress, and the way you felt on Tuesday. It finds the thread running through all of them. One insight, every evening, that finally makes sense of you.</p>
+    <p class="hero-body">You have had the data all along. The sleep scores, the macros, the step counts. But data without context is just noise. TLC connects every meal, every biometric, and how you actually felt, then finds the thread running through all of it. One insight, every evening. Finally, you get to understand why you feel the way you feel.</p>
     <div class="hero-actions">
       <a href="/start" class="btn btn-black">Start Your Free Assessment</a>
       <a href="/how-it-works" class="btn btn-outline">How It Works</a>
@@ -558,7 +563,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="pillars-grid">
       <div class="pillar-card nutrition reveal d1">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6h5z"/></svg></div></div>
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div></div>
         <h3>Nutrition</h3>
         <p class="pillar-hook">What you eat shapes everything else.</p>
         <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
@@ -613,7 +618,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <!-- NUTRITION -->
       <div class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--nutrition)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
         <h3 class="teaser-h">WHAT YOU EAT,<br>PERFECTED</h3>
@@ -643,7 +648,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label" style="color:var(--nutrition);">Nutrition Intelligence <span class="teaser-prop-badge" style="color:var(--nutrition);background:rgba(57,186,118,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-label">Nutrition Intelligence <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Macro Alignment Score</span>
               <span class="teaser-prop-desc">How consistently your daily intake matches your goals across the week. Reveals when you're nailing targets vs. when flexibility serves you better.</span>
@@ -701,7 +706,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
         </div>
-        <a href="/features#body" class="teaser-cta" style="color:var(--body-blue);border-bottom-color:rgba(57,140,186,0.25);">See how body data works &rarr;</a>
+        <a href="/features#body" class="teaser-cta">Explore body tools &rarr;</a>
       </div>
 
       <!-- MIND -->
@@ -733,7 +738,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label" style="color:var(--mind);">Insight Engine <span class="teaser-prop-badge" style="color:var(--mind);background:rgba(232,184,75,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-label">Insight Engine <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Wellbeing Trend</span>
               <span class="teaser-prop-desc">Your 7-day rolling average of energy, mood, focus, motivation, and recovery from your evening reflection. Spots momentum shifts before you feel them.</span>
@@ -748,7 +753,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
         </div>
-        <a href="/features#mind" class="teaser-cta" style="color:#927010;border-bottom-color:rgba(232,184,75,0.3);">Explore mind tools &rarr;</a>
+        <a href="/features#mind" class="teaser-cta">Explore mind tools &rarr;</a>
       </div>
 
     </div>
@@ -1299,49 +1304,97 @@ setTimeout(function() {
   if (ringM) ringM.style.strokeDashoffset = (87.96 * (1 - 0.84)).toFixed(2);
 }, 800);
 
-// ── Testimonial nebula ──
+// ── Testimonial nebula (orbital nodes + spokes + expanding rings — brand standard) ──
 (function() {
   var canvas = document.getElementById('testimonialNebula');
   if (!canvas) return;
   var section = canvas.parentElement;
   var ctx = canvas.getContext('2d');
   var dpr = window.devicePixelRatio || 1;
-  var W, H, cx, cy, t = 0, active = true;
-  var nodes = [];
+  var nodes = [
+    {a:0,     rx:0.30, ry:0.32, spd: 0.003,  dot:1.8, bright:0.22},
+    {a:1.05,  rx:0.22, ry:0.26, spd:-0.004,  dot:1.5, bright:0.18},
+    {a:2.09,  rx:0.38, ry:0.28, spd: 0.0025, dot:2.0, bright:0.25},
+    {a:3.14,  rx:0.16, ry:0.30, spd:-0.005,  dot:1.3, bright:0.16},
+    {a:4.19,  rx:0.28, ry:0.20, spd: 0.0035, dot:1.5, bright:0.20},
+    {a:5.24,  rx:0.35, ry:0.18, spd:-0.003,  dot:1.4, bright:0.18},
+    {a:0.70,  rx:0.42, ry:0.24, spd: 0.002,  dot:1.2, bright:0.14},
+    {a:3.84,  rx:0.20, ry:0.36, spd:-0.0028, dot:1.6, bright:0.19}
+  ];
+  var rings = [], pulses = [], t = 0, ringT = 0, pulseT = 0, active = false;
+  var W, H;
   function resize() {
     W = section.offsetWidth; H = section.offsetHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-    cx = W * 0.5; cy = H * 0.5;
-    nodes = [];
-    for (var i = 0; i < 28; i++) {
-      nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4, r: Math.random() * 1.5 + 0.5, a: Math.random() * 0.25 + 0.05 });
-    }
   }
   function draw() {
     if (!active || !W) { requestAnimationFrame(draw); return; }
+    var cx = W * 0.5, cy = H * 0.5;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
     t++;
     for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i]; n.x += n.vx; n.y += n.vy;
-      if (n.x < 0 || n.x > W) n.vx *= -1;
-      if (n.y < 0 || n.y > H) n.vy *= -1;
-      for (var j = i + 1; j < nodes.length; j++) {
-        var n2 = nodes[j]; var d = Math.hypot(n.x - n2.x, n.y - n2.y);
-        if (d < 160) { ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(n2.x, n2.y); ctx.strokeStyle = 'rgba(255,255,255,' + (1 - d / 160) * 0.12 + ')'; ctx.lineWidth = 0.6; ctx.stroke(); }
-      }
-      var pulse = n.a + 0.08 * Math.sin(t * 0.04 + i);
-      var glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 6);
-      glow.addColorStop(0, 'rgba(255,255,255,' + pulse * 0.35 + ')');
-      glow.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r * 6, 0, Math.PI * 2); ctx.fillStyle = glow; ctx.fill();
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,' + pulse + ')'; ctx.fill();
+      var n = nodes[i]; n.a += n.spd;
+      n.x = cx + Math.cos(n.a) * n.rx * W;
+      n.y = cy + Math.sin(n.a) * n.ry * H;
     }
+    // Expanding rings
+    ringT++; if (ringT > 100) { ringT = 0; rings.push({r:0, a:0.18}); }
+    for (var j = rings.length - 1; j >= 0; j--) {
+      var rn = rings[j]; rn.r += 0.45; rn.a *= 0.978;
+      if (rn.a < 0.01) { rings.splice(j, 1); continue; }
+      ctx.beginPath(); ctx.arc(cx, cy, rn.r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,255,255,' + (rn.a * 0.16) + ')';
+      ctx.lineWidth = 0.6; ctx.stroke();
+    }
+    // Spokes to centre
+    for (var k = 0; k < nodes.length; k++) {
+      var nd = nodes[k];
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nd.x, nd.y);
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.05 + 0.03 * Math.sin(t * 0.02 + nd.a)) + ')';
+      ctx.lineWidth = 0.5; ctx.stroke();
+    }
+    // Inter-node connections
+    for (var m = 0; m < nodes.length; m++) {
+      for (var p = m + 1; p < nodes.length; p++) {
+        var dx = nodes[m].x - nodes[p].x, dy = nodes[m].y - nodes[p].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < W * 0.40) {
+          ctx.beginPath(); ctx.moveTo(nodes[m].x, nodes[m].y); ctx.lineTo(nodes[p].x, nodes[p].y);
+          ctx.strokeStyle = 'rgba(255,255,255,' + ((1 - dist / (W * 0.40)) * 0.07) + ')';
+          ctx.lineWidth = 0.4; ctx.stroke();
+        }
+      }
+    }
+    // Travelling pulses
+    pulseT++; if (pulseT > 40) { pulseT = 0; var pn = nodes[Math.floor(Math.random() * nodes.length)]; pulses.push({fx:cx,fy:cy,tx:pn.x,ty:pn.y,p:0}); }
+    for (var q = pulses.length - 1; q >= 0; q--) {
+      var pl = pulses[q]; pl.p += 0.022; if (pl.p > 1) { pulses.splice(q, 1); continue; }
+      var px = pl.fx + (pl.tx - pl.fx) * pl.p, py = pl.fy + (pl.ty - pl.fy) * pl.p;
+      var alpha = Math.sin(pl.p * Math.PI);
+      var pg = ctx.createRadialGradient(px, py, 0, px, py, 5);
+      pg.addColorStop(0, 'rgba(255,255,255,' + (alpha * 0.28) + ')');
+      pg.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fillStyle = pg; ctx.fill();
+      ctx.beginPath(); ctx.arc(px, py, 1.4, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,' + (alpha * 0.45) + ')'; ctx.fill();
+    }
+    // Node dots
+    for (var r2 = 0; r2 < nodes.length; r2++) {
+      var nn = nodes[r2];
+      var pulse = nn.bright + 0.05 * Math.sin(t * 0.03 + nn.a);
+      ctx.beginPath(); ctx.arc(nn.x, nn.y, nn.dot, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + pulse + ')'; ctx.fill();
+    }
+    // Centre glow
+    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.16);
+    grad.addColorStop(0, 'rgba(255,255,255,0.06)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
     requestAnimationFrame(draw);
   }
-  new IntersectionObserver(function(e) { active = e[0].isIntersecting; if (active) resize(); }, { threshold: 0.05 }).observe(section);
-  if (window.ResizeObserver) new ResizeObserver(function() { resize(); }).observe(section);
+  new IntersectionObserver(function(e) { active = e[0].isIntersecting; if (active) { resize(); } }, { threshold: 0.05 }).observe(section);
+  if (window.ResizeObserver) new ResizeObserver(function() { if (active) resize(); }).observe(section);
   else window.addEventListener('resize', function() { setTimeout(resize, 100); });
   draw();
 })();
