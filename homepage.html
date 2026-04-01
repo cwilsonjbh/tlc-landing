@@ -215,8 +215,8 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pillar-card h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-align: center; }
 .pillar-hook { font-size: 15px; font-weight: 600; color: var(--ink); text-align: center; margin-bottom: 12px; }
 .pillar-card p.pillar-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; text-align: center; }
-.pillar-data-tags { display: flex; flex-wrap: nowrap; gap: 4px; justify-content: center; margin-top: 20px; overflow: visible; }
-.pillar-data-tag { font-size: 9px; font-weight: 700; padding: 3px 7px; border-radius: 5px; letter-spacing: 0.01em; white-space: nowrap; }
+.pillar-data-tags { display: flex; flex-wrap: nowrap; gap: 4px; justify-content: center; margin-top: 20px; overflow: hidden; }
+.pillar-data-tag { font-size: 8.5px; font-weight: 700; padding: 2px 5px; border-radius: 5px; letter-spacing: 0.01em; white-space: nowrap; }
 .pillar-card.nutrition .pillar-data-tag { background: rgba(57,186,118,0.09); color: #2a9148; }
 .pillar-card.body-pillar .pillar-data-tag { background: rgba(57,140,186,0.09); color: #2b6e93; }
 .pillar-card.mind .pillar-data-tag { background: rgba(232,184,75,0.09); color: #927010; }
@@ -244,7 +244,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-h { font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 34px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 8px; }
 .teaser-sub { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
 .teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; }
-.teaser-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
+.teaser-cta { display: inline-flex; align-items: center; gap: 6px; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
 .teaser-card:hover .teaser-cta { border-bottom-color: var(--green); }
 .teaser-card.tc-body::before { background: linear-gradient(90deg, var(--body-blue), #2b6e93); }
 .teaser-card.tc-body .teaser-icon { background: rgba(57,140,186,0.10); }
@@ -275,7 +275,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
 .teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
 .tc-expanded .teaser-expandable { max-height: 2000px; }
-.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); align-self: flex-start; }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); align-self: flex-start; }
 .teaser-toggle:hover { color: var(--ink-2); }
 .teaser-toggle-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s; }
 .teaser-card.tc-expanded .teaser-toggle-icon { transform: rotate(45deg); }
