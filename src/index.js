@@ -22,7 +22,7 @@ const LANDING_HTML = `<!DOCTYPE html>
 <meta name="description" content="TLC connects what you eat, how your body responds, and how you feel into one insight system that gets sharper every day.">
 <meta property="og:title" content="The Longevity Chef | Food for Life">
 <meta property="og:description" content="See the patterns your body is trying to show you. Nutrition, body, and mind. Connected for the first time.">
-<meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
+<meta property="og:image" content="https://thelongevitychef.io/assets/logo.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -415,7 +415,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="/" class="nav-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="nav-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></a>
   <ul class="nav-links">
     <li><a href="/features">Features</a></li>
     <li><a href="/how-it-works">How It Works</a></li>
@@ -462,7 +462,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <span class="hero-headline-green">Nobody connected them. Until now.</span>
     <p class="hero-body">TLC reads your meals, your sleep, your stress, and the way you felt on Tuesday. It finds the thread running through all of them. One insight, every evening, that finally makes sense of you.</p>
     <div class="hero-actions">
-      <a href="/start" class="btn btn-black">See What You've Been Missing</a>
+      <a href="/start" class="btn btn-black">Start Your Free Assessment</a>
       <a href="/how-it-works" class="btn btn-outline">How It Works</a>
     </div>
     <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;&middot;&nbsp; Encrypted in transit and at rest. &nbsp;&middot;&nbsp; No wearable required.</p>
@@ -597,142 +597,6 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="pillars-link reveal">
       <a href="/why-tlc">See why connecting all three changes everything &rarr;</a>
     </div>
-  </div>
-</section>
-
-<!-- THREE SIGNALS SECTION -->
-<section style="padding:clamp(72px,9vw,120px) 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:2;">
-<style>
-@keyframes gaugeNerve{0%{transform:rotate(-55deg)}15%{transform:rotate(-25deg)}30%{transform:rotate(-72deg)}45%{transform:rotate(-18deg)}62%{transform:rotate(-60deg)}78%{transform:rotate(-38deg)}90%{transform:rotate(-68deg)}100%{transform:rotate(-55deg)}}
-@keyframes fuelRise{0%,100%{transform:translateY(4px);opacity:.22}50%{transform:translateY(-5px);opacity:.42}}
-@keyframes mindPulse{0%,100%{stroke-opacity:.25;transform:scale(1)}50%{stroke-opacity:.65;transform:scale(1.1)}}
-@keyframes tlcGlow{0%,100%{box-shadow:0 4px 32px rgba(46,168,74,0.06)}50%{box-shadow:0 8px 48px rgba(46,168,74,0.16)}}
-@keyframes compassSettle{0%{transform:rotate(55deg)}18%{transform:rotate(-40deg)}36%{transform:rotate(22deg)}51%{transform:rotate(-9deg)}62%{transform:rotate(4deg)}72%,100%{transform:rotate(0deg)}}
-.signals-top-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:880px;margin:0 auto;}
-.signals-tlc-wrap{max-width:500px;margin:0 auto;width:100%;}
-.signals-conv{max-width:880px;margin:0 auto;height:72px;}
-@media(max-width:640px){.signals-top-grid{grid-template-columns:1fr;gap:16px;}.signals-conv{display:none;}.signals-mobile-sep{display:flex !important;}}
-</style>
-  <div class="container">
-    <div style="text-align:center;margin-bottom:52px;" class="reveal">
-      <h2 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,60px);line-height:0.95;letter-spacing:0.02em;color:var(--ink);">THREE SIGNALS.<br><em style="font-style:normal;color:var(--green);">ONE CLEAR VIEW.</em></h2>
-    </div>
-
-    <!-- Three input cards -->
-    <div class="signals-top-grid reveal d1">
-
-      <!-- NUTRITION: THE FUEL LOAD -->
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
-        <div style="width:60px;height:60px;border-radius:16px;background:rgba(57,186,118,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:hidden;">
-          <svg width="32" height="44" viewBox="0 0 32 44" fill="none">
-            <path d="M16 2 C16 2 2 17 2 27 A14 14 0 0 0 30 27 C30 17 16 2 16 2z" stroke="#39BA76" stroke-width="2" fill="none" stroke-linejoin="round"/>
-            <clipPath id="fdc1"><path d="M16 2 C16 2 2 17 2 27 A14 14 0 0 0 30 27 C30 17 16 2 16 2z"/></clipPath>
-            <rect x="2" y="2" width="28" height="40" clip-path="url(#fdc1)" fill="rgba(57,186,118,0.3)" style="animation:fuelRise 3.5s ease-in-out infinite;"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE FUEL LOAD</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Nutrition powers every hour of your day. Logged in isolation, food data tells you what went in, but not how the system responded once you were in motion.</p>
-      </div>
-
-      <!-- BODY: THE INSTRUMENT PANEL -->
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
-        <div style="width:60px;height:60px;border-radius:16px;background:rgba(57,140,186,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
-          <svg width="50" height="36" viewBox="0 0 50 36" fill="none">
-            <path d="M2 33 A22 22 0 0 1 48 33" stroke="rgba(57,140,186,0.18)" stroke-width="4" stroke-linecap="round"/>
-            <line x1="2.5" y1="32.5" x2="6" y2="26" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="25" y1="11" x2="25" y2="16" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="47.5" y1="32.5" x2="44" y2="26" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="9" y1="17" x2="12" y2="21" stroke="rgba(57,140,186,0.2)" stroke-width="1" stroke-linecap="round"/>
-            <line x1="41" y1="17" x2="38" y2="21" stroke="rgba(57,140,186,0.2)" stroke-width="1" stroke-linecap="round"/>
-            <line x1="25" y1="33" x2="25" y2="14" stroke="#398CBA" stroke-width="2.5" stroke-linecap="round" style="transform-origin:25px 33px;animation:gaugeNerve 3.2s ease-in-out infinite;display:block;"/>
-            <circle cx="25" cy="33" r="4" fill="#398CBA"/>
-            <circle cx="25" cy="33" r="2" fill="white"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE INSTRUMENT PANEL</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable measures sleep depth, HRV, and resting heart rate with precision. But raw metrics aren't the full picture. Without context, they're just noise. Data waiting for a signal.</p>
-      </div>
-
-      <!-- MIND: CREW READINESS -->
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
-        <div style="width:60px;height:60px;border-radius:16px;background:rgba(232,184,75,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
-          <svg width="52" height="36" viewBox="0 0 52 36" fill="none">
-            <line x1="2" y1="18" x2="50" y2="18" stroke="rgba(232,184,75,0.15)" stroke-width="1.5" stroke-linecap="round"/>
-            <polyline points="2,18 10,18 13,4 16,32 19,10 22,26 26,18 30,18 33,4 36,32 39,10 42,26 50,18" stroke="#E8B84B" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="animation:mindPulse 2.8s ease-in-out infinite;transform-origin:26px 18px;"/>
-            <circle cx="26" cy="18" r="3.5" fill="#E8B84B" style="animation:fuelRise 2.8s 0.4s ease-in-out infinite;"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">PILOT STATE</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Energy, mood, and stress aren't soft signals. They're the human variable, the difference between turbulence and control, clarity and noise.</p>
-      </div>
-
-    </div>
-
-    <!-- Animated convergence connector (desktop only) -->
-    <div class="signals-conv">
-      <svg width="100%" height="72" viewBox="0 0 100 72" preserveAspectRatio="none" fill="none" style="display:block;overflow:visible;">
-        <defs>
-          <path id="pN" d="M16.5 0 C16.5 36 50 36 50 72"/>
-          <path id="pB" d="M50 0 L50 72"/>
-          <path id="pM" d="M83.5 0 C83.5 36 50 36 50 72"/>
-        </defs>
-        <use href="#pN" stroke="rgba(57,186,118,0.22)" stroke-width="0.4"/>
-        <use href="#pB" stroke="rgba(57,140,186,0.22)" stroke-width="0.4"/>
-        <use href="#pM" stroke="rgba(232,184,75,0.22)" stroke-width="0.4"/>
-        <!-- Nutrition dots -->
-        <circle r="1.2" fill="rgba(57,186,118,0.75)"><animateMotion dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,186,118,0.55)"><animateMotion dur="2.2s" begin="-0.73s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,186,118,0.4)"><animateMotion dur="2.2s" begin="-1.46s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
-        <!-- Body dots -->
-        <circle r="1.2" fill="rgba(57,140,186,0.75)"><animateMotion dur="2.2s" begin="-0.25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,140,186,0.55)"><animateMotion dur="2.2s" begin="-0.98s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,140,186,0.4)"><animateMotion dur="2.2s" begin="-1.71s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
-        <!-- Mind dots -->
-        <circle r="1.2" fill="rgba(232,184,75,0.75)"><animateMotion dur="2.2s" begin="-0.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(232,184,75,0.55)"><animateMotion dur="2.2s" begin="-1.23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(232,184,75,0.4)"><animateMotion dur="2.2s" begin="-1.96s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
-        <!-- Convergence dot at bottom -->
-        <circle cx="50" cy="72" r="3" fill="rgba(46,168,74,0.3)"><animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.2s" repeatCount="indefinite"/></circle>
-      </svg>
-    </div>
-
-    <!-- Mobile separator (hidden on desktop) -->
-    <div class="signals-mobile-sep" style="display:none;align-items:center;justify-content:center;padding:16px 0;gap:6px;">
-      <div style="width:6px;height:6px;border-radius:50%;background:rgba(57,186,118,0.6);"></div>
-      <div style="width:6px;height:6px;border-radius:50%;background:rgba(57,140,186,0.6);"></div>
-      <div style="width:6px;height:6px;border-radius:50%;background:rgba(232,184,75,0.6);"></div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(46,168,74,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-
-    <!-- TLC synthesis card -->
-    <div class="signals-tlc-wrap reveal d2">
-      <div style="background:linear-gradient(160deg,rgba(46,168,74,0.07) 0%,rgba(255,255,255,0) 60%);border:1.5px solid rgba(46,168,74,0.25);border-radius:16px;padding:36px 32px;text-align:center;animation:tlcGlow 3s ease-in-out infinite;">
-        <div style="width:64px;height:64px;border-radius:18px;background:rgba(46,168,74,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;overflow:visible;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="transform-origin:24px 24px;animation:tlcGlow 4s ease-in-out infinite;">
-            <!-- Fuselage: tapered nose to blunt tail -->
-            <path d="M24 4C25.1 4 26.5 5.8 27 9L27.5 20L27 36C26.5 39 25.2 42 24 44C22.8 42 21.5 39 21 36L20.5 20L21 9C21.5 5.8 22.9 4 24 4Z" fill="#2ea84a"/>
-            <!-- Main wings — swept, thin aerofoil -->
-            <path d="M21.5 19L3 30L3.5 32.5L21.5 25L26.5 25L44.5 32.5L45 30L26.5 19Z" fill="#2ea84a" opacity="0.80"/>
-            <!-- Horizontal tail stabilizers — smaller -->
-            <path d="M22.5 37L13 43L13.5 44.5L22.5 40L25.5 40L34.5 44.5L35 43L25.5 37Z" fill="#2ea84a" opacity="0.60"/>
-            <!-- Engine nacelles on wings -->
-            <ellipse cx="14.5" cy="26" rx="3.5" ry="1.4" fill="#2ea84a" opacity="0.5" transform="rotate(-22 14.5 26)"/>
-            <ellipse cx="33.5" cy="26" rx="3.5" ry="1.4" fill="#2ea84a" opacity="0.5" transform="rotate(22 33.5 26)"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
-        <div style="font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:14px;">THE FLIGHT MANAGEMENT SYSTEM</div>
-        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one instrument alone. TLC unifies your nutrition, biometrics, and reflections into one clear, coherent view.</p>
-        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:12px auto 0;font-style:italic;">Where every signal finally makes sense.</p>
-        <p style="font-size:11px;font-weight:800;letter-spacing:0.18em;color:var(--green);margin:18px auto 0;text-align:center;">THREE SIGNALS. ONE CLEAR VIEW.</p>
-      </div>
-    </div>
-
-    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:560px;margin:40px auto 0;line-height:1.85;" class="reveal d3">Once you break through the clouds, the picture sharpens.<br>Every signal aligns. Every decision becomes clearer.</p>
-
   </div>
 </section>
 
@@ -1019,7 +883,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="margin-bottom:20px;display:inline-flex;justify-content:center;">Plans</span>
       <h2>CHOOSE YOUR PATH <em>TO LONGEVITY</em></h2>
-      <p>Nothing to lose. <strong>Everything to gain.</strong></p>
+      <p>Seven days to your first pattern. Free to start. No commitment.</p>
       <p style="max-width:560px;margin:16px auto 0;font-size:15px;color:var(--ink-2);line-height:1.75;">At worst, nothing changes and it costs you nothing to try. At best, you unlock a smarter way to eat, feel better every day, and take control of your long-term health.<br><br>Make one of the most valuable investments you will make this year, in your mind and your body.</p>
     </div>
     <div class="pricing-grid">
@@ -1063,7 +927,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Smart zero-waste shopping list</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>10-15% average grocery savings</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Your First Month Free</a>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
     </div>
@@ -1080,7 +944,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <p class="reveal d1">No rigid plans. No starting over. TLC meets you where you are, learns what works for your body, and gets sharper every single day. Start free. No card needed.</p>
   <div class="cta-actions reveal d2">
     <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
-    <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
+    <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No hidden fees</span>
   </div>
 </div></div></section>
 
@@ -1088,7 +952,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></div>
+      <div class="footer-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></div>
       <p>Connecting the dots between what you eat, how your body responds, and how you feel.</p>
     </div>
     <div class="footer-col"><ul>
@@ -6282,6 +6146,16 @@ export default {
       else if (path === '/start') html = START_HTML;
       else if (path === '/privacy') html = PRIVACY_HTML;
       else if (path === '/terms') html = TERMS_HTML;
+      else if (path === '/assets/logo.png') {
+        const logoRes = await fetch('https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png');
+        const logoData = await logoRes.arrayBuffer();
+        return new Response(logoData, {
+          headers: {
+            'Content-Type': 'image/png',
+            'Cache-Control': 'public, max-age=86400',
+          }
+        });
+      }
       else {
         return new Response('Not Found', { status: 404, headers: cors });
       }
