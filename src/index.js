@@ -255,9 +255,26 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-card.tc-coach .teaser-icon svg { stroke: var(--body-blue); }
 .teaser-h { font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 34px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 8px; }
 .teaser-sub { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
-.teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; flex: 1; }
-.teaser-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
+.teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; }
+.teaser-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
 .teaser-card:hover .teaser-cta { border-bottom-color: var(--green); }
+.teaser-card.tc-body::before { background: linear-gradient(90deg, var(--body-blue), #2b6e93); }
+.teaser-card.tc-body .teaser-icon { background: rgba(57,140,186,0.10); }
+.teaser-card.tc-body .teaser-icon svg { stroke: var(--body-blue); }
+.teaser-card.tc-body .teaser-cta { color: var(--body-blue); border-bottom-color: rgba(57,140,186,0.25); }
+.teaser-card.tc-body:hover .teaser-cta { border-bottom-color: var(--body-blue); }
+.teaser-card.tc-mind::before { background: linear-gradient(90deg, var(--mind), #b89010); }
+.teaser-card.tc-mind .teaser-icon { background: rgba(232,184,75,0.10); }
+.teaser-card.tc-mind .teaser-icon svg { stroke: var(--mind); }
+.teaser-card.tc-mind .teaser-cta { color: #927010; border-bottom-color: rgba(232,184,75,0.3); }
+.teaser-card.tc-mind:hover .teaser-cta { border-bottom-color: var(--mind); }
+.teaser-tool-list { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
+.teaser-tool-item { display: flex; flex-direction: column; gap: 2px; }
+.teaser-tool-name { font-size: 12px; font-weight: 700; color: var(--ink-2); }
+.teaser-tool-desc { font-size: 12.5px; color: var(--muted-2); line-height: 1.55; }
+.teaser-tool-pro { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--mind); background: rgba(232,184,75,0.12); border-radius: 4px; padding: 1px 5px; margin-left: 5px; vertical-align: middle; }
+.teaser-data-tags { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
 .teasers-more { text-align: center; }
 .teasers-more p { font-size: 15px; color: var(--muted-2); margin-bottom: 8px; }
 .teasers-more a { font-size: 13px; font-weight: 700; color: var(--green); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; transition: all 0.2s; }
@@ -499,7 +516,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <div class="stats-bar"><div class="container"><div class="stats-grid">
   <div class="stat-item reveal d1"><span class="stat-num" data-count="3">0</span><span class="stat-label">Pillars Connected</span><span class="stat-sub">No other system joins food, body, and mind.</span></div>
   <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Your biometric data in every insight.</span></div>
-  <div class="stat-item reveal d3"><span class="stat-num">24/7</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every interaction, analysis and conversation.</span></div>
+  <div class="stat-item reveal d3"><span class="stat-num">24/7</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every response already knows your complete history.</span></div>
   <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
 </div></div></div>
 
@@ -607,7 +624,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
         <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE INSTRUMENT PANEL</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable tracks sleep depth, HRV, and resting heart rate with precision. But instruments alone don't tell the story. They show readings, not meaning.</p>
+        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable measures sleep depth, HRV, and resting heart rate with precision. But raw metrics aren't the full picture. Without context, they're just noise. Data waiting for a signal.</p>
       </div>
 
       <!-- MIND: CREW READINESS -->
@@ -680,11 +697,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
         <div style="font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:14px;">THE FLIGHT MANAGEMENT SYSTEM</div>
-        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one instrument alone. TLC brings your nutrition, biometrics, and reflections together, reading how they interact, not just how they perform in isolation.</p>
+        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one instrument alone. TLC unifies your nutrition, biometrics, and reflections into one clear, coherent view.</p>
+        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:12px auto 0;font-style:italic;">Where every signal finally makes sense.</p>
+        <p style="font-size:11px;font-weight:800;letter-spacing:0.18em;color:var(--green);margin:18px auto 0;text-align:center;">THREE SIGNALS. ONE CLEAR VIEW.</p>
       </div>
     </div>
 
-    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:560px;margin:40px auto 0;line-height:1.85;" class="reveal d3">Because once you break through the clouds, the picture sharpens.<br>Every signal aligns. Every decision becomes clearer.</p>
+    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:560px;margin:40px auto 0;line-height:1.85;" class="reveal d3">Once you break through the clouds, the picture sharpens.<br>Every signal aligns. Every decision becomes clearer.</p>
 
   </div>
 </section>
@@ -693,49 +712,89 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <section class="section-teasers" id="teasers">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">What TLC Gives You</span>
-      <h2>THREE TOOLS.<br><em>ONE SYSTEM.</em></h2>
-      <p>Each tool is built to stand alone. Together, they share a single picture of you. The longer you use them, the more precisely the whole system understands what you need.</p>
+      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The System</span>
+      <h2>THREE PILLARS.<br><em>ONE TOOLKIT.</em></h2>
+      <p>TLC is built around the three forces that shape your health. Each pillar has its own tools. Together, they form one connected picture of you.</p>
     </div>
     <div class="teasers-grid">
 
-      <a href="/features#dynamic-insights" class="teaser-card tc-di reveal d1">
+      <!-- NUTRITION -->
+      <a href="/features#nutrition" class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2" stroke="#39BA76" stroke-width="1.8"/><circle cx="19" cy="5" r="2" stroke="#39BA76" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke="#39BA76" stroke-width="1.8"/><line x1="6.8" y1="6.2" x2="10.5" y2="11" stroke="#39BA76" stroke-width="1.6"/><line x1="17.2" y1="6.2" x2="13.5" y2="11" stroke="#39BA76" stroke-width="1.6"/><line x1="12" y1="18" x2="12" y2="14" stroke="#39BA76" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" stroke="#39BA76" stroke-width="1.8"/><circle cx="12" cy="12" r="1" fill="#39BA76" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6h5z"/></svg>
         </div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
+        <h3 class="teaser-h">WHAT YOU EAT,<br>PERFECTED</h3>
+        <p class="teaser-sub">From restaurant to recipe to meal plan</p>
+        <p class="teaser-body">Everything you need to eat well — whether you're eating out or cooking in. Find the right dish, build the right recipe, understand what's on your plate, and plan the week ahead.</p>
+        <div class="teaser-tool-list">
+          <div class="teaser-tool-item">
+            <span class="teaser-tool-name">Meal Matchmaker</span>
+            <span class="teaser-tool-desc">Find macro-matched, goal-aligned dishes at restaurants near you — anywhere in the world.</span>
+          </div>
+          <div class="teaser-tool-item">
+            <span class="teaser-tool-name">Pantry Pal</span>
+            <span class="teaser-tool-desc">Turn your ingredients into recipes built around your macros, restrictions, and goals.</span>
+          </div>
+          <div class="teaser-tool-item">
+            <span class="teaser-tool-name">Meal Analyser</span>
+            <span class="teaser-tool-desc">Photograph any meal for an instant nutritional breakdown.</span>
+          </div>
+          <div class="teaser-tool-item">
+            <span class="teaser-tool-name">Meal Plan <span class="teaser-tool-pro">PRO</span></span>
+            <span class="teaser-tool-desc">A full week of personalised meals, a smart grocery list, and a batch cooking guide to get ahead.</span>
+          </div>
+        </div>
+        <span class="teaser-cta">Explore nutrition tools &rarr;</span>
+      </a>
 
-        <h3 class="teaser-h">YOUR PATTERNS,<br>DECODED</h3>
+      <!-- BODY -->
+      <a href="/features#body" class="teaser-card tc-body reveal d2">
+        <div class="teaser-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
+        <h3 class="teaser-h">YOUR BIOMETRICS,<br>MADE MEANINGFUL</h3>
+        <p class="teaser-sub">Data your wearable captures. Context TLC provides.</p>
+        <p class="teaser-body">Connect Oura, WHOOP, Garmin, or Fitbit — or log manually. TLC reads the meaning behind your numbers, tracking the full breadth of your biometric picture and weaving it into your daily health narrative.</p>
+        <div class="teaser-data-tags">
+          <span class="teaser-data-tag">HRV</span>
+          <span class="teaser-data-tag">Sleep Depth</span>
+          <span class="teaser-data-tag">Resting Heart Rate</span>
+          <span class="teaser-data-tag">Recovery Score</span>
+          <span class="teaser-data-tag">Daily Steps</span>
+          <span class="teaser-data-tag">Readiness</span>
+          <span class="teaser-data-tag">Sleep Stages</span>
+        </div>
+        <span class="teaser-cta" style="color:var(--body-blue);border-bottom-color:rgba(57,140,186,0.25);">See how body data works &rarr;</span>
+      </a>
+
+      <!-- MIND -->
+      <a href="/features#mind" class="teaser-card tc-mind reveal d3">
+        <div class="teaser-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="12" cy="20" r="2"/><line x1="6.8" y1="6.2" x2="10.5" y2="11"/><line x1="17.2" y1="6.2" x2="13.5" y2="11"/><line x1="12" y1="18" x2="12" y2="14"/><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="12" r="1" fill="var(--mind)" stroke="none"/></svg>
+        </div>
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
+        <h3 class="teaser-h">PATTERNS YOUR<br>EYES CAN'T SEE</h3>
         <p class="teaser-sub">Where data becomes understanding</p>
-        <p class="teaser-body">Your sleep, your meals, your stress. Tracked separately, they're noise. <span style="color:var(--green);font-weight:600;">Dynamic Insights</span> connects them into a single daily narrative that tells you what's actually happening, and why. The breakthrough isn't in the numbers. It's in the connections between them.</p>
-        <span class="teaser-cta">See how Insights work &rarr;</span>
-      </a>
-
-      <a href="/features#meal-matchmaker" class="teaser-card tc-mm reveal d2">
-        <div class="teaser-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p class="teaser-body">The tools that connect your nutrition and biometrics to how you actually feel — turning that connection into daily insight and expert, contextual guidance.</p>
+        <div class="teaser-tool-list">
+          <div class="teaser-tool-item">
+            <span class="teaser-tool-name">Dynamic Insights</span>
+            <span class="teaser-tool-desc">A daily narrative connecting your food, sleep, and mood into one clear, personalised picture.</span>
+          </div>
+          <div class="teaser-tool-item">
+            <span class="teaser-tool-name">Longevity Coach</span>
+            <span class="teaser-tool-desc">An expert coach that already knows your biometrics, meals, goals, and history before you ask a single question.</span>
+          </div>
         </div>
-
-        <h3 class="teaser-h">EAT WELL,<br>ANYWHERE</h3>
-        <p class="teaser-sub">Exact dishes, not just places</p>
-        <p class="teaser-body">Travelling, time-poor, nowhere near your usual spots. Meal Matchmaker finds the right dish at the right restaurant for your exact macros, in any city, in seconds. Macro-matched, allergy-verified, and goal-aligned. Free, forever.</p>
-        <span class="teaser-cta">Find your next meal &rarr;</span>
-      </a>
-
-      <a href="/features#longevity-coach" class="teaser-card tc-coach reveal d3">
-        <div class="teaser-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><circle cx="9" cy="10" r="1" fill="#398CBA"/><circle cx="12" cy="10" r="1" fill="#398CBA"/><circle cx="15" cy="10" r="1" fill="#398CBA"/></svg>
-        </div>
-
-        <h3 class="teaser-h">IT ALREADY<br>KNOWS YOU</h3>
-        <p class="teaser-sub">No briefing. No repeating yourself.</p>
-        <p class="teaser-body">Before you ask your first question, the Coach holds your biometrics, your meals, your goals, and your restrictions. Five disciplines of expertise, combined into one expert who gets sharper the longer you use it.</p>
-        <span class="teaser-cta">Meet your Coach &rarr;</span>
+        <span class="teaser-cta" style="color:#927010;border-bottom-color:rgba(232,184,75,0.3);">Explore mind tools &rarr;</span>
       </a>
 
     </div>
     <div class="teasers-more reveal">
-      <p>Plus Pantry Pal, Menu Scanner, and Monthly Meal Planning for TLC Pro.</p>
-      <a href="/features">Explore all five features &rarr;</a>
+      <p>All three pillars. One connected system.</p>
+      <a href="/features">Explore all tools &rarr;</a>
     </div>
   </div>
 </section>
@@ -769,7 +828,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition has barely slipped in the past six months, and even when it did, TLC knew exactly what to do to get me back on track.</p>
+        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition has barely slipped in the past 6 months, and even when it did, TLC knew exactly what to do or say to get me back on the wagon.</p>
         <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">J</span></div><div><div class="t-name">James K.</div><div class="t-device">WHOOP 4.0 &bull; Longevity goal</div></div></div>
       </div>
       <div class="testimonial-card reveal d3">
@@ -960,46 +1019,109 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <div class="mobile-cta" id="mobileCta"><a href="/start" class="btn btn-green">Start Free</a></div>
 
 <!-- CONTACT MODAL -->
-<div class="login-overlay" id="contactOverlay" onclick="if(event.target===this)closeContactModal()" style="display:none;">
-  <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" style="max-width:460px;">
-    <button class="login-modal-close" onclick="closeContactModal()" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<style>
+.contact-overlay { position:fixed;inset:0;background:rgba(10,10,10,0.55);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;box-sizing:border-box; }
+.contact-modal { background:#fff;border-radius:20px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.18); }
+.contact-modal-header { padding:32px 32px 0; }
+.contact-modal-body { padding:24px 32px 32px; }
+.contact-close { position:absolute;top:20px;right:20px;width:32px;height:32px;border-radius:50%;border:none;background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background 0.15s; }
+.contact-close:hover { background:var(--border); }
+.contact-field-label { font-size:13px;font-weight:600;color:var(--ink-2);display:block;margin-bottom:8px; }
+.contact-input { width:100%;box-sizing:border-box;padding:12px 16px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:#fff;transition:border-color 0.15s; }
+.contact-input:focus { border-color:var(--green); }
+.contact-category-grid { display:grid;grid-template-columns:1fr 1fr;gap:8px; }
+.contact-cat-btn { padding:10px 14px;border:1.5px solid var(--border-mid);border-radius:10px;background:#fff;font-size:13px;font-weight:500;color:var(--ink-2);cursor:pointer;text-align:left;transition:all 0.15s;display:flex;align-items:center;gap:8px; }
+.contact-cat-btn:hover { border-color:var(--green);color:var(--ink); }
+.contact-cat-btn.active { border-color:var(--green);background:rgba(46,168,74,0.06);color:var(--ink);font-weight:600; }
+.contact-cat-btn svg { flex-shrink:0;opacity:0.6; }
+.contact-cat-btn.active svg { opacity:1; }
+.contact-divider { height:1px;background:var(--border);margin:20px 0; }
+@media(max-width:480px){ .contact-category-grid { grid-template-columns:1fr; } .contact-modal-header,.contact-modal-body { padding-left:20px;padding-right:20px; } }
+</style>
+<div class="contact-overlay" id="contactOverlay" onclick="if(event.target===this)closeContactModal()">
+  <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <button class="contact-close" onclick="closeContactModal()" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div id="contactFormWrap">
-      <h3 id="contactTitle" style="font-family:var(--font-display);font-size:clamp(20px,2.4vw,26px);letter-spacing:0.01em;color:var(--ink);margin-bottom:8px;">Get in touch</h3>
-      <p style="font-size:14px;color:var(--muted-2);margin-bottom:24px;line-height:1.6;">Questions, feedback, or partnership enquiries — we read everything.</p>
-      <div id="contactError" style="display:none;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.2);border-radius:8px;padding:10px 14px;font-size:13px;color:#dc2626;margin-bottom:16px;"></div>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <div>
-          <label style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;">Name</label>
-          <input id="cName" type="text" placeholder="Your name" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:var(--surface);" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border-mid)'">
+      <div class="contact-modal-header">
+        <h3 id="contactTitle" style="font-family:var(--font-display);font-size:clamp(22px,2.6vw,28px);letter-spacing:0.01em;color:var(--ink);margin-bottom:6px;">Get in touch</h3>
+        <p style="font-size:14px;color:var(--muted-2);line-height:1.65;">We read everything. Expect a reply within 24 hours.</p>
+      </div>
+      <div class="contact-modal-body">
+        <div id="contactError" style="display:none;background:rgba(220,38,38,0.07);border:1px solid rgba(220,38,38,0.18);border-radius:8px;padding:10px 14px;font-size:13px;color:#dc2626;margin-bottom:20px;"></div>
+
+        <div style="margin-bottom:20px;">
+          <label class="contact-field-label">What's this about?</label>
+          <div class="contact-category-grid">
+            <button type="button" class="contact-cat-btn" data-cat="General question" onclick="selectCategory(this)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+              General question
+            </button>
+            <button type="button" class="contact-cat-btn" data-cat="Feedback" onclick="selectCategory(this)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              Feedback
+            </button>
+            <button type="button" class="contact-cat-btn" data-cat="Partnership" onclick="selectCategory(this)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              Partnership
+            </button>
+            <button type="button" class="contact-cat-btn" data-cat="Bug report" onclick="selectCategory(this)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Bug report
+            </button>
+            <button type="button" class="contact-cat-btn" data-cat="Press & media" onclick="selectCategory(this)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg>
+              Press &amp; media
+            </button>
+            <button type="button" class="contact-cat-btn" data-cat="Other" onclick="selectCategory(this)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+              Other
+            </button>
+          </div>
         </div>
-        <div>
-          <label style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;">Email</label>
-          <input id="cEmail" type="email" placeholder="you@example.com" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:var(--surface);" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border-mid)'">
+
+        <div class="contact-divider"></div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <label class="contact-field-label" for="cName">Name</label>
+              <input id="cName" class="contact-input" type="text" placeholder="Your name">
+            </div>
+            <div>
+              <label class="contact-field-label" for="cEmail">Email</label>
+              <input id="cEmail" class="contact-input" type="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div>
+            <label class="contact-field-label" for="cMessage">Message</label>
+            <textarea id="cMessage" class="contact-input" rows="4" placeholder="Tell us more..." style="resize:vertical;line-height:1.6;"></textarea>
+          </div>
+          <button id="cSubmitBtn" onclick="submitContact()" style="width:100%;padding:14px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;font-family:var(--font-body);transition:background 0.15s;">Send Message</button>
         </div>
-        <div>
-          <label style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;">Message</label>
-          <textarea id="cMessage" placeholder="How can we help?" rows="4" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1.5px solid var(--border-mid);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--ink);outline:none;background:var(--surface);resize:vertical;line-height:1.6;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border-mid)'"></textarea>
-        </div>
-        <button id="cSubmitBtn" onclick="submitContact()" style="width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:0.04em;cursor:pointer;font-family:var(--font-body);">Send Message</button>
       </div>
     </div>
-    <div id="contactSuccess" style="display:none;text-align:center;padding:24px 0;">
-      <div style="width:56px;height:56px;border-radius:50%;background:rgba(46,168,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+    <div id="contactSuccess" style="display:none;text-align:center;padding:56px 32px;">
+      <div style="width:60px;height:60px;border-radius:50%;background:rgba(46,168,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2ea84a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <h3 style="font-family:var(--font-display);font-size:22px;color:var(--ink);margin-bottom:8px;">Message sent</h3>
-      <p style="font-size:14px;color:var(--muted-2);line-height:1.6;">We'll get back to you within 24 hours.</p>
+      <h3 style="font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:8px;">Message sent</h3>
+      <p style="font-size:14px;color:var(--muted-2);line-height:1.65;max-width:280px;margin:0 auto;">We'll be in touch within 24 hours.</p>
     </div>
   </div>
 </div>
 
 <script>
+let _contactCategory = '';
+function selectCategory(el) {
+  document.querySelectorAll('.contact-cat-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  _contactCategory = el.dataset.cat;
+}
 function openContactModal() {
   document.getElementById('contactOverlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('cName').focus(), 100);
 }
 function closeContactModal() {
   document.getElementById('contactOverlay').style.display = 'none';
@@ -1013,7 +1135,7 @@ async function submitContact() {
   const btn = document.getElementById('cSubmitBtn');
   errEl.style.display = 'none';
   if (!name || !email || !message) {
-    errEl.textContent = 'Please fill in all fields.';
+    errEl.textContent = 'Please fill in your name, email, and message.';
     errEl.style.display = 'block';
     return;
   }
@@ -1028,16 +1150,14 @@ async function submitContact() {
     const res = await fetch('/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, email, message, category: _contactCategory || 'General question' }),
     });
     if (res.ok) {
       document.getElementById('contactFormWrap').style.display = 'none';
       document.getElementById('contactSuccess').style.display = 'block';
-    } else {
-      throw new Error('Failed');
-    }
+    } else { throw new Error('Failed'); }
   } catch(e) {
-    errEl.textContent = 'Something went wrong. Please try again or email chris@thelongevitychef.io directly.';
+    errEl.textContent = 'Something went wrong. Email us directly at chris@thelongevitychef.io.';
     errEl.style.display = 'block';
     btn.textContent = 'Send Message';
     btn.disabled = false;
@@ -5999,7 +6119,7 @@ export default {
     // Contact form submission
     if (request.method === 'POST' && url.pathname === '/contact') {
       try {
-        const { name, email, message } = await request.json();
+        const { name, email, message, category } = await request.json();
         if (!name || !email || !message) {
           return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400, headers: { ...cors, 'Content-Type': 'application/json' } });
         }
@@ -6011,7 +6131,8 @@ export default {
           <h2 style="color:#2ea84a;margin-bottom:4px;">New Contact Form Submission</h2>
           <p style="color:#666;font-size:13px;margin-bottom:24px;">via thelongevitychef.io</p>
           <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;width:80px;">Name</td><td style="padding:10px 0;color:#333;">${name}</td></tr>
+            <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;width:80px;">Category</td><td style="padding:10px 0;color:#333;">${category || 'Not specified'}</td></tr>
+            <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;">Name</td><td style="padding:10px 0;color:#333;">${name}</td></tr>
             <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;">Email</td><td style="padding:10px 0;color:#333;"><a href="mailto:${email}" style="color:#2ea84a;">${email}</a></td></tr>
             <tr><td style="padding:10px 0;font-weight:700;color:#1a1a1a;vertical-align:top;">Message</td><td style="padding:10px 0;color:#333;line-height:1.6;">${message.replace(/\n/g,'<br>')}</td></tr>
           </table>
@@ -6026,7 +6147,7 @@ export default {
             personalizations: [{ to: [{ email: 'chris@thelongevitychef.io' }] }],
             from: { email: 'chris@thelongevitychef.io', name: 'TLC Contact Form' },
             reply_to: { email: email, name: name },
-            subject: `Contact: ${name}`,
+            subject: `[${category || 'Contact'}] ${name}`,
             content: [{ type: 'text/html', value: html }],
           }),
         });
