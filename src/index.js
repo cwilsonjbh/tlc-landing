@@ -196,12 +196,14 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 
 /* ── STATS ── */
 .stats-bar { background: var(--surface); padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; z-index: 2; }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
-.stat-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.stat-num { font-family: var(--font-display); font-size: clamp(48px, 5vw, 68px); color: var(--ink); line-height: 1; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: center; }
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 clamp(12px, 2.5vw, 36px); }
+.stat-item + .stat-item { border-left: 1px solid var(--border); }
+.stat-num { font-family: var(--font-display); font-size: clamp(48px, 5vw, 68px); color: var(--ink); line-height: 1.1; }
+.stat-num.stat-word { font-size: clamp(38px, 4vw, 58px); min-height: calc(1.2 * clamp(38px, 4vw, 58px)); display: flex; align-items: flex-end; justify-content: center; }
 .stat-num span { color: var(--green); }
-.stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
-.stat-sub { font-size: 13px; color: var(--ink-2); line-height: 1.45; max-width: 160px; text-align: center; font-weight: 500; margin-top: 2px; }
+.stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); min-height: 2em; display: flex; align-items: center; justify-content: center; }
+.stat-sub { font-size: 13px; color: var(--ink-2); line-height: 1.5; max-width: 200px; text-align: center; font-weight: 500; margin-top: 2px; }
 
 /* ── THREE PILLARS ── */
 .section-pillars { padding: var(--section-pad) 0; position: relative; z-index: 2; background: var(--white); }
@@ -273,8 +275,23 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-tool-name { font-size: 12px; font-weight: 700; color: var(--ink-2); }
 .teaser-tool-desc { font-size: 12.5px; color: var(--muted-2); line-height: 1.55; }
 .teaser-tool-pro { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--mind); background: rgba(232,184,75,0.12); border-radius: 4px; padding: 1px 5px; margin-left: 5px; vertical-align: middle; }
+.teaser-proprietary { margin-top: 16px; border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+.teaser-prop-label { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--body-blue); margin-bottom: 2px; display: flex; align-items: center; gap: 8px; }
+.teaser-prop-badge { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; color: var(--body-blue); background: rgba(57,140,186,0.12); border-radius: 4px; padding: 1px 6px; }
+.teaser-prop-item { display: flex; flex-direction: column; gap: 2px; }
+.teaser-prop-name { font-size: 12px; font-weight: 700; color: var(--ink-2); }
+.teaser-prop-desc { font-size: 12px; color: var(--muted-2); line-height: 1.5; }
 .teaser-data-tags { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
 .teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
+.teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease; opacity: 0; }
+.teaser-card.tc-expanded .teaser-expandable { max-height: 1400px; opacity: 1; }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); }
+.teaser-toggle:hover { color: var(--ink-2); }
+.teaser-toggle-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s; }
+.teaser-card.tc-expanded .teaser-toggle-icon { transform: rotate(45deg); }
+.teaser-card.tc-di.tc-expanded .teaser-toggle { color: var(--nutrition); }
+.teaser-card.tc-body.tc-expanded .teaser-toggle { color: var(--body-blue); }
+.teaser-card.tc-mind.tc-expanded .teaser-toggle { color: var(--mind); }
 .teasers-more { text-align: center; }
 .teasers-more p { font-size: 15px; color: var(--muted-2); margin-bottom: 8px; }
 .teasers-more a { font-size: 13px; font-weight: 700; color: var(--green); text-decoration: none; letter-spacing: 0.04em; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; transition: all 0.2s; }
@@ -358,7 +375,15 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .hero-left::after { display: none; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
   .teasers-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .teaser-card { padding: 28px 22px 24px; }
+  .teaser-toggle { margin-top: 16px; font-size: 12px; padding: 8px 0; }
+  .teaser-toggle-icon { width: 22px; height: 22px; }
+  .teaser-cta { padding-top: 20px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .stat-item + .stat-item { border-left: none; }
+  .stat-item { padding: 24px clamp(12px, 4vw, 28px); }
+  .stat-item:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .stat-item:nth-child(2n+1) { border-right: 1px solid var(--border); }
   .testimonials-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .pricing-card.featured { transform: none; }
@@ -374,7 +399,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   :root { --section-pad: clamp(72px, 10vw, 100px); }
   .hero-right { height: 40vh; }
   .hero-left { padding-top: 80px; padding-bottom: 32px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .stats-bar { padding: 48px 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .stat-sub { max-width: none; font-size: 12px; line-height: 1.55; }
+  .stat-num.stat-word { font-size: clamp(28px, 7.5vw, 40px); min-height: calc(1.2 * clamp(28px, 7.5vw, 40px)); }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .hero-headline { font-size: clamp(56px, 14vw, 100px); }
@@ -514,10 +542,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- STATS -->
 <div class="stats-bar"><div class="container"><div class="stats-grid">
-  <div class="stat-item reveal d1"><span class="stat-num" data-count="3">0</span><span class="stat-label">Pillars Connected</span><span class="stat-sub">No other system joins food, body, and mind.</span></div>
-  <div class="stat-item reveal d2"><span class="stat-num" data-count="25" data-suffix="+">0</span><span class="stat-label">Wearables Synced</span><span class="stat-sub">Your biometric data in every insight.</span></div>
-  <div class="stat-item reveal d3"><span class="stat-num">24/7</span><span class="stat-label">Lifetime Context</span><span class="stat-sub">Every response already knows your complete history.</span></div>
-  <div class="stat-item reveal d4"><span class="stat-num" data-count="52">0</span><span class="stat-label">Strategies a Year</span><span class="stat-sub">A new game plan every week, built on your patterns.</span></div>
+  <div class="stat-item reveal d1"><span class="stat-num stat-word" style="color:var(--green);">Why.</span><span class="stat-label">Finally, an Answer</span><span class="stat-sub">Your wearable shows the what. TLC finds the why. Last night's dinner is more connected to this morning's brain fog than you think.</span></div>
+  <div class="stat-item reveal d2"><span class="stat-num stat-word">Day 1.</span><span class="stat-label">Working from Minute One</span><span class="stat-sub">Before you log a single meal or step, TLC already knows your baselines. Your first insight is personalised from minute one.</span></div>
+  <div class="stat-item reveal d3"><span class="stat-num stat-word">Day 7.</span><span class="stat-label">The Moment It Clicks</span><span class="stat-sub">Seven days in, something shifts. You see a connection between your sleep score and what you ate two nights ago. You cannot unsee it.</span></div>
+  <div class="stat-item reveal d4"><span class="stat-num stat-word">Day 30+</span><span class="stat-label">You Stop Guessing</span><span class="stat-sub">After a month, your decisions stop being instinct and start being informed. You know what your body needs before it starts asking loudly.</span></div>
 </div></div></div>
 
 <!-- THREE PILLARS -->
@@ -530,7 +558,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="pillars-grid">
       <div class="pillar-card nutrition reveal d1">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11c0-2 1.5-2 1.5-4"/><path d="M12 11c0-2 1.5-2 1.5-4"/><path d="M15 11c0-2 1.5-2 1.5-4"/><path d="M5 11h14a7 7 0 01-14 0z"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div></div>
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6h5z"/></svg></div></div>
         <h3>Nutrition</h3>
         <p class="pillar-hook">What you eat shapes everything else.</p>
         <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
@@ -719,77 +747,145 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="teasers-grid">
 
       <!-- NUTRITION -->
-      <a href="/features#nutrition" class="teaser-card tc-di reveal d1">
+      <div class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6h5z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--nutrition)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
         <h3 class="teaser-h">WHAT YOU EAT,<br>PERFECTED</h3>
         <p class="teaser-sub">From restaurant to recipe to meal plan</p>
-        <p class="teaser-body">Everything you need to eat well — whether you're eating out or cooking in. Find the right dish, build the right recipe, understand what's on your plate, and plan the week ahead.</p>
-        <div class="teaser-tool-list">
-          <div class="teaser-tool-item">
-            <span class="teaser-tool-name">Meal Matchmaker</span>
-            <span class="teaser-tool-desc">Find macro-matched, goal-aligned dishes at restaurants near you — anywhere in the world.</span>
+        <p class="teaser-body">Everything you need to eat well, whether you're eating out or cooking in. Find the right dish, build the right recipe, understand what's on your plate, and plan the week ahead.</p>
+        <button class="teaser-toggle" onclick="event.stopPropagation();event.preventDefault();toggleTeaser(this)">
+          <span class="teaser-toggle-icon"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+          <span class="teaser-toggle-label">See what's included</span>
+        </button>
+        <div class="teaser-expandable">
+          <div class="teaser-tool-list">
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Meal Matchmaker</span>
+              <span class="teaser-tool-desc">Find macro-matched, goal-aligned dishes at restaurants near you, anywhere in the world.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Pantry Pal</span>
+              <span class="teaser-tool-desc">Get personalised recipes on demand, tailored to your macros, restrictions, and goals. Or scan your fridge and cupboards and TLC builds recipes around exactly what you already have.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Meal Analyser</span>
+              <span class="teaser-tool-desc">Photograph any meal for an instant nutritional breakdown.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Meal Plan <span class="teaser-tool-pro">PRO</span></span>
+              <span class="teaser-tool-desc">A daily meal plan that evolves every week based on what worked best for your mind and body. The more TLC knows you, the smarter your plan gets. Comes with a smart grocery list and batch cooking guide.</span>
+            </div>
           </div>
-          <div class="teaser-tool-item">
-            <span class="teaser-tool-name">Pantry Pal</span>
-            <span class="teaser-tool-desc">Turn your ingredients into recipes built around your macros, restrictions, and goals.</span>
-          </div>
-          <div class="teaser-tool-item">
-            <span class="teaser-tool-name">Meal Analyser</span>
-            <span class="teaser-tool-desc">Photograph any meal for an instant nutritional breakdown.</span>
-          </div>
-          <div class="teaser-tool-item">
-            <span class="teaser-tool-name">Meal Plan <span class="teaser-tool-pro">PRO</span></span>
-            <span class="teaser-tool-desc">A full week of personalised meals, a smart grocery list, and a batch cooking guide to get ahead.</span>
+          <div class="teaser-proprietary">
+            <div class="teaser-prop-label" style="color:var(--nutrition);">Nutrition Intelligence <span class="teaser-prop-badge" style="color:var(--nutrition);background:rgba(57,186,118,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Macro Alignment Score</span>
+              <span class="teaser-prop-desc">How consistently your daily intake matches your goals across the week. Reveals when you're nailing targets vs. when flexibility serves you better.</span>
+            </div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Meal Timing Pattern</span>
+              <span class="teaser-prop-desc">How meal spacing relative to your sleep and activity affects your energy and recovery. When you eat matters as much as what you eat.</span>
+            </div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Food-Mood Correlation</span>
+              <span class="teaser-prop-desc">Your unique patterns showing which foods drive your energy, focus, and mood. Built from your own reflection data, not generic population guidelines.</span>
+            </div>
           </div>
         </div>
-        <span class="teaser-cta">Explore nutrition tools &rarr;</span>
-      </a>
+        <a href="/features#nutrition" class="teaser-cta">Explore nutrition tools &rarr;</a>
+      </div>
 
       <!-- BODY -->
-      <a href="/features#body" class="teaser-card tc-body reveal d2">
+      <div class="teaser-card tc-body reveal d2">
         <div class="teaser-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
         <h3 class="teaser-h">YOUR BIOMETRICS,<br>MADE MEANINGFUL</h3>
         <p class="teaser-sub">Data your wearable captures. Context TLC provides.</p>
-        <p class="teaser-body">Connect Oura, WHOOP, Garmin, or Fitbit — or log manually. TLC reads the meaning behind your numbers, tracking the full breadth of your biometric picture and weaving it into your daily health narrative.</p>
-        <div class="teaser-data-tags">
-          <span class="teaser-data-tag">HRV</span>
-          <span class="teaser-data-tag">Sleep Depth</span>
-          <span class="teaser-data-tag">Resting Heart Rate</span>
-          <span class="teaser-data-tag">Recovery Score</span>
-          <span class="teaser-data-tag">Daily Steps</span>
-          <span class="teaser-data-tag">Readiness</span>
-          <span class="teaser-data-tag">Sleep Stages</span>
+        <p class="teaser-body">Connect Oura, WHOOP, Garmin, or Fitbit, or log manually. TLC reads the meaning behind your numbers and weaves them into your daily health narrative.</p>
+        <button class="teaser-toggle" onclick="event.stopPropagation();event.preventDefault();toggleTeaser(this)">
+          <span class="teaser-toggle-icon"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+          <span class="teaser-toggle-label">See what's included</span>
+        </button>
+        <div class="teaser-expandable">
+          <div class="teaser-tool-list">
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Wearable signals tracked</span>
+              <span class="teaser-tool-desc">HRV, Sleep Depth, Sleep Stages, Resting Heart Rate, Recovery Score, Readiness, Daily Steps, Strain, Calories Burned, SpO2, Skin Temp.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">TLC scores</span>
+              <span class="teaser-tool-desc">Three Pillars (Nutrition, Body, Mind), Longevity Score, Consistency Score, Activity Score, Goal Progress Score.</span>
+            </div>
+          </div>
+          <div class="teaser-proprietary">
+            <div class="teaser-prop-label">Proprietary metrics <span class="teaser-prop-badge">TLC ONLY</span></div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Vitality Alignment</span>
+              <span class="teaser-prop-desc">How well your energy, nutrition, and sleep pull in the same direction. When they align, you feel it.</span>
+            </div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Restoration Index</span>
+              <span class="teaser-prop-desc">True overnight recovery quality relative to your stress load and nutritional intake. Not just sleep duration.</span>
+            </div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Digestive Recovery Rate</span>
+              <span class="teaser-prop-desc">How quickly your gut recovers after dietary stress. Combines reflection scores with nutritional patterns over time.</span>
+            </div>
+          </div>
         </div>
-        <span class="teaser-cta" style="color:var(--body-blue);border-bottom-color:rgba(57,140,186,0.25);">See how body data works &rarr;</span>
-      </a>
+        <a href="/features#body" class="teaser-cta" style="color:var(--body-blue);border-bottom-color:rgba(57,140,186,0.25);">See how body data works &rarr;</a>
+      </div>
 
       <!-- MIND -->
-      <a href="/features#mind" class="teaser-card tc-mind reveal d3">
+      <div class="teaser-card tc-mind reveal d3">
         <div class="teaser-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="12" cy="20" r="2"/><line x1="6.8" y1="6.2" x2="10.5" y2="11"/><line x1="17.2" y1="6.2" x2="13.5" y2="11"/><line x1="12" y1="18" x2="12" y2="14"/><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="12" r="1" fill="var(--mind)" stroke="none"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
         <h3 class="teaser-h">PATTERNS YOUR<br>EYES CAN'T SEE</h3>
         <p class="teaser-sub">Where data becomes understanding</p>
-        <p class="teaser-body">The tools that connect your nutrition and biometrics to how you actually feel — turning that connection into daily insight and expert, contextual guidance.</p>
-        <div class="teaser-tool-list">
-          <div class="teaser-tool-item">
-            <span class="teaser-tool-name">Dynamic Insights</span>
-            <span class="teaser-tool-desc">A daily narrative connecting your food, sleep, and mood into one clear, personalised picture.</span>
+        <p class="teaser-body">The tools that connect your nutrition and biometrics to how you actually feel, turning that connection into daily insight and expert, contextual guidance.</p>
+        <button class="teaser-toggle" onclick="event.stopPropagation();event.preventDefault();toggleTeaser(this)">
+          <span class="teaser-toggle-icon"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+          <span class="teaser-toggle-label">See what's included</span>
+        </button>
+        <div class="teaser-expandable">
+          <div class="teaser-tool-list">
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Dynamic Insights</span>
+              <span class="teaser-tool-desc">A daily narrative connecting food, sleep, and mood into one clear, personalised picture. TLC analyses energy, focus, mood, motivation, digestion, recovery, and sleep quality together.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Longevity Coach</span>
+              <span class="teaser-tool-desc">An expert coach that already knows your biometrics, meals, goals, and history before you ask a single question.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Pattern Intelligence</span>
+              <span class="teaser-tool-desc">TLC calculates your Longevity Score, Three Pillars gauges, and weekly trend lines, spotting cross-pillar patterns that no single data source could reveal alone.</span>
+            </div>
           </div>
-          <div class="teaser-tool-item">
-            <span class="teaser-tool-name">Longevity Coach</span>
-            <span class="teaser-tool-desc">An expert coach that already knows your biometrics, meals, goals, and history before you ask a single question.</span>
+          <div class="teaser-proprietary">
+            <div class="teaser-prop-label" style="color:var(--mind);">Insight Engine <span class="teaser-prop-badge" style="color:var(--mind);background:rgba(232,184,75,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Wellbeing Trend</span>
+              <span class="teaser-prop-desc">Your 7-day rolling average of energy, mood, focus, motivation, and recovery from your evening reflection. Spots momentum shifts before you feel them.</span>
+            </div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Weekly Pattern Detection</span>
+              <span class="teaser-prop-desc">Discovers your repeating cycles across days and weeks. TLC learns your personal rhythm and flags deviations that matter before they compound.</span>
+            </div>
+            <div class="teaser-prop-item">
+              <span class="teaser-prop-name">Pillar Correlation Score</span>
+              <span class="teaser-prop-desc">How well your nutrition, body metrics, and mind signals align week to week. When all three pillars move in sync, that is when breakthroughs happen.</span>
+            </div>
           </div>
         </div>
-        <span class="teaser-cta" style="color:#927010;border-bottom-color:rgba(232,184,75,0.3);">Explore mind tools &rarr;</span>
-      </a>
+        <a href="/features#mind" class="teaser-cta" style="color:#927010;border-bottom-color:rgba(232,184,75,0.3);">Explore mind tools &rarr;</a>
+      </div>
 
     </div>
     <div class="teasers-more reveal">
@@ -805,7 +901,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="testimonials-header reveal">
       <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:rgba(255,255,255,0.70);background:transparent;border:none;letter-spacing:0.18em;">Real Results</span>
-      <h2>PEOPLE WHO <em>JOINED THE DOTS</em></h2>
+      <h2>PEOPLE WHO ALREADY <em>LET TLC JOIN THE DOTS</em></h2>
       <p>What happens when food, body, and mind finally talk to each other.</p>
     </div>
     <div class="testimonials-grid">
@@ -851,8 +947,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">Why TLC</span>
-      <h2>NOT ANOTHER<br><em>CALORIE COUNTER</em></h2>
-      <p>Most tools do one job well. TLC connects the dots between them, turning isolated data into a picture that gets clearer every day.</p>
+      <h2>NOT ANOTHER CALORIE COUNTER,<br><em>HEALTH TRACKER, MEAL PLANNER OR TEST KIT.</em></h2>
+      <p>It's an ultra-personalised longevity ecosystem, designed to spot hidden patterns, then guide you to live better and longer.</p>
     </div>
     <div style="overflow-x:auto;" class="reveal d1">
       <table style="width:100%;border-collapse:collapse;min-width:560px;">
@@ -922,8 +1018,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="margin-bottom:20px;display:inline-flex;justify-content:center;">Plans</span>
-      <h2>CHOOSE YOUR <em>PATH</em></h2>
-      <p>TLC Lite gives you Meal Matchmaker, free forever. To unlock the connections between nutrition, body, and mind, upgrade to TLC.</p>
+      <h2>CHOOSE YOUR PATH <em>TO LONGEVITY</em></h2>
+      <p>Nothing to lose. <strong>Everything to gain.</strong></p>
+      <p style="max-width:560px;margin:16px auto 0;font-size:15px;color:var(--ink-2);line-height:1.75;">At worst, nothing changes and it costs you nothing to try. At best, you unlock a smarter way to eat, feel better every day, and take control of your long-term health.<br><br>Make one of the most valuable investments you will make this year, in your mind and your body.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card reveal-scale d1">
@@ -1415,6 +1512,17 @@ setTimeout(function() {
   }
   draw();
 })();
+</script>
+<script>
+function toggleTeaser(btn) {
+  const cards = document.querySelectorAll('.teaser-card');
+  const isExpanded = cards[0].classList.contains('tc-expanded');
+  const newState = !isExpanded;
+  cards.forEach(function(card) {
+    card.classList.toggle('tc-expanded', newState);
+    card.querySelector('.teaser-toggle-label').textContent = newState ? 'Show less' : "See what's included";
+  });
+}
 </script>
 </body>
 </html>
