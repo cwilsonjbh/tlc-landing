@@ -5115,6 +5115,18 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
+          How does TLC Pro calculate grocery costs and food waste savings?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">The grocery estimate is calculated from your actual plan: the number of meals you select across your chosen days, multiplied by a per-meal cost range based on mid-range supermarket pricing for health-focused meals. We use official household food expenditure data from your country (ONS in the UK, USDA in the US, ABS in Australia, and equivalent bodies elsewhere). The food waste saving is derived from WRAP's Household Food Waste Report 2022, which found UK households waste £470 to £700 per year in edible food. A structured meal plan with ingredient overlap directly reduces the two leading causes of food waste: food not used in time, and cooking or serving too much. We show you what portion of that annual waste your plan could avoid, based on the level of ingredient overlap you choose. All estimates vary by supermarket and specific ingredients chosen, and are shown clearly as approximations.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
           How does TLC handle my health data?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
