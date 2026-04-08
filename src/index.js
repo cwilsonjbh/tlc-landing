@@ -5654,47 +5654,14 @@ main {
 
   <div class="goal-grid">
 
-    <!-- FREE TIER -->
-    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
-      <div class="goal-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
-      </div>
-      <div class="goal-tier-pill">TLC Lite &middot; Free</div>
-      <h2 class="goal-title">SMARTER EATING<br>WHEN I'M OUT</h2>
-      <p class="goal-body">Find dishes at nearby restaurants that fit your macros, allergies, and health goal. Any city, any menu, in seconds.</p>
-      <ul class="goal-features">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Meal Matchmaker (3 searches/day)
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Personal nutrition blueprint
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Allergy and goal-aware matching
-        </li>
-      </ul>
-      <div class="goal-cta">
-        <div>
-          <div class="goal-cta-text">Start free</div>
-          <div class="goal-cta-price">No card required</div>
-        </div>
-        <div class="goal-cta-arrow">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-      </div>
-    </a>
-
     <!-- TLC PAID TIER -->
     <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="goal-card gc-tlc">
       <div class="goal-icon">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="4" cy="6" r="2" stroke-width="1.8"/><circle cx="20" cy="6" r="2" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke-width="1.8"/><circle cx="12" cy="13" r="2.5" stroke-width="1.8"/><circle cx="12" cy="13" r="0.8" fill="currentColor" stroke="none"/><line x1="5.7" y1="7.2" x2="10.4" y2="11.6" stroke-width="1.6"/><line x1="18.3" y1="7.2" x2="13.6" y2="11.6" stroke-width="1.6"/><line x1="12" y1="15.5" x2="12" y2="18" stroke-width="1.6"/></svg>
       </div>
       <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
-      <h2 class="goal-title">DAILY INSIGHT<br>INTO MY HEALTH</h2>
-      <p class="goal-body">Connect your wearable, log meals, and receive a daily insight that joins the dots between nutrition, sleep, and how you feel.</p>
+      <h2 class="goal-title">FULLY ADAPTIVE<br>HEALTH LOOP</h2>
+      <p class="goal-body">Fully adaptive loop with the mind, body and nutrition linked, mapped and analysed. Sync your wearable to unlock deeper insights.</p>
       <ul class="goal-features">
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -5720,14 +5687,47 @@ main {
       </div>
     </a>
 
+    <!-- FREE TIER -->
+    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC Lite &middot; Free</div>
+      <h2 class="goal-title">MAP MY MEALS TO<br>MY NEEDS AND GOALS</h2>
+      <p class="goal-body">Map my meals to my needs, goals and macros when I'm eating out. Any city, any menu, in seconds.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Meal Matchmaker (3 searches/day)
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Personal nutrition blueprint
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Allergy and goal-aware matching
+        </li>
+      </ul>
+      <div class="goal-cta">
+        <div>
+          <div class="goal-cta-text">Start free</div>
+          <div class="goal-cta-price">No card required</div>
+        </div>
+        <div class="goal-cta-arrow">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </a>
+
     <!-- TLC PRO TIER -->
     <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="goal-card gc-pro">
       <div class="goal-icon">
         <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="3" stroke-width="1.8"/><path d="M16 2v4M8 2v4" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-width="1.8"/><rect x="7" y="12" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/><rect x="14" y="12" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/><rect x="7" y="17" width="3" height="2" rx="0.5" fill="currentColor" stroke="none"/><rect x="14" y="17" width="3" height="2" rx="0.5" fill="currentColor" stroke="none"/></svg>
       </div>
       <div class="goal-tier-pill">TLC Pro &middot; $19.99/mo</div>
-      <h2 class="goal-title">COMPLETE MEAL<br>PLANNING SYSTEM</h2>
-      <p class="goal-body">Every meal of every day, planned around your biology, goals, and schedule. Auto-generated shopping lists, zero waste, fully adaptable.</p>
+      <h2 class="goal-title">FULL ADAPTIVE<br>MEAL PLANNING</h2>
+      <p class="goal-body">Full adaptive system but with additional meal planning, catering to all your nutritional needs. Auto-generated shopping lists, zero waste, fully adaptable.</p>
       <ul class="goal-features">
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
