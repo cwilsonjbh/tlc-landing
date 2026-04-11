@@ -522,7 +522,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Listen mode reads your insight aloud. Hands-free, eyes-free.</li>
             <li>Never starts from scratch. Every week builds on the last.</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Start your first insight free &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Start your first insight free &rarr;</a>
         </div>
       </div>
     </div>
@@ -560,7 +560,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Gets sharper with every session as your patterns compound</li>
             <li>Opens Meal Matchmaker with your current context when you ask about food</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Talk to your coach free &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Talk to your coach free &rarr;</a>
         </div>
       </div>
     </div>
@@ -630,7 +630,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Synced live with your current goals, not last week's settings</li>
             <li>Free forever on TLC Lite. No subscription required.</li>
           </ul>
-          <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="feature-cta">Find your next meal free &rarr;</a>
+          <a href="https://start.thelongevitychef.io" class="feature-cta">Find your next meal free &rarr;</a>
         </div>
       </div>
     </div>
@@ -709,7 +709,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Meal Analyser: snap any plate for full macros instantly</li>
             <li>Connects to your Daily Insight. Every meal logged automatically.</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Scan your fridge free &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Scan your fridge free &rarr;</a>
         </div>
       </div>
     </div>
@@ -791,7 +791,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Recalibrates automatically when life disrupts the plan</li>
             <li>Mixes freely with Meal Matchmaker and Pantry Pal</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Start your Pro journey &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Start your Pro journey &rarr;</a>
         </div>
       </div>
     </div>
@@ -814,7 +814,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <p>Most health tools hand you a plan and expect you to fit your life around it. Rigid. Generic. Built for a hypothetical average person who is not you.</p>
         <p>TLC starts with <span class="highlight-pill">who you actually are</span>: your wearable data, your food patterns, your goals, your restrictions, your daily reality. Then it meets you where you are. At the restaurant. At home. When you are exhausted and need the answer in 10 seconds.</p>
         <p>Five tools that talk to each other. Every insight built from your data. Every coaching response that knows your week. Every plan that reflects where you actually are, not where a formula assumed you would be.</p>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
       </div>
     </div>
   </div>
@@ -958,7 +958,7 @@ async function submitMagicLink() {
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
   } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }

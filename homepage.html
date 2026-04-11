@@ -888,7 +888,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Goal, allergy, and macro-aware</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personal nutrition blueprint</li>
         </ul>
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a>
+        <a href="https://start.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a>
         <p class="pricing-trial">Free forever. No card required.</p>
       </div>
       <div class="pricing-card featured reveal-scale d2">
@@ -904,7 +904,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal and photo meal logging</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>25+ wearables connected</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 Days Free</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
       <div class="pricing-card reveal-scale d3">
@@ -918,7 +918,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Smart zero-waste shopping list</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>10-15% average grocery savings</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 Days Free</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
     </div>
@@ -1234,14 +1234,14 @@ window.handleLoginGoogleCredential = async function(response) {
   if (wrap) wrap.innerHTML = '<div class="login-google-loading">Signing in\u2026</div>';
   var errEl = document.getElementById('loginError');
   try {
-    var res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/google-auth', {
+    var res = await fetch('https://app.thelongevitychef.io/api/google-auth', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ credential: response.credential })
     });
     var data = await res.json();
     if (data.status === 'existing') {
       if (wrap) wrap.innerHTML = '<div class="login-google-loading">Redirecting to your dashboard\u2026</div>';
-      window.location.href = 'https://tlc-engine.chris-ec5.workers.dev/dashboard?user_id=' + encodeURIComponent(data.user_id);
+      window.location.href = data.redirect_url || ('https://app.thelongevitychef.io/dashboard?user_id=' + encodeURIComponent(data.user_id));
     } else {
       // No account found — send them to start
       if (wrap) wrap.innerHTML = saved;
@@ -1262,7 +1262,7 @@ async function submitMagicLink() {
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
   } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }

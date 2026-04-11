@@ -375,7 +375,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">A genuine taste of what TLC does. No credit card. No expiry. No catch.</div>
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-free">Get started free</a>
+        <a href="https://start.thelongevitychef.io" class="plan-cta plan-cta-free">Get started free</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">What's included</div>
         <ul class="plan-features">
@@ -428,7 +428,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
+        <a href="https://join.thelongevitychef.io?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in Lite, plus</div>
         <ul class="plan-features">
@@ -480,7 +480,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
+        <a href="https://join.thelongevitychef.io?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in TLC, plus</div>
         <ul class="plan-features">
@@ -899,7 +899,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <h2 class="reveal d1">YOUR FIRST<br>INSIGHT TONIGHT.</h2>
     <span class="cta-sub reveal d2">Free to start. No credit card required.</span>
     <div class="cta-actions reveal d3">
-      <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
+      <a href="https://start.thelongevitychef.io" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
     </div>
   </div>
 </section>
@@ -924,9 +924,9 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
       <div class="footer-col">
         <h4>Get started</h4>
         <ul>
-          <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Lite (free)</a></li>
-          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc">TLC ($9.99/mo)</a></li>
-          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro">TLC Pro ($19.99/mo)</a></li>
+          <li><a href="https://start.thelongevitychef.io">TLC Lite (free)</a></li>
+          <li><a href="https://join.thelongevitychef.io?path=tlc">TLC ($9.99/mo)</a></li>
+          <li><a href="https://join.thelongevitychef.io?path=pro">TLC Pro ($19.99/mo)</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -981,7 +981,7 @@ document.getElementById('loginSubmit').addEventListener('click', async () => {
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     const data = await res.json();
     if (data.success) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errorEl.textContent = data.error || 'Something went wrong. Please try again.'; errorEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
