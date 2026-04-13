@@ -193,6 +193,8 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
 .feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
 .feat-info:hover .feat-tooltip { opacity: 1; }
+.plan-card-featured .feat-info { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.55); }
+.plan-card-featured .feat-info:hover { border-color: var(--green); color: var(--green); }
 
 /* ── VALUE SECTION ── */
 .value-section { padding: clamp(100px, 12vw, 160px) 0; background: var(--white); }
@@ -434,7 +436,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
         <ul class="plan-features">
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Daily Dynamic Insights</span>
+            <span class="feat-label">Daily Dynamic Insights<span class="feat-info">i<span class="feat-tooltip">A personalised evening analysis generated from your meals, biometrics, and reflection data. Surfaces patterns across all three pillars that no single data source could reveal alone.</span></span></span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
