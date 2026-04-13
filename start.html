@@ -342,6 +342,8 @@ main {
 .goal-card.featured .goal-title { color: white; }
 .goal-card.featured .goal-body { color: rgba(255,255,255,0.65); }
 .goal-card.featured .goal-features li { color: rgba(255,255,255,0.75); }
+.goal-feature-link { color: inherit; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; opacity: 0.85; transition: opacity 0.15s; }
+.goal-feature-link:hover { opacity: 1; }
 .goal-card.featured .goal-cta {
   border-top-color: rgba(255,255,255,0.12);
   padding-top: 0;
@@ -459,8 +461,7 @@ main {
       <ul class="goal-features">
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Daily Dynamic Insights
-          <span class="feature-explain">Your nutrition, body signals + mindset connected into one daily pattern read</span>
+          <a href="/features#dynamic-insights" class="goal-feature-link">Daily Dynamic Insights</a>
         </li>
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
