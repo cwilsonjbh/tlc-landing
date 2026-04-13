@@ -398,6 +398,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .footer-bottom { flex-direction: column; gap: 8px; }
   .hero-headline { font-size: clamp(56px, 14vw, 100px); }
 }
+.feat-label { display: inline-flex; align-items: center; gap: 6px; }
+.feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; cursor: default; flex-shrink: 0; line-height: 1; }
+.feat-info:hover { border-color: var(--green); color: var(--green); }
+.feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+.feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
+.feat-info:hover .feat-tooltip { opacity: 1; }
+.pricing-features li { position: relative; }
 </style>
 </head>
 <body>
@@ -899,7 +906,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <p class="pricing-desc">The full system. Daily insights, your Coach, and every tool connected.</p>
         <ul class="pricing-features">
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Lite</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Daily Dynamic Insights</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span class="feat-label">Daily Dynamic Insights<span class="feat-info">i<span class="feat-tooltip">A personalised evening analysis generated from your meals, biometrics, and reflection data. Surfaces patterns across all three pillars that no single data source could reveal alone.</span></span></span></li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Longevity Coach with full context</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal and photo meal logging</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>25+ wearables connected</li>
