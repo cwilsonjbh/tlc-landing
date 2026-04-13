@@ -342,8 +342,9 @@ main {
 .goal-card.featured .goal-title { color: white; }
 .goal-card.featured .goal-body { color: rgba(255,255,255,0.65); }
 .goal-card.featured .goal-features li { color: rgba(255,255,255,0.75); }
-.goal-feature-link { color: inherit; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; opacity: 0.85; transition: opacity 0.15s; }
-.goal-feature-link:hover { opacity: 1; }
+.goal-feature-link { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 600; }
+.goal-feature-link::after { content: ' →'; font-weight: 400; opacity: 0.6; }
+.goal-feature-link:hover { text-decoration: underline; text-underline-offset: 2px; }
 .goal-card.featured .goal-cta {
   border-top-color: rgba(255,255,255,0.12);
   padding-top: 0;
