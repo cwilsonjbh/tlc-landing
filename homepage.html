@@ -401,8 +401,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .feat-label { display: inline-flex; align-items: center; gap: 6px; }
 .feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; cursor: default; flex-shrink: 0; line-height: 1; }
 .feat-info:hover { border-color: var(--green); color: var(--green); }
-.feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
-.feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
+.feat-tooltip { position: absolute; right: 22px; left: auto; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+.feat-tooltip::before { content: ''; position: absolute; left: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-left-color: var(--ink); }
 .feat-info:hover .feat-tooltip { opacity: 1; }
 .pricing-features li { position: relative; }
 </style>
