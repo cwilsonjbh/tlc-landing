@@ -286,6 +286,72 @@ main {
 .gc-tlc .goal-cta-arrow svg { stroke: var(--green); }
 .gc-pro .goal-cta-arrow svg { stroke: var(--body-blue); }
 
+/* ── FEATURED (TLC hero) card ── */
+.goal-card.featured {
+  background: #162e1e;
+  border-color: transparent;
+  box-shadow: 0 24px 64px rgba(22,46,30,0.35), 0 8px 20px rgba(0,0,0,0.18);
+  transform: scale(1.05);
+  z-index: 2;
+  color: white;
+}
+.goal-card.featured:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 32px 72px rgba(22,46,30,0.4), 0 12px 28px rgba(0,0,0,0.20);
+  border-color: transparent;
+}
+.goal-card.featured::before { display: none; }
+.goal-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.goal-card.featured .goal-icon { background: rgba(255,255,255,0.10); }
+.goal-card.featured .goal-icon svg { stroke: rgba(255,255,255,0.9); }
+.goal-card.featured .goal-tier-pill { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); }
+.goal-card.featured .goal-title { color: white; }
+.goal-card.featured .goal-body { color: rgba(255,255,255,0.65); }
+.goal-card.featured .goal-features li { color: rgba(255,255,255,0.75); }
+.goal-card.featured .goal-cta {
+  border-top-color: rgba(255,255,255,0.12);
+  padding-top: 0;
+  border-top: none;
+  margin-top: auto;
+}
+.goal-cta-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--green);
+  color: white;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: auto;
+}
+.goal-cta-btn:hover { background: var(--green-dark); transform: scale(1.02); }
+.goal-cta-btn-sub {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
 .start-note {
   margin-top: 32px;
   font-size: 12px;
@@ -327,39 +393,6 @@ main {
 
   <div class="goal-grid">
 
-    <!-- TLC PAID TIER -->
-    <a href="https://join.thelongevitychef.io?path=tlc" class="goal-card gc-tlc">
-      <div class="goal-icon">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="4" cy="6" r="2" stroke-width="1.8"/><circle cx="20" cy="6" r="2" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke-width="1.8"/><circle cx="12" cy="13" r="2.5" stroke-width="1.8"/><circle cx="12" cy="13" r="0.8" fill="currentColor" stroke="none"/><line x1="5.7" y1="7.2" x2="10.4" y2="11.6" stroke-width="1.6"/><line x1="18.3" y1="7.2" x2="13.6" y2="11.6" stroke-width="1.6"/><line x1="12" y1="15.5" x2="12" y2="18" stroke-width="1.6"/></svg>
-      </div>
-      <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
-      <h2 class="goal-title">FULLY ADAPTIVE<br>HEALTH LOOP</h2>
-      <p class="goal-body">Fully adaptive loop with the mind, body and nutrition linked, mapped and analysed. Sync your wearable to unlock deeper insights.</p>
-      <ul class="goal-features">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Daily Dynamic Insights
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Longevity Coach with full context
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          25+ wearables &bull; Pantry Pal &bull; Meal Analyser
-        </li>
-      </ul>
-      <div class="goal-cta">
-        <div>
-          <div class="goal-cta-text">Start TLC</div>
-          <div class="goal-cta-price">7-day free trial</div>
-        </div>
-        <div class="goal-cta-arrow">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-      </div>
-    </a>
-
     <!-- FREE TIER -->
     <a href="https://start.thelongevitychef.io" class="goal-card gc-free">
       <div class="goal-icon">
@@ -391,6 +424,33 @@ main {
           <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </div>
+    </a>
+
+    <!-- TLC PAID TIER — FEATURED -->
+    <a href="https://join.thelongevitychef.io?path=tlc" class="goal-card gc-tlc featured">
+      <div class="goal-badge">Most popular</div>
+      <div class="goal-icon">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="4" cy="6" r="2" stroke-width="1.8"/><circle cx="20" cy="6" r="2" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke-width="1.8"/><circle cx="12" cy="13" r="2.5" stroke-width="1.8"/><circle cx="12" cy="13" r="0.8" fill="currentColor" stroke="none"/><line x1="5.7" y1="7.2" x2="10.4" y2="11.6" stroke-width="1.6"/><line x1="18.3" y1="7.2" x2="13.6" y2="11.6" stroke-width="1.6"/><line x1="12" y1="15.5" x2="12" y2="18" stroke-width="1.6"/></svg>
+      </div>
+      <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
+      <h2 class="goal-title">FULLY ADAPTIVE<br>HEALTH LOOP</h2>
+      <p class="goal-body">Fully adaptive loop with the mind, body and nutrition linked, mapped and analysed. Sync your wearable to unlock deeper insights.</p>
+      <ul class="goal-features">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Daily Dynamic Insights
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Longevity Coach with full context
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          25+ wearables &bull; Pantry Pal &bull; Meal Analyser
+        </li>
+      </ul>
+      <span class="goal-cta-btn">Start your journey</span>
+      <p class="goal-cta-btn-sub">7-day free trial &bull; No card required</p>
     </a>
 
     <!-- TLC PRO TIER -->
