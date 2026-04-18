@@ -22,7 +22,7 @@ const LANDING_HTML = `<!DOCTYPE html>
 <meta name="description" content="TLC connects what you eat, how your body responds, and how you feel into one insight system that gets sharper every day.">
 <meta property="og:title" content="The Longevity Chef | Food for Life">
 <meta property="og:description" content="See the patterns your body is trying to show you. Nutrition, body, and mind. Connected for the first time.">
-<meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
+<meta property="og:image" content="https://thelongevitychef.io/assets/logo.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -212,7 +212,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .section-header h2 em { font-style: normal; color: var(--green); }
 .section-header > p { font-size: 18px; color: var(--muted-2); max-width: 540px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
-.pillar-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 16px; padding: 40px 30px 32px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; }
+.pillar-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 16px; padding: 40px 30px 32px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; display: flex; flex-direction: column; }
 .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 16px 16px 0 0; }
 .pillar-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(0,0,0,0.08); }
 .pillar-card.nutrition { background: linear-gradient(160deg, rgba(57,186,118,0.05) 0%, rgba(255,255,255,0) 55%); }
@@ -221,16 +221,16 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .pillar-card.nutrition::before { background: var(--nutrition); }
 .pillar-card.body-pillar::before { background: var(--body-blue); }
 .pillar-card.mind::before { background: var(--mind); }
-.pillar-visual { margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
-.pillar-icon-wrap { width: 68px; height: 68px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+.pillar-visual { margin-top: 12px; margin-bottom: 22px; display: flex; align-items: center; justify-content: center; }
+.pillar-icon-wrap { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
 .pillar-card.nutrition .pillar-icon-wrap { background: rgba(57,186,118,0.12); }
 .pillar-card.body-pillar .pillar-icon-wrap { background: rgba(57,140,186,0.12); }
 .pillar-card.mind .pillar-icon-wrap { background: rgba(232,184,75,0.12); }
 .pillar-card h3 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-align: center; }
 .pillar-hook { font-size: 15px; font-weight: 600; color: var(--ink); text-align: center; margin-bottom: 12px; }
 .pillar-card p.pillar-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; text-align: center; }
-.pillar-data-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 20px; }
-.pillar-data-tag { font-size: 10px; font-weight: 700; padding: 4px 11px; border-radius: 5px; letter-spacing: 0.01em; }
+.pillar-data-tags { display: flex; flex-wrap: nowrap; gap: 4px; justify-content: center; margin-top: auto; padding-top: 20px; overflow: hidden; width: 100%; }
+.pillar-data-tag { font-size: 8.5px; font-weight: 700; padding: 2px 5px; border-radius: 5px; letter-spacing: 0.01em; white-space: nowrap; }
 .pillar-card.nutrition .pillar-data-tag { background: rgba(57,186,118,0.09); color: #2a9148; }
 .pillar-card.body-pillar .pillar-data-tag { background: rgba(57,140,186,0.09); color: #2b6e93; }
 .pillar-card.mind .pillar-data-tag { background: rgba(232,184,75,0.09); color: #927010; }
@@ -258,7 +258,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-h { font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 34px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 8px; }
 .teaser-sub { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
 .teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; }
-.teaser-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
+.teaser-cta { display: inline-flex; align-items: center; gap: 6px; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
 .teaser-card:hover .teaser-cta { border-bottom-color: var(--green); }
 .teaser-card.tc-body::before { background: linear-gradient(90deg, var(--body-blue), #2b6e93); }
 .teaser-card.tc-body .teaser-icon { background: rgba(57,140,186,0.10); }
@@ -270,6 +270,10 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-card.tc-mind .teaser-icon svg { stroke: var(--mind); }
 .teaser-card.tc-mind .teaser-cta { color: #927010; border-bottom-color: rgba(232,184,75,0.3); }
 .teaser-card.tc-mind:hover .teaser-cta { border-bottom-color: var(--mind); }
+.teaser-card.tc-di .teaser-prop-label { color: var(--nutrition); }
+.teaser-card.tc-di .teaser-prop-badge { color: var(--nutrition); background: rgba(57,186,118,0.12); }
+.teaser-card.tc-mind .teaser-prop-label { color: var(--mind); }
+.teaser-card.tc-mind .teaser-prop-badge { color: var(--mind); background: rgba(232,184,75,0.12); }
 .teaser-tool-list { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; }
 .teaser-tool-item { display: flex; flex-direction: column; gap: 2px; }
 .teaser-tool-name { font-size: 12px; font-weight: 700; color: var(--ink-2); }
@@ -283,9 +287,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-prop-desc { font-size: 12px; color: var(--muted-2); line-height: 1.5; }
 .teaser-data-tags { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
 .teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
-.teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease; opacity: 0; }
-.teaser-card.tc-expanded .teaser-expandable { max-height: 1400px; opacity: 1; }
-.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); }
+.teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.tc-expanded .teaser-expandable { max-height: 2000px; }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); align-self: flex-start; }
 .teaser-toggle:hover { color: var(--ink-2); }
 .teaser-toggle-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s; }
 .teaser-card.tc-expanded .teaser-toggle-icon { transform: rotate(45deg); }
@@ -374,6 +378,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .hero-left { padding-top: 120px; padding-bottom: 56px; }
   .hero-left::after { display: none; }
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pillar-card { padding: 32px 22px 28px; }
   .teasers-grid { grid-template-columns: 1fr; }
   .teaser-card { padding: 28px 22px 24px; }
   .teaser-toggle { margin-top: 16px; font-size: 12px; padding: 8px 0; }
@@ -407,6 +412,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .footer-bottom { flex-direction: column; gap: 8px; }
   .hero-headline { font-size: clamp(56px, 14vw, 100px); }
 }
+.feat-label { display: inline-flex; align-items: center; gap: 6px; }
+.feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; cursor: default; flex-shrink: 0; line-height: 1; }
+.feat-info:hover { border-color: var(--green); color: var(--green); }
+.feat-tooltip { position: absolute; right: 22px; left: auto; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+.feat-tooltip::before { content: ''; position: absolute; left: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-left-color: var(--ink); }
+.feat-info:hover .feat-tooltip { opacity: 1; }
+.pricing-features li { position: relative; }
 </style>
 </head>
 <body>
@@ -415,7 +427,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="/" class="nav-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="nav-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></a>
   <ul class="nav-links">
     <li><a href="/features">Features</a></li>
     <li><a href="/how-it-works">How It Works</a></li>
@@ -460,9 +472,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="hero-eyebrow"><span class="label">The Data &middot; The Body &middot; The Mind</span></div>
     <h1 class="hero-headline">YOUR MIND KNEW.<br>YOUR BODY KNEW.<br>YOUR WEARABLE KNEW.</h1>
     <span class="hero-headline-green">Nobody connected them. Until now.</span>
-    <p class="hero-body">TLC reads your meals, your sleep, your stress, and the way you felt on Tuesday. It finds the thread running through all of them. One insight, every evening, that finally makes sense of you.</p>
+    <p class="hero-body">You have had the data all along. The sleep scores, the macros, the step counts. But data without context is just noise. TLC connects every meal, every biometric, and how you actually felt, then finds the thread running through all of it. One insight, every evening. Finally, you get to understand why you feel the way you feel.</p>
     <div class="hero-actions">
-      <a href="/start" class="btn btn-black">See What You've Been Missing</a>
+      <a href="/start" class="btn btn-black">Start Your Free Assessment</a>
       <a href="/how-it-works" class="btn btn-outline">How It Works</a>
     </div>
     <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;&middot;&nbsp; Encrypted in transit and at rest. &nbsp;&middot;&nbsp; No wearable required.</p>
@@ -558,7 +570,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     </div>
     <div class="pillars-grid">
       <div class="pillar-card nutrition reveal d1">
-        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6h5z"/></svg></div></div>
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div></div>
         <h3>Nutrition</h3>
         <p class="pillar-hook">What you eat shapes everything else.</p>
         <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
@@ -600,142 +612,6 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   </div>
 </section>
 
-<!-- THREE SIGNALS SECTION -->
-<section style="padding:clamp(72px,9vw,120px) 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:2;">
-<style>
-@keyframes gaugeNerve{0%{transform:rotate(-55deg)}15%{transform:rotate(-25deg)}30%{transform:rotate(-72deg)}45%{transform:rotate(-18deg)}62%{transform:rotate(-60deg)}78%{transform:rotate(-38deg)}90%{transform:rotate(-68deg)}100%{transform:rotate(-55deg)}}
-@keyframes fuelRise{0%,100%{transform:translateY(4px);opacity:.22}50%{transform:translateY(-5px);opacity:.42}}
-@keyframes mindPulse{0%,100%{stroke-opacity:.25;transform:scale(1)}50%{stroke-opacity:.65;transform:scale(1.1)}}
-@keyframes tlcGlow{0%,100%{box-shadow:0 4px 32px rgba(46,168,74,0.06)}50%{box-shadow:0 8px 48px rgba(46,168,74,0.16)}}
-@keyframes compassSettle{0%{transform:rotate(55deg)}18%{transform:rotate(-40deg)}36%{transform:rotate(22deg)}51%{transform:rotate(-9deg)}62%{transform:rotate(4deg)}72%,100%{transform:rotate(0deg)}}
-.signals-top-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:880px;margin:0 auto;}
-.signals-tlc-wrap{max-width:500px;margin:0 auto;width:100%;}
-.signals-conv{max-width:880px;margin:0 auto;height:72px;}
-@media(max-width:640px){.signals-top-grid{grid-template-columns:1fr;gap:16px;}.signals-conv{display:none;}.signals-mobile-sep{display:flex !important;}}
-</style>
-  <div class="container">
-    <div style="text-align:center;margin-bottom:52px;" class="reveal">
-      <h2 style="font-family:var(--font-display);font-size:clamp(36px,4.5vw,60px);line-height:0.95;letter-spacing:0.02em;color:var(--ink);">THREE SIGNALS.<br><em style="font-style:normal;color:var(--green);">ONE CLEAR VIEW.</em></h2>
-    </div>
-
-    <!-- Three input cards -->
-    <div class="signals-top-grid reveal d1">
-
-      <!-- NUTRITION: THE FUEL LOAD -->
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
-        <div style="width:60px;height:60px;border-radius:16px;background:rgba(57,186,118,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:hidden;">
-          <svg width="32" height="44" viewBox="0 0 32 44" fill="none">
-            <path d="M16 2 C16 2 2 17 2 27 A14 14 0 0 0 30 27 C30 17 16 2 16 2z" stroke="#39BA76" stroke-width="2" fill="none" stroke-linejoin="round"/>
-            <clipPath id="fdc1"><path d="M16 2 C16 2 2 17 2 27 A14 14 0 0 0 30 27 C30 17 16 2 16 2z"/></clipPath>
-            <rect x="2" y="2" width="28" height="40" clip-path="url(#fdc1)" fill="rgba(57,186,118,0.3)" style="animation:fuelRise 3.5s ease-in-out infinite;"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE FUEL LOAD</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Nutrition powers every hour of your day. Logged in isolation, food data tells you what went in, but not how the system responded once you were in motion.</p>
-      </div>
-
-      <!-- BODY: THE INSTRUMENT PANEL -->
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
-        <div style="width:60px;height:60px;border-radius:16px;background:rgba(57,140,186,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
-          <svg width="50" height="36" viewBox="0 0 50 36" fill="none">
-            <path d="M2 33 A22 22 0 0 1 48 33" stroke="rgba(57,140,186,0.18)" stroke-width="4" stroke-linecap="round"/>
-            <line x1="2.5" y1="32.5" x2="6" y2="26" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="25" y1="11" x2="25" y2="16" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="47.5" y1="32.5" x2="44" y2="26" stroke="rgba(57,140,186,0.35)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="9" y1="17" x2="12" y2="21" stroke="rgba(57,140,186,0.2)" stroke-width="1" stroke-linecap="round"/>
-            <line x1="41" y1="17" x2="38" y2="21" stroke="rgba(57,140,186,0.2)" stroke-width="1" stroke-linecap="round"/>
-            <line x1="25" y1="33" x2="25" y2="14" stroke="#398CBA" stroke-width="2.5" stroke-linecap="round" style="transform-origin:25px 33px;animation:gaugeNerve 3.2s ease-in-out infinite;display:block;"/>
-            <circle cx="25" cy="33" r="4" fill="#398CBA"/>
-            <circle cx="25" cy="33" r="2" fill="white"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">THE INSTRUMENT PANEL</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Your wearable measures sleep depth, HRV, and resting heart rate with precision. But raw metrics aren't the full picture. Without context, they're just noise. Data waiting for a signal.</p>
-      </div>
-
-      <!-- MIND: CREW READINESS -->
-      <div style="background:var(--white);border:1.5px solid var(--border-mid);border-radius:16px;padding:28px 22px;text-align:center;">
-        <div style="width:60px;height:60px;border-radius:16px;background:rgba(232,184,75,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;overflow:visible;">
-          <svg width="52" height="36" viewBox="0 0 52 36" fill="none">
-            <line x1="2" y1="18" x2="50" y2="18" stroke="rgba(232,184,75,0.15)" stroke-width="1.5" stroke-linecap="round"/>
-            <polyline points="2,18 10,18 13,4 16,32 19,10 22,26 26,18 30,18 33,4 36,32 39,10 42,26 50,18" stroke="#E8B84B" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="animation:mindPulse 2.8s ease-in-out infinite;transform-origin:26px 18px;"/>
-            <circle cx="26" cy="18" r="3.5" fill="#E8B84B" style="animation:fuelRise 2.8s 0.4s ease-in-out infinite;"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
-        <div style="font-family:var(--font-display);font-size:clamp(17px,1.8vw,22px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:10px;">PILOT STATE</div>
-        <p style="font-size:13px;color:var(--muted-2);line-height:1.65;">Energy, mood, and stress aren't soft signals. They're the human variable, the difference between turbulence and control, clarity and noise.</p>
-      </div>
-
-    </div>
-
-    <!-- Animated convergence connector (desktop only) -->
-    <div class="signals-conv">
-      <svg width="100%" height="72" viewBox="0 0 100 72" preserveAspectRatio="none" fill="none" style="display:block;overflow:visible;">
-        <defs>
-          <path id="pN" d="M16.5 0 C16.5 36 50 36 50 72"/>
-          <path id="pB" d="M50 0 L50 72"/>
-          <path id="pM" d="M83.5 0 C83.5 36 50 36 50 72"/>
-        </defs>
-        <use href="#pN" stroke="rgba(57,186,118,0.22)" stroke-width="0.4"/>
-        <use href="#pB" stroke="rgba(57,140,186,0.22)" stroke-width="0.4"/>
-        <use href="#pM" stroke="rgba(232,184,75,0.22)" stroke-width="0.4"/>
-        <!-- Nutrition dots -->
-        <circle r="1.2" fill="rgba(57,186,118,0.75)"><animateMotion dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,186,118,0.55)"><animateMotion dur="2.2s" begin="-0.73s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,186,118,0.4)"><animateMotion dur="2.2s" begin="-1.46s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pN"/></animateMotion></circle>
-        <!-- Body dots -->
-        <circle r="1.2" fill="rgba(57,140,186,0.75)"><animateMotion dur="2.2s" begin="-0.25s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,140,186,0.55)"><animateMotion dur="2.2s" begin="-0.98s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(57,140,186,0.4)"><animateMotion dur="2.2s" begin="-1.71s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pB"/></animateMotion></circle>
-        <!-- Mind dots -->
-        <circle r="1.2" fill="rgba(232,184,75,0.75)"><animateMotion dur="2.2s" begin="-0.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(232,184,75,0.55)"><animateMotion dur="2.2s" begin="-1.23s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
-        <circle r="1.2" fill="rgba(232,184,75,0.4)"><animateMotion dur="2.2s" begin="-1.96s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#pM"/></animateMotion></circle>
-        <!-- Convergence dot at bottom -->
-        <circle cx="50" cy="72" r="3" fill="rgba(46,168,74,0.3)"><animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.2s" repeatCount="indefinite"/></circle>
-      </svg>
-    </div>
-
-    <!-- Mobile separator (hidden on desktop) -->
-    <div class="signals-mobile-sep" style="display:none;align-items:center;justify-content:center;padding:16px 0;gap:6px;">
-      <div style="width:6px;height:6px;border-radius:50%;background:rgba(57,186,118,0.6);"></div>
-      <div style="width:6px;height:6px;border-radius:50%;background:rgba(57,140,186,0.6);"></div>
-      <div style="width:6px;height:6px;border-radius:50%;background:rgba(232,184,75,0.6);"></div>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(46,168,74,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-
-    <!-- TLC synthesis card -->
-    <div class="signals-tlc-wrap reveal d2">
-      <div style="background:linear-gradient(160deg,rgba(46,168,74,0.07) 0%,rgba(255,255,255,0) 60%);border:1.5px solid rgba(46,168,74,0.25);border-radius:16px;padding:36px 32px;text-align:center;animation:tlcGlow 3s ease-in-out infinite;">
-        <div style="width:64px;height:64px;border-radius:18px;background:rgba(46,168,74,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;overflow:visible;">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="transform-origin:24px 24px;animation:tlcGlow 4s ease-in-out infinite;">
-            <!-- Fuselage: tapered nose to blunt tail -->
-            <path d="M24 4C25.1 4 26.5 5.8 27 9L27.5 20L27 36C26.5 39 25.2 42 24 44C22.8 42 21.5 39 21 36L20.5 20L21 9C21.5 5.8 22.9 4 24 4Z" fill="#2ea84a"/>
-            <!-- Main wings — swept, thin aerofoil -->
-            <path d="M21.5 19L3 30L3.5 32.5L21.5 25L26.5 25L44.5 32.5L45 30L26.5 19Z" fill="#2ea84a" opacity="0.80"/>
-            <!-- Horizontal tail stabilizers — smaller -->
-            <path d="M22.5 37L13 43L13.5 44.5L22.5 40L25.5 40L34.5 44.5L35 43L25.5 37Z" fill="#2ea84a" opacity="0.60"/>
-            <!-- Engine nacelles on wings -->
-            <ellipse cx="14.5" cy="26" rx="3.5" ry="1.4" fill="#2ea84a" opacity="0.5" transform="rotate(-22 14.5 26)"/>
-            <ellipse cx="33.5" cy="26" rx="3.5" ry="1.4" fill="#2ea84a" opacity="0.5" transform="rotate(22 33.5 26)"/>
-          </svg>
-        </div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">TLC</div>
-        <div style="font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);line-height:1.05;letter-spacing:0.02em;color:var(--ink);margin-bottom:14px;">THE FLIGHT MANAGEMENT SYSTEM</div>
-        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:0 auto;">No pilot flies on one instrument alone. TLC unifies your nutrition, biometrics, and reflections into one clear, coherent view.</p>
-        <p style="font-size:15px;color:var(--muted-2);line-height:1.75;max-width:380px;margin:12px auto 0;font-style:italic;">Where every signal finally makes sense.</p>
-        <p style="font-size:11px;font-weight:800;letter-spacing:0.18em;color:var(--green);margin:18px auto 0;text-align:center;">THREE SIGNALS. ONE CLEAR VIEW.</p>
-      </div>
-    </div>
-
-    <p style="text-align:center;font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);max-width:560px;margin:40px auto 0;line-height:1.85;" class="reveal d3">Once you break through the clouds, the picture sharpens.<br>Every signal aligns. Every decision becomes clearer.</p>
-
-  </div>
-</section>
-
 <!-- FEATURE TEASERS -->
 <section class="section-teasers" id="teasers">
   <div class="container">
@@ -749,7 +625,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <!-- NUTRITION -->
       <div class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--nutrition)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
         <h3 class="teaser-h">WHAT YOU EAT,<br>PERFECTED</h3>
@@ -775,11 +651,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
             <div class="teaser-tool-item">
               <span class="teaser-tool-name">Meal Plan <span class="teaser-tool-pro">PRO</span></span>
-              <span class="teaser-tool-desc">A daily meal plan that evolves every week based on what worked best for your mind and body. The more TLC knows you, the smarter your plan gets. Comes with a smart grocery list and batch cooking guide.</span>
+              <span class="teaser-tool-desc">A weekly meal plan that evolves based on what works for your mind and body. Ingredients are shared intelligently across meals — cutting packaging waste and avoiding an estimated 7kg of CO&#8322; emissions per month. Comes with a smart shopping list and batch cooking guide.</span>
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label" style="color:var(--nutrition);">Nutrition Intelligence <span class="teaser-prop-badge" style="color:var(--nutrition);background:rgba(57,186,118,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-label">Nutrition Intelligence <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Macro Alignment Score</span>
               <span class="teaser-prop-desc">How consistently your daily intake matches your goals across the week. Reveals when you're nailing targets vs. when flexibility serves you better.</span>
@@ -837,7 +713,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
         </div>
-        <a href="/features#body" class="teaser-cta" style="color:var(--body-blue);border-bottom-color:rgba(57,140,186,0.25);">See how body data works &rarr;</a>
+        <a href="/features#body" class="teaser-cta">Explore body tools &rarr;</a>
       </div>
 
       <!-- MIND -->
@@ -869,7 +745,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label" style="color:var(--mind);">Insight Engine <span class="teaser-prop-badge" style="color:var(--mind);background:rgba(232,184,75,0.12);">TLC ONLY</span></div>
+            <div class="teaser-prop-label">Insight Engine <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Wellbeing Trend</span>
               <span class="teaser-prop-desc">Your 7-day rolling average of energy, mood, focus, motivation, and recovery from your evening reflection. Spots momentum shifts before you feel them.</span>
@@ -884,7 +760,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
         </div>
-        <a href="/features#mind" class="teaser-cta" style="color:#927010;border-bottom-color:rgba(232,184,75,0.3);">Explore mind tools &rarr;</a>
+        <a href="/features#mind" class="teaser-cta">Explore mind tools &rarr;</a>
       </div>
 
     </div>
@@ -1019,7 +895,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="margin-bottom:20px;display:inline-flex;justify-content:center;">Plans</span>
       <h2>CHOOSE YOUR PATH <em>TO LONGEVITY</em></h2>
-      <p>Nothing to lose. <strong>Everything to gain.</strong></p>
+      <p>Seven days to your first pattern. Free to start. No commitment.</p>
       <p style="max-width:560px;margin:16px auto 0;font-size:15px;color:var(--ink-2);line-height:1.75;">At worst, nothing changes and it costs you nothing to try. At best, you unlock a smarter way to eat, feel better every day, and take control of your long-term health.<br><br>Make one of the most valuable investments you will make this year, in your mind and your body.</p>
     </div>
     <div class="pricing-grid">
@@ -1033,7 +909,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Goal, allergy, and macro-aware</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personal nutrition blueprint</li>
         </ul>
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a>
+        <a href="https://start.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a>
         <p class="pricing-trial">Free forever. No card required.</p>
       </div>
       <div class="pricing-card featured reveal-scale d2">
@@ -1044,12 +920,12 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <p class="pricing-desc">The full system. Daily insights, your Coach, and every tool connected.</p>
         <ul class="pricing-features">
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Lite</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Daily Dynamic Insights</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span class="feat-label">Daily Dynamic Insights<span class="feat-info">i<span class="feat-tooltip">A personalised evening analysis generated from your meals, biometrics, and reflection data. Surfaces patterns across all three pillars that no single data source could reveal alone.</span></span></span></li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Longevity Coach with full context</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal and photo meal logging</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>25+ wearables connected</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 Days Free</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
       <div class="pricing-card reveal-scale d3">
@@ -1060,10 +936,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <ul class="pricing-features">
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in TLC</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Full monthly meal plan</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Smart zero-waste shopping list</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>10-15% average grocery savings</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Shopping list that avoids ~7kg CO&#8322; emissions per month</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>~16% estimated grocery savings from shared ingredients</li>
         </ul>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-outline" style="width:100%;justify-content:center;">Start Your First Month Free</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
     </div>
@@ -1080,7 +956,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <p class="reveal d1">No rigid plans. No starting over. TLC meets you where you are, learns what works for your body, and gets sharper every single day. Start free. No card needed.</p>
   <div class="cta-actions reveal d2">
     <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
-    <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
+    <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No hidden fees</span>
   </div>
 </div></div></section>
 
@@ -1088,7 +964,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></div>
+      <div class="footer-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></div>
       <p>Connecting the dots between what you eat, how your body responds, and how you feel.</p>
     </div>
     <div class="footer-col"><ul>
@@ -1317,10 +1193,12 @@ window.addEventListener('scroll', () => {
   const heroH = heroSection ? heroSection.offsetHeight : 700;
   if (subNav) subNav.classList.toggle('show', sy > heroH);
   if (subNav && sy > heroH) nav.style.top = '-80px'; else nav.style.top = '0';
-  if (mobileCta) mobileCta.classList.toggle('show', sy > heroH);
+  if (mobileCta) mobileCta.classList.toggle('show', window.innerWidth <= 960 || sy > heroH);
   const nebulaEl = document.getElementById('nebulaCanvas');
   if (nebulaEl) nebulaEl.style.opacity = Math.max(0.1, 0.45 - sy / window.innerHeight * 0.4);
 });
+// Show mobile CTA immediately on page load without waiting for scroll
+if (mobileCta && window.innerWidth <= 960) mobileCta.classList.add('show');
 
 // ── Active sub-nav ──
 const sections = document.querySelectorAll('section[id]');
@@ -1377,14 +1255,14 @@ window.handleLoginGoogleCredential = async function(response) {
   if (wrap) wrap.innerHTML = '<div class="login-google-loading">Signing in\\u2026</div>';
   var errEl = document.getElementById('loginError');
   try {
-    var res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/google-auth', {
+    var res = await fetch('https://app.thelongevitychef.io/api/google-auth', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ credential: response.credential })
     });
     var data = await res.json();
     if (data.status === 'existing') {
       if (wrap) wrap.innerHTML = '<div class="login-google-loading">Redirecting to your dashboard\\u2026</div>';
-      window.location.href = 'https://tlc-engine.chris-ec5.workers.dev/dashboard?user_id=' + encodeURIComponent(data.user_id);
+      window.location.href = data.redirect_url || ('https://app.thelongevitychef.io/dashboard?user_id=' + encodeURIComponent(data.user_id));
     } else {
       // No account found — send them to start
       if (wrap) wrap.innerHTML = saved;
@@ -1405,7 +1283,7 @@ async function submitMagicLink() {
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
   } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
@@ -1435,49 +1313,97 @@ setTimeout(function() {
   if (ringM) ringM.style.strokeDashoffset = (87.96 * (1 - 0.84)).toFixed(2);
 }, 800);
 
-// ── Testimonial nebula ──
+// ── Testimonial nebula (orbital nodes + spokes + expanding rings — brand standard) ──
 (function() {
   var canvas = document.getElementById('testimonialNebula');
   if (!canvas) return;
   var section = canvas.parentElement;
   var ctx = canvas.getContext('2d');
   var dpr = window.devicePixelRatio || 1;
-  var W, H, cx, cy, t = 0, active = true;
-  var nodes = [];
+  var nodes = [
+    {a:0,     rx:0.30, ry:0.32, spd: 0.003,  dot:1.8, bright:0.22},
+    {a:1.05,  rx:0.22, ry:0.26, spd:-0.004,  dot:1.5, bright:0.18},
+    {a:2.09,  rx:0.38, ry:0.28, spd: 0.0025, dot:2.0, bright:0.25},
+    {a:3.14,  rx:0.16, ry:0.30, spd:-0.005,  dot:1.3, bright:0.16},
+    {a:4.19,  rx:0.28, ry:0.20, spd: 0.0035, dot:1.5, bright:0.20},
+    {a:5.24,  rx:0.35, ry:0.18, spd:-0.003,  dot:1.4, bright:0.18},
+    {a:0.70,  rx:0.42, ry:0.24, spd: 0.002,  dot:1.2, bright:0.14},
+    {a:3.84,  rx:0.20, ry:0.36, spd:-0.0028, dot:1.6, bright:0.19}
+  ];
+  var rings = [], pulses = [], t = 0, ringT = 0, pulseT = 0, active = false;
+  var W, H;
   function resize() {
     W = section.offsetWidth; H = section.offsetHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-    cx = W * 0.5; cy = H * 0.5;
-    nodes = [];
-    for (var i = 0; i < 28; i++) {
-      nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4, r: Math.random() * 1.5 + 0.5, a: Math.random() * 0.25 + 0.05 });
-    }
   }
   function draw() {
     if (!active || !W) { requestAnimationFrame(draw); return; }
+    var cx = W * 0.5, cy = H * 0.5;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
     t++;
     for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i]; n.x += n.vx; n.y += n.vy;
-      if (n.x < 0 || n.x > W) n.vx *= -1;
-      if (n.y < 0 || n.y > H) n.vy *= -1;
-      for (var j = i + 1; j < nodes.length; j++) {
-        var n2 = nodes[j]; var d = Math.hypot(n.x - n2.x, n.y - n2.y);
-        if (d < 160) { ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(n2.x, n2.y); ctx.strokeStyle = 'rgba(255,255,255,' + (1 - d / 160) * 0.12 + ')'; ctx.lineWidth = 0.6; ctx.stroke(); }
-      }
-      var pulse = n.a + 0.08 * Math.sin(t * 0.04 + i);
-      var glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 6);
-      glow.addColorStop(0, 'rgba(255,255,255,' + pulse * 0.35 + ')');
-      glow.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r * 6, 0, Math.PI * 2); ctx.fillStyle = glow; ctx.fill();
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,' + pulse + ')'; ctx.fill();
+      var n = nodes[i]; n.a += n.spd;
+      n.x = cx + Math.cos(n.a) * n.rx * W;
+      n.y = cy + Math.sin(n.a) * n.ry * H;
     }
+    // Expanding rings
+    ringT++; if (ringT > 100) { ringT = 0; rings.push({r:0, a:0.18}); }
+    for (var j = rings.length - 1; j >= 0; j--) {
+      var rn = rings[j]; rn.r += 0.45; rn.a *= 0.978;
+      if (rn.a < 0.01) { rings.splice(j, 1); continue; }
+      ctx.beginPath(); ctx.arc(cx, cy, rn.r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,255,255,' + (rn.a * 0.16) + ')';
+      ctx.lineWidth = 0.6; ctx.stroke();
+    }
+    // Spokes to centre
+    for (var k = 0; k < nodes.length; k++) {
+      var nd = nodes[k];
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nd.x, nd.y);
+      ctx.strokeStyle = 'rgba(255,255,255,' + (0.05 + 0.03 * Math.sin(t * 0.02 + nd.a)) + ')';
+      ctx.lineWidth = 0.5; ctx.stroke();
+    }
+    // Inter-node connections
+    for (var m = 0; m < nodes.length; m++) {
+      for (var p = m + 1; p < nodes.length; p++) {
+        var dx = nodes[m].x - nodes[p].x, dy = nodes[m].y - nodes[p].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < W * 0.40) {
+          ctx.beginPath(); ctx.moveTo(nodes[m].x, nodes[m].y); ctx.lineTo(nodes[p].x, nodes[p].y);
+          ctx.strokeStyle = 'rgba(255,255,255,' + ((1 - dist / (W * 0.40)) * 0.07) + ')';
+          ctx.lineWidth = 0.4; ctx.stroke();
+        }
+      }
+    }
+    // Travelling pulses
+    pulseT++; if (pulseT > 40) { pulseT = 0; var pn = nodes[Math.floor(Math.random() * nodes.length)]; pulses.push({fx:cx,fy:cy,tx:pn.x,ty:pn.y,p:0}); }
+    for (var q = pulses.length - 1; q >= 0; q--) {
+      var pl = pulses[q]; pl.p += 0.022; if (pl.p > 1) { pulses.splice(q, 1); continue; }
+      var px = pl.fx + (pl.tx - pl.fx) * pl.p, py = pl.fy + (pl.ty - pl.fy) * pl.p;
+      var alpha = Math.sin(pl.p * Math.PI);
+      var pg = ctx.createRadialGradient(px, py, 0, px, py, 5);
+      pg.addColorStop(0, 'rgba(255,255,255,' + (alpha * 0.28) + ')');
+      pg.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fillStyle = pg; ctx.fill();
+      ctx.beginPath(); ctx.arc(px, py, 1.4, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,' + (alpha * 0.45) + ')'; ctx.fill();
+    }
+    // Node dots
+    for (var r2 = 0; r2 < nodes.length; r2++) {
+      var nn = nodes[r2];
+      var pulse = nn.bright + 0.05 * Math.sin(t * 0.03 + nn.a);
+      ctx.beginPath(); ctx.arc(nn.x, nn.y, nn.dot, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + pulse + ')'; ctx.fill();
+    }
+    // Centre glow
+    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, W * 0.16);
+    grad.addColorStop(0, 'rgba(255,255,255,0.06)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
     requestAnimationFrame(draw);
   }
-  new IntersectionObserver(function(e) { active = e[0].isIntersecting; if (active) resize(); }, { threshold: 0.05 }).observe(section);
-  if (window.ResizeObserver) new ResizeObserver(function() { resize(); }).observe(section);
+  new IntersectionObserver(function(e) { active = e[0].isIntersecting; if (active) { resize(); } }, { threshold: 0.05 }).observe(section);
+  if (window.ResizeObserver) new ResizeObserver(function() { if (active) resize(); }).observe(section);
   else window.addEventListener('resize', function() { setTimeout(resize, 100); });
   draw();
 })();
@@ -2054,7 +1980,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Listen mode reads your insight aloud. Hands-free, eyes-free.</li>
             <li>Never starts from scratch. Every week builds on the last.</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Start your first insight free &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Start your first insight free &rarr;</a>
         </div>
       </div>
     </div>
@@ -2092,7 +2018,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Gets sharper with every session as your patterns compound</li>
             <li>Opens Meal Matchmaker with your current context when you ask about food</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Talk to your coach free &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Talk to your coach free &rarr;</a>
         </div>
       </div>
     </div>
@@ -2162,7 +2088,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Synced live with your current goals, not last week's settings</li>
             <li>Free forever on TLC Lite. No subscription required.</li>
           </ul>
-          <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="feature-cta">Find your next meal free &rarr;</a>
+          <a href="https://start.thelongevitychef.io" class="feature-cta">Find your next meal free &rarr;</a>
         </div>
       </div>
     </div>
@@ -2241,7 +2167,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Meal Analyser: snap any plate for full macros instantly</li>
             <li>Connects to your Daily Insight. Every meal logged automatically.</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Scan your fridge free &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Scan your fridge free &rarr;</a>
         </div>
       </div>
     </div>
@@ -2323,7 +2249,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Recalibrates automatically when life disrupts the plan</li>
             <li>Mixes freely with Meal Matchmaker and Pantry Pal</li>
           </ul>
-          <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="feature-cta">Start your Pro journey &rarr;</a>
+          <a href="https://join.thelongevitychef.io" class="feature-cta">Start your Pro journey &rarr;</a>
         </div>
       </div>
     </div>
@@ -2346,7 +2272,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <p>Most health tools hand you a plan and expect you to fit your life around it. Rigid. Generic. Built for a hypothetical average person who is not you.</p>
         <p>TLC starts with <span class="highlight-pill">who you actually are</span>: your wearable data, your food patterns, your goals, your restrictions, your daily reality. Then it meets you where you are. At the restaurant. At home. When you are exhausted and need the answer in 10 seconds.</p>
         <p>Five tools that talk to each other. Every insight built from your data. Every coaching response that knows your week. Every plan that reflects where you actually are, not where a formula assumed you would be.</p>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
       </div>
     </div>
   </div>
@@ -2490,7 +2416,7 @@ async function submitMagicLink() {
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
   } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
@@ -3521,7 +3447,7 @@ async function submitMagicLink() {
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
   } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
@@ -4277,7 +4203,7 @@ async function submitMagicLink() {
   errEl.style.display = 'none';
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     if (res.ok) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
   } catch { errEl.textContent = 'Something went wrong. Please try again.'; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
@@ -4538,6 +4464,8 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
 .feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
 .feat-info:hover .feat-tooltip { opacity: 1; }
+.plan-card-featured .feat-info { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.55); }
+.plan-card-featured .feat-info:hover { border-color: var(--green); color: var(--green); }
 
 /* ── VALUE SECTION ── */
 .value-section { padding: clamp(100px, 12vw, 160px) 0; background: var(--white); }
@@ -4720,7 +4648,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">A genuine taste of what TLC does. No credit card. No expiry. No catch.</div>
-        <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="plan-cta plan-cta-free">Get started free</a>
+        <a href="https://start.thelongevitychef.io" class="plan-cta plan-cta-free">Get started free</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">What's included</div>
         <ul class="plan-features">
@@ -4773,13 +4701,13 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
+        <a href="https://join.thelongevitychef.io?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in Lite, plus</div>
         <ul class="plan-features">
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Daily Dynamic Insights</span>
+            <span class="feat-label">Daily Dynamic Insights<span class="feat-info">i<span class="feat-tooltip">A personalised evening analysis generated from your meals, biometrics, and reflection data. Surfaces patterns across all three pillars that no single data source could reveal alone.</span></span></span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -4825,7 +4753,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
           <div class="plan-price-period">/month</div>
         </div>
         <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
-        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
+        <a href="https://join.thelongevitychef.io?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in TLC, plus</div>
         <ul class="plan-features">
@@ -5196,6 +5124,18 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
+          How does TLC Pro calculate grocery costs and food waste savings?
+          <div class="faq-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">The grocery estimate is calculated from your actual plan: the number of meals you select across your chosen days, multiplied by a per-meal cost range based on mid-range supermarket pricing for health-focused meals. We use official household food expenditure data from your country (ONS in the UK, USDA in the US, ABS in Australia, and equivalent bodies elsewhere). The food waste saving is derived from WRAP's Household Food Waste Report 2022, which found UK households waste £470 to £700 per year in edible food. A structured meal plan with ingredient overlap directly reduces the two leading causes of food waste: food not used in time, and cooking or serving too much. We show you what portion of that annual waste your plan could avoid, based on the level of ingredient overlap you choose. All estimates vary by supermarket and specific ingredients chosen, and are shown clearly as approximations.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
           How does TLC handle my health data?
           <div class="faq-icon">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -5232,7 +5172,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <h2 class="reveal d1">YOUR FIRST<br>INSIGHT TONIGHT.</h2>
     <span class="cta-sub reveal d2">Free to start. No credit card required.</span>
     <div class="cta-actions reveal d3">
-      <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
+      <a href="https://start.thelongevitychef.io" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
     </div>
   </div>
 </section>
@@ -5257,9 +5197,9 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
       <div class="footer-col">
         <h4>Get started</h4>
         <ul>
-          <li><a href="https://tlc-onboarding-lite.chris-ec5.workers.dev">TLC Lite (free)</a></li>
-          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc">TLC ($9.99/mo)</a></li>
-          <li><a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro">TLC Pro ($19.99/mo)</a></li>
+          <li><a href="https://start.thelongevitychef.io">TLC Lite (free)</a></li>
+          <li><a href="https://join.thelongevitychef.io?path=tlc">TLC ($9.99/mo)</a></li>
+          <li><a href="https://join.thelongevitychef.io?path=pro">TLC Pro ($19.99/mo)</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -5314,7 +5254,7 @@ document.getElementById('loginSubmit').addEventListener('click', async () => {
   if (!email || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch('https://tlc-engine.chris-ec5.workers.dev/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+    const res = await fetch('https://app.thelongevitychef.io/api/magic-link', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     const data = await res.json();
     if (data.success) { document.getElementById('loginForm').style.display = 'none'; document.getElementById('loginSuccess').style.display = 'block'; }
     else { errorEl.textContent = data.error || 'Something went wrong. Please try again.'; errorEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send login link'; }
@@ -5532,155 +5472,60 @@ main {
   animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards;
 }
 
-/* ── GOAL CARDS ── */
-.goal-grid {
+/* ── PLAN CARDS ── */
+.pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 2px;
+  background: var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.06);
   width: 100%;
   max-width: 900px;
   opacity: 0;
   animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.4s forwards;
 }
-
-.goal-card {
-  background: var(--white);
-  border: 1.5px solid var(--border-mid);
-  border-radius: 20px;
-  padding: 32px 28px 28px;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-.goal-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  border-radius: 20px 20px 0 0;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.goal-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 56px rgba(0,0,0,0.10);
-  border-color: transparent;
-}
-.goal-card:hover::before { opacity: 1; }
-
-.goal-card.gc-free::before { background: linear-gradient(90deg, var(--nutrition), var(--green)); }
-.goal-card.gc-tlc::before { background: linear-gradient(90deg, var(--green), var(--green-dark)); }
-.goal-card.gc-pro::before { background: linear-gradient(90deg, var(--body-blue), #1d5c7a); }
-
-.goal-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.gc-free .goal-icon { background: rgba(57,186,118,0.10); }
-.gc-tlc .goal-icon { background: rgba(46,168,74,0.10); }
-.gc-pro .goal-icon { background: rgba(57,140,186,0.10); }
-.goal-icon svg { width: 26px; height: 26px; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.gc-free .goal-icon svg { stroke: var(--nutrition); }
-.gc-tlc .goal-icon svg { stroke: var(--green); }
-.gc-pro .goal-icon svg { stroke: var(--body-blue); }
-
-.goal-tier-pill {
-  display: inline-flex;
-  align-items: center;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 5px;
-  margin-bottom: 12px;
-  width: fit-content;
-}
-.gc-free .goal-tier-pill { background: rgba(57,186,118,0.10); color: #2a9148; }
-.gc-tlc .goal-tier-pill { background: rgba(46,168,74,0.10); color: var(--green-dark); }
-.gc-pro .goal-tier-pill { background: rgba(57,140,186,0.10); color: #2b6e93; }
-
-.goal-title {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.5vw, 30px);
-  line-height: 1;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-  margin-bottom: 10px;
-}
-.goal-body {
-  font-size: 13.5px;
-  color: var(--muted-2);
-  line-height: 1.7;
-  flex: 1;
-  margin-bottom: 24px;
-}
-.goal-features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin-bottom: 24px;
-}
-.goal-features li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12.5px;
-  color: var(--muted-2);
-}
-.goal-features li svg { flex-shrink: 0; }
-
-.goal-cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  margin-top: auto;
-}
-.goal-cta-text {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.gc-free .goal-cta-text { color: var(--nutrition); }
-.gc-tlc .goal-cta-text { color: var(--green); }
-.gc-pro .goal-cta-text { color: var(--body-blue); }
-.goal-cta-price {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--muted);
-}
-.goal-cta-arrow {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.2s;
-}
-.gc-free .goal-cta-arrow { background: rgba(57,186,118,0.10); }
-.gc-tlc .goal-cta-arrow { background: rgba(46,168,74,0.10); }
-.gc-pro .goal-cta-arrow { background: rgba(57,140,186,0.10); }
-.goal-card:hover .goal-cta-arrow { transform: translateX(3px); }
-.goal-cta-arrow svg { width: 14px; height: 14px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.gc-free .goal-cta-arrow svg { stroke: var(--nutrition); }
-.gc-tlc .goal-cta-arrow svg { stroke: var(--green); }
-.gc-pro .goal-cta-arrow svg { stroke: var(--body-blue); }
+.plan-card { background: var(--white); padding: clamp(32px, 4vw, 48px) clamp(28px, 3.5vw, 40px); position: relative; display: flex; flex-direction: column; }
+.plan-card.featured { background: var(--ink); }
+.plan-card-badge { position: absolute; top: 20px; right: 20px; font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); background: var(--mind); padding: 4px 12px; border-radius: 100px; }
+.plan-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.plan-card.featured .plan-label { color: rgba(255,255,255,0.45); }
+.plan-name { font-family: var(--font-display); font-size: 38px; letter-spacing: 0.03em; color: var(--ink); margin-bottom: 6px; line-height: 1; }
+.plan-card.featured .plan-name { color: var(--white); }
+.plan-price-row { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 8px; }
+.plan-price { font-family: var(--font-display); font-size: clamp(52px, 6vw, 72px); line-height: 1; color: var(--ink); letter-spacing: -0.01em; }
+.plan-card.featured .plan-price { color: var(--white); }
+.plan-price-period { font-size: 13px; font-weight: 500; color: var(--muted); padding-bottom: 10px; }
+.plan-card.featured .plan-price-period { color: rgba(255,255,255,0.4); }
+.plan-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; margin-bottom: 28px; min-height: 52px; }
+.plan-card.featured .plan-desc { color: rgba(255,255,255,0.55); }
+.plan-cta { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; padding: 15px 24px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); width: 100%; margin-bottom: 32px; box-sizing: border-box; }
+.plan-cta:hover { transform: translateY(-2px); }
+.plan-cta-free { background: var(--surface); color: var(--ink); }
+.plan-cta-free:hover { background: var(--surface-2); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.plan-cta-featured { background: var(--green); color: var(--white); box-shadow: 0 4px 20px rgba(46,168,74,0.35); }
+.plan-cta-featured:hover { background: var(--green-mid); box-shadow: 0 8px 32px rgba(46,168,74,0.4); }
+.plan-cta-pro { background: transparent; color: var(--ink); border: 1.5px solid var(--border-mid); }
+.plan-cta-pro:hover { border-color: var(--ink); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.plan-divider { height: 1px; background: var(--border); margin-bottom: 28px; }
+.plan-card.featured .plan-divider { background: rgba(255,255,255,0.1); }
+.plan-features-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.plan-card.featured .plan-features-label { color: rgba(255,255,255,0.35); }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.plan-feature { display: flex; align-items: flex-start; gap: 12px; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); }
+.plan-card.featured .plan-feature { color: rgba(255,255,255,0.78); }
+.plan-feature-check.yes { color: var(--green); }
+.plan-card.featured .plan-feature-check.yes { color: var(--green-accent); }
+.plan-feature-check.no { color: var(--muted); opacity: 0.4; }
+.feat-label { display: inline-flex; align-items: center; gap: 6px; }
+.feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; font-family: var(--font-body); cursor: default; flex-shrink: 0; line-height: 1; }
+.feat-info:hover { border-color: var(--green); color: var(--green); }
+.feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+.feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
+.feat-info:hover .feat-tooltip { opacity: 1; }
+.plan-card.featured .feat-info { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.55); }
+.plan-card.featured .feat-info:hover { border-color: var(--green); color: var(--green); }
 
 .start-note {
   margin-top: 32px;
@@ -5694,10 +5539,8 @@ main {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 860px) {
-  .goal-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-  }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .plan-card.featured { order: -1; }
 }
 @media (max-width: 520px) {
   .start-headline { font-size: clamp(42px, 12vw, 72px); }
@@ -5721,106 +5564,124 @@ main {
   <h1 class="start-headline">WHAT ARE YOU<br>LOOKING TO<br>ACHIEVE?</h1>
   <p class="start-sub">Choose what matters most to you right now. You can always change direction later.</p>
 
-  <div class="goal-grid">
+  <div class="pricing-grid">
 
-    <!-- FREE TIER -->
-    <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="goal-card gc-free">
-      <div class="goal-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+    <!-- TLC LITE (FREE) -->
+    <div class="plan-card">
+      <div class="plan-label">Free forever</div>
+      <div class="plan-name">TLC Lite</div>
+      <div class="plan-price-row">
+        <div class="plan-price">$0</div>
+        <div class="plan-price-period">/month</div>
       </div>
-      <div class="goal-tier-pill">TLC Lite &middot; Free</div>
-      <h2 class="goal-title">SMARTER EATING<br>WHEN I'M OUT</h2>
-      <p class="goal-body">Find dishes at nearby restaurants that fit your macros, allergies, and health goal. Any city, any menu, in seconds.</p>
-      <ul class="goal-features">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Meal Matchmaker (3 searches/day)
+      <div class="plan-desc">Map your meals to your needs, goals and macros when eating out. Any city, any menu, in seconds.</div>
+      <a href="https://start.thelongevitychef.io" class="plan-cta plan-cta-free">Get started free</a>
+      <div class="plan-divider"></div>
+      <div class="plan-features-label">What's included</div>
+      <ul class="plan-features">
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Meal Matchmaker (3 searches per day)</span>
         </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Personal nutrition blueprint
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Personal nutrition blueprint</span>
         </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#39BA76" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Allergy and goal-aware matching
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Allergy and goal-aware matching</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Daily Dynamic Insights</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Longevity Coach</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Wearable integration</span>
         </li>
       </ul>
-      <div class="goal-cta">
-        <div>
-          <div class="goal-cta-text">Start free</div>
-          <div class="goal-cta-price">No card required</div>
-        </div>
-        <div class="goal-cta-arrow">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-      </div>
-    </a>
+    </div>
 
-    <!-- TLC PAID TIER -->
-    <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="goal-card gc-tlc">
-      <div class="goal-icon">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="4" cy="6" r="2" stroke-width="1.8"/><circle cx="20" cy="6" r="2" stroke-width="1.8"/><circle cx="12" cy="20" r="2" stroke-width="1.8"/><circle cx="12" cy="13" r="2.5" stroke-width="1.8"/><circle cx="12" cy="13" r="0.8" fill="currentColor" stroke="none"/><line x1="5.7" y1="7.2" x2="10.4" y2="11.6" stroke-width="1.6"/><line x1="18.3" y1="7.2" x2="13.6" y2="11.6" stroke-width="1.6"/><line x1="12" y1="15.5" x2="12" y2="18" stroke-width="1.6"/></svg>
+    <!-- TLC (FEATURED) -->
+    <div class="plan-card featured">
+      <div class="plan-card-badge">Most popular</div>
+      <div class="plan-label">Best value</div>
+      <div class="plan-name">TLC</div>
+      <div class="plan-price-row">
+        <div class="plan-price">$9.99</div>
+        <div class="plan-price-period">/month</div>
       </div>
-      <div class="goal-tier-pill">TLC &middot; $9.99/mo</div>
-      <h2 class="goal-title">DAILY INSIGHT<br>INTO MY HEALTH</h2>
-      <p class="goal-body">Connect your wearable, log meals, and receive a daily insight that joins the dots between nutrition, sleep, and how you feel.</p>
-      <ul class="goal-features">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Daily Dynamic Insights
+      <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
+      <a href="https://join.thelongevitychef.io?path=tlc" class="plan-cta plan-cta-featured">Start TLC</a>
+      <div class="plan-divider"></div>
+      <div class="plan-features-label">Everything in Lite, plus</div>
+      <ul class="plan-features">
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="feat-label">Daily Dynamic Insights<span class="feat-info">i<span class="feat-tooltip">A personalised evening analysis generated from your meals, biometrics, and reflection data. Surfaces patterns across all three pillars that no single data source could reveal alone.</span></span></span>
         </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Longevity Coach with full context
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Weekly Deep-Dive and strategy</span>
         </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          25+ wearables &bull; Pantry Pal &bull; Meal Analyser
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Longevity Coach (unlimited sessions)</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Meal Matchmaker (unlimited searches)</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Wearable sync (25+ devices)</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Pantry Pal and photo meal analysis</span>
         </li>
       </ul>
-      <div class="goal-cta">
-        <div>
-          <div class="goal-cta-text">Start TLC</div>
-          <div class="goal-cta-price">7-day free trial</div>
-        </div>
-        <div class="goal-cta-arrow">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-      </div>
-    </a>
+    </div>
 
-    <!-- TLC PRO TIER -->
-    <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="goal-card gc-pro">
-      <div class="goal-icon">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="3" stroke-width="1.8"/><path d="M16 2v4M8 2v4" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-width="1.8"/><rect x="7" y="12" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/><rect x="14" y="12" width="3" height="3" rx="0.5" fill="currentColor" stroke="none"/><rect x="7" y="17" width="3" height="2" rx="0.5" fill="currentColor" stroke="none"/><rect x="14" y="17" width="3" height="2" rx="0.5" fill="currentColor" stroke="none"/></svg>
+    <!-- TLC PRO -->
+    <div class="plan-card">
+      <div class="plan-label">Full system</div>
+      <div class="plan-name">TLC Pro</div>
+      <div class="plan-price-row">
+        <div class="plan-price">$19.99</div>
+        <div class="plan-price-period">/month</div>
       </div>
-      <div class="goal-tier-pill">TLC Pro &middot; $19.99/mo</div>
-      <h2 class="goal-title">COMPLETE MEAL<br>PLANNING SYSTEM</h2>
-      <p class="goal-body">Every meal of every day, planned around your biology, goals, and schedule. Auto-generated shopping lists, zero waste, fully adaptable.</p>
-      <ul class="goal-features">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Weekly personalised meal plan
+      <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
+      <a href="https://join.thelongevitychef.io?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
+      <div class="plan-divider"></div>
+      <div class="plan-features-label">Everything in TLC, plus</div>
+      <ul class="plan-features">
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Weekly personalised meal plan</span>
         </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Smart zero-waste shopping list
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Smart Shopping List (saves 10-15% on groceries)</span>
         </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#398CBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Everything in TLC, plus daily Longevity Score
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Plan adjusts weekly based on your data</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Longevity Score (weekly)</span>
+        </li>
+        <li class="plan-feature">
+          <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Priority email support</span>
         </li>
       </ul>
-      <div class="goal-cta">
-        <div>
-          <div class="goal-cta-text">Start TLC Pro</div>
-          <div class="goal-cta-price">7-day free trial</div>
-        </div>
-        <div class="goal-cta-arrow">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </div>
-      </div>
-    </a>
+    </div>
 
   </div>
 

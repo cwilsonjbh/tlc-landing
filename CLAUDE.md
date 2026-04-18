@@ -2,11 +2,13 @@
 
 ## Critical Rules
 
-- **ALWAYS use `npm run deploy`** — runs `node sync-landing.js` then `wrangler deploy`
-- **NEVER edit HTML inside `src/index.js`** — always edit `landing.html`
-- **After every deploy:** commit changed files and push to git
+- **NOTHING STAYS LOCAL.** Every edit must be committed to GitHub AND deployed to Cloudflare before the turn ends. Never leave work sitting in local files. Never tell Chris to "preview on localhost" as the final step. The live URL is the source of truth.
+- **ALWAYS use `npm run deploy`** — runs `node sync-pages.js` then `wrangler deploy`
+- **The canonical landing source file is `homepage.html`, NOT `landing.html`.** `sync-pages.js` reads `homepage.html` → `LANDING_HTML`. `landing.html` is a legacy scratchpad — edits there never reach production.
+- **NEVER edit HTML inside `src/index.js`** — always edit the source `.html` files. Every `.html` file in repo root maps to a `*_HTML` constant via `sync-pages.js`.
+- **After every deploy:** commit changed files and push to GitHub. Both steps every time.
 - NO emojis — SVG icons only. NO AI mentions. NO em dashes in UI copy.
-- **QA IN BROWSER BEFORE USER TESTS** — use the preview server (port 8794) to verify every change
+- **QA IN BROWSER BEFORE USER TESTS** — verify on the deployed live URL, not localhost.
 
 ## Deployment Workflow
 
