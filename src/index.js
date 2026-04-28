@@ -2297,43 +2297,43 @@ function toggleTeaser(btn) {
   var SCRIPTS = [
     {
       turns: [
-        { role: ‘user’, text: ‘Why am I dragging today?’ },
-        { role: ‘luma’, html: ‘Three nights this week you ate after 9 pm and deep sleep dropped 22%. But there is another pattern here. Your <strong>magnesium intake has been low</strong> across the last four days, averaging 38% below your target. Tonight, aim to eat before 7:45 and include magnesium-rich foods: dark leafy greens, pumpkin seeds, or a small portion of dark chocolate. We will track your HRV the following morning.’ },
-        { role: ‘user’, text: ‘Okay, great. Let\\’s try that.’ },
-        { role: ‘luma’, html: ‘I\\’ve got some great magnesium-rich recipes for dinner that will match your taste palette and macro goals perfectly.’ }
+        { role: 'user', text: 'Why am I dragging today?' },
+        { role: 'luma', html: 'Three nights this week you ate after 9 pm and deep sleep dropped 22%. But there is another pattern here. Your <strong>magnesium intake has been low</strong> across the last four days, averaging 38% below your target. Tonight, aim to eat before 7:45 and include magnesium-rich foods: dark leafy greens, pumpkin seeds, or a small portion of dark chocolate. We will track your HRV the following morning.' },
+        { role: 'user', text: 'Okay, great. Let\\'s try that.' },
+        { role: 'luma', html: 'I\\'ve got some great magnesium-rich recipes for dinner that will match your taste palette and macro goals perfectly.' }
       ]
     },
     {
       turns: [
-        { role: ‘user’, text: ‘What should I eat tonight?’ },
-        { role: ‘luma’, html: ‘Lean anti-inflammatory. The <strong>salmon dinner last Tuesday</strong> gave you your best recovery score this week. Leafy greens and walnuts will help. Avoid caffeine after 1 pm.’ }
+        { role: 'user', text: 'What should I eat tonight?' },
+        { role: 'luma', html: 'Lean anti-inflammatory. The <strong>salmon dinner last Tuesday</strong> gave you your best recovery score this week. Leafy greens and walnuts will help. Avoid caffeine after 1 pm.' }
       ]
     },
     {
       turns: [
-        { role: ‘user’, text: ‘Should I train today?’ },
-        { role: ‘luma’, html: ‘Your readiness sits at <strong>58, the lowest this fortnight.</strong> Skip the heavy lift. A 20-minute zone 2 walk will do more for tomorrow\\’s HRV than pushing through.’ }
+        { role: 'user', text: 'Should I train today?' },
+        { role: 'luma', html: 'Your readiness sits at <strong>58, the lowest this fortnight.</strong> Skip the heavy lift. A 20-minute zone 2 walk will do more for tomorrow\\'s HRV than pushing through.' }
       ]
     }
   ];
   var timers = [];
-  var reduced = window.matchMedia && window.matchMedia(‘(prefers-reduced-motion: reduce)’).matches;
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function clearTimers() { timers.forEach(function(t) { clearTimeout(t); }); timers = []; }
   function play(idx) {
     clearTimers();
-    chat.innerHTML = ‘’;
+    chat.innerHTML = '';
     var script = SCRIPTS[idx] || SCRIPTS[0];
-    document.querySelectorAll(‘.luma-suggest’).forEach(function(b) {
-      b.classList.toggle(‘active’, parseInt(b.dataset.script, 10) === idx);
+    document.querySelectorAll('.luma-suggest').forEach(function(b) {
+      b.classList.toggle('active', parseInt(b.dataset.script, 10) === idx);
     });
     var delay = reduced ? 0 : 300;
     script.turns.forEach(function(turn) {
-      if (turn.role === ‘user’) {
+      if (turn.role === 'user') {
         (function(d, txt) {
           timers.push(setTimeout(function() {
-            var el = document.createElement(‘div’);
-            el.className = ‘luma-bubble user’;
-            el.textContent = ‘”’ + txt + ‘”’;
+            var el = document.createElement('div');
+            el.className = 'luma-bubble user';
+            el.textContent = '”' + txt + '”';
             chat.appendChild(el);
             chat.scrollTop = chat.scrollHeight;
           }, d));
@@ -2343,18 +2343,18 @@ function toggleTeaser(btn) {
         (function(td, rd, html) {
           if (!reduced) {
             timers.push(setTimeout(function() {
-              var t = document.createElement(‘div’);
-              t.className = ‘luma-bubble typing’;
-              t.innerHTML = ‘<span></span><span></span><span></span>’;
+              var t = document.createElement('div');
+              t.className = 'luma-bubble typing';
+              t.innerHTML = '<span></span><span></span><span></span>';
               chat.appendChild(t);
               chat.scrollTop = chat.scrollHeight;
             }, td));
           }
           timers.push(setTimeout(function() {
-            var typing = chat.querySelector(‘.luma-bubble.typing’);
+            var typing = chat.querySelector('.luma-bubble.typing');
             if (typing) typing.remove();
-            var el = document.createElement(‘div’);
-            el.className = ‘luma-bubble luma’;
+            var el = document.createElement('div');
+            el.className = 'luma-bubble luma';
             el.innerHTML = html;
             chat.appendChild(el);
             chat.scrollTop = chat.scrollHeight;
