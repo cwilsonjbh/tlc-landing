@@ -23,7 +23,7 @@ const LANDING_HTML = `
 <meta name="description" content="TLC connects what you eat, how your body responds, and how you feel into one insight system that gets sharper every day.">
 <meta property="og:title" content="The Longevity Chef | Food for Life">
 <meta property="og:description" content="See the patterns your body is trying to show you. Nutrition, body, and mind. Connected for the first time.">
-<meta property="og:image" content="https://thelongevitychef.io/assets/logo.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cwilsonjbh/tlc-landing@master/assets/logo.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -771,9 +771,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .works-with-inner { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
 .works-with-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .works-with-brands { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center; }
-.works-with-brand { font-size: 13px; font-weight: 700; color: var(--muted-2); letter-spacing: 0.02em; white-space: nowrap; display: inline-flex; align-items: center; }
-.works-with-brand img { height: 22px; width: 22px; object-fit: contain; display: block; }
-@media (max-width: 540px) { .works-with-inner { gap: 16px; } .works-with-brands { gap: 16px; } .works-with-brand { font-size: 12px; } .works-with-brand img { height: 20px; width: 20px; } }
+.works-with-brand { font-size: 11px; font-weight: 700; color: var(--muted-2); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; display: inline-flex; align-items: center; gap: 5px; }
+.works-with-brand img { height: 16px; width: 16px; object-fit: contain; display: block; flex-shrink: 0; }
+@media (max-width: 540px) { .works-with-inner { gap: 16px; } .works-with-brands { gap: 14px; } .works-with-brand { font-size: 10px; } .works-with-brand img { height: 14px; width: 14px; } }
 
 /* Mobile: simplify dashboard preview */
 @media (max-width: 540px) {
@@ -813,7 +813,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="/" class="nav-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></a>
+  <a href="/" class="nav-logo"><img src="https://cdn.jsdelivr.net/gh/cwilsonjbh/tlc-landing@master/assets/logo.png" alt="The Longevity Chef"></a>
   <ul class="nav-links">
     <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/features">Features</a></li>
@@ -920,15 +920,15 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="works-with-inner">
     <span class="works-with-label">Works with</span>
     <div class="works-with-brands">
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=whoop.com&sz=128" alt="WHOOP"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ouraring.com&sz=128" alt="Oura"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=garmin.com&sz=128" alt="Garmin"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=fitbit.com&sz=128" alt="Fitbit"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=withings.com&sz=128" alt="Withings"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ultrahuman.com&sz=128" alt="Ultrahuman"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=polar.com&sz=128" alt="Polar"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=dexcom.com&sz=128" alt="Dexcom"></span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=suunto.com&sz=128" alt="Suunto"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=whoop.com&sz=64" alt="">WHOOP</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ouraring.com&sz=64" alt="">Oura</span>
+      <span class="works-with-brand"><img src="https://cdn.simpleicons.org/garmin/6b6b6b" alt="">Garmin</span>
+      <span class="works-with-brand"><img src="https://cdn.simpleicons.org/fitbit/6b6b6b" alt="">Fitbit</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=withings.com&sz=64" alt="">Withings</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ultrahuman.com&sz=64" alt="">Ultrahuman</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=polar.com&sz=64" alt="">Polar</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=dexcom.com&sz=64" alt="">Dexcom</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=suunto.com&sz=64" alt="">Suunto</span>
       <span class="works-with-brand">+ 15 more</span>
     </div>
   </div>
@@ -1594,7 +1594,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></div>
+      <div class="footer-logo"><img src="https://cdn.jsdelivr.net/gh/cwilsonjbh/tlc-landing@master/assets/logo.png" alt="The Longevity Chef"></div>
       <p>Connecting what you eat, how your body responds, and how you feel. Every day.</p>
     </div>
     <div class="footer-col"><ul>
@@ -2088,7 +2088,7 @@ function toggleTeaser(btn) {
   var ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  var MONA_URL = '/assets/mona.jpg';
+  var MONA_URL = 'https://cdn.jsdelivr.net/gh/cwilsonjbh/tlc-landing@master/assets/mona.jpg';
   var img = new Image();
   var imgReady = false;
   var pendingDraw = null;
@@ -7015,6 +7015,18 @@ export default {
       else if (path === '/start') html = START_HTML;
       else if (path === '/privacy') html = PRIVACY_HTML;
       else if (path === '/terms') html = TERMS_HTML;
+      else if (path === '/assets/mona.jpg') {
+        const res = await fetch('https://cdn.jsdelivr.net/gh/cwilsonjbh/tlc-landing@master/assets/mona.jpg');
+        if (!res.ok) return new Response('Not Found', { status: 404, headers: cors });
+        const data = await res.arrayBuffer();
+        return new Response(data, { headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, max-age=86400, s-maxage=604800', 'Access-Control-Allow-Origin': '*' } });
+      }
+      else if (path === '/assets/logo.png') {
+        const res = await fetch('https://cdn.jsdelivr.net/gh/cwilsonjbh/tlc-landing@master/assets/logo.png');
+        if (!res.ok) return new Response('Not Found', { status: 404, headers: cors });
+        const data = await res.arrayBuffer();
+        return new Response(data, { headers: { 'Content-Type': 'image/png', 'Cache-Control': 'public, max-age=86400, s-maxage=604800', 'Access-Control-Allow-Origin': '*' } });
+      }
       else {
         return new Response('Not Found', { status: 404, headers: cors });
       }
