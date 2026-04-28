@@ -1,5 +1,20 @@
 # TLC Landing Page — Claude Instructions
 
+---
+
+## 🚨 THIS IS THE ONLY LIVE LANDING PAGE 🚨
+
+**`thelongevitychef.io` and `www.thelongevitychef.io` are served EXCLUSIVELY from this repo.**
+
+There is an archived snapshot in `cwilsonjbh/tlc-engine` under `landing-live/`. **It shares the same Cloudflare worker name (`tlc-landing`) and will silently overwrite this production site if deployed.** That caused an incident on 2026-04-28. The `landing-live/` folder is marked ARCHIVED and must never be deployed.
+
+**Source of truth for all landing page changes:**
+- Edit: `landing.html` (this repo)
+- Deploy: `npm run deploy` (runs sync then wrangler)
+- Live: `thelongevitychef.io`
+
+---
+
 ## Critical Rules
 
 - **NOTHING STAYS LOCAL.** Every edit must be committed to GitHub AND deployed to Cloudflare before the turn ends. Never leave work sitting in local files. Never tell Chris to "preview on localhost" as the final step. The live URL is the source of truth.
