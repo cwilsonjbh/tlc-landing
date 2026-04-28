@@ -757,8 +757,9 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .works-with-inner { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
 .works-with-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .works-with-brands { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center; }
-.works-with-brand { font-size: 13px; font-weight: 700; color: var(--muted-2); letter-spacing: 0.02em; white-space: nowrap; }
-@media (max-width: 540px) { .works-with-inner { gap: 16px; } .works-with-brands { gap: 16px; } .works-with-brand { font-size: 12px; } }
+.works-with-brand { font-size: 13px; font-weight: 700; color: var(--muted-2); letter-spacing: 0.02em; white-space: nowrap; display: inline-flex; align-items: center; }
+.works-with-brand img { height: 22px; width: 22px; object-fit: contain; display: block; }
+@media (max-width: 540px) { .works-with-inner { gap: 16px; } .works-with-brands { gap: 16px; } .works-with-brand { font-size: 12px; } .works-with-brand img { height: 20px; width: 20px; } }
 
 /* Mobile: simplify dashboard preview */
 @media (max-width: 540px) {
@@ -905,15 +906,15 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="works-with-inner">
     <span class="works-with-label">Works with</span>
     <div class="works-with-brands">
-      <span class="works-with-brand">WHOOP</span>
-      <span class="works-with-brand">Oura</span>
-      <span class="works-with-brand">Garmin</span>
-      <span class="works-with-brand">Fitbit</span>
-      <span class="works-with-brand">Withings</span>
-      <span class="works-with-brand">Ultrahuman</span>
-      <span class="works-with-brand">Polar</span>
-      <span class="works-with-brand">Dexcom</span>
-      <span class="works-with-brand">Suunto</span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=whoop.com&sz=128" alt="WHOOP"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ouraring.com&sz=128" alt="Oura"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=garmin.com&sz=128" alt="Garmin"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=fitbit.com&sz=128" alt="Fitbit"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=withings.com&sz=128" alt="Withings"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ultrahuman.com&sz=128" alt="Ultrahuman"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=polar.com&sz=128" alt="Polar"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=dexcom.com&sz=128" alt="Dexcom"></span>
+      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=suunto.com&sz=128" alt="Suunto"></span>
       <span class="works-with-brand">+ 15 more</span>
     </div>
   </div>
