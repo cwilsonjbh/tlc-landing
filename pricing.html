@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -37,8 +37,8 @@ html { scroll-behavior: smooth; }
   --muted-2: rgba(26,26,26,0.65);
   --border: rgba(26,26,26,0.08);
   --border-mid: rgba(26,26,26,0.14);
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'Figtree', sans-serif;
+  --font-display: 'Open Sans', system-ui, sans-serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
   --section-pad: clamp(100px, 12vw, 160px);
   --gutter: clamp(24px, 5vw, 72px);
   --content-max: 1180px;
@@ -103,15 +103,15 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .login-modal { background: #fff; border-radius: 16px; padding: 40px 36px; max-width: 420px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.18); position: relative; }
 .login-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--muted-2); padding: 4px; }
 .login-modal-close:hover { color: var(--ink); }
-.login-modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
+.login-modal h3 { font-family: 'Open Sans', system-ui, sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
 .login-modal p { font-size: 14px; color: var(--muted-2); margin: 0 0 24px; line-height: 1.5; }
-.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Figtree', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Open Sans', system-ui, sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
 .login-modal input[type="email"]:focus { border-color: var(--green); }
-.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Figtree', sans-serif; }
+.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Open Sans', system-ui, sans-serif; }
 .login-modal .btn-login-submit:hover { background: #259940; transform: translateY(-1px); }
 .login-modal .btn-login-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
 .login-modal-success { display: none; text-align: center; padding: 8px 0; }
-.login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 0 0 8px; }
+.login-modal-success h4 { font-family: 'Open Sans', system-ui, sans-serif; font-size: 24px; color: var(--ink); margin: 0 0 8px; }
 .login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
 .login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
 
@@ -139,8 +139,10 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .plan-card.featured .plan-price { color: var(--white); }
 .plan-price-period { font-size: 13px; font-weight: 500; color: var(--muted); padding-bottom: 10px; }
 .plan-card.featured .plan-price-period { color: rgba(255,255,255,0.4); }
-.plan-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; margin-bottom: 28px; min-height: 52px; }
+.plan-desc { font-size: 13px; color: var(--muted-2); line-height: 1.65; margin-bottom: 28px; min-height: 152px; flex: 1; }
 .plan-card.featured .plan-desc { color: rgba(255,255,255,0.55); }
+.plan-summary { font-size: 13px; color: var(--muted-2); margin: -8px 0 16px; line-height: 1.5; }
+.plan-card.featured .plan-summary { color: rgba(255,255,255,0.55); }
 .plan-cta { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; padding: 15px 24px; transition: all 0.25s cubic-bezier(0.4,0,0.2,1); width: 100%; margin-bottom: 32px; }
 .plan-cta:hover { transform: translateY(-2px); }
 .plan-cta-free { background: var(--surface); color: var(--ink); }
@@ -190,9 +192,16 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .feat-label { display: inline-flex; align-items: center; gap: 6px; }
 .feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; font-family: var(--font-body); cursor: default; flex-shrink: 0; line-height: 1; }
 .feat-info:hover { border-color: var(--green); color: var(--green); }
-.feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+.feat-tooltip { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 1000; box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
 .feat-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: var(--ink); }
-.feat-info:hover .feat-tooltip { opacity: 1; }
+.feat-info:hover .feat-tooltip,
+.feat-info:focus .feat-tooltip,
+.feat-info.is-active .feat-tooltip { opacity: 1; pointer-events: auto; }
+.feat-info { cursor: pointer; }
+@media (max-width: 720px) {
+  .feat-tooltip { position: fixed !important; left: 16px !important; right: 16px !important; top: auto !important; bottom: 16px !important; width: auto !important; max-width: none !important; transform: none !important; font-size: 13px; padding: 14px 16px; z-index: 9999; }
+  .feat-tooltip::before { display: none; }
+}
 .plan-card-featured .feat-info { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.55); }
 .plan-card-featured .feat-info:hover { border-color: var(--green); color: var(--green); }
 
@@ -295,6 +304,34 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   .footer-top { grid-template-columns: 1fr; }
   .value-comparisons { display: none; }
 }
+
+/* ── Editorial system + pricing uniformity ── */
+:root { --card-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 28px rgba(20,40,30,0.06), 0 30px 64px rgba(20,40,30,0.05); --card-shadow-hover: 0 1px 0 rgba(255,255,255,0.9) inset, 0 18px 36px rgba(20,40,30,0.10), 0 40px 80px rgba(20,40,30,0.08); }
+.page-hero h1 { font-size: clamp(40px, 5.2vw, 76px) !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; max-width: 18ch; margin-left: auto; margin-right: auto; font-weight: 700 !important; }
+.page-hero-sub { font-size: clamp(17px, 1.7vw, 22px) !important; line-height: 1.65 !important; max-width: 56ch; margin-left: auto; margin-right: auto; font-style: normal !important; font-weight: 400 !important; }
+.section-cta .cta-inner h2 { font-size: clamp(36px, 5vw, 64px) !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; font-weight: 700 !important; max-width: 18ch; margin-left: auto; margin-right: auto; }
+.comparison-section h2,
+.value-section h2,
+.faq-section h2,
+.guarantee-section h2,
+.cta-section h2 { font-size: clamp(34px, 4vw, 56px) !important; line-height: 1.18 !important; letter-spacing: -0.015em !important; font-weight: 700 !important; max-width: 22ch; margin-left: auto; margin-right: auto; }
+/* Pricing card uniformity (both .pricing-card and .plan-card classes) */
+.pricing-grid { align-items: stretch !important; }
+.pricing-card, .plan-card { display: flex; flex-direction: column; box-shadow: var(--card-shadow); }
+.pricing-card.featured, .plan-card.featured { transform: none !important; box-shadow: 0 0 0 2px var(--green), 0 24px 48px rgba(46,168,74,0.16), 0 4px 12px rgba(46,168,74,0.10) !important; }
+.pricing-card.featured:hover, .plan-card.featured:hover { transform: translateY(-6px) !important; box-shadow: 0 0 0 2px var(--green), 0 32px 64px rgba(46,168,74,0.22), 0 8px 20px rgba(46,168,74,0.14) !important; }
+.pricing-features, .plan-features { flex: 1 1 auto; }
+.pricing-card .btn, .plan-card .plan-cta { margin-top: auto; }
+/* FAQ depth */
+.faq-item { box-shadow: var(--card-shadow); border-radius: 14px; padding: 18px 22px; margin-bottom: 12px; background: linear-gradient(180deg, #ffffff 0%, #f6f8f4 100%); border: 1px solid var(--border); }
+
+/* ── Mobile audit ── */
+@media (max-width: 480px) {
+  .page-hero { padding: clamp(120px, 18vw, 160px) 0 clamp(56px, 10vw, 80px) !important; }
+  .page-hero h1 { max-width: 100% !important; }
+  .pricing-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .pricing-card { padding: 32px 22px !important; }
+}
 </style>
 </head>
 <body>
@@ -356,81 +393,33 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 <section class="page-hero">
   <div class="container">
     <div class="label">Membership</div>
-    <h1>ONE INVESTMENT.<br>FIVE TOOLS.</h1>
-    <span class="page-hero-sub">Costs less than one hour with a nutritionist.</span>
+    <h1>Five tools. One system. Less than a coffee a week.</h1>
+    <span class="page-hero-sub">Costs less than one hour with a nutritionist. Delivers something a nutritionist alone never could.</span>
     <p class="page-hero-body">Every TLC tool shares the same intelligence. Your meals inform your coach. Your wearable sharpens your insights. Your insights evolve your plan. Nothing works in isolation.</p>
   </div>
 </section>
 
+<div class="pricing-anchor reveal" style="text-align:center;max-width:600px;margin:0 auto 48px;padding:0 var(--gutter);">
+  <p style="font-size:18px;font-weight:600;color:var(--ink);line-height:1.5;">One session with a nutritionist: $80 to $150. TLC: $9.99 per month. Your data, your coach, every day.</p>
+</div>
 
 <!-- PRICING GRID -->
 <section class="pricing-section">
   <div class="container">
     <div class="pricing-grid reveal">
 
-      <!-- TLC LITE (FREE) -->
-      <div class="plan-card">
-        <div class="plan-label">Free forever</div>
-        <div class="plan-name">TLC Lite</div>
-        <div class="plan-price-row">
-          <div class="plan-price">$0</div>
-          <div class="plan-price-period">/month</div>
-        </div>
-        <div class="plan-desc">A genuine taste of what TLC does. No credit card. No expiry. No catch.</div>
-        <a href="https://start.thelongevitychef.io" class="plan-cta plan-cta-free">Get started free</a>
-        <div class="plan-divider"></div>
-        <div class="plan-features-label">What's included</div>
-        <ul class="plan-features">
-          <li class="plan-feature">
-            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Meal Matchmaker (3 searches per day)</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Weekly Dynamic Insight</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Basic nutrition logging</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Macro targets and calorie goals</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Daily Dynamic Insights</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Longevity Coach</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Pantry Pal</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Wearable integration</span>
-          </li>
-          <li class="plan-feature">
-            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Longevity Score</span>
-          </li>
-        </ul>
-      </div>
-
       <!-- TLC (FEATURED) -->
       <div class="plan-card featured">
         <div class="plan-card-badge">Most popular</div>
         <div class="plan-label">Best value</div>
         <div class="plan-name">TLC</div>
+        <p class="plan-summary">Your daily health coach and insight engine.</p>
         <div class="plan-price-row">
           <div class="plan-price" id="tlcPrice">$9.99</div>
           <div class="plan-price-period">/month</div>
         </div>
-        <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes - all personalised to you.</div>
-        <a href="https://join.thelongevitychef.io?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Start TLC</a>
+        <div class="plan-desc">The full system. Daily intelligence, coached guidance, restaurant recommendations and pantry-to-table recipes. All personalised to you.</div>
+        <a href="https://join.thelongevitychef.io?path=tlc" class="plan-cta plan-cta-featured" id="tlcCta">Try 7 days free</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in Lite, plus</div>
         <ul class="plan-features">
@@ -477,42 +466,100 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
       <div class="plan-card">
         <div class="plan-label">Full system</div>
         <div class="plan-name">TLC Pro</div>
+        <p class="plan-summary">Your coach, plus a complete weekly food system.</p>
         <div class="plan-price-row">
           <div class="plan-price" id="proPrice">$19.99</div>
           <div class="plan-price-period">/month</div>
         </div>
-        <div class="plan-desc">For those who want the full picture: personalised weekly meal plans built around your biology, goals and schedule.</div>
-        <a href="https://join.thelongevitychef.io?path=pro" class="plan-cta plan-cta-pro">Start TLC Pro</a>
+        <div class="plan-desc">A weekly meal plan that quietly cuts your grocery bill, your food waste and your carbon footprint, built around your biology and schedule.</div>
+        <a href="https://join.thelongevitychef.io?path=pro" class="plan-cta plan-cta-pro">Try 7 days free</a>
         <div class="plan-divider"></div>
         <div class="plan-features-label">Everything in TLC, plus</div>
         <ul class="plan-features">
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Weekly personalised meal plan</span>
+            <span>Weekly personalised meal plan that adapts to your data</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Smart Shopping List (saves 10–15% on groceries)</span>
+            <span>Zero-waste shopping list, ingredients overlap across all 7 days</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Plan adjusts weekly based on your data</span>
+            <span>Up to 15% off your weekly grocery spend</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Longevity Score (weekly)</span>
+            <span>Around 7kg CO&#8322;e saved each month versus a typical diet</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Smart Shopping List eliminates duplicates across all 28 days</span>
+            <span>Batch prep guide, two short cooking sessions a week</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Priority email support</span>
+            <span>Plate Diversity Index, a score no other app tracks</span>
           </li>
           <li class="plan-feature">
             <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Early access to new features</span>
+            <span>Share your plan with a home chef or partner</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Priority email support and early access</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- TLC LITE (FREE) -->
+      <div class="plan-card">
+        <div class="plan-label">Always free</div>
+        <div class="plan-name">TLC Lite</div>
+        <p class="plan-summary">Your free longevity baseline. Always free.</p>
+        <div class="plan-price-row">
+          <div class="plan-price">$0</div>
+          <div class="plan-price-period">/month</div>
+        </div>
+        <div class="plan-desc">A genuine taste of what TLC does. No credit card. No expiry. No catch.</div>
+        <a href="https://start.thelongevitychef.io" class="plan-cta plan-cta-free">Always free</a>
+        <div class="plan-divider"></div>
+        <div class="plan-features-label">What's included</div>
+        <ul class="plan-features">
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Meal Matchmaker (3 searches per day)</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Weekly Dynamic Insight</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Basic nutrition logging</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check yes" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.12"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Macro targets and calorie goals</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Daily Dynamic Insights</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Longevity Coach</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Pantry Pal</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Wearable integration</span>
+          </li>
+          <li class="plan-feature">
+            <svg class="plan-feature-check no" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="currentColor" opacity="0.08"/><path d="M6 12l6-6M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Longevity Score</span>
           </li>
         </ul>
       </div>
@@ -525,8 +572,8 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 <section class="comparison-section">
   <div class="container">
     <div class="label reveal">Feature breakdown</div>
-    <h2 class="reveal d1">COMPARE<br>THE PLANS</h2>
-    <p class="section-sub reveal d2">Every feature, clearly listed. No asterisks.</p>
+    <h2 class="reveal d1" style="text-align:center;">Compare the plans.</h2>
+    <p class="section-sub reveal d2" style="text-align:center;">Every feature, clearly listed. No asterisks.</p>
     <div class="reveal d2" style="overflow-x:auto;">
       <table class="comparison-table">
         <thead>
@@ -558,14 +605,14 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td><span class="feat-label">Longevity Score<span class="feat-info">i<span class="feat-tooltip">A weekly composite score (0-1000) reflecting your nutrition consistency, sleep quality, activity, and wellbeing data. Tracks your trajectory over time so progress is always visible.</span></span></span></td>
+            <td><span class="feat-label">Longevity Score<span class="feat-info">i<span class="feat-tooltip">A weekly composite score (0 to 1000) reflecting your nutrition consistency, sleep quality, activity, and wellbeing data. Tracks your trajectory over time so progress is always visible.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
             <td class="center"><span class="comp-check partial">Weekly</span></td>
           </tr>
           <tr class="comp-section-header"><td colspan="4">Tools</td></tr>
           <tr>
-            <td><span class="feat-label">Personal nutrition blueprint<span class="feat-info">i<span class="feat-tooltip">Your personal nutrition targets built from your body stats, health goals, dietary preferences, food tastes, and lifestyle. More than macros — an evolving daily guide that adapts as you progress.</span></span></span></td>
+            <td><span class="feat-label">Personal nutrition blueprint<span class="feat-info">i<span class="feat-tooltip">Your personal nutrition targets built from your body stats, health goals, dietary preferences, food tastes, and lifestyle. More than macros. An evolving daily guide that adapts as you progress.</span></span></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
@@ -583,7 +630,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td><span class="feat-label">Longevity Coach<span class="feat-info">i<span class="feat-tooltip">An expert nutrition and lifestyle coach with full lifetime access to your data. Every response draws on your complete history — meals, biometrics, sleep, goals, and reflections — not just the last 7 days.</span></span></span></td>
+            <td><span class="feat-label">Longevity Coach<span class="feat-info">i<span class="feat-tooltip">An expert nutrition and lifestyle coach with full lifetime access to your data. Every response draws on your complete history: meals, biometrics, sleep, goals, and reflections. Not just the last 7 days.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
@@ -644,7 +691,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
           </tr>
           <tr>
-            <td><span class="feat-label">Smart Shopping List (saves 10–15% on grocery bills)<span class="feat-info">i<span class="feat-tooltip">Auto-generated from your 28-day meal plan. Consolidates ingredients across all meals, eliminates duplicates, and organises by store section to cut average grocery spend by 10-15%.</span></span></span></td>
+            <td><span class="feat-label">Smart Shopping List (saves up to 15% on your weekly groceries)<span class="feat-info">i<span class="feat-tooltip">Auto-generated from your 28-day meal plan. Consolidates ingredients across all meals, eliminates duplicates, and organises by store section to cut average grocery spend by up to 15%.</span></span></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check no"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M12 12L4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></td>
             <td class="center"><span class="comp-check yes"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
@@ -661,9 +708,9 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <div class="value-grid">
       <div class="value-left">
         <div class="label reveal">In perspective</div>
-        <h2 class="reveal d1">WHAT ELSE<br>$9.99<br>BUYS YOU</h2>
+        <h2 class="reveal d1">What else $9.99 buys you.</h2>
         <p class="reveal d2">A single session with a nutritionist typically costs $80 to $150. One hour with a dietitian. No continuity. No data. No connection between what you eat, how you move, and how you feel.</p>
-        <p class="reveal d3">TLC does the connective work automatically - every day, across all three pillars, for less than a dollar per day.</p>
+        <p class="reveal d3">TLC does the connective work automatically. Every day, across all three pillars, for less than a dollar per day.</p>
         <div class="value-comparisons reveal d3">
           <div class="value-row">
             <div class="value-item-name">One nutritionist session</div>
@@ -733,7 +780,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;" class="reveal">
       <div>
         <div class="label" style="margin-bottom:18px;">Honest assessment</div>
-        <h2 style="font-family:var(--font-display);font-size:clamp(40px,5vw,72px);line-height:0.9;letter-spacing:0.01em;color:var(--ink);margin-bottom:24px;">IS TLC<br>RIGHT FOR<br>YOU?</h2>
+        <h2 style="font-family:var(--font-display);font-size:clamp(40px,5vw,72px);line-height:0.9;letter-spacing:0.01em;color:var(--ink);margin-bottom:24px;">Is TLC right for you?</h2>
         <p style="font-size:clamp(14px,1.4vw,17px);font-weight:300;color:var(--muted-2);line-height:1.8;margin-bottom:0;">Not every tool is right for every person. Here is an honest picture of who TLC is built for and who would be better served elsewhere.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:2px;">
@@ -763,7 +810,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
 <section class="faq-section">
   <div class="container">
     <div class="label reveal">Common questions</div>
-    <h2 class="reveal d1">EVERYTHING<br>YOU WANT<br>TO KNOW</h2>
+    <h2 class="reveal d1">Everything you want to know.</h2>
     <div class="faq-grid reveal d2">
 
 
@@ -888,7 +935,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
         <path d="M9.5 14l3 3 6-6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <h2 class="reveal d1">30-DAY PROMISE</h2>
+    <h2 class="reveal d1">30-day promise.</h2>
     <p class="reveal d2">If TLC has not shown you something genuinely useful about your health patterns within the first 30 days, email us and we will refund every penny. No conditions, no hoops, no need to justify it.</p>
   </div>
 </section>
@@ -898,7 +945,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
   <canvas class="cta-nebula" id="ctaNebula"></canvas>
   <div class="container cta-inner">
     <div class="label reveal">Start today</div>
-    <h2 class="reveal d1">YOUR FIRST<br>INSIGHT TONIGHT.</h2>
+    <h2 class="reveal d1">Your first insight, tonight.</h2>
     <span class="cta-sub reveal d2">Free to start. No credit card required.</span>
     <div class="cta-actions reveal d3">
       <a href="https://start.thelongevitychef.io" class="btn btn-green" style="padding:18px 48px;font-size:13px;">Start Free</a>
@@ -912,7 +959,7 @@ footer { background: var(--black); padding: clamp(60px, 8vw, 100px) 0 40px; }
     <div class="footer-top">
       <div class="footer-brand">
         <img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef">
-        <p>Joining the dots between nutrition, body, and mind - so you can see the patterns that matter.</p>
+        <p>Connecting what you eat, how your body responds, and how you feel. Every day.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
@@ -960,6 +1007,15 @@ function toggleMobileNav() {
   document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
 }
 document.getElementById('hamburgerBtn').addEventListener('click', toggleMobileNav);
+
+// ── Tooltip tap-to-toggle (mobile + a11y) ──
+(function setupTooltips() {
+  document.addEventListener('click', function(e) {
+    var info = e.target.closest('.feat-info');
+    document.querySelectorAll('.feat-info.is-active').forEach(function(el) { if (el !== info) el.classList.remove('is-active'); });
+    if (info) { e.preventDefault(); e.stopPropagation(); info.classList.toggle('is-active'); }
+  }, false);
+})();
 
 // ── LOGIN MODAL ──
 function openLogin() {

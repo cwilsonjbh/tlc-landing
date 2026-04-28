@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -37,8 +37,8 @@ html { scroll-behavior: smooth; }
   --muted-2: rgba(26,26,26,0.65);
   --border: rgba(26,26,26,0.08);
   --border-mid: rgba(26,26,26,0.14);
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'Figtree', sans-serif;
+  --font-display: 'Open Sans', system-ui, sans-serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
   --section-pad: clamp(100px, 12vw, 160px);
   --gutter: clamp(24px, 5vw, 72px);
   --content-max: 1180px;
@@ -103,15 +103,15 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .login-overlay.open { display: flex; }
 .login-modal { background: #fff; border-radius: 16px; padding: 40px 36px; max-width: 420px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.18); position: relative; }
 .login-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--muted-2); padding: 4px; }
-.login-modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
+.login-modal h3 { font-family: 'Open Sans', system-ui, sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
 .login-modal p { font-size: 14px; color: var(--muted-2); margin: 0 0 24px; line-height: 1.5; }
-.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Figtree', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Open Sans', system-ui, sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
 .login-modal input[type="email"]:focus { border-color: var(--green); }
-.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Figtree', sans-serif; }
+.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Open Sans', system-ui, sans-serif; }
 .login-modal .btn-login-submit:hover { background: #259940; transform: translateY(-1px); }
 .login-modal .btn-login-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
 .login-modal-success { display: none; text-align: center; padding: 8px 0; }
-.login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 8px 0; }
+.login-modal-success h4 { font-family: 'Open Sans', system-ui, sans-serif; font-size: 24px; color: var(--ink); margin: 8px 0; }
 .login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
 .login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
 
@@ -149,7 +149,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .feature-block:nth-child(even) .feature-inner > * { direction: ltr; }
 .feature-visual { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; background: var(--surface); display: block; box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.04); }
 .feature-copy .label { margin-bottom: 20px; display: inline-flex; }
-.feature-copy h3 { font-family: var(--font-display); font-size: clamp(32px, 5vw, 52px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
+.feature-copy h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 20px; max-width: 18ch; }
 .feature-copy > p { font-size: 16px; color: var(--muted-2); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
 .feature-copy .feature-highlights { list-style: none; margin-top: 24px; }
 .feature-copy .feature-highlights li { font-size: 14px; color: var(--ink); padding: 8px 0; display: flex; align-items: flex-start; gap: 12px; font-weight: 500; border-bottom: 1px solid var(--border); }
@@ -336,10 +336,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .section-wearables { background: var(--surface); padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .wearables-inner { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; justify-content: center; }
 .wearable-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-.wearable-tag { display: inline-flex; align-items: center; justify-content: center; background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 50px; padding: 10px 22px; height: 48px; }
-.wearable-tag img { height: 22px; width: auto; max-width: 90px; object-fit: contain; display: block; }
-.wearable-dot { display: none; }
-.wearable-tag-muted { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); border-style: dashed; }
+.wearable-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 8px 18px; border: 1.5px solid var(--border-mid); border-radius: 50px; background: var(--white); }
+.wearable-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.wearable-tag-muted { color: var(--muted); border-style: dashed; }
 
 /* ── FINAL CTA ── */
 .section-cta { padding: var(--section-pad) 0; background: var(--ink); position: relative; overflow: hidden; }
@@ -393,6 +392,21 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   .hero-feature-pill { width: 100%; justify-content: center; max-width: 280px; }
   .footer-inner { grid-template-columns: 1fr; }
 }
+
+/* ── Editorial page-hero refit (Open Sans sentence-case) ── */
+.page-hero h1 { font-size: clamp(40px, 5.2vw, 76px) !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; max-width: 18ch; margin-left: auto; margin-right: auto; font-weight: 700 !important; }
+.page-hero-sub { font-size: clamp(17px, 1.7vw, 22px); color: var(--muted-2); line-height: 1.65; max-width: 56ch; margin: 18px auto 32px; font-weight: 400; }
+.page-hero-actions { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.page-hero-trust { font-size: 13px; color: var(--muted); margin-top: 18px; letter-spacing: 0.01em; }
+.page-hero-eyebrow { margin-bottom: 22px; }
+
+/* ── Universal card depth (matches / pass) ── */
+.feature-visual, .difference-card, .wearable-tag { box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 28px rgba(20,40,30,0.06), 0 30px 64px rgba(20,40,30,0.05); }
+.wearable-tag { transition: transform 0.3s, box-shadow 0.3s; }
+.wearable-tag:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 16px 32px rgba(20,40,30,0.08), 0 40px 80px rgba(20,40,30,0.07); }
+
+/* ── Final CTA Open Sans tune ── */
+.section-cta .cta-inner h2 { font-size: clamp(36px, 5vw, 64px) !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; font-weight: 700 !important; max-width: 18ch; margin-left: auto; margin-right: auto; }
 </style>
 </head>
 <body>
@@ -446,19 +460,21 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-eyebrow"><span class="label">Five Tools. One System.</span></div>
-    <h1>TOOLS THAT<br><em>TALK TO</em><br>EACH OTHER</h1>
-    <p class="page-hero-sub">Each one sharpens the rest.</p>
-    <p class="page-hero-body">Every other health app gives you a collection of features. TLC gives you a system. What you learn from your evening insight changes what your coach says tomorrow. What your coach says changes how you eat next week. What you eat changes what the insight reveals next month. The connections are what make it work.</p>
-    <div class="page-hero-nav">
-      <a href="#dynamic-insights" class="hero-feature-pill"><span class="pill-dot" style="background:var(--nutrition);"></span>Dynamic Insights</a>
-      <a href="#longevity-coach" class="hero-feature-pill"><span class="pill-dot" style="background:var(--body-blue);"></span>Longevity Coach</a>
-      <a href="#meal-matchmaker" class="hero-feature-pill"><span class="pill-dot" style="background:var(--green);"></span>Meal Matchmaker</a>
-      <a href="#pantry-pal" class="hero-feature-pill"><span class="pill-dot" style="background:var(--mind);"></span>Pantry Pal</a>
-      <a href="#meal-plan" class="hero-feature-pill"><span class="pill-dot" style="background:#154D33;"></span>Meal Plan</a>
+    <div class="page-hero-eyebrow"><span class="label">Five tools. One system.</span></div>
+    <h1>One system that knows you end to end.</h1>
+    <p class="page-hero-sub">Your meals inform your coach. Your wearable sharpens your insights. Your insights shape what comes next. Every tool feeds every other tool.</p>
+    <div class="page-hero-actions">
+      <a href="/start" class="btn btn-black">Start free tonight</a>
+      <a href="/how-it-works" class="btn btn-outline">See how it works</a>
     </div>
+    <p class="page-hero-trust">No card. Cancel in one tap. Your first insight by 9 pm.</p>
   </div>
 </section>
+
+<div style="text-align:center;padding:0 0 40px;">
+  <a href="/start" class="btn btn-green">Start free — no card needed</a>
+  <p style="font-size:12px;color:var(--muted);margin-top:10px;">Free forever on Lite. 7-day free trial on paid plans.</p>
+</div>
 
 <!-- FEATURES -->
 <section class="section-features">
@@ -485,7 +501,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
               <p id="di-narrative-p3" style="opacity:0;transition:opacity 0.8s ease;margin-top:6px;">This week's Longevity Score: <strong>741/1000</strong>. Up 17 from last week. Your weekly strategy lands tomorrow morning. The patterns are compounding.</p>
             </div>
             <div class="mock-wellbeing-section">
-              <div class="mock-wb-header">Wellbeing Journey / Week 4</div>
+              <div class="mock-wb-header">Wellbeing Progress / Week 4</div>
               <div class="mock-wb-row">
                 <span class="mock-wb-label" style="color:var(--mind)">Mood</span>
                 <div class="mock-wb-bars" id="wb-bars-mood"></div>
@@ -512,9 +528,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div class="feature-copy reveal d2">
           <span class="label">The intelligence layer</span>
-          <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
-          <h3>DYNAMIC INSIGHTS</h3>
-          <p>Every evening at 8pm, TLC does something no other platform can. It takes what you ate, what your body measured, and how you felt, and draws specific, named connections across all three. Not a summary of your day. A revelation about the pattern behind it.</p>
+          <h3>Dynamic Insights</h3>
+          <p>Every evening, TLC does something no other platform can. It takes what you ate, what your body measured, and how you felt, and draws specific, named connections across all three. Not a summary of your day. A revelation about the pattern behind it.</p>
           <p>Week by week, the picture deepens. Your Longevity Score tracks the trajectory your habits are building. After 30 days, TLC has seen your individual patterns across hundreds of data points. Every insight that follows is built on that foundation, not a template.</p>
           <ul class="feature-highlights">
             <li>Connects nutrition, biometrics, and reflection in one daily insight</li>
@@ -523,7 +538,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Listen mode reads your insight aloud. Hands-free, eyes-free.</li>
             <li>Never starts from scratch. Every week builds on the last.</li>
           </ul>
-          <a href="https://join.thelongevitychef.io" class="feature-cta">Start your first insight free &rarr;</a>
+          <a href="https://join.thelongevitychef.io?path=tlc" class="feature-cta">Start your first insight free &rarr;</a>
         </div>
       </div>
     </div>
@@ -550,18 +565,17 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div class="feature-copy reveal d2">
           <span class="label">Always in context</span>
-          <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
-          <h3>LONGEVITY COACH</h3>
-          <p>Before you type a word, your coach already knows. Your biometrics from this morning. Every meal you logged this week. Your active goals, your health conditions, your dietary restrictions. The last seven insights and every pattern TLC has seen in your data. That context is loaded before the conversation starts.</p>
-          <p>This is the difference between a generic chatbot and a coach who has been following your journey since day one. Ask it anything. It answers from your data. Come back six months later. It has not forgotten a single pattern. The longer you use TLC, the more precisely it guides you.</p>
+          <h3>Longevity Coach</h3>
+          <p>Meet Luma, your new longevity coach. Before you type a word, she has already read your data and has something specific to tell you. Your biometrics from this morning. Every meal you logged this week. Your active goals, your health conditions, your dietary restrictions. The last seven insights and every pattern TLC has seen in your data. She has it all.</p>
+          <p>Ask her anything, by voice or text. She answers from your data. Come back six months later, and Luma has not forgotten a single pattern. The longer you use TLC, the more precisely she guides you.</p>
           <ul class="feature-highlights">
-            <li>Dietician, nutritionist, longevity specialist, and life coach in one</li>
+            <li>Expert in nutrition, physiology, and the patterns that drive longevity</li>
             <li>Full context loaded before you say a word: biometrics, meals, goals, history</li>
             <li>References your actual data. Never a generic response.</li>
-            <li>Gets sharper with every session as your patterns compound</li>
+            <li>The longer you use TLC, the more precisely Luma reads your patterns</li>
             <li>Opens Meal Matchmaker with your current context when you ask about food</li>
           </ul>
-          <a href="https://join.thelongevitychef.io" class="feature-cta">Talk to your coach free &rarr;</a>
+          <a href="https://join.thelongevitychef.io?path=tlc" class="feature-cta">Chat with Luma &rarr;</a>
         </div>
       </div>
     </div>
@@ -620,8 +634,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div class="feature-copy reveal d2">
           <span class="label">Your goals travel with you</span>
-          <div class="feature-tier-pill lite">TLC Lite &middot; Free</div>
-          <h3>MEAL MATCHMAKER</h3>
+          <h3>Meal Matchmaker</h3>
           <p>You are in a city you do not know. A restaurant you have never heard of. A menu you are seeing for the first time. Meal Matchmaker already has your macros, your current goals, your allergies, and your calorie target. It browses the actual menu and finds the dish that fits. Not approximately. To within 12 calories.</p>
           <p>This works anywhere. Any city, any country, any cuisine. Menu Scanner extends it further: point your camera at any printed, digital, or overhead menu and TLC reads it instantly. Every meal an informed decision, wherever life takes you. Your plan never stays home, because TLC never stays home.</p>
           <ul class="feature-highlights">
@@ -631,7 +644,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Synced live with your current goals, not last week's settings</li>
             <li>Free forever on TLC Lite. No subscription required.</li>
           </ul>
-          <a href="https://start.thelongevitychef.io" class="feature-cta">Find your next meal free &rarr;</a>
+          <a href="https://start.thelongevitychef.io" class="feature-cta">Find your next meal &rarr;</a>
         </div>
       </div>
     </div>
@@ -699,8 +712,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div class="feature-copy reveal d2">
           <span class="label">At home, in your kitchen</span>
-          <div class="feature-tier-pill tlc">TLC &middot; $9.99/mo</div>
-          <h3>PANTRY PAL + RECIPES</h3>
+          <h3>Pantry Pal and recipes</h3>
           <p>Open your fridge. Point your camera. TLC identifies everything you have and generates a recipe that hits your macro targets, aligns with your active goal, and works with exactly what is already there. No shopping required. No compromise. Just precise, purposeful food from your own kitchen.</p>
           <p>Planning ahead instead? Start from scratch and TLC builds the recipe with a ready-to-go shopping list. Meal Analyser completes the loop: snap any finished plate and receive full macros in seconds. Cooking in, eating out, ordering ahead. TLC has a tool for every moment your nutrition needs you.</p>
           <ul class="feature-highlights">
@@ -710,7 +722,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Meal Analyser: snap any plate for full macros instantly</li>
             <li>Connects to your Daily Insight. Every meal logged automatically.</li>
           </ul>
-          <a href="https://join.thelongevitychef.io" class="feature-cta">Scan your fridge free &rarr;</a>
+          <a href="https://join.thelongevitychef.io?path=tlc" class="feature-cta">Scan your fridge free &rarr;</a>
         </div>
       </div>
     </div>
@@ -780,8 +792,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         </div>
         <div class="feature-copy reveal d2">
           <span class="label">The committed path</span>
-          <div class="feature-tier-pill pro">TLC Pro &middot; $19.99/mo</div>
-          <h3>YOUR ENTIRE MONTH. PLANNED.</h3>
+          <div class="feature-tier-pill pro">TLC Pro</div>
+          <h3>Your entire month, planned.</h3>
           <p>TLC Pro is for those who are done with improvising. Every breakfast, lunch, dinner, and snack for 28 days, built around your macro targets, taste preferences, dietary restrictions, cooking ability, and kitchen. Not a rotation. Not a template. A completely unique plan built specifically for you.</p>
           <p>The Smart Shopping List consolidates every ingredient across all 28 days, eliminates duplicates, and sequences your shop around what gets used when. Members typically cut their grocery bill by 10 to 15 percent. And when life gets in the way, it does not unravel. Miss a meal, eat out, or raid the pantry and TLC recalibrates automatically. The plan works around real life.</p>
           <ul class="feature-highlights">
@@ -792,7 +804,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             <li>Recalibrates automatically when life disrupts the plan</li>
             <li>Mixes freely with Meal Matchmaker and Pantry Pal</li>
           </ul>
-          <a href="https://join.thelongevitychef.io" class="feature-cta">Start your Pro journey &rarr;</a>
+          <a href="https://join.thelongevitychef.io?path=pro" class="feature-cta">Start TLC Pro &rarr;</a>
         </div>
       </div>
     </div>
@@ -811,11 +823,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       </div>
       <div class="difference-answer reveal d2">
         <span class="label" style="margin-bottom:22px;display:inline-flex;color:var(--green-accent);">The Difference</span>
-        <h2>IT ADAPTS TO YOU.<br>NOT THE OTHER WAY.</h2>
+        <h2>It adapts to you, not the other way.</h2>
         <p>Most health tools hand you a plan and expect you to fit your life around it. Rigid. Generic. Built for a hypothetical average person who is not you.</p>
         <p>TLC starts with <span class="highlight-pill">who you actually are</span>: your wearable data, your food patterns, your goals, your restrictions, your daily reality. Then it meets you where you are. At the restaurant. At home. When you are exhausted and need the answer in 10 seconds.</p>
         <p>Five tools that talk to each other. Every insight built from your data. Every coaching response that knows your week. Every plan that reflects where you actually are, not where a formula assumed you would be.</p>
-        <a href="https://join.thelongevitychef.io" class="btn btn-green" style="margin-top:28px;">Get Your Free Longevity Blueprint</a>
+        <a href="https://join.thelongevitychef.io?path=tlc" class="btn btn-green" style="margin-top:28px;">Get your free longevity blueprint.</a>
       </div>
     </div>
   </div>
@@ -826,12 +838,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="wearables-inner">
       <span class="wearable-label">Syncs with:</span>
-      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/whoop/1a1a1a" alt="WHOOP"></span>
-      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/oura/1a1a1a" alt="Oura"></span>
-      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/fitbit/1a1a1a" alt="Fitbit"></span>
-      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/garmin/1a1a1a" alt="Garmin"></span>
-      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/withings/1a1a1a" alt="Withings"></span>
-      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/ultrahuman/1a1a1a" alt="Ultrahuman"></span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>WHOOP</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>OURA</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>FITBIT</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>GARMIN</span>
+      <span class="wearable-tag"><span class="wearable-dot"></span>ULTRAHUMAN</span>
       <span class="wearable-tag wearable-tag-muted">+ 20 more</span>
     </div>
   </div>
@@ -841,13 +852,13 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <section class="section-cta">
   <div class="container">
     <div class="cta-inner">
-      <span class="label" style="justify-content:center;margin-bottom:28px;display:inline-flex;color:var(--green-accent);">Where It Starts</span>
-      <h2 class="reveal">THE SYSTEM<br>THAT <span>GROWS</span><br>WITH YOU.</h2>
-      <p class="reveal d1">Start free. No card needed. Meal Matchmaker is yours from day one. Unlock the full system when you are ready to see the connections that change everything.</p>
+      <span class="label" style="justify-content:center;margin-bottom:28px;display:inline-flex;color:var(--green-accent);">Where it starts</span>
+      <h2 class="reveal">Five tools. <span>Tonight.</span></h2>
+      <p class="reveal d1">Meal Matchmaker is yours from minute one. Unlock the full system when you are ready to see the thread.</p>
       <div class="cta-actions reveal d2">
-        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start Free Today</a>
-        <a href="/pricing" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Compare all plans</a>
-        <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No fees</span>
+        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start free tonight</a>
+        <a href="/pricing" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Compare plans</a>
+        <span class="cta-note">Cancel anytime. No card. No lock-in.</span>
       </div>
     </div>
   </div>
@@ -858,7 +869,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></div>
-      <p>Connecting the dots between nutrition, body, and mind. Eat smarter, feel better, live longer.</p>
+      <p>Connecting what you eat, how your body responds, and how you feel. Every day.</p>
     </div>
     <div class="footer-col"><ul>
       <li><a href="/features">Features</a></li>
