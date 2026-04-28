@@ -233,9 +233,10 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .section-wearables { background: var(--surface); padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .wearables-inner { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; justify-content: center; }
 .wearable-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-.wearable-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); padding: 8px 18px; border: 1.5px solid var(--border-mid); border-radius: 50px; background: var(--white); }
-.wearable-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
-.wearable-tag-muted { color: var(--muted); border-style: dashed; }
+.wearable-tag { display: inline-flex; align-items: center; justify-content: center; background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 50px; padding: 10px 22px; height: 48px; }
+.wearable-tag img { height: 22px; width: auto; max-width: 90px; object-fit: contain; display: block; }
+.wearable-dot { display: none; }
+.wearable-tag-muted { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); border-style: dashed; }
 
 /* ── SETUP STEPS ── */
 .section-setup { padding: var(--section-pad) 0; background: var(--white); }
@@ -604,11 +605,12 @@ footer { background: var(--black); padding: 60px 0 0; }
   <div class="container">
     <div class="wearables-inner">
       <span class="wearable-label">Works with:</span>
-      <span class="wearable-tag"><span class="wearable-dot"></span>WHOOP</span>
-      <span class="wearable-tag"><span class="wearable-dot"></span>OURA</span>
-      <span class="wearable-tag"><span class="wearable-dot"></span>FITBIT</span>
-      <span class="wearable-tag"><span class="wearable-dot"></span>GARMIN</span>
-      <span class="wearable-tag"><span class="wearable-dot"></span>ULTRAHUMAN</span>
+      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/whoop/1a1a1a" alt="WHOOP"></span>
+      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/oura/1a1a1a" alt="Oura"></span>
+      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/fitbit/1a1a1a" alt="Fitbit"></span>
+      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/garmin/1a1a1a" alt="Garmin"></span>
+      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/withings/1a1a1a" alt="Withings"></span>
+      <span class="wearable-tag"><img src="https://cdn.simpleicons.org/ultrahuman/1a1a1a" alt="Ultrahuman"></span>
       <span class="wearable-tag wearable-tag-muted">+ 20 more. Or no wearable at all.</span>
     </div>
   </div>

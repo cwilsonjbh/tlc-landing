@@ -460,10 +460,11 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .section-wearables { padding: 56px 0; background: var(--surface); position: relative; z-index: 2; border-top: 1px solid var(--border); }
 .wearables-inner { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .wearable-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-.wearable-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); background: var(--white); border: 1px solid var(--border-mid); border-radius: 50px; padding: 9px 20px; transition: all 0.25s; }
+.wearable-tag { display: inline-flex; align-items: center; justify-content: center; background: var(--white); border: 1px solid var(--border-mid); border-radius: 50px; padding: 10px 22px; height: 48px; transition: all 0.25s; }
 .wearable-tag:hover { border-color: var(--green); box-shadow: 0 4px 12px rgba(46,168,74,0.08); }
-.wearable-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
-.wearable-tag-muted { color: var(--muted); border-color: var(--border); }
+.wearable-tag img { height: 22px; width: auto; max-width: 90px; object-fit: contain; display: block; }
+.wearable-dot { display: none; }
+.wearable-tag-muted { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: var(--muted); border-color: var(--border); }
 
 /* ── PRICING (Apple-style clean, WHOOP-style tiers) ── */
 .section-pricing { padding: var(--section-pad) 0; position: relative; z-index: 2; background: var(--white); }
@@ -1303,11 +1304,12 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <!-- WEARABLES -->
 <section class="section-wearables"><div class="container"><div class="wearables-inner">
   <span class="wearable-label">Integrates with:</span>
-  <span class="wearable-tag"><span class="wearable-dot"></span>WHOOP</span>
-  <span class="wearable-tag"><span class="wearable-dot"></span>OURA</span>
-  <span class="wearable-tag"><span class="wearable-dot"></span>FITBIT</span>
-  <span class="wearable-tag"><span class="wearable-dot"></span>GARMIN</span>
-  <span class="wearable-tag"><span class="wearable-dot"></span>ULTRAHUMAN</span>
+  <span class="wearable-tag"><img src="https://cdn.simpleicons.org/whoop/1a1a1a" alt="WHOOP"></span>
+  <span class="wearable-tag"><img src="https://cdn.simpleicons.org/oura/1a1a1a" alt="Oura"></span>
+  <span class="wearable-tag"><img src="https://cdn.simpleicons.org/fitbit/1a1a1a" alt="Fitbit"></span>
+  <span class="wearable-tag"><img src="https://cdn.simpleicons.org/garmin/1a1a1a" alt="Garmin"></span>
+  <span class="wearable-tag"><img src="https://cdn.simpleicons.org/withings/1a1a1a" alt="Withings"></span>
+  <span class="wearable-tag"><img src="https://cdn.simpleicons.org/ultrahuman/1a1a1a" alt="Ultrahuman"></span>
   <span class="wearable-tag wearable-tag-muted">+ many more</span>
 </div></div></section>
 
