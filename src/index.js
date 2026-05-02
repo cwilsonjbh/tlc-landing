@@ -1502,8 +1502,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>25+ wearables connected</li>
         </ul>
         <a href="https://join.thelongevitychef.io?path=tlc" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 days free</a>
-<p style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">30-day money-back guarantee. No card needed for Lite.</p>
-        <p class="pricing-trial">7-day free trial. No card required.</p>
+
+        <p class="pricing-trial" style="text-align:center;">7-day free trial. No card required.</p>
       </div>
       <div class="pricing-card reveal-scale d2">
         <div class="pricing-tier">TLC Pro</div>
@@ -1519,7 +1519,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Batch prep guide, two short sessions per week</li>
         </ul>
         <a href="https://join.thelongevitychef.io?path=pro" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 days free</a>
-        <p class="pricing-trial">7-day free trial. No card required.</p>
+        <p class="pricing-trial" style="text-align:center;">7-day free trial. No card required.</p>
       </div>
       <div class="pricing-card reveal-scale d3">
         <div class="pricing-tier">TLC Lite</div>
@@ -1531,8 +1531,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Goal, allergy, and macro-aware</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personal nutrition blueprint</li>
         </ul>
-        <a href="https://start.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Start free</a>
-        <p class="pricing-trial">Free forever. No card required.</p>
+        <a href="https://start.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Always free</a>
+        <p class="pricing-trial" style="text-align:center;">Free forever. No card required.</p>
       </div>
     </div>
     <div class="pricing-compare reveal">
