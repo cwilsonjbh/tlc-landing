@@ -1,4 +1,7 @@
 // TLC Landing Page - Cloudflare Worker
+// LIVE PRODUCTION: thelongevitychef.io + www.thelongevitychef.io
+// Last updated: 2026-05-03
+// Source repo: github.com/cwilsonjbh/tlc-landing (edit HTML files, run sync-pages.js, then deploy)
 // Routes:
 //   GET /             -> homepage
 //   GET /features     -> features page
