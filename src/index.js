@@ -28,7 +28,7 @@ const LANDING_HTML = `
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -61,6 +61,7 @@ html { scroll-behavior: smooth; }
 }
 
 body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+strong, b { font-weight: 700; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -153,7 +154,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hero-eyebrow { margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards; }
 .hero-headline { font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 3.8vw, 52px); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 20px; max-width: 18ch; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s forwards; }
 .hero-headline-green { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(18px, 2.2vw, 28px); color: var(--green); letter-spacing: 0.02em; display: block; margin-bottom: 32px; line-height: 1.3; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards; }
-.hero-headline-green strong { font-weight: 700; }
+.hero-headline-green strong { font-style: normal; }
 .hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: none; line-height: 1.85; margin-bottom: 48px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.8s forwards; }
 .hero-trust { font-size: 12px; color: var(--muted); margin-top: 14px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.95s forwards; letter-spacing: 0.02em; }
@@ -865,7 +866,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <h1 class="hero-headline">Where nutrition, body and mind finally talk to each other.</h1>
     <span class="hero-headline-green">The Longevity Chef connects <strong>fragmented signals across nutrition, body and mind</strong> to reveal <strong>hidden patterns</strong> in how you respond to food, sleep and recovery, so what truly drives your <strong>energy, focus and long-term wellbeing</strong> becomes clear.</span>
     <div class="hero-actions">
-      <a href="/start" class="btn btn-black">Start free tonight</a>
+      <a href="/start" class="btn btn-black">Let's get started</a>
       <a href="/how-it-works" class="btn btn-outline">See how it works</a>
     </div>
   </div>
@@ -1059,7 +1060,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <button type="button" class="luma-suggest" data-script="1">What should I eat tonight?</button>
         <button type="button" class="luma-suggest" data-script="2">Should I train?</button>
       </div>
-      <p class="luma-mock-closing">She is doing this with your data tonight. <a href="/start" class="luma-mock-link">Start free tonight <span aria-hidden="true">&rarr;</span></a></p>
+      <p class="luma-mock-closing">She is doing this with your data tonight. <a href="/start" class="luma-mock-link">Let's get started <span aria-hidden="true">&rarr;</span></a></p>
     </div>
   </div>
 </section>
@@ -1549,7 +1550,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <p class="reveal d1">Five minutes to onboard. By 9 pm, Luma has your first insight. By Day 7, the first pattern you can point to.</p>
   <div class="cta-actions reveal d2">
     <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
-      <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start free tonight</a>
+      <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Let's get started</a>
       <span style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:8px;text-align:center;">No card needed. Free to try.</span>
     </div>
     <span class="cta-note">No card. Cancel in one tap. Your data stays yours.</span>
@@ -2901,7 +2902,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
     <h1>One system that knows you end to end.</h1>
     <p class="page-hero-sub">Your meals inform your coach. Your wearable sharpens your insights. Your insights shape what comes next. Every tool feeds every other tool.</p>
     <div class="page-hero-actions">
-      <a href="/start" class="btn btn-black">Start free tonight</a>
+      <a href="/start" class="btn btn-black">Let's get started</a>
       <a href="/how-it-works" class="btn btn-outline">See how it works</a>
     </div>
     <p class="page-hero-trust">No card. Cancel in one tap. Your first insight by 9 pm.</p>
@@ -3293,7 +3294,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <h2 class="reveal">Five tools. <span>Tonight.</span></h2>
       <p class="reveal d1">Meal Matchmaker is yours from minute one. Unlock the full system when you are ready to see the thread.</p>
       <div class="cta-actions reveal d2">
-        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start free tonight</a>
+        <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Let's get started</a>
         <a href="/pricing" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Compare plans</a>
         <span class="cta-note">Cancel anytime. No card. No lock-in.</span>
       </div>
@@ -4012,7 +4013,7 @@ footer { background: var(--black); padding: 60px 0 0; }
     <h1>Your day, quietly building a picture.</h1>
     <p class="page-hero-sub">You live your life. Luma reads the data, joins the dots, and meets you at 9 pm with one clear thing to change.</p>
     <div class="page-hero-actions">
-      <a href="/start" class="btn btn-green">Start free tonight</a>
+      <a href="/start" class="btn btn-green">Let's get started</a>
       <a href="#section-loop" class="btn btn-outline-white">See the loop</a>
     </div>
     <p class="page-hero-trust" style="color:rgba(255,255,255,0.55);margin-top:18px;">No card. Cancel in one tap. Your first insight by 9 pm.</p>
@@ -4215,7 +4216,7 @@ footer { background: var(--black); padding: 60px 0 0; }
       <p class="reveal d1">Five minutes to onboard. By 9 pm, Luma has your first insight. By Day 7, the first pattern you can point to.</p>
       <div class="cta-actions reveal d2">
         <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
-          <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Start free tonight</a>
+          <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Let's get started</a>
           <span style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:8px;text-align:center;">No card needed. Free to try.</span>
         </div>
         <a href="/features" class="btn btn-outline-white" style="font-size:12px;padding:17px 36px;">Explore all features</a>
@@ -4665,7 +4666,7 @@ footer { background: var(--black); padding: 60px 0 0; }
         <h1>The dots were always there.</h1>
         <p class="page-hero-body">Your wearable floods you with numbers. Your nutrition app sits separately. Your mood lives in a journal. <strong>The data already exists.</strong> It is just sitting in silos. The question you have been asking your whole life, why do I feel the way I do, was always answerable. TLC reads all three together and turns the signal into one clear thing to do tonight.</p>
         <div class="page-hero-actions">
-          <a href="/start" class="btn btn-green">Start free tonight</a>
+          <a href="/start" class="btn btn-green">Let's get started</a>
           <a href="/pricing" class="btn btn-outline">See plans</a>
         </div>
       </div>

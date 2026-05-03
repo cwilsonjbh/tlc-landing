@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +8,12 @@
 <meta name="description" content="TLC connects what you eat, how your body responds, and how you feel into one insight system that gets sharper every day.">
 <meta property="og:title" content="The Longevity Chef | Food for Life">
 <meta property="og:description" content="See the patterns your body is trying to show you. Nutrition, body, and mind. Connected for the first time.">
-<meta property="og:image" content="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png">
+<meta property="og:image" content="https://thelongevitychef.io/assets/logo.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,15 +38,14 @@ html { scroll-behavior: smooth; }
   --muted-2: rgba(26,26,26,0.65);
   --border: rgba(26,26,26,0.08);
   --border-mid: rgba(26,26,26,0.14);
-  --font-display: 'Open Sans', system-ui, sans-serif;
-  --font-body: 'Open Sans', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Figtree', sans-serif;
   --section-pad: clamp(100px, 12vw, 160px);
   --gutter: clamp(24px, 5vw, 72px);
   --content-max: 1180px;
 }
 
 body { background: var(--white); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-strong, b { font-weight: 700; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -107,15 +105,15 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .login-overlay.open { display: flex; }
 .login-modal { background: #fff; border-radius: 16px; padding: 40px 36px; max-width: 420px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.18); position: relative; }
 .login-modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--muted-2); padding: 4px; }
-.login-modal h3 { font-family: 'Open Sans', system-ui, sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
+.login-modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--ink); margin: 0 0 6px; letter-spacing: 0.03em; }
 .login-modal p { font-size: 14px; color: var(--muted-2); margin: 0 0 24px; line-height: 1.5; }
-.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Open Sans', system-ui, sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
+.login-modal input[type="email"] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 13px 16px; font-size: 15px; font-family: 'Figtree', sans-serif; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 14px; }
 .login-modal input[type="email"]:focus { border-color: var(--green); }
-.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Open Sans', system-ui, sans-serif; }
+.login-modal .btn-login-submit { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: 'Figtree', sans-serif; }
 .login-modal .btn-login-submit:hover { background: #259940; transform: translateY(-1px); }
 .login-modal .btn-login-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
 .login-modal-success { display: none; text-align: center; padding: 8px 0; }
-.login-modal-success h4 { font-family: 'Open Sans', system-ui, sans-serif; font-size: 24px; color: var(--ink); margin: 8px 0; }
+.login-modal-success h4 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--ink); margin: 8px 0; }
 .login-modal-success p { font-size: 14px; color: var(--muted-2); margin: 0; }
 .login-modal-error { display: none; background: #fff3f3; border: 1px solid #fca5a5; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #b91c1c; margin-bottom: 12px; }
 .login-google-wrap { display: flex; justify-content: center; margin-bottom: 4px; min-height: 44px; }
@@ -138,10 +136,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hero-left { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 100px var(--gutter) 80px; background: var(--white); }
 .hero-left::after { content: ''; position: absolute; top: 15%; right: -1px; bottom: 15%; width: 1px; background: var(--border-mid); }
 .hero-eyebrow { margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards; }
-.hero-headline { font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 3.8vw, 52px); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 20px; max-width: 18ch; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s forwards; }
+.hero-headline { font-family: var(--font-display); font-size: clamp(36px, 4.2vw, 56px); line-height: 0.90; letter-spacing: 0.01em; color: var(--ink); margin-bottom: 16px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s forwards; }
 .hero-headline-green { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(18px, 2.2vw, 28px); color: var(--green); letter-spacing: 0.02em; display: block; margin-bottom: 32px; line-height: 1.3; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards; }
-.hero-headline-green strong { font-style: normal; }
-.hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: none; line-height: 1.85; margin-bottom: 48px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
+.hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: 440px; line-height: 1.85; margin-bottom: 48px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.8s forwards; }
 .hero-trust { font-size: 12px; color: var(--muted); margin-top: 14px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.95s forwards; letter-spacing: 0.02em; }
 .hero-right { position: relative; overflow: hidden; z-index: 1; background: #1a2018; }
@@ -185,11 +182,8 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 
 /* ── STATS ── */
 .stats-bar { background: var(--surface); padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; z-index: 2; }
-.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; align-items: stretch; gap: 0; text-align: center; }
-.stat-item { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 clamp(12px, 2.5vw, 36px); height: 100%; min-width: 0; }
-.stat-item .stat-num { flex: 0 0 auto; }
-.stat-item .stat-label { flex: 0 0 auto; min-height: 32px; }
-.stat-item .stat-sub { flex: 1 1 auto; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: center; }
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 clamp(12px, 2.5vw, 36px); }
 .stat-item + .stat-item { border-left: 1px solid var(--border); }
 .stat-num { font-family: var(--font-display); font-size: clamp(48px, 5vw, 68px); color: var(--ink); line-height: 1.1; }
 .stat-num.stat-word { font-size: clamp(38px, 4vw, 58px); min-height: calc(1.2 * clamp(38px, 4vw, 58px)); display: flex; align-items: flex-end; justify-content: center; }
@@ -198,9 +192,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .stat-sub { font-size: 13px; color: var(--ink-2); line-height: 1.5; max-width: 200px; text-align: center; font-weight: 500; margin-top: 2px; }
 
 /* ── THREE PILLARS ── */
-.section-pillars { padding: var(--section-pad) 0; position: relative; z-index: 2; background: var(--surface); }
+.section-pillars { padding: var(--section-pad) 0; position: relative; z-index: 2; background: var(--white); }
 .section-header { text-align: center; margin-bottom: 72px; }
-.section-header h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 4vw, 56px); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 22px; max-width: 22ch; margin-left: auto; margin-right: auto; }
+.section-header h2 { font-family: var(--font-display); font-size: clamp(48px, 5.5vw, 76px); line-height: 0.95; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
 .section-header h2 em { font-style: normal; color: var(--green); }
 .section-header > p { font-size: 18px; color: var(--muted-2); max-width: 540px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
 .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
@@ -247,9 +241,9 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-card.tc-di .teaser-icon svg { stroke: var(--nutrition); }
 .teaser-card.tc-mm .teaser-icon svg { stroke: var(--green); }
 .teaser-card.tc-coach .teaser-icon svg { stroke: var(--body-blue); }
-.teaser-h { font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 1.9vw, 26px); line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 10px; }
+.teaser-h { font-family: var(--font-display); font-size: clamp(26px, 2.5vw, 34px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 8px; }
 .teaser-sub { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
-.teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; flex: 1; }
+.teaser-body { font-size: 14.5px; color: var(--muted-2); line-height: 1.72; }
 .teaser-cta { display: inline-flex; align-items: center; gap: 6px; padding-top: 24px; font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1.5px solid rgba(46,168,74,0.25); padding-bottom: 2px; width: fit-content; transition: all 0.2s; }
 .teaser-card:hover .teaser-cta { border-bottom-color: var(--green); }
 .teaser-card.tc-body::before { background: linear-gradient(90deg, var(--body-blue), #2b6e93); }
@@ -281,7 +275,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .teaser-data-tag { font-size: 11px; font-weight: 600; color: var(--body-blue); background: rgba(57,140,186,0.08); border-radius: 20px; padding: 3px 10px; }
 .teaser-expandable { overflow: hidden; max-height: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
 .tc-expanded .teaser-expandable { max-height: 2000px; }
-.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; padding-top: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); align-self: flex-start; }
+.teaser-toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); cursor: pointer; border: none; background: none; padding-bottom: 6px; transition: color 0.2s; font-family: var(--font-body); align-self: flex-start; }
 .teaser-toggle:hover { color: var(--ink-2); }
 .teaser-toggle-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s; }
 .teaser-card.tc-expanded .teaser-toggle-icon { transform: rotate(45deg); }
@@ -407,392 +401,10 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 .feat-label { display: inline-flex; align-items: center; gap: 6px; }
 .feat-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid rgba(26,26,26,0.22); color: rgba(26,26,26,0.42); font-size: 9px; font-weight: 700; cursor: default; flex-shrink: 0; line-height: 1; }
 .feat-info:hover { border-color: var(--green); color: var(--green); }
-.feat-tooltip { position: absolute; right: 22px; left: auto; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 1000; box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
+.feat-tooltip { position: absolute; right: 22px; left: auto; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--white); font-size: 12px; font-weight: 400; line-height: 1.5; letter-spacing: 0; text-transform: none; padding: 9px 13px; border-radius: 6px; width: 230px; white-space: normal; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
 .feat-tooltip::before { content: ''; position: absolute; left: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-left-color: var(--ink); }
-.feat-info:hover .feat-tooltip,
-.feat-info:focus .feat-tooltip,
-.feat-info.is-active .feat-tooltip { opacity: 1; pointer-events: auto; }
-.feat-info { cursor: pointer; }
-@media (max-width: 720px) {
-  .feat-tooltip { position: fixed !important; left: 16px !important; right: 16px !important; top: auto !important; bottom: 16px !important; width: auto !important; max-width: none !important; transform: none !important; font-size: 13px; padding: 14px 16px; z-index: 9999; }
-  .feat-tooltip::before { display: none; }
-}
+.feat-info:hover .feat-tooltip { opacity: 1; }
 .pricing-features li { position: relative; }
-/* -- Luma mock (copied from dashboard.html coach panel) -- */
-.luma-mock-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-  overflow: hidden;
-  max-width: 380px;
-  margin: 0 auto;
-}
-.luma-mock-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 16px;
-  background: linear-gradient(135deg, #154D33 0%, #1D6040 50%, #39BA76 100%);
-  color: #fff;
-  overflow: hidden;
-}
-.luma-mock-avatar-header {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-}
-.luma-mock-title-wrap { display: flex; flex-direction: column; gap: 1px; }
-.luma-mock-name { font-size: 15px; font-weight: 700; line-height: 1.2; }
-.luma-mock-status {
-  font-size: 11px;
-  opacity: 0.85;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.luma-mock-status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #8ef4b8;
-  box-shadow: 0 0 8px #8ef4b8;
-}
-.luma-mock-messages {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #fafafa;
-}
-.luma-mock-msg {
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
-  max-width: 85%;
-}
-.luma-mock-msg.user { align-self: flex-end; flex-direction: row-reverse; }
-.luma-mock-msg.assistant { align-self: flex-start; }
-.luma-mock-msg-avatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #154D33;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.luma-mock-msg.user .luma-mock-msg-avatar { display: none; }
-.luma-mock-msg-bubble {
-  padding: 10px 14px;
-  border-radius: 16px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-.luma-mock-msg.assistant .luma-mock-msg-bubble {
-  background: #39BA76;
-  color: #fff;
-  border-bottom-left-radius: 4px;
-}
-.luma-mock-msg.user .luma-mock-msg-bubble {
-  background: #F1F1F1;
-  color: #1D6040;
-  border-bottom-right-radius: 4px;
-}
-.luma-mock-chip {
-  display: inline-block;
-  background: rgba(232, 184, 75, 0.18);
-  color: #154D33;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 9px;
-  border-radius: 10px;
-  margin-bottom: 6px;
-}
-/* Luma section layout */
-.luma-section {
-  padding: 80px 20px;
-  background: #fff;
-  text-align: center;
-}
-.luma-section .eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #E8B84B;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.luma-section h2 {
-  font-size: clamp(28px, 5vw, 44px);
-  line-height: 1.1;
-  color: #154D33;
-  margin: 0 0 18px;
-}
-.luma-section .mission {
-  font-size: clamp(18px, 2.6vw, 26px);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #1D6040;
-  margin: 0 0 18px;
-}
-.luma-section .mission span { color: #39BA76; }
-.luma-section .intro,
-.luma-section .subcopy {
-  max-width: 620px;
-  margin: 0 auto 14px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #2a2a2a;
-}
-.luma-section .subcopy { margin-bottom: 48px; }
-.luma-moments {
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
-  max-width: 440px;
-  margin: 0 auto;
-}
-.luma-moment .caption {
-  font-size: 13px;
-  color: #154D33;
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-.luma-cta-wrap { margin-top: 56px; }
-.luma-cta {
-  display: inline-block;
-  padding: 16px 36px;
-  background: #39BA76;
-  color: #fff;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-.luma-cta:hover { background: #1D6040; }
-.luma-fade { opacity: 0; transform: translateY(8px); transition: opacity 0.25s ease-out, transform 0.25s ease-out; }
-.luma-fade.in { opacity: 1; transform: translateY(0); }
-@media (max-width: 480px) {
-  .luma-section { padding: 60px 16px; }
-  .luma-moments { gap: 36px; }
-  .luma-mock-card { max-width: 100%; }
-}
-
-/* ── 24-HOUR TIMELINE (moved from /how-it-works) ── */
-.section-timeline { padding: var(--section-pad) 0; background: var(--white); position: relative; }
-.timeline-header { text-align: center; margin-bottom: 80px; }
-.timeline-header h2 { font-family: var(--font-display); font-size: clamp(44px, 5.5vw, 68px); line-height: 0.95; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 20px; }
-.timeline-header h2 em { font-style: normal; color: var(--green); }
-.timeline-header > p { font-size: 18px; color: var(--muted-2); max-width: 520px; margin: 0 auto; line-height: 1.75; font-weight: 300; }
-.timeline { position: relative; max-width: 900px; margin: 0 auto; }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  bottom: 0;
-  width: 1.5px;
-  background: linear-gradient(to bottom, transparent, var(--border-mid) 8%, var(--border-mid) 92%, transparent);
-}
-.timeline-item { display: grid; grid-template-columns: 1fr 60px 1fr; align-items: start; gap: 0; margin-bottom: 80px; position: relative; }
-.timeline-item:last-child { margin-bottom: 0; }
-.timeline-item.right .timeline-content { grid-column: 3; grid-row: 1; }
-.timeline-item.right .timeline-spacer { grid-column: 2; grid-row: 1; }
-.timeline-item.right .timeline-placeholder { grid-column: 1; grid-row: 1; }
-.timeline-item.left .timeline-content { grid-column: 1; grid-row: 1; text-align: right; }
-.timeline-item.left .timeline-spacer { grid-column: 2; grid-row: 1; }
-.timeline-item.left .timeline-placeholder { grid-column: 3; grid-row: 1; }
-.timeline-spacer { display: flex; flex-direction: column; align-items: center; padding-top: 24px; }
-.timeline-node { width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 2.5px solid var(--green); position: relative; flex-shrink: 0; }
-.timeline-node.active { background: var(--green); box-shadow: 0 0 0 6px rgba(46,168,74,0.12); animation: livePulse 3s ease-in-out infinite; }
-.timeline-time-chip { margin-top: 10px; font-size: 10px; font-weight: 800; letter-spacing: 0.12em; color: var(--green-dark); background: linear-gradient(180deg, #ffffff 0%, var(--green-light) 100%); border: 1px solid rgba(46,168,74,0.28); border-radius: 50px; padding: 5px 12px; white-space: nowrap; box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 6px 14px rgba(46,168,74,0.18), 0 1px 2px rgba(46,168,74,0.10); }
-.timeline-content { padding: 0 32px; }
-.timeline-item.left .timeline-content { padding: 0 32px 0 0; }
-.timeline-item.right .timeline-content { padding: 0 0 0 32px; }
-.timeline-placeholder { padding: 24px 32px 0; }
-.timeline-visual { background: linear-gradient(180deg, #ffffff 0%, #f6f8f4 100%); border-radius: 18px; padding: 22px; border: 1px solid var(--border); box-shadow: var(--card-shadow); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1); }
-.timeline-placeholder:hover .timeline-visual { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
-.t-tool-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 14px; }
-.t-tool-badge.nutrition { background: rgba(57,186,118,0.10); color: #2a9148; border: 1px solid rgba(57,186,118,0.22); }
-.t-tool-badge.body { background: rgba(57,140,186,0.10); color: #2b6e93; border: 1px solid rgba(57,140,186,0.22); }
-.t-tool-badge.mind { background: rgba(232,184,75,0.10); color: #927010; border: 1px solid rgba(232,184,75,0.22); }
-.t-tool-badge.green { background: rgba(46,168,74,0.08); color: var(--green-dark); border: 1px solid rgba(46,168,74,0.20); }
-.timeline-content h3 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 40px); line-height: 1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 14px; }
-.timeline-content p { font-size: 15px; color: var(--muted-2); line-height: 1.8; font-weight: 300; }
-.timeline-content p strong { color: var(--ink); font-weight: 600; }
-.t-insight-card { background: #0d1210; border-radius: 10px; padding: 14px; }
-.t-insight-label { font-size: 8px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.30); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-.t-insight-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-accent); animation: livePulse 2s infinite; flex-shrink: 0; }
-.t-insight-text { font-size: 10px; color: rgba(255,255,255,0.60); line-height: 1.65; }
-.t-insight-text strong { color: var(--green-accent); font-weight: 700; }
-.t-score-row { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); }
-.t-score-label { font-size: 8px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
-.t-score-num { font-family: var(--font-display); font-size: 24px; color: var(--green-accent); line-height: 1; }
-.t-wearable-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.t-metric-pill { display: flex; flex-direction: column; align-items: center; background: var(--white); border: 1px solid var(--border-mid); border-radius: 10px; padding: 10px 14px; min-width: 64px; }
-.t-metric-val { font-family: var(--font-display); font-size: 22px; color: var(--ink); line-height: 1; }
-.t-metric-label { font-size: 8px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
-.t-metric-pill.good .t-metric-val { color: var(--nutrition); }
-.t-metric-pill.warn .t-metric-val { color: var(--mind); }
-.t-chat-row { display: flex; flex-direction: column; gap: 7px; }
-.t-chat-bubble { font-size: 10px; line-height: 1.55; padding: 8px 12px; border-radius: 10px; max-width: 90%; }
-.t-chat-bubble.user { align-self: flex-end; background: var(--surface); color: var(--muted-2); font-style: italic; }
-.t-chat-bubble.coach { align-self: flex-start; background: rgba(46,168,74,0.08); color: var(--ink); border: 1px solid rgba(46,168,74,0.15); }
-.t-chat-coach-label { font-size: 7px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 3px; }
-.t-luma-tile { padding: 0 !important; background: transparent !important; border: none !important; }
-.t-luma-card { background: var(--white); border: 1.5px solid var(--border-mid); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-body); }
-.t-luma-card .mock-coach-context { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 12px; border-bottom: 1px solid var(--border); }
-.t-luma-card .mock-chip { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 50px; background: var(--surface); color: var(--muted-2); border: 1px solid var(--border-mid); }
-.t-luma-card .mock-chip.alert { background: rgba(234,88,12,0.07); color: #ea580c; border-color: rgba(234,88,12,0.18); }
-.t-luma-card .mock-chip.low { background: rgba(239,68,68,0.07); color: #ef4444; border-color: rgba(239,68,68,0.18); }
-.t-luma-card .mock-chat-area { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; }
-.t-luma-card .mock-bubble { font-size: 12px; line-height: 1.55; padding: 10px 13px; border-radius: 10px; max-width: 90%; }
-.t-luma-card .mock-bubble.user { align-self: flex-end; background: var(--surface); color: var(--muted-2); border-radius: 10px 10px 2px 10px; font-style: italic; }
-.t-luma-card .mock-bubble.coach { align-self: flex-start; background: rgba(46,168,74,0.08); color: var(--ink); border-radius: 10px 10px 10px 2px; border: 1px solid rgba(46,168,74,0.15); }
-.t-luma-card .mock-coach-label { font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 5px; }
-.t-luma-card .mock-input-row { display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-top: 1px solid var(--border); }
-.t-luma-card .mock-input-bar { flex: 1; height: 32px; background: var(--surface); border-radius: 8px; border: 1px solid var(--border); }
-.t-luma-card .mock-send-btn { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-.t-luma-card .mock-send-btn svg { width: 14px; height: 14px; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.t-reflection-row { display: flex; flex-direction: column; gap: 8px; }
-.t-reflect-item { display: flex; align-items: center; gap: 10px; }
-.t-reflect-label { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); width: 52px; flex-shrink: 0; }
-.t-reflect-bar { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
-.t-reflect-fill { height: 100%; border-radius: 3px; }
-.t-reflect-val { font-size: 10px; font-weight: 700; width: 20px; text-align: right; }
-@media (max-width: 900px) {
-  .timeline::before { left: 28px; }
-  .timeline-item { grid-template-columns: 56px 1fr; }
-  .timeline-item.right .timeline-content,
-  .timeline-item.left .timeline-content { grid-column: 2; grid-row: 1; text-align: left; padding: 0 0 0 20px; }
-  .timeline-item.right .timeline-spacer,
-  .timeline-item.left .timeline-spacer { grid-column: 1; grid-row: 1; }
-  .timeline-item.right .timeline-placeholder,
-  .timeline-item.left .timeline-placeholder { display: none; }
-}
-
-/* ── Editorial h2 system (overrides legacy Bebas-era h2s on /) ── */
-.timeline-header h2,
-.testimonials-header h2 { font-family: var(--font-display) !important; font-weight: 700 !important; font-size: clamp(34px, 4vw, 56px) !important; line-height: 1.18 !important; letter-spacing: -0.015em !important; max-width: 22ch; margin-left: auto; margin-right: auto; }
-.section-cta .cta-inner h2 { font-family: var(--font-display) !important; font-weight: 700 !important; font-size: clamp(36px, 5vw, 64px) !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; max-width: 18ch; margin-left: auto; margin-right: auto; }
-
-/* ── Eyebrow color: single source of truth ── */
-.label, .label::before { color: var(--green); }
-.section-cta .label { color: var(--green) !important; }
-.section-cta .label::before { background: var(--green) !important; }
-
-/* ── Card shadow tokens ── */
-:root { --card-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 28px rgba(20,40,30,0.06), 0 30px 64px rgba(20,40,30,0.05); --card-shadow-hover: 0 1px 0 rgba(255,255,255,0.9) inset, 0 18px 36px rgba(20,40,30,0.10), 0 40px 80px rgba(20,40,30,0.08); }
-
-/* ── 3D TIMELINE JOURNEY ── */
-.section-timeline { perspective: 1400px; perspective-origin: 50% 38vh; overflow: hidden; }
-.section-timeline .timeline { transform-style: preserve-3d; }
-.section-timeline .timeline::before {
-  background: linear-gradient(to bottom, transparent, rgba(46,168,74,0.10) 8%, rgba(46,168,74,0.45) 50%, rgba(46,168,74,0.10) 92%, transparent);
-  width: 2px;
-  box-shadow: 0 0 20px rgba(46,168,74,0.25);
-}
-.section-timeline .timeline-item {
-  transform-style: preserve-3d;
-  will-change: transform, opacity;
-  transform: translateZ(-260px) translateY(40px) scale(0.84);
-  opacity: 0.22;
-  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-  /* override .reveal initial state. JS controls visibility */
-  animation: none !important;
-}
-.section-timeline .timeline-item.reveal { opacity: 0.22; }
-.section-timeline .timeline-item.tl-focus {
-  transform: translateZ(0) translateY(0) scale(1);
-  opacity: 1;
-}
-.section-timeline .timeline-item.tl-past {
-  transform: translateZ(-160px) translateY(-20px) scale(0.9);
-  opacity: 0.45;
-}
-.section-timeline .timeline-item .timeline-spacer { transform: translateZ(40px); }
-.section-timeline .timeline-item .timeline-visual { transform: translateZ(20px); }
-.section-timeline .timeline-item.tl-focus .timeline-visual {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 2px 4px rgba(20,40,30,0.05), 0 24px 48px rgba(20,40,30,0.10), 0 60px 120px rgba(57,186,118,0.10);
-}
-.section-timeline .timeline-item.tl-focus .timeline-node.active {
-  box-shadow: 0 0 0 8px rgba(46,168,74,0.18), 0 0 28px rgba(46,168,74,0.45);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .section-timeline { perspective: none; }
-  .section-timeline .timeline-item { transform: none !important; opacity: 1 !important; transition: none !important; }
-}
-
-@media (max-width: 860px) {
-  .section-timeline { perspective: 900px; perspective-origin: 50% 30vh; }
-  .section-timeline .timeline-item { transform: translateZ(-160px) translateY(30px) scale(0.9); }
-  .section-timeline .timeline-item.tl-past { transform: translateZ(-100px) scale(0.94); }
-}
-
-/* ── PRICING CARD UNIFORMITY ── */
-.section-pricing .pricing-grid { align-items: stretch; }
-.section-pricing .pricing-card { display: flex; flex-direction: column; }
-.section-pricing .pricing-card.featured { transform: none; box-shadow: 0 0 0 2px var(--green), 0 24px 48px rgba(46,168,74,0.16), 0 4px 12px rgba(46,168,74,0.10); }
-.section-pricing .pricing-card.featured:hover { transform: translateY(-6px); box-shadow: 0 0 0 2px var(--green), 0 32px 64px rgba(46,168,74,0.22), 0 8px 20px rgba(46,168,74,0.14); }
-.section-pricing .pricing-features { flex: 1 1 auto; }
-.section-pricing .pricing-card .btn { margin-top: auto; }
-
-/* ── WORKS WITH STRIP ── */
-.works-with { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; text-align: center; }
-.works-with-inner { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
-.works-with-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-.works-with-brands { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center; }
-.works-with-brand { font-size: 11px; font-weight: 700; color: var(--muted-2); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; display: inline-flex; align-items: center; gap: 5px; }
-.works-with-brand img { height: 16px; width: 16px; object-fit: contain; display: block; flex-shrink: 0; }
-@media (max-width: 540px) { .works-with-inner { gap: 16px; } .works-with-brands { gap: 14px; } .works-with-brand { font-size: 10px; } .works-with-brand img { height: 14px; width: 14px; } }
-
-/* Mobile: simplify dashboard preview */
-@media (max-width: 540px) {
-  .ls-grid, .score-breakdown { grid-template-columns: 1fr !important; }
-  .score-sub { display: none; }
-  .score-main { font-size: clamp(56px, 18vw, 80px) !important; }
-}
-
-/* Mobile: pricing cards stack with recommended first */
-@media (max-width: 768px) {
-  .pricing-grid { display: flex !important; flex-direction: column !important; align-items: stretch; }
-  .pricing-card.featured { order: -1; }
-}
-
-/* Mobile: pillar feature lists trim to 3 items */
-@media (max-width: 540px) {
-  .pillar-feature-list li:nth-child(n+4) { display: none; }
-  .pillar-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-}
-
-/* ── FAQ SECTION ── */
-.section-faq { padding: var(--section-pad) 0; background: var(--surface); border-top: 1px solid var(--border); }
-.faq-grid { max-width: 720px; margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-direction: column; gap: 0; }
-.faq-item { border-bottom: 1px solid var(--border); }
-.faq-item:first-child { border-top: 1px solid var(--border); }
-.faq-q { width: 100%; background: none; border: none; padding: 20px 0; text-align: left; font-size: 16px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; line-height: 1.4; }
-.faq-q::after { content: '+'; font-size: 20px; font-weight: 400; color: var(--green); flex-shrink: 0; transition: transform 0.2s; }
-.faq-q[aria-expanded="true"]::after { transform: rotate(45deg); }
-.faq-a { display: none; padding: 0 0 20px; }
-.faq-q[aria-expanded="true"] + .faq-a { display: block; }
-.faq-a p { font-size: 15px; line-height: 1.7; color: var(--muted-2); margin: 0; }
 </style>
 </head>
 <body>
@@ -801,11 +413,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="/" class="nav-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></a>
+  <a href="/" class="nav-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></a>
   <ul class="nav-links">
-    <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/features">Features</a></li>
     <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/why-tlc">Why TLC</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="#" class="nav-login" onclick="openLoginModal();return false;">Log in</a></li>
     <li><a href="/start" class="nav-cta">Start Free</a></li>
@@ -825,10 +437,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <a href="/why-tlc" onclick="toggleMobileNav()">Why TLC</a>
   <a href="/pricing" onclick="toggleMobileNav()">Pricing</a>
   <a href="#" onclick="toggleMobileNav();openLoginModal();return false;">Log in</a>
-  <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-top:8px;">
-    <a href="/start" class="btn btn-green">Start Free</a>
-    <span style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">No card needed. Free to try.</span>
-  </div>
+  <a href="/start" class="btn btn-green">Start Free</a>
 </div>
 
 <!-- STICKY SUB-NAV -->
@@ -836,10 +445,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="sub-nav-inner">
     <span class="sub-nav-title">The Longevity Chef</span>
     <ul class="sub-nav-links">
-      <li><a href="/features">Features</a></li>
-      <li><a href="/how-it-works">How It Works</a></li>
-      <li><a href="/why-tlc">Why TLC</a></li>
       <li><a href="#pillars">The System</a></li>
+      <li><a href="#teasers">Features</a></li>
       <li><a href="#pricing">Plans</a></li>
     </ul>
   </div>
@@ -848,13 +455,15 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow"><span class="label">Observe. Analyse. Optimise.</span></div>
-    <h1 class="hero-headline">Where nutrition, body and mind finally talk to each other.</h1>
-    <span class="hero-headline-green">The Longevity Chef connects <strong>fragmented signals across nutrition, body and mind</strong> to reveal <strong>hidden patterns</strong> in how you respond to food, sleep and recovery, so what truly drives your <strong>energy, focus and long-term wellbeing</strong> becomes clear.</span>
+    <div class="hero-eyebrow"><span class="label">The Data &middot; The Body &middot; The Mind</span></div>
+    <h1 class="hero-headline">YOUR MIND KNEW.<br>YOUR BODY KNEW.<br>YOUR WEARABLE KNEW.</h1>
+    <span class="hero-headline-green">Nobody connected them. Until now.</span>
+    <p class="hero-body">You have had the data all along. The sleep scores, the macros, the step counts. But data without context is just noise. TLC connects every meal, every biometric, and how you actually felt, then finds the thread running through all of it. One insight, every evening. Finally, you get to understand why you feel the way you feel.</p>
     <div class="hero-actions">
-      <a href="/start" class="btn btn-black">Let's get started</a>
-      <a href="/how-it-works" class="btn btn-outline">See how it works</a>
+      <a href="/start" class="btn btn-black">Start Your Free Assessment</a>
+      <a href="/how-it-works" class="btn btn-outline">How It Works</a>
     </div>
+    <p class="hero-trust">Your data is yours. Never sold, never shared. &nbsp;&middot;&nbsp; Encrypted in transit and at rest. &nbsp;&middot;&nbsp; No wearable required.</p>
   </div>
   <div class="hero-right">
     <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80">
@@ -868,8 +477,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <defs><linearGradient id="hicGrad" gradientUnits="userSpaceOnUse" x1="18" y1="100" x2="182" y2="100"><stop offset="0%" stop-color="#E8B84B"/><stop offset="55%" stop-color="#39BA76"/><stop offset="100%" stop-color="#2ea84a"/></linearGradient></defs>
           <path d="M 18,100 A 82,82 0 0,1 182,100" stroke="rgba(26,26,26,0.08)" stroke-width="12" fill="none" stroke-linecap="round"/>
           <path id="hic-speedo-fill" d="M 18,100 A 82,82 0 0,1 182,100" stroke="url(#hicGrad)" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="257.6" stroke-dashoffset="257.6" style="transition:stroke-dashoffset 0.8s cubic-bezier(0.4,0,0.2,1) 0.1s;"/>
-          <text id="hic-speedo-num" x="100" y="86" text-anchor="middle" font-family="'Open Sans',system-ui,sans-serif" font-size="36" fill="#1a1a1a">0</text>
-          <text x="100" y="100" text-anchor="middle" font-family="'Open Sans',system-ui,sans-serif" font-size="9" fill="rgba(26,26,26,0.38)" font-weight="600">/ 1000</text>
+          <text id="hic-speedo-num" x="100" y="86" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="36" fill="#1a1a1a">0</text>
+          <text x="100" y="100" text-anchor="middle" font-family="'Figtree',sans-serif" font-size="9" fill="rgba(26,26,26,0.38)" font-weight="600">/ 1000</text>
         </svg>
         <div class="hic-speedo-label">Longevity Score</div>
         <div class="hic-speedo-sub">Strong day &middot; Insight ready</div>
@@ -903,380 +512,111 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   </div>
 </section>
 
-<!-- WORKS WITH -->
-<div class="works-with">
-  <div class="works-with-inner">
-    <span class="works-with-label">Works with</span>
-    <div class="works-with-brands">
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=whoop.com&sz=64" alt="">WHOOP</span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ouraring.com&sz=64" alt="">Oura</span>
-      <span class="works-with-brand"><img src="https://cdn.simpleicons.org/garmin/6b6b6b" alt="">Garmin</span>
-      <span class="works-with-brand"><img src="https://cdn.simpleicons.org/fitbit/6b6b6b" alt="">Fitbit</span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=withings.com&sz=64" alt="">Withings</span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=ultrahuman.com&sz=64" alt="">Ultrahuman</span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=polar.com&sz=64" alt="">Polar</span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=dexcom.com&sz=64" alt="">Dexcom</span>
-      <span class="works-with-brand"><img src="https://www.google.com/s2/favicons?domain=suunto.com&sz=64" alt="">Suunto</span>
-      <span class="works-with-brand">+ 15 more</span>
-    </div>
-  </div>
-</div>
-
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>HRV and Nutrition Connected</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Patterns Revealed</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Your Data. Your Answers.</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>25+ Wearables Synced</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Food, Body and Mind as One System</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Free to Try. No Card Needed.</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Daily Insights from Your Own Data</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Sleep, Stress and Recovery Tracked</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Score Updated Weekly</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Patterns That Change Everything</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>HRV and Nutrition Connected</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Patterns Revealed</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Your Data. Your Answers.</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>25+ Wearables Synced</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Food, Body and Mind as One System</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Free to Try. No Card Needed.</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Daily Insights from Your Own Data</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Sleep, Stress and Recovery Tracked</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Score Updated Weekly</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Patterns That Change Everything</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Nutrition</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Body</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Mind</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Connected</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Daily Insights</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Coach</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Meal Matchmaker</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>25+ Wearables</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Pantry Pal</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Score</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Nutrition</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Body</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Mind</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Connected</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Daily Insights</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Coach</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Meal Matchmaker</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>25+ Wearables</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Pantry Pal</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Longevity Score</span>
   </div>
 </div>
 
-<!-- INTRO COMPOUND STRIP (reuses .section-compound/.compound-* with 4-col override) -->
-<style>
-.section-compound.compound-4 .compound-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1480px; gap: 18px; }
-@media (max-width: 980px) { .section-compound.compound-4 .compound-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 540px) { .section-compound.compound-4 .compound-grid { grid-template-columns: 1fr; } }
-</style>
-<section class="section-compound compound-4">
-  <div class="compound-grid">
-    <div class="compound-eyebrow" style="text-align:center;margin-bottom:48px;">
-      <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.2vw,42px);line-height:1.18;letter-spacing:-0.015em;color:var(--ink);max-width:34ch;margin:0 auto;">TLC uncovers the patterns that were hiding in plain sight.</h2>
-    </div>
-    <div class="compound-item reveal">
-      <div class="compound-stat" style="white-space:nowrap;">Finally...</div>
-      <div class="compound-h">You have the answers.</div>
-      <p class="compound-body">Your meals, your wearable and how you actually felt. One adaptive system reading all three at once. The connections were always there. Now they show up.</p>
-    </div>
-    <div class="compound-item reveal d1">
-      <div class="compound-stat" style="white-space:nowrap;">Day 1</div>
-      <div class="compound-h">Tailored from the start.</div>
-      <p class="compound-body">A five-minute onboarding sets your baseline. Your first insight is built around your data, your goals and your restrictions. Not a generic plan.</p>
-    </div>
-    <div class="compound-item reveal d2">
-      <div class="compound-stat" style="white-space:nowrap;">Day 7</div>
-      <div class="compound-h">The pattern appears.</div>
-      <p class="compound-body">One week in, food, sleep and energy stop being separate inputs. They become one connected picture you can point to. Once you see it, you cannot unsee it.</p>
-    </div>
-    <div class="compound-item reveal d3">
-      <div class="compound-stat" style="white-space:nowrap;">Day 30+</div>
-      <div class="compound-h">You stop guessing.</div>
-      <p class="compound-body">A month in, you are no longer reacting. You are anticipating. Your choices stop being guesswork and start being informed instinct.</p>
-    </div>
-  </div>
-</section>
-
-<!-- LUMA PROOF -->
-<style>
-.section-luma { padding: var(--section-pad) 0; background: var(--white); position: relative; z-index: 2; border-top: 1px solid var(--border); }
-.luma-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gutter); }
-.luma-copy .label { margin-bottom: 24px; color: var(--green); }
-.luma-copy h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 18px; max-width: 18ch; }
-.luma-copy p { font-size: 17px; line-height: 1.7; color: var(--muted-2); max-width: 46ch; margin-bottom: 28px; font-weight: 400; }
-.luma-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
-.luma-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 18px; }
-.luma-tile-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-.luma-tile-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
-.luma-tile.body-tile .luma-tile-eyebrow::before { background: var(--body-blue); }
-.luma-tile.mind-tile .luma-tile-eyebrow::before { background: var(--mind); }
-.luma-tile p { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 0; font-weight: 400; }
-.luma-mock { background: linear-gradient(160deg, #154D33 0%, #0d3621 100%); border-radius: 24px; padding: 28px; box-shadow: 0 30px 80px rgba(21,77,51,0.22), 0 8px 24px rgba(0,0,0,0.10); position: relative; overflow: hidden; }
-.luma-mock::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 0%, rgba(57,186,118,0.20) 0%, transparent 55%); pointer-events: none; }
-.luma-mock-head { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; position: relative; z-index: 1; }
-.luma-mock-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #39BA76, #1D6040); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; flex-shrink: 0; }
-.luma-mock-meta { display: flex; flex-direction: column; gap: 2px; }
-.luma-mock-name { color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.01em; }
-.luma-mock-role { color: rgba(255,255,255,0.55); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
-.luma-mock-bubble { background: rgba(255,255,255,0.96); color: var(--ink); border-radius: 16px 16px 16px 4px; padding: 18px 20px; font-size: 15px; line-height: 1.6; position: relative; z-index: 1; max-width: 92%; box-shadow: 0 8px 24px rgba(0,0,0,0.08); font-weight: 400; }
-.luma-mock-pattern { color: var(--green-dark); font-weight: 700; }
-.luma-mock-stamp { color: rgba(255,255,255,0.55); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 14px; font-weight: 600; position: relative; z-index: 1; }
-@media (max-width: 860px) { .luma-grid { grid-template-columns: 1fr; gap: 36px; } .luma-tiles { grid-template-columns: 1fr; } .luma-copy h2 { max-width: 100%; } }
-</style>
-<section class="section-luma" id="luma-proof">
-  <div class="luma-grid">
-    <div class="luma-copy reveal">
-      <span class="label" style="text-transform:none;letter-spacing:0.01em;font-size:14px;">Meet Luma, your longevity coach, always on and continuously reading the signals across your mind, body, and nutrition.</span>
-      <h2>All day, your body has been sending signals.<br>Until now, they were easy to miss.</h2>
-      <p>Luma is always with you, quietly processing everything. Every meal. Every signal. Every number.<br>The patterns were always there. Now they&rsquo;re unmistakable.<br><br>She observes, analyses, and optimises in real time.</p>
-      <div class="luma-tiles">
-        <div class="luma-tile body-tile">
-          <div class="luma-tile-eyebrow">Activity to mind</div>
-          <p>On weeks you trained four or more times, your reported focus rose 18%. The link your tracker cannot draw.</p>
-        </div>
-        <div class="luma-tile mind-tile">
-          <div class="luma-tile-eyebrow">Mind to body</div>
-          <p>On nights after a stressful day, your resting heart rate ran 6 bpm higher. Now it has a name.</p>
-        </div>
-      </div>
-    </div>
-    <div class="luma-mock luma-mock-live reveal d2" id="lumaInteractive">
-      <div class="luma-mock-head">
-
-        <div class="luma-mock-meta">
-          <span class="luma-mock-name">Luma</span>
-          <span class="luma-mock-role">Your longevity coach</span>
-        </div>
-        <div class="luma-mock-status"><span class="luma-mock-status-dot"></span>Live</div>
-      </div>
-      <div class="luma-mock-context">
-        <span class="luma-chip alert">HRV: 41ms</span>
-        <span class="luma-chip alert">Sleep: 6.2h</span>
-        <span class="luma-chip low">Recovery: Low</span>
-        <span class="luma-chip">Goal: Longevity</span>
-      </div>
-      <div class="luma-mock-chat" id="lumaChat" aria-live="polite"></div>
-      <div class="luma-mock-suggestions">
-        <button type="button" class="luma-suggest" data-script="0">Why am I dragging today?</button>
-        <button type="button" class="luma-suggest" data-script="1">What should I eat tonight?</button>
-        <button type="button" class="luma-suggest" data-script="2">Should I train?</button>
-      </div>
-      <p class="luma-mock-closing">She is doing this with your data tonight. <a href="/start" class="luma-mock-link">Let's get started <span aria-hidden="true">&rarr;</span></a></p>
-    </div>
-  </div>
-</section>
-<style>
-.luma-mock-status { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.72); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 50px; position: relative; z-index: 1; }
-.luma-mock-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #6FE3A1; box-shadow: 0 0 0 3px rgba(111,227,161,0.18); animation: livePulse 2s ease-in-out infinite; }
-.luma-mock-context { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 1; }
-.luma-chip { font-size: 11px; font-weight: 700; letter-spacing: 0.02em; padding: 4px 10px; border-radius: 50px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); border: 1px solid rgba(255,255,255,0.12); }
-.luma-chip.alert { background: rgba(234,88,12,0.15); color: #FFB783; border-color: rgba(234,88,12,0.30); }
-.luma-chip.low { background: rgba(239,68,68,0.15); color: #FF9B9B; border-color: rgba(239,68,68,0.30); }
-.luma-mock-chat { display: flex; flex-direction: column; gap: 10px; min-height: 168px; position: relative; z-index: 1; padding: 4px 0 8px; }
-.luma-bubble { font-size: 14.5px; line-height: 1.55; padding: 12px 16px; border-radius: 14px; max-width: 88%; opacity: 0; transform: translateY(8px); animation: lumaBubbleIn 0.45s cubic-bezier(0.2,0.8,0.2,1) forwards; }
-@keyframes lumaBubbleIn { to { opacity: 1; transform: translateY(0); } }
-.luma-bubble.user { align-self: flex-end; background: rgba(255,255,255,0.10); color: #fff; border-radius: 14px 14px 4px 14px; font-style: italic; }
-.luma-bubble.luma { align-self: flex-start; background: rgba(255,255,255,0.96); color: var(--ink); border-radius: 14px 14px 14px 4px; box-shadow: 0 6px 20px rgba(0,0,0,0.10); }
-.luma-bubble.luma strong { color: var(--green-dark); font-weight: 700; }
-.luma-bubble.typing { background: rgba(255,255,255,0.96); border-radius: 14px 14px 14px 4px; padding: 14px 18px; align-self: flex-start; display: inline-flex; gap: 5px; align-items: center; }
-.luma-bubble.typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(20,40,30,0.45); animation: lumaTypingDot 1.1s ease-in-out infinite; }
-.luma-bubble.typing span:nth-child(2) { animation-delay: 0.18s; }
-.luma-bubble.typing span:nth-child(3) { animation-delay: 0.36s; }
-@keyframes lumaTypingDot { 0%,60%,100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
-.luma-mock-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 1; }
-.luma-suggest { font-family: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.01em; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 14px; cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
-.luma-suggest:hover { background: rgba(232,184,75,0.16); border-color: rgba(232,184,75,0.45); color: #fff; transform: translateY(-1px); }
-.luma-suggest.active { background: rgba(111,227,161,0.18); border-color: rgba(111,227,161,0.50); color: #fff; }
-.luma-mock-closing { color: rgba(255,255,255,0.78); font-size: 13px; line-height: 1.55; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.10); position: relative; z-index: 1; }
-.luma-mock-link { color: #6FE3A1; font-weight: 700; text-decoration: none; letter-spacing: 0.01em; border-bottom: 1px solid rgba(111,227,161,0.35); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; white-space: nowrap; margin-left: 6px; }
-.luma-mock-link:hover { color: #9EF0BD; border-bottom-color: rgba(158,240,189,0.7); }
-@media (prefers-reduced-motion: reduce) { .luma-bubble { opacity: 1; transform: none; animation: none; } .luma-bubble.typing span { animation: none; opacity: 0.6; } .luma-mock-status-dot { animation: none; } }
-</style>
-
-<!-- 24-HOUR TIMELINE -->
-<section class="section-timeline">
-  <div class="container">
-    <div class="timeline-header reveal">
-      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">A day in your life with TLC</span>
-      <h2>When everything connects, answers appear.</h2>
-      <p>Five moments. One picture you have never been able to see before. This is what changes when your food, your body and your mind finally talk to each other.</p>
-    </div>
-
-    <div class="timeline">
-
-      <!-- 07:30 Wearable Sync -->
-      <div class="timeline-item right reveal">
-        <div class="timeline-spacer">
-          <div class="timeline-node active"></div>
-          <span class="timeline-time-chip">07:30</span>
-        </div>
-        <div class="timeline-content">
-          <div class="t-tool-badge body">Body Pillar</div>
-          <h3>Your body reports in.</h3>
-          <p>Your wearable synced while you slept. <strong>HRV, sleep stages, resting heart rate, and recovery score</strong> are already in TLC before you open your eyes. No manual entry. No guessing. Your body's overnight story is already written.</p>
-          <p style="margin-top:12px;">TLC reads it and quietly adjusts today's recommendations. Low HRV this morning? Your calorie targets and food suggestions shift toward recovery. High strain overnight? Your coach already knows before you ask.</p>
-        </div>
-        <div class="timeline-placeholder">
-          <div class="timeline-visual">
-            <div class="t-wearable-row">
-              <div class="t-metric-pill good">
-                <span class="t-metric-val">61</span>
-                <span class="t-metric-label">HRV ms</span>
-              </div>
-              <div class="t-metric-pill">
-                <span class="t-metric-val">7.4h</span>
-                <span class="t-metric-label">Sleep</span>
-              </div>
-              <div class="t-metric-pill good">
-                <span class="t-metric-val">84%</span>
-                <span class="t-metric-label">Recovery</span>
-              </div>
-              <div class="t-metric-pill warn">
-                <span class="t-metric-val">58</span>
-                <span class="t-metric-label">RHR bpm</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12:30 Meal Matchmaker -->
-      <div class="timeline-item left reveal d1">
-        <div class="timeline-content">
-          <div class="t-tool-badge nutrition">Nutrition Pillar</div>
-          <h3>Lunch, anywhere.</h3>
-          <p>You’re out for lunch. You open Meal Matchmaker. TLC already knows your calorie needs for the day, your lunch macros, goals, allergies, and taste preferences. It scans real menus from nearby eateries and finds the perfect match for you. </p>
-          <p style="margin-top:12px;">Not a suggestion. A specific dish, from a real menu, with your actual macro targets checked. Every meal an informed decision, wherever you are. <strong>All meals, calories & macros logged automatically.</strong></p>
-          <p style="margin-top:12px;">At home? TLC's Pantry Pal scans your fridge and cupboards, uses what you already have at home, and builds instant recipes tailored to you. Or follow a pre-made TLC meal plan designed a week in advance around your preferences.</p>
-        </div>
-        <div class="timeline-spacer">
-          <div class="timeline-node"></div>
-          <span class="timeline-time-chip">12:30</span>
-        </div>
-        <div class="timeline-placeholder">
-          <div class="timeline-visual">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-              <span style="font-size:11px;font-weight:700;color:var(--ink);">Sushi Yoshi</span>
-              <span style="font-size:10px;font-weight:800;color:var(--green);background:rgba(46,168,74,0.10);border:1px solid rgba(46,168,74,0.22);border-radius:50px;padding:3px 10px;">94% Match</span>
-            </div>
-            <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px;">Salmon Avocado Bowl</div>
-            <div style="font-size:9px;color:var(--muted);margin-bottom:10px;">680 kcal &bull; 44g protein &bull; Omega-3 rich</div>
-            <div style="font-size:9px;font-style:italic;color:var(--green-dark);background:var(--green-light);padding:8px 10px;border-radius:6px;border:1px solid rgba(46,168,74,0.15);">"Calorie distance: 12 kcal. Anti-inflammatory profile matches your goal."</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 20:00 Evening Reflection -->
-      <div class="timeline-item left reveal d1">
-        <div class="timeline-content">
-          <div class="t-tool-badge mind">Mind Pillar</div>
-          <h3>Sixty seconds that close the loop.</h3>
-          <p>TLC sends a gentle reminder at your preferred time. You rate your mood, energy, focus, and stress. <strong>60 seconds.</strong> That is all. This is the data point that closes the triangle: nutrition plus body plus mind. The one that turns numbers into patterns.</p>
-          <p style="margin-top:12px;">Without it, TLC has two of the three pillars. With it, the third reading lands and tonight's insight has somewhere to point. "Every time your omega-3 intake was above target, your evening energy was 7.8 or higher." That kind of pattern only exists because you took 60 seconds.</p>
-        </div>
-        <div class="timeline-spacer">
-          <div class="timeline-node active"></div>
-          <span class="timeline-time-chip">20:00</span>
-        </div>
-        <div class="timeline-placeholder">
-          <div class="timeline-visual">
-            <div style="font-size:8px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Tonight's Reflection</div>
-            <div class="t-reflection-row">
-              <div class="t-reflect-item">
-                <span class="t-reflect-label" style="color:var(--mind);">Mood</span>
-                <div class="t-reflect-bar"><div class="t-reflect-fill" style="width:78%;background:var(--mind);"></div></div>
-                <span class="t-reflect-val" style="color:var(--mind);">7.8</span>
-              </div>
-              <div class="t-reflect-item">
-                <span class="t-reflect-label" style="color:var(--body-blue);">Energy</span>
-                <div class="t-reflect-bar"><div class="t-reflect-fill" style="width:82%;background:var(--body-blue);"></div></div>
-                <span class="t-reflect-val" style="color:var(--body-blue);">8.2</span>
-              </div>
-              <div class="t-reflect-item">
-                <span class="t-reflect-label" style="color:var(--nutrition);">Focus</span>
-                <div class="t-reflect-bar"><div class="t-reflect-fill" style="width:71%;background:var(--nutrition);"></div></div>
-                <span class="t-reflect-val" style="color:var(--nutrition);">7.1</span>
-              </div>
-              <div class="t-reflect-item">
-                <span class="t-reflect-label" style="color:var(--muted);">Stress</span>
-                <div class="t-reflect-bar"><div class="t-reflect-fill" style="width:35%;background:var(--muted);"></div></div>
-                <span class="t-reflect-val" style="color:var(--muted);">3.5</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPOUNDING STATS STRIP -->
-<style>
-.section-compound { padding: var(--section-pad) 0; background: linear-gradient(180deg, var(--white) 0%, var(--surface) 100%); border-top: 1px solid var(--border); position: relative; z-index: 2; }
-.compound-grid { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 32px); align-items: stretch; }
-.compound-eyebrow { grid-column: 1 / -1; text-align: center; margin-bottom: 12px; }
-.compound-item { background: linear-gradient(180deg, #ffffff 0%, #f6f8f4 100%); border: 1px solid var(--border); border-radius: 18px; padding: 40px 44px; box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 28px rgba(20,40,30,0.06), 0 30px 64px rgba(20,40,30,0.05); display: flex; flex-direction: column; height: 100%; }
-.compound-stat { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 4.5vw, 56px); line-height: 1; letter-spacing: -0.02em; color: var(--green); margin-bottom: 14px; }
-.compound-h { font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 2vw, 26px); line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 12px; }
-.compound-body { font-size: 15px; line-height: 1.7; color: var(--muted-2); font-weight: 400; }
-@media (max-width: 860px) { .compound-grid { grid-template-columns: 1fr; } }
-</style>
+<!-- STATS -->
+<div class="stats-bar"><div class="container"><div class="stats-grid">
+  <div class="stat-item reveal d1"><span class="stat-num stat-word" style="color:var(--green);">Why.</span><span class="stat-label">Finally, an Answer</span><span class="stat-sub">Your wearable shows the what. TLC finds the why. Last night's dinner is more connected to this morning's brain fog than you think.</span></div>
+  <div class="stat-item reveal d2"><span class="stat-num stat-word">Day 1.</span><span class="stat-label">Working from Minute One</span><span class="stat-sub">Before you log a single meal or step, TLC already knows your baselines. Your first insight is personalised from minute one.</span></div>
+  <div class="stat-item reveal d3"><span class="stat-num stat-word">Day 7.</span><span class="stat-label">The Moment It Clicks</span><span class="stat-sub">Seven days in, something shifts. You see a connection between your sleep score and what you ate two nights ago. You cannot unsee it.</span></div>
+  <div class="stat-item reveal d4"><span class="stat-num stat-word">Day 30+</span><span class="stat-label">You Stop Guessing</span><span class="stat-sub">After a month, your decisions stop being instinct and start being informed. You know what your body needs before it starts asking loudly.</span></div>
+</div></div></div>
 
 <!-- THREE PILLARS -->
-<style>
-.section-pillars .teasers-grid { grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
-.section-pillars .teaser-card.tc-mind { grid-column: 1 / -1; order: -1; padding: clamp(40px, 5vw, 64px) clamp(32px, 5vw, 72px); background: linear-gradient(135deg, #154D33 0%, #1D6040 60%, #2a7a4a 100%); border: 1px solid rgba(232,184,75,0.20); box-shadow: 0 1px 0 rgba(255,255,255,0.10) inset, 0 24px 48px rgba(20,40,30,0.18), 0 60px 120px rgba(232,184,75,0.10); display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; overflow: hidden; isolation: isolate; max-width: 560px; width: 100%; margin-left: auto; margin-right: auto; aspect-ratio: 2/3; min-height: fit-content; }
-.section-pillars .teaser-card.tc-mind > *:not(.thread-backdrop) { position: relative; z-index: 1; }
-.thread-backdrop { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-.thread-backdrop canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
-.thread-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(21,77,51,0.55) 0%, rgba(29,96,64,0.42) 50%, rgba(42,122,74,0.38) 100%); transition: background 1.8s ease-out; pointer-events: none; }
-.section-pillars .teaser-card.tc-mind.thread-revealed .thread-backdrop::after { background: linear-gradient(135deg, rgba(21,77,51,0.42) 0%, rgba(29,96,64,0.30) 50%, rgba(42,122,74,0.26) 100%); }
-.section-pillars .teaser-card.tc-mind::before { display: none; }
-.section-pillars .teaser-card.tc-mind .teaser-icon { background: rgba(232,184,75,0.16); width: 104px; height: 104px; margin-bottom: 28px; border-radius: 22px; }
-.section-pillars .teaser-card.tc-mind .teaser-icon svg { width: 56px; height: 56px; stroke: var(--mind); }
-.section-pillars .teaser-card.tc-mind > div:nth-child(2) { color: var(--mind); margin-bottom: 14px; }
-.section-pillars .teaser-card.tc-mind .teaser-h { color: #fff; font-size: clamp(18px, 2.2vw, 26px); line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 16px; max-width: 32ch; text-align: center; font-weight: 600; }
-.section-pillars .teaser-card.tc-mind .teaser-h + .teaser-h { margin-top: 0; }
-.section-pillars .teaser-card.tc-mind .teaser-sub { color: rgba(232,184,75,0.85); font-style: normal; font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; text-align: center; }
-.section-pillars .teaser-card.tc-mind .teaser-body { color: rgba(255,255,255,0.80); font-size: 17px; line-height: 1.7; max-width: 60ch; text-align: center; margin-bottom: 22px; }
-.section-pillars .teaser-card.tc-mind .teaser-toggle { color: rgba(255,255,255,0.55); align-self: center; }
-.section-pillars .teaser-card.tc-mind .teaser-toggle:hover { color: rgba(255,255,255,0.85); }
-.section-pillars .teaser-card.tc-mind .teaser-expandable { width: 100%; max-width: 720px; margin: 0 auto; text-align: left; }
-.section-pillars .teaser-card.tc-mind .teaser-tool-name,
-.section-pillars .teaser-card.tc-mind .teaser-prop-name { color: #fff; }
-.section-pillars .teaser-card.tc-mind .teaser-tool-desc,
-.section-pillars .teaser-card.tc-mind .teaser-prop-desc { color: rgba(255,255,255,0.65); }
-.section-pillars .teaser-card.tc-mind .teaser-tool-list,
-.section-pillars .teaser-card.tc-mind .teaser-proprietary { border-top-color: rgba(255,255,255,0.10); }
-.section-pillars .teaser-card.tc-mind .teaser-prop-label { color: var(--mind); }
-.section-pillars .teaser-card.tc-mind .teaser-prop-badge { background: rgba(232,184,75,0.18); color: var(--mind); }
-.section-pillars .teaser-card.tc-mind .teaser-cta { color: var(--mind); border-bottom-color: rgba(232,184,75,0.4); margin-top: 14px; align-self: center; }
-/* Mind pillar tile */
-.section-pillars .teaser-card.tc-mind-tile::before { background: linear-gradient(90deg, var(--mind), #b89010); }
-.section-pillars .teaser-card.tc-mind-tile .teaser-icon { background: rgba(232,184,75,0.10); }
-.section-pillars .teaser-card.tc-mind-tile .teaser-icon svg { stroke: var(--mind); }
-.section-pillars .teaser-card.tc-mind-tile .teaser-cta { color: #927010; border-bottom-color: rgba(232,184,75,0.3); }
-.section-pillars .teaser-card.tc-mind-tile:hover .teaser-cta { border-bottom-color: var(--mind); }
-/* Tile compaction */
-.section-pillars .teaser-card.tc-di,
-.section-pillars .teaser-card.tc-body,
-.section-pillars .teaser-card.tc-mind-tile { padding: 32px 28px 28px; }
-.section-pillars .teaser-card.tc-di .teaser-h,
-.section-pillars .teaser-card.tc-body .teaser-h,
-.section-pillars .teaser-card.tc-mind-tile .teaser-h { font-size: clamp(20px, 1.9vw, 24px); margin-bottom: 8px; }
-.section-pillars .teaser-card.tc-di .teaser-body,
-.section-pillars .teaser-card.tc-body .teaser-body,
-.section-pillars .teaser-card.tc-mind-tile .teaser-body { font-size: 14px; }
-@media (max-width: 720px) {
-  .section-pillars .teasers-grid { grid-template-columns: 1fr; }
-  .section-pillars .teaser-card.tc-mind { grid-column: auto; padding: 32px 24px; grid-template-columns: 1fr; gap: 18px; }
-  .section-pillars .teaser-card.tc-mind > * { grid-column: auto !important; }
-}
-</style>
 <section class="section-pillars" id="pillars">
   <div class="container">
     <div class="section-header reveal">
-      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The thread</span>
-      <h2 style="text-align:center;">Three pillars. One unified picture.</h2>
-      <p>Nutrition. Body. Mind. Most tools track one in isolation. TLC reads all three together, and the insight lives in the connection between them.</p>
+      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The Three Pillars</span>
+      <h2>EVERYTHING YOUR BODY<br><em>IS TRYING TO TELL YOU</em></h2>
+      <p>Most health tools track one thing at a time. TLC tracks all three simultaneously and finds the connections between them. Those connections are the insight.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card nutrition reveal d1">
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39BA76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div></div>
+        <h3>Nutrition</h3>
+        <p class="pillar-hook">What you eat shapes everything else.</p>
+        <p class="pillar-body">Every meal you log tells TLC something your wearable can't. The timing, the macros, the quality, the patterns across days. Nutrition is the lever most people underestimate.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">Meal logging</span>
+          <span class="pillar-data-tag">Macro targets</span>
+          <span class="pillar-data-tag">Menu scanning</span>
+          <span class="pillar-data-tag">Restaurant finder</span>
+        </div>
+      </div>
+      <div class="pillar-card body-pillar reveal d2">
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#398CBA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="4"/><path d="M9 4V2.5a.5.5 0 01.5-.5h5a.5.5 0 01.5.5V4"/><path d="M9 20v1.5a.5.5 0 00.5.5h5a.5.5 0 00.5-.5V20"/><polyline points="7.5 13 9.5 13 11 10.5 12.5 15.5 14 12 15.5 13 16.5 13"/><circle cx="12" cy="7.5" r="1" fill="#398CBA" stroke="none"/></svg></div></div>
+        <h3>Body</h3>
+        <p class="pillar-hook">Your wearable has been waiting for context.</p>
+        <p class="pillar-body">HRV, sleep stages, resting heart rate, strain, recovery. Your wearable collects all of it. TLC is the first system that connects these signals to what you ate and how you felt. That's where the patterns are.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">HRV</span>
+          <span class="pillar-data-tag">Sleep quality</span>
+          <span class="pillar-data-tag">Recovery</span>
+          <span class="pillar-data-tag">25+ devices</span>
+        </div>
+      </div>
+      <div class="pillar-card mind reveal d3">
+        <div class="pillar-visual"><div class="pillar-icon-wrap"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8B84B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg></div></div>
+        <h3>Mind</h3>
+        <p class="pillar-hook">The data your wearable can't collect.</p>
+        <p class="pillar-body">Energy, focus, mood, motivation. A 60-second evening reflection tells TLC what no sensor can: how you actually feel. It is the missing variable that makes every other data point interpretable.</p>
+        <div class="pillar-data-tags">
+          <span class="pillar-data-tag">Evening reflection</span>
+          <span class="pillar-data-tag">Mood tracking</span>
+          <span class="pillar-data-tag">Energy levels</span>
+          <span class="pillar-data-tag">Focus</span>
+        </div>
+      </div>
+    </div>
+    <div class="pillars-link reveal">
+      <a href="/why-tlc">See why connecting all three changes everything &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE TEASERS -->
+<section class="section-teasers" id="teasers">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">The System</span>
+      <h2>THREE PILLARS.<br><em>ONE TOOLKIT.</em></h2>
+      <p>TLC is built around the three forces that shape your health. Each pillar has its own tools. Together, they form one connected picture of you.</p>
     </div>
     <div class="teasers-grid">
 
       <!-- NUTRITION -->
       <div class="teaser-card tc-di reveal d1">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--nutrition);margin-bottom:8px;">Nutrition</div>
-        <h3 class="teaser-h">What you eat, dialled in.</h3>
-        <p class="teaser-sub">Meals aligned to your goals, your body, and your day.</p>
-        <p class="teaser-body">Every choice guided by your goals, your body, and what's already in your fridge. Build meals in seconds or plan a full week with less waste and less guesswork.</p>
+        <h3 class="teaser-h">WHAT YOU EAT,<br>PERFECTED</h3>
+        <p class="teaser-sub">From restaurant to recipe to meal plan</p>
+        <p class="teaser-body">Everything you need to eat well, whether you're eating out or cooking in. Find the right dish, build the right recipe, understand what's on your plate, and plan the week ahead.</p>
         <button class="teaser-toggle" onclick="event.stopPropagation();event.preventDefault();toggleTeaser(this)">
           <span class="teaser-toggle-icon"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
           <span class="teaser-toggle-label">See what's included</span>
@@ -1297,11 +637,11 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
             <div class="teaser-tool-item">
               <span class="teaser-tool-name">Meal Plan <span class="teaser-tool-pro">PRO</span></span>
-              <span class="teaser-tool-desc">A weekly meal plan that evolves based on what works for your mind and body. Ingredients are shared intelligently across meals. cutting packaging waste and avoiding an estimated 7kg of CO&#8322; emissions per month. Comes with a smart shopping list and batch cooking guide.</span>
+              <span class="teaser-tool-desc">A weekly meal plan that evolves based on what works for your mind and body. Ingredients are shared intelligently across meals — cutting packaging waste and avoiding an estimated 7kg of CO&#8322; emissions per month. Comes with a smart shopping list and batch cooking guide.</span>
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label">Nutrition Intelligence</div>
+            <div class="teaser-prop-label">Nutrition Intelligence <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Macro Alignment Score</span>
               <span class="teaser-prop-desc">How consistently your daily intake matches your goals across the week. Reveals when you're nailing targets vs. when flexibility serves you better.</span>
@@ -1322,12 +662,12 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       <!-- BODY -->
       <div class="teaser-card tc-body reveal d2">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--body-blue);margin-bottom:8px;">Body</div>
-        <h3 class="teaser-h">Your biometrics, made useful.</h3>
-        <p class="teaser-sub">Data that shows you what to do next.</p>
-        <p class="teaser-body">Sleep, recovery, activity, and energy in one place. TLC translates your wearable data into specific daily actions so you always know what to do next.</p>
+        <h3 class="teaser-h">YOUR BIOMETRICS,<br>MADE MEANINGFUL</h3>
+        <p class="teaser-sub">Data your wearable captures. Context TLC provides.</p>
+        <p class="teaser-body">Connect Oura, WHOOP, Garmin, or Fitbit, or log manually. TLC reads the meaning behind your numbers and weaves them into your daily health narrative.</p>
         <button class="teaser-toggle" onclick="event.stopPropagation();event.preventDefault();toggleTeaser(this)">
           <span class="teaser-toggle-icon"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
           <span class="teaser-toggle-label">See what's included</span>
@@ -1344,7 +684,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label">Proprietary metrics</div>
+            <div class="teaser-prop-label">Proprietary metrics <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
               <span class="teaser-prop-name">Vitality Alignment</span>
               <span class="teaser-prop-desc">How well your energy, nutrition, and sleep pull in the same direction. When they align, you feel it.</span>
@@ -1363,14 +703,14 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
       </div>
 
       <!-- MIND -->
-      <div class="teaser-card tc-mind-tile reveal d3">
+      <div class="teaser-card tc-mind reveal d3">
         <div class="teaser-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M12 18v-5.5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="12" cy="20" r="2"/><line x1="6.8" y1="6.2" x2="10.5" y2="11"/><line x1="17.2" y1="6.2" x2="13.5" y2="11"/><line x1="12" y1="18" x2="12" y2="14"/><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="12" r="1" fill="var(--mind)" stroke="none"/></svg>
         </div>
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">Mind</div>
-        <h3 class="teaser-h">Your mind, understood.</h3>
-        <p class="teaser-sub">What you feel, finally makes sense.</p>
-        <p class="teaser-body">Daily reflections, mood patterns, and energy signals read together. TLC shows you what's beneath the surface and gives you the clarity to act on it.</p>
+        <h3 class="teaser-h">PATTERNS YOUR<br>EYES CAN'T SEE</h3>
+        <p class="teaser-sub">Where data becomes understanding</p>
+        <p class="teaser-body">The tools that connect your nutrition and biometrics to how you actually feel, turning that connection into daily insight and expert, contextual guidance.</p>
         <button class="teaser-toggle" onclick="event.stopPropagation();event.preventDefault();toggleTeaser(this)">
           <span class="teaser-toggle-icon"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
           <span class="teaser-toggle-label">See what's included</span>
@@ -1378,43 +718,41 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
         <div class="teaser-expandable">
           <div class="teaser-tool-list">
             <div class="teaser-tool-item">
-              <span class="teaser-tool-name">Evening Reflection</span>
-              <span class="teaser-tool-desc">A 60-second check-in that tracks energy, mood, focus, digestion, and recovery. Your baseline for everything TLC learns about you.</span>
+              <span class="teaser-tool-name">Dynamic Insights</span>
+              <span class="teaser-tool-desc">A daily narrative connecting food, sleep, and mood into one clear, personalised picture. TLC analyses energy, focus, mood, motivation, digestion, recovery, and sleep quality together.</span>
             </div>
             <div class="teaser-tool-item">
-              <span class="teaser-tool-name">Luma Coach</span>
-              <span class="teaser-tool-desc">Your longevity coach trained across nutrition, physiology, mental performance, and habit science. Always context-aware. Always in your corner.</span>
+              <span class="teaser-tool-name">Longevity Coach</span>
+              <span class="teaser-tool-desc">An expert coach that already knows your biometrics, meals, goals, and history before you ask a single question.</span>
+            </div>
+            <div class="teaser-tool-item">
+              <span class="teaser-tool-name">Pattern Intelligence</span>
+              <span class="teaser-tool-desc">TLC calculates your Longevity Score, Three Pillars gauges, and weekly trend lines, spotting cross-pillar patterns that no single data source could reveal alone.</span>
             </div>
           </div>
           <div class="teaser-proprietary">
-            <div class="teaser-prop-label">Mind Intelligence</div>
+            <div class="teaser-prop-label">Insight Engine <span class="teaser-prop-badge">TLC ONLY</span></div>
             <div class="teaser-prop-item">
-              <span class="teaser-prop-name">Food-Mood Correlation</span>
-              <span class="teaser-prop-desc">Your unique patterns showing which foods drive your energy, focus, and mood. Built from your own data, not population averages.</span>
+              <span class="teaser-prop-name">Wellbeing Trend</span>
+              <span class="teaser-prop-desc">Your 7-day rolling average of energy, mood, focus, motivation, and recovery from your evening reflection. Spots momentum shifts before you feel them.</span>
             </div>
             <div class="teaser-prop-item">
-              <span class="teaser-prop-name">Mental Load Index</span>
-              <span class="teaser-prop-desc">How stress and cognitive load interact with your sleep and nutrition. Spots the days you need recovery before your body tells you.</span>
+              <span class="teaser-prop-name">Weekly Pattern Detection</span>
+              <span class="teaser-prop-desc">Discovers your repeating cycles across days and weeks. TLC learns your personal rhythm and flags deviations that matter before they compound.</span>
             </div>
             <div class="teaser-prop-item">
-              <span class="teaser-prop-name">Clarity Trend</span>
-              <span class="teaser-prop-desc">Weekly trajectory of focus and mood relative to your sleep, meals, and activity. The signal behind how sharp you feel each day.</span>
+              <span class="teaser-prop-name">Pillar Correlation Score</span>
+              <span class="teaser-prop-desc">How well your nutrition, body metrics, and mind signals align week to week. When all three pillars move in sync, that is when breakthroughs happen.</span>
             </div>
           </div>
         </div>
         <a href="/features#mind" class="teaser-cta">Explore mind tools &rarr;</a>
       </div>
 
-      <!-- CROSS-PILLAR HERO -->
-      <div class="teaser-card tc-mind reveal d3" id="threadHero">
-        <div class="thread-backdrop" aria-hidden="true"><canvas id="threadCanvas"></canvas></div>
-        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--mind);margin-bottom:8px;">The thread</div>
-        <h3 class="teaser-h">When you look at the data as individual dots, everything feels noisy and unclear.</h3>
-        <h3 class="teaser-h">Connect them, and patterns begin to emerge. What once felt fragmented resolves into a clear picture that was there all along.</h3>
-        <p class="teaser-body">One night of bad sleep is just a data point. Three nights in a row, after late dinners, heading into a stressful week, alongside low magnesium intake. That is a pattern.<br><br>TLC brings these signals together. It reads how your mind and body respond, then quietly guides you toward what works, and away from what doesn’t.</p>
-        <a href="/how-it-works" class="teaser-cta">See the thread in action &rarr;</a>
-      </div>
-
+    </div>
+    <div class="teasers-more reveal">
+      <p>All three pillars. One connected system.</p>
+      <a href="/features">Explore all tools &rarr;</a>
     </div>
   </div>
 </section>
@@ -1425,7 +763,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="testimonials-header reveal">
       <span class="label" style="margin-bottom:18px;display:inline-flex;justify-content:center;color:rgba(255,255,255,0.70);background:transparent;border:none;letter-spacing:0.18em;">Real Results</span>
-      <h2>People who let TLC join the dots.</h2>
+      <h2>PEOPLE WHO ALREADY <em>LET TLC JOIN THE DOTS</em></h2>
       <p>What happens when food, body, and mind finally talk to each other.</p>
     </div>
     <div class="testimonials-grid">
@@ -1438,7 +776,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
         <p class="t-quote">I tried every tracker going. They all showed me numbers but never explained <strong>why</strong> my energy crashed every Thursday. TLC spotted the pattern in week two: low sleep Tuesday plus high carbs Wednesday. Fixed it. Never looked back.</p>
-        <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">S</span></div><div><div class="t-name">Sarah M., 38, marathon runner, London</div><div class="t-device">Oura Ring &bull; Fat loss goal</div></div></div>
+        <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">S</span></div><div><div class="t-name">Sarah M.</div><div class="t-device">Oura Ring &bull; Fat loss goal</div></div></div>
       </div>
       <div class="testimonial-card reveal d2">
         <div class="t-stars">
@@ -1448,8 +786,8 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition has barely slipped in the past 6 months, and even when it did, TLC knew exactly what to do or say to gave me one clear step to correct it.</p>
-        <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">J</span></div><div><div class="t-name">James K., 52, executive, Dublin</div><div class="t-device">WHOOP 4.0 &bull; Longevity goal</div></div></div>
+        <p class="t-quote">I travel three weeks out of four for work. Meal Matchmaker is the only tool that actually handles this. <strong>Any city, any restaurant</strong>, it finds exactly what I need in 30 seconds. My nutrition has barely slipped in the past 6 months, and even when it did, TLC knew exactly what to do or say to get me back on the wagon.</p>
+        <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">J</span></div><div><div class="t-name">James K.</div><div class="t-device">WHOOP 4.0 &bull; Longevity goal</div></div></div>
       </div>
       <div class="testimonial-card reveal d3">
         <div class="t-stars">
@@ -1460,8 +798,79 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <svg class="t-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
         <p class="t-quote">As someone managing gut health issues, the coach is extraordinary. It knows <strong>my exact sensitivities</strong>, cross-references everything I eat with how I felt the next day, and has never once suggested something that would trigger a flare.</p>
-        <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">P</span></div><div><div class="t-name">Priya L., 44, GP and mother of two, Sydney</div><div class="t-device">Garmin &bull; Gut health goal</div></div></div>
+        <div class="t-author"><div class="t-avatar"><span class="t-avatar-letter">P</span></div><div><div class="t-name">Priya L.</div><div class="t-device">Garmin &bull; Gut health goal</div></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITOR DIFFERENTIATION -->
+<section class="section-diff-table" id="compare" style="padding:var(--section-pad) 0;background:var(--white);border-top:1px solid var(--border);position:relative;z-index:2;">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:64px;">
+      <span class="label" style="justify-content:center;margin-bottom:20px;display:inline-flex;">Why TLC</span>
+      <h2>NOT ANOTHER CALORIE COUNTER,<br><em>HEALTH TRACKER, MEAL PLANNER OR TEST KIT.</em></h2>
+      <p>It's an ultra-personalised longevity ecosystem, designed to spot hidden patterns, then guide you to live better and longer.</p>
+    </div>
+    <div style="overflow-x:auto;" class="reveal d1">
+      <table style="width:100%;border-collapse:collapse;min-width:560px;">
+        <thead>
+          <tr>
+            <th style="text-align:left;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:0 20px 18px 0;border-bottom:2px solid var(--border);width:36%;">Capability</th>
+            <th style="text-align:center;font-size:12px;font-weight:800;color:var(--green);padding:0 16px 18px;border-bottom:2px solid var(--green);background:rgba(46,168,74,0.04);">TLC</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Nutrition Trackers</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Wearables</th>
+            <th style="text-align:center;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 18px;border-bottom:2px solid var(--border);">Health Tests</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Connects food, sleep, and mood</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Finds dishes at nearby restaurants</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Wearable data (HRV, sleep, recovery)</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Daily insight connecting food, sleep and mood</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Weekly strategy built on your patterns</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+          </tr>
+          <tr>
+            <td style="padding:14px 20px 14px 0;font-size:13.5px;font-weight:500;color:var(--ink-2);">Free tier (no card)</td>
+            <td style="text-align:center;padding:14px 16px;background:rgba(46,168,74,0.04);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(46,168,74,0.12)"/><path d="M5.5 9l2.5 2.5L12.5 6" stroke="#2ea84a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+            <td style="text-align:center;padding:14px 16px;"><span style="color:rgba(26,26,26,0.22);font-size:17px;line-height:1;font-weight:300;">&#8212;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal d2" style="text-align:center;margin-top:40px;">
+      <a href="/why-tlc" style="font-size:13px;font-weight:700;color:var(--green);text-decoration:none;letter-spacing:0.04em;border-bottom:1.5px solid rgba(46,168,74,0.25);padding-bottom:2px;">See the full case for TLC &rarr;</a>
     </div>
   </div>
 </section>
@@ -1471,12 +880,25 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="container">
     <div class="section-header reveal" style="margin-bottom:64px;">
       <span class="label" style="margin-bottom:20px;display:inline-flex;justify-content:center;">Plans</span>
-      <h2>Choose your path to longevity.</h2>
-      <p>Your patterns are already in the data. They are waiting to be read. Free to try, no card needed.</p>
-      <p style="max-width:560px;margin:16px auto 0;font-size:15px;color:var(--ink-2);line-height:1.75;">At worst, nothing changes and it costs you nothing to try. At best, you see patterns no single app could show you, feel better every day, and take control of your long-term health.<br><br>Make one of the most valuable investments you will make this year, in your mind and your body.</p>
+      <h2>CHOOSE YOUR PATH <em>TO LONGEVITY</em></h2>
+      <p>Seven days to your first pattern. Free to start. No commitment.</p>
+      <p style="max-width:560px;margin:16px auto 0;font-size:15px;color:var(--ink-2);line-height:1.75;">At worst, nothing changes and it costs you nothing to try. At best, you unlock a smarter way to eat, feel better every day, and take control of your long-term health.<br><br>Make one of the most valuable investments you will make this year, in your mind and your body.</p>
     </div>
     <div class="pricing-grid">
-      <div class="pricing-card featured reveal-scale d1">
+      <div class="pricing-card reveal-scale d1">
+        <div class="pricing-tier">TLC Lite</div>
+        <div class="pricing-price">Free</div>
+        <div class="pricing-period">forever</div>
+        <p class="pricing-desc">The smartest free meal tool on the market. No card required, no expiry.</p>
+        <ul class="pricing-features">
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Meal Matchmaker in every city</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Goal, allergy, and macro-aware</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personal nutrition blueprint</li>
+        </ul>
+        <a href="https://start.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free</a>
+        <p class="pricing-trial">Free forever. No card required.</p>
+      </div>
+      <div class="pricing-card featured reveal-scale d2">
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-tier">TLC</div>
         <div class="pricing-price">$9.99</div>
@@ -1489,38 +911,22 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pantry Pal and photo meal logging</li>
           <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>25+ wearables connected</li>
         </ul>
-        <a href="https://join.thelongevitychef.io?path=tlc" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 days free</a>
-<p style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center;">30-day money-back guarantee. No card needed for Lite.</p>
-        <p class="pricing-trial">7-day free trial. No card required.</p>
-      </div>
-      <div class="pricing-card reveal-scale d2">
-        <div class="pricing-tier">TLC Pro</div>
-        <div class="pricing-price">$19.99</div>
-        <div class="pricing-period">per month</div>
-        <p class="pricing-desc">Everything in TLC, plus a weekly meal plan that quietly cuts your grocery bill, your food waste and your carbon footprint.</p>
-        <ul class="pricing-features">
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in TLC</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Weekly meal plan tailored to your goals and kitchen</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Zero-waste shopping list that overlaps ingredients across the week</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Around 16% off your weekly grocery spend</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Around 7kg CO&#8322;e saved each month versus a typical diet</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Batch prep guide, two short sessions per week</li>
-        </ul>
-        <a href="https://join.thelongevitychef.io?path=pro" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 days free</a>
+        <a href="https://join.thelongevitychef.io" class="btn btn-green" style="width:100%;justify-content:center;">Try 7 Days Free</a>
         <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
       <div class="pricing-card reveal-scale d3">
-        <div class="pricing-tier">TLC Lite</div>
-        <div class="pricing-price">Free</div>
-        <div class="pricing-period">forever</div>
-        <p class="pricing-desc">The smartest free meal tool on the market. No card required, no expiry.</p>
+        <div class="pricing-tier">TLC Pro</div>
+        <div class="pricing-price">$19.99</div>
+        <div class="pricing-period">per month</div>
+        <p class="pricing-desc">For those who are serious. Your entire month of meals, planned with zero compromise.</p>
         <ul class="pricing-features">
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Meal Matchmaker in every city</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Goal, allergy, and macro-aware</li>
-          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personal nutrition blueprint</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in TLC</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Full monthly meal plan</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Shopping list that avoids ~7kg CO&#8322; emissions per month</li>
+          <li><svg class="pricing-check" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>~16% estimated grocery savings from shared ingredients</li>
         </ul>
-        <a href="https://start.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Start free</a>
-        <p class="pricing-trial">Free forever. No card required.</p>
+        <a href="https://join.thelongevitychef.io" class="btn btn-outline" style="width:100%;justify-content:center;">Try 7 Days Free</a>
+        <p class="pricing-trial">7-day free trial. No card required.</p>
       </div>
     </div>
     <div class="pricing-compare reveal">
@@ -1531,59 +937,21 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
 
 <!-- FINAL CTA -->
 <section class="section-cta"><div class="container"><div class="cta-inner">
-  <span class="label" style="justify-content:center;margin-bottom:28px;display:inline-flex;">Day 1</span>
-  <h2 class="reveal">Tonight, the <span>dots</span> start joining.</h2>
-  <p class="reveal d1">Five minutes to onboard. By 9 pm, Luma has your first insight. By Day 7, the first pattern you can point to.</p>
+  <span class="label" style="justify-content:center;margin-bottom:28px;display:inline-flex;color:var(--green-accent);">This Is Where It Starts</span>
+  <h2 class="reveal">THE SYSTEM THAT<br><span>KNOWS YOU.</span></h2>
+  <p class="reveal d1">No rigid plans. No starting over. TLC meets you where you are, learns what works for your body, and gets sharper every single day. Start free. No card needed.</p>
   <div class="cta-actions reveal d2">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
-      <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Let's get started</a>
-      <span style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:8px;text-align:center;">No card needed. Free to try.</span>
-    </div>
-    <span class="cta-note">No card. Cancel in one tap. Your data stays yours.</span>
+    <a href="/start" class="btn btn-green" style="font-size:13px;padding:18px 52px;">Take Your Free Assessment</a>
+    <span class="cta-note">Cancel anytime &nbsp;&middot;&nbsp; No lock-in &nbsp;&middot;&nbsp; No hidden fees</span>
   </div>
 </div></div></section>
-
-<!-- FAQ -->
-<section class="section-faq" id="faq">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 style="text-align:center;font-size:clamp(28px,3vw,40px);margin-bottom:48px;">Common questions</h2>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false">Does TLC work with my wearable?</button>
-        <div class="faq-a"><p>TLC connects with WHOOP, Oura, Garmin, Fitbit, Withings, Polar, Suunto, and more. If you connect a wearable during onboarding, your biometric data is pulled automatically and feeds directly into your daily insight and Luma's coaching context.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false">What if I don't have a wearable?</button>
-        <div class="faq-a"><p>No wearable needed. At the end of each day, take two minutes to log your energy levels, sleep quality, mood, and meals. TLC reads these inputs exactly as it reads wearable data and surfaces the same patterns. Many members start this way and find the manual check-in itself becomes a useful daily habit. You can connect a wearable at any point once you are ready.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false">Is my health data private?</button>
-        <div class="faq-a"><p>Your data is never sold, never shared with third parties, and never used to train external models. It lives in your account and is used solely to generate your insights and coaching. You can export or delete it at any time.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false">What happens after the free trial?</button>
-        <div class="faq-a"><p>After 7 days you can continue on TLC Lite for free, or stay on your paid plan. No card is required for Lite. If you chose a paid plan, you are billed monthly and can cancel in one tap at any time. We also offer a 30-day money-back guarantee on all paid plans.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false">How is TLC different from MyFitnessPal or WHOOP?</button>
-        <div class="faq-a"><p>MyFitnessPal tracks calories. WHOOP tracks biometrics. Neither connects the two. TLC reads all three pillars -- nutrition, body, and mind -- simultaneously, and surfaces the patterns that only emerge when you look at all three together. No other platform does this.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false">Can I cancel any time?</button>
-        <div class="faq-a"><p>Yes. Cancel in one tap from your account settings. No penalties, no lock-in. You keep access until the end of your current billing period. TLC Lite remains free forever.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo"><img src="https://fb23a745936a999cb3899f128489a23b.cdn.bubble.io/f1771378911633x956768063650322200/TLC_NEW-removebg-preview.png" alt="The Longevity Chef"></div>
-      <p>Connecting what you eat, how your body responds, and how you feel. Every day.</p>
+      <div class="footer-logo"><img src="/assets/logo.png" alt="The Longevity Chef"></div>
+      <p>Connecting the dots between what you eat, how your body responds, and how you feel.</p>
     </div>
     <div class="footer-col"><ul>
       <li><a href="/features">Features</a></li>
@@ -1730,7 +1098,7 @@ async function submitContact() {
     errEl.style.display = 'block';
     return;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
     errEl.textContent = 'Please enter a valid email address.';
     errEl.style.display = 'block';
     return;
@@ -1870,7 +1238,7 @@ function handleOverlayClick(e) { if (e.target === e.currentTarget) closeLoginMod
 window.handleLoginGoogleCredential = async function(response) {
   var wrap = document.getElementById('loginGoogleWrap');
   var saved = wrap ? wrap.innerHTML : '';
-  if (wrap) wrap.innerHTML = '<div class="login-google-loading">Signing in\u2026</div>';
+  if (wrap) wrap.innerHTML = '<div class="login-google-loading">Signing in\\u2026</div>';
   var errEl = document.getElementById('loginError');
   try {
     var res = await fetch('https://app.thelongevitychef.io/api/google-auth', {
@@ -1879,10 +1247,10 @@ window.handleLoginGoogleCredential = async function(response) {
     });
     var data = await res.json();
     if (data.status === 'existing') {
-      if (wrap) wrap.innerHTML = '<div class="login-google-loading">Redirecting to your dashboard\u2026</div>';
+      if (wrap) wrap.innerHTML = '<div class="login-google-loading">Redirecting to your dashboard\\u2026</div>';
       window.location.href = data.redirect_url || ('https://app.thelongevitychef.io/dashboard?user_id=' + encodeURIComponent(data.user_id));
     } else {
-      // No account found. send them to start
+      // No account found — send them to start
       if (wrap) wrap.innerHTML = saved;
       errEl.textContent = 'No account found for that Google account. Start free below to create yours.';
       errEl.style.display = 'block';
@@ -1931,7 +1299,7 @@ setTimeout(function() {
   if (ringM) ringM.style.strokeDashoffset = (87.96 * (1 - 0.84)).toFixed(2);
 }, 800);
 
-// ── Testimonial nebula (orbital nodes + spokes + expanding rings. brand standard) ──
+// ── Testimonial nebula (orbital nodes + spokes + expanding rings — brand standard) ──
 (function() {
   var canvas = document.getElementById('testimonialNebula');
   if (!canvas) return;
@@ -2067,354 +1435,6 @@ function toggleTeaser(btn) {
     card.querySelector('.teaser-toggle-label').textContent = newState ? 'Show less' : "See what's included";
   });
 }
-
-/* ── Thread-hero Mona Lisa pixelated zoom-out reveal ── */
-(function setupThreadBackdrop() {
-  var hero = document.getElementById('threadHero');
-  var canvas = document.getElementById('threadCanvas');
-  if (!hero || !canvas) return;
-  var ctx = canvas.getContext('2d');
-  if (!ctx) return;
-
-  var MONA_URL = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Mona_Lisa.jpg/960px-Mona_Lisa.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail';
-  var img = new Image();
-  var imgReady = false;
-  var pendingDraw = null;
-
-  // Crop focus: Mona Lisa's face is roughly centred horizontally, upper third vertically.
-  // Source image natural size ~ 1200 x 1797.
-  // Initial zoom-in crop = small box around the face. End crop = full painting (centred-cropped to card aspect).
-  function getCropForProgress(p) {
-    // p: 0 = max zoom (face only), 1 = full painting fit-to-card
-    var nw = img.naturalWidth || 1200;
-    var nh = img.naturalHeight || 1797;
-    // Face centre in source pixels
-    var fx = nw * 0.52;
-    var fy = nh * 0.32;
-    // Card aspect (we'll crop a rect with this aspect from the source)
-    var cardAspect = canvas.clientWidth / Math.max(1, canvas.clientHeight);
-    // Final crop: full painting
-    var finalW = nw;
-    var finalH = nh;
-    // Initial crop: small zoom around face, matching painting aspect
-    var initW = Math.min(nw, nh) * 0.10;
-    var initH = initW * (nh / nw);
-    // Interpolate
-    var ease = p < 0 ? 0 : p > 1 ? 1 : p;
-    // cubic ease-in: slow start, speeds up
-    ease = Math.pow(ease, 3);
-    var w = initW + (finalW - initW) * ease;
-    var h = initH + (finalH - initH) * ease;
-    // Centre on face at start, drift to full painting centre at end
-    var cxFinal = nw / 2;
-    var cyFinal = nh / 2;
-    var cx = fx + (cxFinal - fx) * ease;
-    var cy = fy + (cyFinal - fy) * ease;
-    var sx = Math.max(0, Math.min(nw - w, cx - w / 2));
-    var sy = Math.max(0, Math.min(nh - h, cy - h / 2));
-    return { sx: sx, sy: sy, sw: w, sh: h };
-  }
-
-  function getResolutionForProgress(p) {
-    // Effective canvas pixel resolution. Tiny at start, rising to native at end.
-    // Visible card width ~ 600-1100 px desktop, 343 mobile. Cap at 480 for perf.
-    var maxPx = Math.min(480, Math.max(180, canvas.clientWidth));
-    var minPx = 14; // chunky abstract blocks
-    var ease = p < 0 ? 0 : p > 1 ? 1 : p;
-    ease = Math.pow(ease, 2);
-    var w = Math.round(minPx + (maxPx - minPx) * ease);
-    return w;
-  }
-
-  function draw(p) {
-    if (!imgReady) { pendingDraw = p; return; }
-    var cw = canvas.clientWidth;
-    var ch = canvas.clientHeight;
-    if (!cw || !ch) return;
-    var resW = getResolutionForProgress(p);
-    var aspect = cw / ch;
-    var resH = Math.max(1, Math.round(resW / aspect));
-    if (canvas.width !== resW || canvas.height !== resH) {
-      canvas.width = resW;
-      canvas.height = resH;
-    }
-    ctx.imageSmoothingEnabled = false;
-    var crop = getCropForProgress(p);
-    ctx.clearRect(0, 0, resW, resH);
-    // Cover mode: scale to fill canvas fully (no bars), anchor top-centre
-    var scaleX = resW / crop.sw;
-    var scaleY = resH / crop.sh;
-    var scale = Math.max(scaleX, scaleY);
-    var dw = Math.round(crop.sw * scale);
-    var dh = Math.round(crop.sh * scale);
-    var dx = Math.round((resW - dw) / 2);
-    var dy = 0;
-    ctx.drawImage(img, crop.sx, crop.sy, crop.sw, crop.sh, dx, dy, dw, dh);
-  }
-
-  function onResize() {
-    // Re-render at current progress using current card size.
-    draw(currentProgress);
-  }
-
-  var currentProgress = 0;
-  var animStart = 0;
-  var animDuration = 7000;
-  var animating = false;
-  var revealed = false;
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function tick(ts) {
-    if (!animStart) animStart = ts;
-    var elapsed = ts - animStart;
-    var p = Math.min(1, elapsed / animDuration);
-    currentProgress = p;
-    draw(p);
-    if (p < 1) {
-      requestAnimationFrame(tick);
-    } else {
-      animating = false;
-    }
-  }
-
-  function start() {
-    if (revealed) return;
-    revealed = true;
-    hero.classList.add('thread-revealed');
-    if (reduceMotion) {
-      currentProgress = 1;
-      draw(1);
-      return;
-    }
-    animating = true;
-    animStart = 0;
-    requestAnimationFrame(tick);
-  }
-
-  img.onload = function() {
-    imgReady = true;
-    // Initial paint at progress 0 (heavy pixelation, face-zoom).
-    draw(pendingDraw != null ? pendingDraw : currentProgress);
-  };
-  img.onerror = function() {
-    // Fallback: paint a flat gradient so the card is not empty.
-    canvas.width = 8; canvas.height = 8;
-    ctx.fillStyle = '#1D6040';
-    ctx.fillRect(0, 0, 8, 8);
-  };
-  // Initial paint placeholder (in case img is slow): set canvas to a tiny green block.
-  canvas.width = 8; canvas.height = 8;
-  ctx.fillStyle = '#154D33';
-  ctx.fillRect(0, 0, 8, 8);
-
-  img.src = MONA_URL;
-
-  // Resize listener (debounced via rAF)
-  var resizeQueued = false;
-  window.addEventListener('resize', function() {
-    if (resizeQueued) return;
-    resizeQueued = true;
-    requestAnimationFrame(function() {
-      resizeQueued = false;
-      onResize();
-    });
-  });
-
-  function maybeStart() {
-    if (revealed) return;
-    setTimeout(function() {
-      if (imgReady) start(); else img.addEventListener('load', start);
-    }, 220);
-  }
-
-  function isInView() {
-    var r = hero.getBoundingClientRect();
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    return r.top < vh * 0.85 && r.bottom > vh * 0.15;
-  }
-
-  if (!('IntersectionObserver' in window)) {
-    if (isInView()) maybeStart();
-    window.addEventListener('scroll', function onScroll() {
-      if (isInView()) { maybeStart(); window.removeEventListener('scroll', onScroll); }
-    }, { passive: true });
-    return;
-  }
-
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting && !revealed) {
-        maybeStart();
-        obs.unobserve(hero);
-      }
-    });
-  }, { threshold: 0.25 });
-  obs.observe(hero);
-
-  // Belt-and-braces: also poll once on scroll, in case IO is suppressed.
-  var scrollHandler = function() {
-    if (revealed) { window.removeEventListener('scroll', scrollHandler); return; }
-    if (isInView()) { maybeStart(); window.removeEventListener('scroll', scrollHandler); }
-  };
-  window.addEventListener('scroll', scrollHandler, { passive: true });
-
-  // If hero is already visible at script-init time, start now.
-  if (isInView()) maybeStart();
-})();
-
-/* ── Tooltip tap-to-toggle (mobile + a11y) ── */
-(function setupTooltips() {
-  document.addEventListener('click', function(e) {
-    var info = e.target.closest('.feat-info');
-    document.querySelectorAll('.feat-info.is-active').forEach(function(el) {
-      if (el !== info) el.classList.remove('is-active');
-    });
-    if (info) {
-      e.preventDefault();
-      e.stopPropagation();
-      info.classList.toggle('is-active');
-    }
-  }, false);
-})();
-
-/* ── Interactive Luma demo ── */
-(function setupLumaDemo() {
-  var root = document.getElementById('lumaInteractive');
-  var chat = document.getElementById('lumaChat');
-  if (!root || !chat) return;
-  var SCRIPTS = [
-    {
-      turns: [
-        { role: 'user', text: 'Why am I dragging today?' },
-        { role: 'luma', html: 'Three nights this week you ate after 9 pm and deep sleep dropped 22%. But there is another pattern here. Your <strong>magnesium intake has been low</strong> across the last four days, averaging 38% below your target. Tonight, aim to eat before 7:45 and include magnesium-rich foods: dark leafy greens, pumpkin seeds, or a small portion of dark chocolate. We will track your HRV the following morning.' },
-        { role: 'user', text: 'Okay, great. Let\'s try that.' },
-        { role: 'luma', html: 'I\'ve got some great magnesium-rich recipes for dinner that will match your taste palette and macro goals perfectly.' }
-      ]
-    },
-    {
-      turns: [
-        { role: 'user', text: 'What should I eat tonight?' },
-        { role: 'luma', html: 'Lean anti-inflammatory. The <strong>salmon dinner last Tuesday</strong> gave you your best recovery score this week. Leafy greens and walnuts will help. Avoid caffeine after 1 pm.' }
-      ]
-    },
-    {
-      turns: [
-        { role: 'user', text: 'Should I train today?' },
-        { role: 'luma', html: 'Your readiness sits at <strong>58, the lowest this fortnight.</strong> Skip the heavy lift. A 20-minute zone 2 walk will do more for tomorrow\'s HRV than pushing through.' }
-      ]
-    }
-  ];
-  var timers = [];
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function clearTimers() { timers.forEach(function(t) { clearTimeout(t); }); timers = []; }
-  function play(idx) {
-    clearTimers();
-    chat.innerHTML = '';
-    var script = SCRIPTS[idx] || SCRIPTS[0];
-    document.querySelectorAll('.luma-suggest').forEach(function(b) {
-      b.classList.toggle('active', parseInt(b.dataset.script, 10) === idx);
-    });
-    var delay = reduced ? 0 : 300;
-    script.turns.forEach(function(turn) {
-      if (turn.role === 'user') {
-        (function(d, txt) {
-          timers.push(setTimeout(function() {
-            var el = document.createElement('div');
-            el.className = 'luma-bubble user';
-            el.textContent = '”' + txt + '”';
-            chat.appendChild(el);
-            chat.scrollTop = chat.scrollHeight;
-          }, d));
-        })(delay, turn.text);
-        delay = reduced ? 0 : delay + 700;
-      } else {
-        (function(td, rd, html) {
-          if (!reduced) {
-            timers.push(setTimeout(function() {
-              var t = document.createElement('div');
-              t.className = 'luma-bubble typing';
-              t.innerHTML = '<span></span><span></span><span></span>';
-              chat.appendChild(t);
-              chat.scrollTop = chat.scrollHeight;
-            }, td));
-          }
-          timers.push(setTimeout(function() {
-            var typing = chat.querySelector('.luma-bubble.typing');
-            if (typing) typing.remove();
-            var el = document.createElement('div');
-            el.className = 'luma-bubble luma';
-            el.innerHTML = html;
-            chat.appendChild(el);
-            chat.scrollTop = chat.scrollHeight;
-          }, rd));
-        })(delay, reduced ? 0 : delay + 1700, turn.html);
-        delay = reduced ? 0 : delay + 1700 + 1400;
-      }
-    });
-  }
-  document.querySelectorAll('.luma-suggest').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      play(parseInt(btn.dataset.script, 10));
-    });
-  });
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting && !root.dataset.played) {
-          root.dataset.played = '1';
-          play(0);
-        }
-      });
-    }, { threshold: 0.35 });
-    obs.observe(root);
-  } else {
-    play(0);
-  }
-})();
-
-/* ── 3D Timeline z-axis journey ── */
-(function setupTimeline3D() {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const items = document.querySelectorAll('.section-timeline .timeline-item');
-  if (!items.length) return;
-  let ticking = false;
-  function update() {
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const focal = vh * 0.5;
-    const focalRange = vh * 0.32;
-    items.forEach(function(item) {
-      const rect = item.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const distance = Math.abs(center - focal);
-      item.classList.remove('tl-focus', 'tl-past');
-      if (distance < focalRange) {
-        item.classList.add('tl-focus');
-      } else if (center < focal) {
-        item.classList.add('tl-past');
-      }
-    });
-    ticking = false;
-  }
-  window.addEventListener('scroll', function() {
-    if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  window.addEventListener('resize', function() {
-    if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  update();
-})();
-
-/* FAQ accordion */
-(function(){
-  document.querySelectorAll('.faq-q').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('.faq-q').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
-      this.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    });
-  });
-})();
 </script>
 </body>
 </html>
-

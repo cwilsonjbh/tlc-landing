@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tlc-landing-mockups",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8795", "--directory", "mockups"],
+      "port": 8795
+    },
+    {
+      "name": "tlc-mockup-view",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8797", "C:/Users/navmi/Downloads/tlc-landing"],
+      "port": 8797
+    }
+  ]
+}

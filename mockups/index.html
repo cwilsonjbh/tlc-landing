@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TLC Landing — Refresh Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1410; --ink-2:#12241C; --paper:#FAFAF7; --paper-2:#F2F1EA;
+    --deep:#154D33; --mid:#1D6040; --bright:#39BA76; --gold:#E8B84B;
+    --nutrition:#39BA76; --body:#398CBA; --mind:#E8B84B;
+    --hair:rgba(255,255,255,0.10); --hair-dark:rgba(11,20,16,0.10);
+    --micro:11px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:-0.01em;line-height:0.88}
+  .serif{font-family:'Fraunces',serif;font-style:italic;font-weight:300;letter-spacing:-0.01em;line-height:0.9}
+  .micro{font-size:var(--micro);font-weight:600;letter-spacing:0.18em;text-transform:uppercase}
+  .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold)}
+
+  /* Picker */
+  .picker{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:100;display:flex;gap:2px;background:rgba(11,20,16,0.92);padding:4px;border-radius:999px;backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.25)}
+  .picker button{appearance:none;border:0;background:transparent;color:#D8DDD8;padding:9px 18px;border-radius:999px;font:600 11.5px/1 'Figtree';letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+  .picker button.on{background:var(--bright);color:var(--ink)}
+  .view{display:none}
+  .view.on{display:block}
+
+  /* ============ NEBULA CANVAS (shared) ============ */
+  .neb{position:absolute;inset:0;pointer-events:none}
+
+  /* ============ DIRECTION A — CATEGORY CLAIM ============ */
+  .a-hero{position:relative;min-height:100vh;background:linear-gradient(180deg,#0B1410 0%,#12241C 60%,#154D33 100%);color:var(--paper);overflow:hidden}
+  .a-nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid var(--hair)}
+  .a-logo{font-family:'Bebas Neue';letter-spacing:0.22em;font-size:18px}
+  .a-logo span{color:var(--gold)}
+  .a-nav-links{display:flex;gap:36px}
+  .a-nav-links a{color:#D8DDD8;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.02em}
+  .a-cta-mini{padding:10px 22px;border:1px solid var(--hair);border-radius:999px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
+
+  .a-wrap{position:relative;z-index:4;max-width:1440px;margin:0 auto;padding:90px 48px 120px;display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:center}
+  .a-left .eyebrow{margin-bottom:32px}
+  .a-left h1{font-family:'Bebas Neue';font-size:clamp(72px,10vw,156px);line-height:0.84;letter-spacing:-0.015em}
+  .a-left h1 .gold{color:var(--gold)}
+  .a-left h1 .serif{display:block;font-family:'Fraunces';font-style:italic;font-weight:300;font-size:0.72em;color:var(--bright);letter-spacing:-0.01em;margin-top:-6px}
+  .a-left p.sub{max-width:520px;margin-top:34px;font-size:18px;line-height:1.55;color:#CFD4CE;font-weight:400}
+  .a-actions{margin-top:44px;display:flex;gap:14px;align-items:center}
+  .a-btn-primary{background:var(--gold);color:var(--ink);padding:16px 30px;border-radius:999px;font-weight:700;letter-spacing:0.04em;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+  .a-btn-primary svg{width:16px;height:16px}
+  .a-btn-ghost{color:var(--paper);padding:16px 24px;font-weight:600;letter-spacing:0.06em;font-size:13px;text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--hair)}
+  .a-trust{margin-top:28px;display:flex;gap:14px;align-items:center;font-size:12px;color:#8DA095;letter-spacing:0.02em}
+  .a-trust-dot{width:5px;height:5px;border-radius:50%;background:var(--bright);box-shadow:0 0 14px var(--bright)}
+
+  /* Right side: product galaxy */
+  .a-right{position:relative;aspect-ratio:1/1.02;display:flex;align-items:center;justify-content:center}
+  .a-orbit{position:absolute;inset:0;border:1px solid var(--hair);border-radius:50%}
+  .a-orbit.o2{inset:60px}
+  .a-orbit.o3{inset:130px}
+  .a-centre{position:relative;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 50% 45%,#1D6040 0%,#0B1410 72%);box-shadow:0 0 120px rgba(57,186,118,0.35),inset 0 0 40px rgba(57,186,118,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(57,186,118,0.3)}
+  .a-centre .score{font-family:'Bebas Neue';font-size:88px;color:var(--gold);line-height:1}
+  .a-centre .score-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#9DB0A4;margin-top:6px}
+  .a-centre .score-delta{margin-top:10px;font-size:11px;color:var(--bright);font-weight:600}
+
+  .a-node{position:absolute;background:rgba(11,20,16,0.85);border:1px solid var(--hair);border-radius:14px;padding:14px 16px;backdrop-filter:blur(12px);min-width:180px}
+  .a-node .n-eye{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .a-node .n-head{font-family:'Bebas Neue';font-size:22px;letter-spacing:0.02em}
+  .a-node .n-sub{font-size:12px;color:#9DB0A4;margin-top:2px}
+  .a-node.n1{top:4%;left:-4%} .a-node.n1 .n-eye{color:var(--nutrition)}
+  .a-node.n2{top:10%;right:-6%} .a-node.n2 .n-eye{color:var(--body)}
+  .a-node.n3{bottom:16%;right:-2%} .a-node.n3 .n-eye{color:var(--mind)}
+  .a-node.n4{bottom:6%;left:4%} .a-node.n4 .n-eye{color:var(--gold)}
+
+  .a-stats{position:relative;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .a-stat{padding:28px 32px;border-right:1px solid var(--hair)}
+  .a-stat:last-child{border-right:0}
+  .a-stat .num{font-family:'Bebas Neue';font-size:52px;color:var(--paper);line-height:1}
+  .a-stat .num span{color:var(--gold)}
+  .a-stat .lbl{margin-top:8px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8DA095}
+
+  /* ============ DIRECTION B — MEET LUMA ============ */
+  .b-hero{position:relative;min-height:100vh;background:var(--paper);color:var(--ink);overflow:hidden}
+  .b-nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid var(--hair-dark)}
+  .b-logo{font-family:'Bebas Neue';letter-spacing:0.22em;font-size:18px;color:var(--deep)}
+  .b-logo span{color:var(--gold)}
+  .b-cta-mini{padding:10px 22px;background:var(--ink);color:var(--paper);border-radius:999px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none}
+
+  .b-wrap{max-width:1440px;margin:0 auto;padding:90px 48px 140px;display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:center}
+  .b-left .eyebrow{color:var(--deep);margin-bottom:28px}
+  .b-left h1{font-family:'Fraunces';font-weight:300;font-style:italic;font-size:clamp(64px,8vw,128px);line-height:0.94;letter-spacing:-0.025em;color:var(--ink)}
+  .b-left h1 .under{background:linear-gradient(180deg,transparent 62%,rgba(232,184,75,0.45) 62%)}
+  .b-left h1 strong{font-family:'Bebas Neue';font-weight:400;font-style:normal;letter-spacing:-0.01em;color:var(--deep);display:block;margin-top:6px}
+  .b-left p.sub{max-width:520px;margin-top:32px;font-size:18px;line-height:1.6;color:#3b463f}
+  .b-actions{margin-top:40px;display:flex;gap:14px;align-items:center}
+  .b-btn-primary{background:var(--ink);color:var(--paper);padding:16px 28px;border-radius:999px;font-weight:700;letter-spacing:0.04em;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+  .b-btn-ghost{color:var(--ink);padding:16px 22px;font-weight:600;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink)}
+
+  /* Phone frame / Luma conversation */
+  .b-phone{position:relative;width:100%;max-width:440px;margin-left:auto;background:var(--ink);border-radius:44px;padding:14px;box-shadow:0 40px 100px rgba(11,20,16,0.25),0 10px 30px rgba(11,20,16,0.12)}
+  .b-screen{background:#F5F7F5;border-radius:32px;overflow:hidden;min-height:720px;display:flex;flex-direction:column}
+  .b-luma-head{position:relative;background:linear-gradient(180deg,#0B1410 0%,#154D33 100%);padding:28px 22px 22px;color:var(--paper);overflow:hidden}
+  .b-luma-head canvas{position:absolute;inset:0;opacity:0.55}
+  .b-luma-head .row{position:relative;display:flex;align-items:center;gap:12px;z-index:2}
+  .b-avatar{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 50% 45%,#39BA76 0%,#154D33 70%);box-shadow:0 0 18px rgba(57,186,118,0.55);border:1px solid rgba(255,255,255,0.2)}
+  .b-luma-name{font-family:'Bebas Neue';font-size:18px;letter-spacing:0.12em}
+  .b-luma-status{font-size:10px;color:#9DB0A4;letter-spacing:0.14em;text-transform:uppercase;margin-top:2px}
+  .b-luma-status .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--bright);box-shadow:0 0 10px var(--bright);margin-right:6px;vertical-align:middle}
+  .b-greet{position:relative;z-index:2;margin-top:18px;font-family:'Fraunces';font-style:italic;font-weight:300;font-size:22px;line-height:1.25}
+  .b-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .b-talking{background:#fff;border-radius:18px;padding:14px 16px;border:1px solid rgba(11,20,16,0.06);display:flex;gap:12px;align-items:flex-start}
+  .b-talking .pill{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .b-talking .pill svg{width:16px;height:16px;color:#fff}
+  .b-talking .t-eye{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
+  .b-talking .t-body{font-size:13px;line-height:1.4;color:var(--ink)}
+  .b-talking.nut .pill{background:var(--nutrition)} .b-talking.nut .t-eye{color:var(--nutrition)}
+  .b-talking.body .pill{background:var(--body)} .b-talking.body .t-eye{color:var(--body)}
+  .b-talking.mind .pill{background:var(--mind)} .b-talking.mind .t-eye{color:#B8902E}
+  .b-input{margin:14px;background:#fff;border-radius:999px;padding:12px 18px;display:flex;align-items:center;gap:10px;border:1px solid rgba(11,20,16,0.08)}
+  .b-input input{flex:1;border:0;outline:0;font:500 13px/1 'Figtree';color:#4a554e;background:transparent}
+  .b-input .mic{width:32px;height:32px;border-radius:50%;background:var(--deep);display:flex;align-items:center;justify-content:center;color:#fff}
+  .b-input .mic svg{width:14px;height:14px}
+
+  .b-float{position:absolute;border-radius:14px;padding:12px 14px;background:#fff;box-shadow:0 20px 50px rgba(11,20,16,0.14);border:1px solid rgba(11,20,16,0.05);font-size:12px;color:var(--ink)}
+  .b-float .fl-eye{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:3px}
+  .b-float.f1{top:24%;left:-18px;transform:translateX(-100%)}
+  .b-float.f2{bottom:18%;right:-18px;transform:translateX(100%)}
+
+  /* ============ DIRECTION C — THE LOOP ============ */
+  .c-hero{position:relative;min-height:100vh;background:#0B1410;color:var(--paper);overflow:hidden}
+  .c-nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid var(--hair)}
+  .c-logo{font-family:'Bebas Neue';letter-spacing:0.22em;font-size:18px}
+  .c-logo span{color:var(--gold)}
+  .c-cta-mini{padding:10px 22px;background:var(--gold);color:var(--ink);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none}
+
+  .c-wrap{position:relative;z-index:4;max-width:1440px;margin:0 auto;padding:90px 48px 80px}
+  .c-top{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:flex-end;margin-bottom:80px}
+  .c-top .eyebrow{margin-bottom:28px}
+  .c-top h1{font-family:'Bebas Neue';font-size:clamp(64px,9.5vw,148px);line-height:0.86;letter-spacing:-0.015em}
+  .c-top h1 .line2{color:var(--gold);display:block}
+  .c-top h1 em{font-family:'Fraunces';font-style:italic;font-weight:300;color:var(--bright);letter-spacing:-0.02em}
+  .c-top-right{padding-bottom:12px}
+  .c-top-right p{font-size:17px;line-height:1.6;color:#CFD4CE;max-width:440px}
+  .c-top-right .c-actions{margin-top:28px;display:flex;gap:12px}
+  .c-btn-primary{background:var(--gold);color:var(--ink);padding:15px 28px;border-radius:999px;font-weight:700;letter-spacing:0.04em;font-size:13.5px;text-decoration:none;text-transform:uppercase}
+  .c-btn-ghost{border:1px solid var(--hair);color:var(--paper);padding:15px 24px;border-radius:999px;font-weight:600;font-size:13.5px;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase}
+
+  /* Loop diagram */
+  .c-loop{position:relative;aspect-ratio:1.6/1;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:70px 0;display:flex;justify-content:center;align-items:center}
+  .c-loop-svg{width:min(900px,100%);height:auto;overflow:visible}
+  .c-loop-svg text{font-family:'Figtree';font-weight:600;font-size:10px;letter-spacing:0.18em;fill:#9DB0A4;text-transform:uppercase}
+  .c-loop-svg .node-num{font-family:'Bebas Neue';font-size:22px;letter-spacing:0.02em;fill:var(--paper)}
+  .c-loop-svg .node-lbl{font-family:'Figtree';font-weight:600;font-size:11px;fill:var(--paper);letter-spacing:0.04em;text-transform:none}
+  .c-loop-centre{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:220px;height:220px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle,#154D33 0%,transparent 70%);pointer-events:none}
+  .c-loop-centre .score{font-family:'Bebas Neue';font-size:78px;color:var(--gold);line-height:1}
+  .c-loop-centre .lbl{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#9DB0A4;margin-top:4px}
+  .c-loop-centre .trend{font-size:11px;color:var(--bright);font-weight:600;margin-top:10px;letter-spacing:0.02em}
+
+  /* Shared hairline sections */
+  .section-tag{font-size:11px;letter-spacing:0.22em;font-weight:600;text-transform:uppercase;color:var(--gold)}
+
+  @media (max-width:900px){
+    .a-wrap,.b-wrap,.c-top{grid-template-columns:1fr;gap:48px;padding:60px 24px}
+    .a-nav,.b-nav,.c-nav{padding:20px 24px}
+    .a-nav-links{display:none}
+    .a-right{aspect-ratio:1/1;max-width:420px;margin:0 auto}
+    .a-stats{grid-template-columns:repeat(2,1fr)}
+    .a-stat:nth-child(2){border-right:0}
+    .b-phone{max-width:380px;margin:0 auto}
+    .b-float{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="picker" role="tablist">
+  <button class="on" data-view="a">A · Category claim</button>
+  <button data-view="b">B · Meet Luma</button>
+  <button data-view="c">C · The Loop</button>
+</nav>
+
+<!-- ==================== DIRECTION A ==================== -->
+<section class="view on" data-view="a">
+  <div class="a-hero">
+    <canvas class="neb" id="nebA"></canvas>
+    <nav class="a-nav">
+      <div class="a-logo">TLC <span>·</span></div>
+      <div class="a-nav-links">
+        <a href="#">System</a><a href="#">Luma</a><a href="#">Longevity Score</a><a href="#">Pricing</a>
+      </div>
+      <a href="#" class="a-cta-mini">Sign in</a>
+    </nav>
+
+    <div class="a-wrap">
+      <div class="a-left">
+        <div class="eyebrow">The operating system for longevity</div>
+        <h1>
+          ONE SCORE.<br>
+          THREE PILLARS.<br>
+          <span class="serif">every day, connected.</span>
+        </h1>
+        <p class="sub">TLC links what you eat, how your body responds, and how your mind settles into a single living picture. Your personal coach reads it. Your week adapts to it. Your Longevity Score proves it.</p>
+        <div class="a-actions">
+          <a href="#" class="a-btn-primary">Start free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#" class="a-btn-ghost">See how it works</a>
+        </div>
+        <div class="a-trust"><span class="a-trust-dot"></span> 25+ wearables connected<span style="opacity:.3">·</span>no wearable required<span style="opacity:.3">·</span>your data stays yours</div>
+      </div>
+
+      <div class="a-right">
+        <div class="a-orbit"></div><div class="a-orbit o2"></div><div class="a-orbit o3"></div>
+        <div class="a-centre">
+          <div class="score">82</div>
+          <div class="score-label">Longevity Score</div>
+          <div class="score-delta">+4 this week</div>
+        </div>
+        <div class="a-node n1">
+          <div class="n-eye">Nutrition</div>
+          <div class="n-head">MEDITERRANEAN +</div>
+          <div class="n-sub">Omega-3 streak · day 11</div>
+        </div>
+        <div class="a-node n2">
+          <div class="n-eye">Body</div>
+          <div class="n-head">HRV 62 · RHR 54</div>
+          <div class="n-sub">Readiness 88 / 100</div>
+        </div>
+        <div class="a-node n3">
+          <div class="n-eye">Mind</div>
+          <div class="n-head">CALM, FOCUSED</div>
+          <div class="n-sub">7 reflections this week</div>
+        </div>
+        <div class="a-node n4">
+          <div class="n-eye">Luma</div>
+          <div class="n-head">MORNING BRIEF</div>
+          <div class="n-sub">"Your sleep rebuilt overnight."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-stats">
+      <div class="a-stat"><div class="num">3 <span>·</span></div><div class="lbl">Connected pillars</div></div>
+      <div class="a-stat"><div class="num">25+</div><div class="lbl">Wearables supported</div></div>
+      <div class="a-stat"><div class="num">4×</div><div class="lbl">Daily check-ins</div></div>
+      <div class="a-stat"><div class="num">1</div><div class="lbl">Longevity Score</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION B ==================== -->
+<section class="view" data-view="b">
+  <div class="b-hero">
+    <nav class="b-nav">
+      <div class="b-logo">TLC <span>·</span></div>
+      <a href="#" class="b-cta-mini">Sign in</a>
+    </nav>
+
+    <div class="b-wrap">
+      <div class="b-left">
+        <div class="eyebrow">Meet Luma, your longevity coach</div>
+        <h1>
+          She <span class="under">already</span><br>
+          knows you.
+          <strong>BY MORNING, SHE HAS A PLAN.</strong>
+        </h1>
+        <p class="sub">Luma reads your meals, your wearable, your reflections, and your goals before you wake up. By 08:00 she's already chosen what matters today. By sundown she knows what worked. The first real coach in your pocket.</p>
+        <div class="b-actions">
+          <a href="#" class="b-btn-primary">Start free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#" class="b-btn-ghost">Hear her voice</a>
+        </div>
+      </div>
+
+      <div style="position:relative">
+        <div class="b-phone">
+          <div class="b-screen">
+            <div class="b-luma-head">
+              <canvas class="neb" id="nebB"></canvas>
+              <div class="row">
+                <div class="b-avatar"></div>
+                <div>
+                  <div class="b-luma-name">LUMA</div>
+                  <div class="b-luma-status"><span class="dot"></span>Listening</div>
+                </div>
+              </div>
+              <div class="b-greet">Morning Chris. Three things for today.</div>
+            </div>
+            <div class="b-body">
+              <div class="b-talking nut">
+                <div class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+                <div>
+                  <div class="t-eye">Nutrition</div>
+                  <div class="t-body">Your omega-3 streak is at day 11. One more wild salmon dinner hits two weeks.</div>
+                </div>
+              </div>
+              <div class="b-talking body">
+                <div class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a6 6 0 0 0-6 6v3l-2 7h16l-2-7V8a6 6 0 0 0-6-6Z"/></svg></div>
+                <div>
+                  <div class="t-eye">Body</div>
+                  <div class="t-body">HRV rebuilt overnight. Your body wants harder today, not lighter.</div>
+                </div>
+              </div>
+              <div class="b-talking mind">
+                <div class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 9 9"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <div>
+                  <div class="t-eye">Mind</div>
+                  <div class="t-body">You've logged 7 calm reflections. That's the pattern we were chasing.</div>
+                </div>
+              </div>
+            </div>
+            <div class="b-input">
+              <input value="How should I eat around training today?" readonly>
+              <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 1 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="b-float f1">
+          <div class="fl-eye">Longevity Score</div>
+          <div style="font-family:'Bebas Neue';font-size:36px;color:var(--deep);line-height:1">82 <span style="color:var(--bright);font-size:14px">+4</span></div>
+        </div>
+        <div class="b-float f2">
+          <div class="fl-eye">Active adjustment</div>
+          <div style="font-size:12px;line-height:1.35;max-width:160px">Cut caffeine after 2pm · 4-day streak</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION C ==================== -->
+<section class="view" data-view="c">
+  <div class="c-hero">
+    <canvas class="neb" id="nebC"></canvas>
+    <nav class="c-nav">
+      <div class="c-logo">TLC <span>·</span></div>
+      <a href="#" class="c-cta-mini">Start free</a>
+    </nav>
+    <div class="c-wrap">
+      <div class="c-top">
+        <div>
+          <div class="eyebrow">The feedback loop for a longer life</div>
+          <h1>Every meal.<br>Every metric.<br><span class="line2">Every <em>night.</em></span></h1>
+        </div>
+        <div class="c-top-right">
+          <p>TLC is not an app you check. It is a loop you live in. Data goes in, insight comes out, your week adapts, and the loop gets sharper every time it runs.</p>
+          <div class="c-actions">
+            <a class="c-btn-primary" href="#">Start the loop</a>
+            <a class="c-btn-ghost" href="#">See the system</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-loop">
+        <svg class="c-loop-svg" viewBox="0 0 900 560">
+          <defs>
+            <filter id="glow"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+          <!-- outer ring -->
+          <ellipse cx="450" cy="280" rx="400" ry="230" fill="none" stroke="rgba(255,255,255,0.08)"/>
+          <ellipse cx="450" cy="280" rx="300" ry="170" fill="none" stroke="rgba(255,255,255,0.05)"/>
+          <!-- connecting arcs -->
+          <g stroke="rgba(232,184,75,0.35)" stroke-width="1" fill="none">
+            <path d="M 120 280 Q 280 90, 450 80" stroke-dasharray="2 4"/>
+            <path d="M 450 80 Q 620 90, 780 280" stroke-dasharray="2 4"/>
+            <path d="M 780 280 Q 620 470, 450 480" stroke-dasharray="2 4"/>
+            <path d="M 450 480 Q 280 470, 120 280" stroke-dasharray="2 4"/>
+          </g>
+          <!-- 6 nodes -->
+          <g>
+            <g transform="translate(120 280)">
+              <circle r="32" fill="#12241C" stroke="#39BA76" stroke-width="1.3"/>
+              <text class="node-num" text-anchor="middle" dy="-2">01</text>
+              <text class="node-lbl" text-anchor="middle" dy="52">MEALS</text>
+              <text text-anchor="middle" dy="68">nutrition</text>
+            </g>
+            <g transform="translate(285 120)">
+              <circle r="32" fill="#12241C" stroke="#398CBA" stroke-width="1.3"/>
+              <text class="node-num" text-anchor="middle" dy="-2">02</text>
+              <text class="node-lbl" text-anchor="middle" dy="52">BIOMETRICS</text>
+              <text text-anchor="middle" dy="68">body</text>
+            </g>
+            <g transform="translate(615 120)">
+              <circle r="32" fill="#12241C" stroke="#E8B84B" stroke-width="1.3"/>
+              <text class="node-num" text-anchor="middle" dy="-2">03</text>
+              <text class="node-lbl" text-anchor="middle" dy="52">REFLECTION</text>
+              <text text-anchor="middle" dy="68">mind</text>
+            </g>
+            <g transform="translate(780 280)">
+              <circle r="32" fill="#12241C" stroke="#39BA76" stroke-width="1.3"/>
+              <text class="node-num" text-anchor="middle" dy="-2">04</text>
+              <text class="node-lbl" text-anchor="middle" dy="52">INSIGHT</text>
+              <text text-anchor="middle" dy="68">daily</text>
+            </g>
+            <g transform="translate(615 440)">
+              <circle r="32" fill="#12241C" stroke="#E8B84B" stroke-width="1.3"/>
+              <text class="node-num" text-anchor="middle" dy="-2">05</text>
+              <text class="node-lbl" text-anchor="middle" dy="52">STRATEGY</text>
+              <text text-anchor="middle" dy="68">week ahead</text>
+            </g>
+            <g transform="translate(285 440)">
+              <circle r="32" fill="#12241C" stroke="#39BA76" stroke-width="1.3"/>
+              <text class="node-num" text-anchor="middle" dy="-2">06</text>
+              <text class="node-lbl" text-anchor="middle" dy="52">COACH</text>
+              <text text-anchor="middle" dy="68">luma speaks</text>
+            </g>
+          </g>
+        </svg>
+        <div class="c-loop-centre">
+          <div class="score">82</div>
+          <div class="lbl">Longevity Score</div>
+          <div class="trend">+4 vs. last week</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Picker
+  const views = document.querySelectorAll('.view');
+  document.querySelectorAll('.picker button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.picker button').forEach(x=>x.classList.remove('on'));
+      views.forEach(v=>v.classList.remove('on'));
+      b.classList.add('on');
+      document.querySelector('.view[data-view="'+b.dataset.view+'"]').classList.add('on');
+    });
+  });
+
+  // TLC Brand Nebula — canonical pattern
+  function mountNebula(canvas){
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w,h,cx,cy,R;
+    const nodes = [
+      {a:0,    rx:0.30,ry:0.35,spd: 0.003, dot:1.8,bright:0.22},
+      {a:1.05, rx:0.22,ry:0.28,spd:-0.004, dot:1.5,bright:0.18},
+      {a:2.09, rx:0.38,ry:0.30,spd: 0.0025,dot:2.0,bright:0.25},
+      {a:3.14, rx:0.16,ry:0.32,spd:-0.005, dot:1.3,bright:0.16},
+      {a:4.19, rx:0.28,ry:0.22,spd: 0.0035,dot:1.5,bright:0.20},
+      {a:5.24, rx:0.35,ry:0.20,spd:-0.003, dot:1.4,bright:0.18},
+    ];
+    const rings = [];
+    function resize(){
+      const r = canvas.getBoundingClientRect();
+      w=canvas.width=r.width*devicePixelRatio; h=canvas.height=r.height*devicePixelRatio;
+      canvas.style.width=r.width+'px'; canvas.style.height=r.height+'px';
+      cx=w/2;cy=h/2;R=Math.min(w,h);
+    }
+    window.addEventListener('resize',resize); resize();
+    let t=0;
+    setInterval(()=>rings.push({r:0,a:0.28}), 2200);
+    function frame(){
+      ctx.clearRect(0,0,w,h);
+      // rings
+      for(let i=rings.length-1;i>=0;i--){
+        const r=rings[i]; r.r += R*0.0015; r.a *= 0.986;
+        ctx.strokeStyle=`rgba(255,255,255,${r.a})`; ctx.lineWidth=1*devicePixelRatio;
+        ctx.beginPath(); ctx.arc(cx,cy,r.r,0,Math.PI*2); ctx.stroke();
+        if(r.a<0.01) rings.splice(i,1);
+      }
+      // compute positions
+      const pts = nodes.map(n=>{
+        n.a += n.spd;
+        return {x:cx + Math.cos(n.a)*n.rx*R*0.5, y:cy + Math.sin(n.a)*n.ry*R*0.5, n};
+      });
+      // spokes
+      ctx.strokeStyle='rgba(255,255,255,0.08)'; ctx.lineWidth=1*devicePixelRatio;
+      pts.forEach(p=>{ ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(p.x,p.y); ctx.stroke(); });
+      // inter-node
+      ctx.strokeStyle='rgba(255,255,255,0.06)';
+      for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+        const a=pts[i],b=pts[j]; const d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<R*0.45){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+      }
+      // dots
+      pts.forEach(p=>{
+        ctx.fillStyle=`rgba(255,255,255,${p.n.bright+0.5})`;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.n.dot*devicePixelRatio,0,Math.PI*2); ctx.fill();
+      });
+      // centre glow
+      const g=ctx.createRadialGradient(cx,cy,0,cx,cy,R*0.18);
+      g.addColorStop(0,'rgba(57,186,118,0.22)'); g.addColorStop(1,'rgba(57,186,118,0)');
+      ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+      requestAnimationFrame(frame);
+    }
+    frame();
+  }
+  mountNebula(document.getElementById('nebA'));
+  mountNebula(document.getElementById('nebB'));
+  mountNebula(document.getElementById('nebC'));
+</script>
+</body>
+</html>

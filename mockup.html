@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TLC Landing — Proposed Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a1a;
+    --ink-2: #2e2e2e;
+    --surface: #f5f4f0;
+    --white: #ffffff;
+    --green: #2ea84a;
+    --green-dark: #1a5c28;
+    --green-light: #ebf7ee;
+    --nutrition: #39BA76;
+    --body-blue: #398CBA;
+    --mind: #E8B84B;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Figtree', sans-serif;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ---- MOCKUP LABELS ---- */
+  .mockup-label {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .mockup-label span.tag {
+    background: var(--green);
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+
+  /* ---- SHARED UTILS ---- */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--green); background: var(--green-light); border: 1px solid #c5e8cc;
+    border-radius: 20px; padding: 5px 14px;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  h2 em { font-style: normal; color: var(--green); }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green); color: #fff;
+    font-family: var(--font-body); font-size: 14px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 14px 28px; border-radius: 6px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--ink);
+    border: 1.5px solid #ccc;
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 14px 28px; border-radius: 6px; text-decoration: none;
+  }
+
+  /* ===========================
+     OPTION A: MEAL PLAN HERO STRIP
+     =========================== */
+  .meal-strip {
+    background: var(--ink);
+    padding: 80px 0;
+  }
+  .meal-strip-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .meal-strip .eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--nutrition); margin-bottom: 16px;
+  }
+  .meal-strip h2 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 64px);
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 20px;
+  }
+  .meal-strip h2 em { color: var(--nutrition); font-style: normal; }
+  .meal-strip p {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .meal-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .meal-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .meal-stat .num {
+    font-family: var(--font-display);
+    font-size: 40px;
+    color: var(--nutrition);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .meal-stat .lbl {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+  .meal-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .meal-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+  }
+  .meal-checklist li svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    stroke: var(--nutrition);
+  }
+  .badge-pro {
+    display: inline-block;
+    background: var(--nutrition);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 6px;
+    position: relative;
+    top: -1px;
+  }
+
+  /* ===========================
+     OPTION B: STANDALONE FEATURE BLOCK
+     =========================== */
+  .meal-feature {
+    padding: 100px 0;
+    background: var(--white);
+  }
+  .meal-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .meal-feature-visual {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .meal-feature-visual::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(57,186,118,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .week-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #888; margin-bottom: 16px;
+  }
+  .week-days {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+  }
+  .day-pill {
+    flex: 1;
+    text-align: center;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 10px 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #aaa;
+    border: 1px solid #e8e8e8;
+  }
+  .day-pill.active {
+    background: var(--nutrition);
+    color: #fff;
+    border-color: var(--nutrition);
+  }
+  .meal-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .meal-slot {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e8e8e8;
+  }
+  .meal-slot .meal-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .meal-slot .meal-macros { font-size: 12px; color: #999; }
+  .meal-slot .meal-time { font-size: 11px; font-weight: 700; color: var(--nutrition); letter-spacing: 0.06em; }
+  .co2-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-light);
+    border: 1px solid #c5e8cc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--green-dark);
+    font-weight: 600;
+  }
+  .co2-badge svg { stroke: var(--green); flex-shrink: 0; }
+
+  .meal-feature-copy .eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--nutrition); margin-bottom: 12px;
+  }
+  .meal-feature-copy h2 {
+    margin-bottom: 16px;
+  }
+  .meal-feature-copy p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .feature-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .feature-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .feature-points li svg { flex-shrink: 0; margin-top: 3px; stroke: var(--nutrition); }
+  .feature-points li strong { font-weight: 700; }
+
+  /* ===========================
+     OPTION C: REVISED FINAL CTA
+     =========================== */
+  .final-cta-revised {
+    background: var(--ink);
+    padding: 100px 0;
+    text-align: center;
+  }
+  .final-cta-revised h2 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 7vw, 96px);
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .final-cta-revised h2 em { color: var(--green); font-style: normal; }
+  .final-cta-revised p {
+    color: rgba(255,255,255,0.65);
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .cta-btns {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary-dark {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green); color: #fff;
+    font-family: var(--font-body); font-size: 14px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 16px 32px; border-radius: 6px; text-decoration: none;
+  }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    padding: 16px 32px; border-radius: 6px; text-decoration: none;
+  }
+
+  /* divider */
+  .divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================================================
+     OPTION A — MEAL PLAN AS DARK HERO STRIP
+     Replaces the current teaser card approach.
+     Shows meal plan stats upfront, no toggle needed.
+     ====================================================== -->
+<div class="mockup-label">
+  <span class="tag">Option A</span>
+  Meal Plan — Dark Hero Strip (replaces current hidden toggle section)
+</div>
+
+<section class="meal-strip">
+  <div class="container">
+    <div class="meal-strip-inner">
+
+      <!-- LEFT: copy -->
+      <div>
+        <div class="eyebrow">Nutrition &bull; Pro Feature</div>
+        <h2>120 MEALS.<br><em>PLANNED.</em><br>BEFORE THE<br>MONTH BEGINS.</h2>
+        <p>TLC builds your full monthly meal plan around what actually works for your body — your energy peaks, your sleep patterns, your biometrics. Not a template. A plan built for you.</p>
+        <ul class="meal-checklist">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Ingredients shared across meals — less waste, less cost
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Smart shopping list generated automatically
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Batch cooking guide included
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Evolves each week based on your Mind &amp; Body data
+          </li>
+        </ul>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="btn-primary">Get Meal Plan <span class="badge-pro">PRO</span></a>
+      </div>
+
+      <!-- RIGHT: stats -->
+      <div class="meal-stats">
+        <div class="meal-stat">
+          <div class="num">120</div>
+          <div class="lbl">Meals planned per month</div>
+        </div>
+        <div class="meal-stat">
+          <div class="num">7kg</div>
+          <div class="lbl">Estimated CO<sub>2</sub> saved per month</div>
+        </div>
+        <div class="meal-stat">
+          <div class="num">~16%</div>
+          <div class="lbl">Estimated grocery savings</div>
+        </div>
+        <div class="meal-stat">
+          <div class="num">0</div>
+          <div class="lbl">Decisions left to chance</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ======================================================
+     OPTION B — FEATURE BLOCK WITH VISUAL MOCKUP
+     Standalone section with a week-view UI preview right.
+     ====================================================== -->
+<div class="mockup-label">
+  <span class="tag">Option B</span>
+  Meal Plan — Feature Block with week-view UI (light section)
+</div>
+
+<section class="meal-feature">
+  <div class="container">
+    <div class="meal-feature-grid">
+
+      <!-- LEFT: visual -->
+      <div class="meal-feature-visual">
+        <div class="week-label">This Week's Plan</div>
+        <div class="week-days">
+          <div class="day-pill">M</div>
+          <div class="day-pill active">T</div>
+          <div class="day-pill">W</div>
+          <div class="day-pill">T</div>
+          <div class="day-pill">F</div>
+          <div class="day-pill">S</div>
+          <div class="day-pill">S</div>
+        </div>
+        <div class="meal-row">
+          <div class="meal-slot">
+            <div>
+              <div class="meal-name">Greek yogurt &amp; berries</div>
+              <div class="meal-macros">340 kcal &bull; 28g protein</div>
+            </div>
+            <div class="meal-time">Breakfast</div>
+          </div>
+          <div class="meal-slot">
+            <div>
+              <div class="meal-name">Salmon &amp; quinoa bowl</div>
+              <div class="meal-macros">520 kcal &bull; 42g protein</div>
+            </div>
+            <div class="meal-time">Lunch</div>
+          </div>
+          <div class="meal-slot">
+            <div>
+              <div class="meal-name">Chicken &amp; roast veg</div>
+              <div class="meal-macros">490 kcal &bull; 38g protein</div>
+            </div>
+            <div class="meal-time">Dinner</div>
+          </div>
+        </div>
+        <div class="co2-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          Shared ingredients this week save an estimated 1.8kg CO<sub>2</sub>
+        </div>
+      </div>
+
+      <!-- RIGHT: copy -->
+      <div class="meal-feature-copy">
+        <div class="eyebrow">Meal Plan &mdash; Pro</div>
+        <h2>YOUR MONTH OF<br><em>MEALS, DECIDED.</em></h2>
+        <p>Every meal in your plan is built around your data — your energy patterns, sleep quality, and macro targets. Ingredients are shared intelligently so your shopping list stays short and your waste stays low.</p>
+        <ul class="feature-points">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><strong>Adapts weekly</strong> — plan evolves as your biometric data changes</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><strong>Smart shopping list</strong> — one list, shared ingredients, no repeats</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><strong>Batch cooking guide</strong> — prep once, eat well all week</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><strong>~16% grocery savings</strong> and ~7kg CO<sub>2</sub> per month</span>
+          </li>
+        </ul>
+        <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=pro" class="btn-primary">Get TLC Pro &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ======================================================
+     OPTION C — REVISED FINAL CTA
+     Current: "THE SYSTEM THAT KNOWS YOU."
+     Proposed: Remove the "knows you" echo, sharper message.
+     ====================================================== -->
+<div class="mockup-label">
+  <span class="tag">Option C</span>
+  Final CTA — Replacing "THE SYSTEM THAT KNOWS YOU" (removes redundancy)
+</div>
+
+<section class="final-cta-revised">
+  <div class="container">
+    <h2>ONE SYSTEM.<br><em>YOUR WHOLE LIFE.</em></h2>
+    <p>Food, sleep, and mood — finally connected. Start free. No card required.</p>
+    <div class="cta-btns">
+      <a href="https://tlc-onboarding-lite.chris-ec5.workers.dev" class="btn-primary-dark">Start Free</a>
+      <a href="https://tlc-onboarding.chris-ec5.workers.dev?path=tlc" class="btn-ghost">Try TLC &mdash; $9.99/mo</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
