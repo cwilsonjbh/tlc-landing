@@ -862,7 +862,7 @@ footer { background: var(--black); padding: 60px 0 0; position: relative; z-inde
   <div class="hero-left">
     <div class="hero-eyebrow"><span class="label">Observe. Analyse. Optimise.</span></div>
     <h1 class="hero-headline">Where nutrition, body and mind finally talk to each other.</h1>
-    <span class="hero-headline-green">The Longevity Chef connects fragmented signals across nutrition, body and mind to reveal hidden patterns in how you respond to food, sleep and recovery, so what truly drives your energy, focus and long-term wellbeing becomes clear.</span>
+    <span class="hero-headline-green">The Longevity Chef connects <strong>fragmented signals across nutrition, body and mind</strong> to reveal <strong>hidden patterns</strong> in how you respond to food, sleep and recovery, so what truly drives your <strong>energy, focus and long-term wellbeing</strong> becomes clear.</span>
     <div class="hero-actions">
       <a href="/start" class="btn btn-black">Start free tonight</a>
       <a href="/how-it-works" class="btn btn-outline">See how it works</a>
