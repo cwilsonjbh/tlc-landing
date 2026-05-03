@@ -153,6 +153,7 @@ nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px) s
 .hero-eyebrow { margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards; }
 .hero-headline { font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 3.8vw, 52px); line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 20px; max-width: 18ch; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.35s forwards; }
 .hero-headline-green { font-family: var(--font-body); font-style: italic; font-weight: 300; font-size: clamp(18px, 2.2vw, 28px); color: var(--green); letter-spacing: 0.02em; display: block; margin-bottom: 32px; line-height: 1.3; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.5s forwards; }
+.hero-headline-green strong { font-weight: 700; }
 .hero-body { font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; color: var(--muted-2); max-width: none; line-height: 1.85; margin-bottom: 48px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.65s forwards; }
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.8s forwards; }
 .hero-trust { font-size: 12px; color: var(--muted); margin-top: 14px; opacity: 0; animation: fadeUp 1s cubic-bezier(0.25,0.46,0.45,0.94) 0.95s forwards; letter-spacing: 0.02em; }
