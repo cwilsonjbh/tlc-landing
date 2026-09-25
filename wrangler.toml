@@ -9,3 +9,6 @@ routes = [
 
 [vars]
 WORKER_ENV = "production"
+
+[assets]
+directory = "./public"
